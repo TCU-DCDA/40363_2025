@@ -1,0 +1,610 @@
+0:06  
+Hey, crew just picking up where we left off last time when we developed
+
+0:12  
+an even more responsive navigation into a hamburger with our Week Three remediation. So this is all in preparation for week four. I
+
+0:24  
+so one pointer in general. So a digression, but it's all in the interest of having the confidence to code your best final project
+
+0:33  
+if you go to any website. So I'll use mine as an example. But this will work probably for most websites, if you right click, and instead of going to inspect, as we have before, go to you go to View Page Source. Instead, you
+
+0:47  
+can see, initially the HTML for that page.
+
+0:52  
+So if there's a feature of a page, you don't quite understand how is, how is constructed, you can, you can take a peek at the back end by right clicking on the on the
+
+1:02  
+anywhere on the page going to view page source,
+
+1:08  
+and that'll work for any page that you go to.
+
+1:16  
+But what's nice is that you can also then look at the CSS too, because it's also linked here.
+
+1:23  
+So we talked about Frank encoding last time. So my week three remediation is changing quite a bit into week four. So it's not how it will How is not in this final draft as as as you currently have access to it,
+
+1:38  
+but you're welcome to
+
+1:41  
+to to Franken code. Pieces of my code into your project at this point, if that's helpful to you, but there's a piece that I've done that doesn't quite match what you've done and you like what I'm doing. You may you may do a view page source
+
+1:58  
+and grab the code you need. Okay, it's common practice.
+
+2:09  
+So if we take a peek at the my site from the end of the last video, the navigation has been refined so that it becomes a hamburger
+
+2:20  
+and the mobile view
+
+2:23  
+still operating as a function navigation but but
+
+2:28  
+less cluttered in this bar when the screen is narrow on a mobile device, we're thinking about mobile first as always.
+
+2:36  
+So that's working. Well, that's been one nice, further evolution of our Week Three remediations.
+
+2:47  
+So this video will focus focus primarily on images.
+
+2:52  
+So part of what's keeping my site from looking more professional
+
+3:01  
+is the lack of alignment. Here. So we have alignment at the top and in the columns. That's that's okay, but the the alignment would look even better if it was top and bottom align throughout, right? So we have two sizes of cards here, three different size cards here, right? And it'd be not nice if all six cards were the same size. So what's causing this discrepancy between the cards is the way the images have been sized and placed, so they're in there sort of with their natural aspect ratio. And that's right. So if you look at the the way the images are inserted, they're doing what we've done before, which is, which is the beginning of a good practice. So we set the image images to 100%
+
+3:44  
+width,
+
+3:46  
+and that works well by itself in certain contexts,
+
+3:51  
+but it's obviously not really doing the trick here for these cards. So the idea is to get the cards all the same size. The woods are being handled pretty well there,
+
+4:04  
+but the heights are erratic. That's a ding against my professional appearance. Let's see what we can do from the tutorial to see if we can rectify this problem on the homepage. Okay, so I have the tutorial called up. The URL is linked in detail with the URL, so I have the product already opened up in VS code, so make sure you're in the same place. So there's a universal kind of image, image statement that we need to add that's that you'll see again and again and again, that's really is very time saving in the big picture. So I'm going briefly to my cell CSS file and go to the top of my page, and I'm going back to my tutorial
+
+4:42  
+and grabbing the essential the essential rule in step one, I'm
+
+4:48  
+going to paste that maybe third from the top, so beneath Asterix, and then body, and then now image,
+
+4:58  
+and notice another comes.
+
+5:00  
+With it makes all images responsive by default. So to kind of read through the CSS itself, everything in the entire site that's that's tagged IMG, set everything every time that the IMG appears. Make sure that content is has the value of 100%
+
+5:14  
+with this property, and set the basically set the height automatically in relationship to that
+
+5:21  
+to the width it's taking inside that box. Okay, so what we've been doing
+
+5:28  
+with our images
+
+5:30  
+throughout the whole our whole time working with images so far was that we've been doing this
+
+5:38  
+right?
+
+5:40  
+So for now, go ahead and knock those out.
+
+5:44  
+So these are the the card images of the homepage
+
+5:51  
+here. So this is basically replacing what we're deleting from the feature section I'm
+
+6:00  
+uh,
+
+6:04  
+let's try something I had to do, Command F,
+
+6:07  
+I'll type in with
+
+6:12  
+equals 100%
+
+6:21  
+then I'll replace it
+
+6:25  
+with just a space. So every time this occurs on the page, want to get rid of all of them at once. So every time that occurs on the page, we'll just hit we'll just
+
+6:36  
+replace it with a space.
+
+6:40  
+So that's all of them, okay, so go find, then replace that you have with Microsoft Word, or we'll work here too. So I just did a
+
+6:51  
+command, F for find.
+
+6:55  
+I typed in what I wanted to find, so the search term basically, then I replaced it. I opened the arrow, replaced it with a space to get rid of that element throughout the whole page, right? So make sure you have the whole phrase you want to delete typed out properly before you replace it with anything else. Okay, okay, so that shouldn't change the view of our page considerably.
+
+7:21  
+Problems will still persist. Yeah. So it just has been,
+
+7:27  
+we've outsourced
+
+7:30  
+the image sizing itself to the CSS, which is what CSS is for, right to control a house if something is handled throughout the whole site. So we have it's more efficient that way. And also, one thing that will help, I think, which is creating part of the erratic sizing of the heights, is the
+
+7:50  
+text. That's the first sentences of the sub pages that these are linking to. I don't
+
+7:57  
+know if that's necessary, the headings, subheadings will help,
+
+8:03  
+but I'm not sure if the the text itself is is all that and all that enticing.
+
+8:09  
+And you may not have this already in place, but I do so going to go ahead and kill the paragraphs in each card, and
+
+8:18  
+that should help part of the sizing issues, not all the part.
+
+8:26  
+And again, be careful about what you're cutting out so it's going from P to P slash P and nothing more.
+
+8:36  
+So that's helping. But some images are landscape.
+
+8:41  
+Some images are more portrait, and that difference in aspect ratio is making making a sloppy mess here, still even so the text is is helping
+
+8:52  
+to make a little more consistency, but still not enough. Okay, so let's see if we can change the sizing of the images themselves to to be a more consistent size. So let's see if we can find some strategies to resize these images here so that they're more consistently no matter what their original format is, they'll still be consistently sized across all all six cards in this example.
+
+9:22  
+So there's basically a foolproof way of handling this
+
+9:27  
+that is a bit of labor, but totally worth the labor in terms of a professional outcome for your site.
+
+9:34  
+So what I've done here, what I've done prior to the video, which I suggest you do on your own time,
+
+9:42  
+after I go cover this next bit of instruction, pause the video, and then create the thumbnails, and then come back and then put the thumbnails in place. But I have my I have at least five of the images here. One I couldn't I couldn't convert very easily, but I've made square versions. I.
+
+10:00  
+Of each of each image,
+
+10:04  
+except for the Billie Holiday picture. So different sizes still, but they're all square, so when they're in a smaller container, they all will scale to the same size. If you know Photoshop, you can do in Photoshop, if you if you know how to use preview as a Mac user, you know that you can do it with preview. I made my changes using Canva.
+
+10:28  
+Photopea is a free, online sort of version of Photoshop, even though it's not WW product. If you know Photoshop, you can use photopia for free and use the same skills. Basically, I haven't tried Squish, remove, or the other one, or the other ones here. But Canva is very simple. It took me five minutes, less than five minutes, to recess these
+
+10:50  
+images. So what I what I did then, was I put them into a folder called thumbs, so I know precisely where they are and what, what where and what they are when I see the folder.
+
+11:03  
+But then I put the put these folder, this folder,
+
+11:07  
+I'll copy this folder inside my images folder.
+
+11:11  
+It should work, that should work as a drag and drop.
+
+11:18  
+So now there's a sub directory, subfolder called thumbs that has then thumbnail versions of
+
+11:26  
+the images that are here and the the or the feature cards.
+
+11:34  
+Okay, so let's so in turn, that is not new. We have we have a new subdirectory to pull the image from but otherwise
+
+11:43  
+the syntax will be very similar to what you've done before. Let's go to the top.
+
+11:49  
+So I go into the sheet
+
+11:53  
+music.
+
+12:01  
+So it'd be, in this case, it'd be images slash thumbs, because that's going through a second sub directory.
+
+12:13  
+But we can insert the image the way we have other one, the way we have previously. I
+
+12:23  
+so we'll do the clef image.
+
+12:36  
+So there's I have five images to replace. The sixth one is not
+
+12:41  
+ready yet, but I'll fix that. But also I think it'll help to prove the point by not having it in place quite
+
+12:49  
+yet. So we'll see how that looks the last one shouldn't we don't have available yet?
+
+12:54  
+Okay, that's a fair bit better,
+
+12:58  
+because the other times the images were cropped, so heads were and faces were chopped out by cropping them myself, as I have for these images. It's not not the Billy Holiday picture, but the other five images, I have control as to what gets preserved and what gets cropped out. So the way it was cropping before this image of this choir, there are faces that are half cropped, which is kind of not cool to do. It's not sort of polite to the human subjects that you have in your photograph. So I see I have some people here with their shoulders. We can identify them otherwise, but there's no faces that have been dropped out,
+
+13:34  
+right?
+
+13:37  
+And then this was this piece had the title of the song cropped out is just the the the
+
+13:45  
+musical staffs, which is fine, but this is this helps to kind of put this into context too. It's more it's a reference inside the essay itself.
+
+13:54  
+So this is much cleaner as line. It aligns vertically and horizontally, top and bottom, except for this one image that's not been been addressed. So this is much cleaner, much more professional,
+
+14:09  
+and I think an improvement, and so it's still responsive.
+
+14:16  
+So they become stack cards. You
+
+14:23  
+and this, even though this picture, this black one picture, is much larger than the color pictures,
+
+14:29  
+they don't look that. They don't look differently sized here, because they're being controlled by the CSS in a nice way.
+
+14:35  
+So again, I hope you've paused the video at this point. I hope you've created thumbnails for your cards so you have that really nice control over the sizing. Control over sizing gives them more professional appearance, more refined, more polished appearance, which I think is really important.
+
+14:58  
+Moving to step five, I.
+
+15:00  
+I've already done some of this work previously in terms of cleaning up the textual clutter,
+
+15:04  
+just to kind of keep those boxes smaller, but also a little more tight, a little more easily seen as a group, instead of just individual things that are pushing down the elements below.
+
+15:16  
+So what I'll do here
+
+15:19  
+is make another refinement, just to kind of which is more semantically correct than what I have currently.
+
+15:27  
+So right now we have
+
+15:30  
+square that I have my square image, except for the last one, which I still
+
+15:34  
+need to work on. We have a reference to the page that these are linking to, which is nice. So it's kind of a more graphically enhanced version of the navigation above,
+
+15:49  
+but I think these are the text here. Are tagged as h3 when they should probably instead be tagged as h2 and they're a little bit too close to the image above. So create some space from the age two, from the subtitle, subheading text and the picture, I make the subheading text itself larger.
+
+16:08  
+So first, let's make the text larger, which is, you know how to do. So let's see.
+
+16:15  
+Let's try this. Age three shows up. How many times?
+
+16:19  
+12 times. So six images, six links. That's right. Okay,
+
+16:24  
+so we'll change, we'll, we'll replace h3 with h2 it's
+
+16:36  
+a little more, little more legible, little more
+
+16:42  
+I'm easily read. Okay,
+
+16:48  
+so this is step five. I'm referring to right?
+
+16:53  
+So I'm changing the h3
+
+16:56  
+to h2
+
+16:57  
+but also I want to add a little bit of spacing
+
+17:01  
+on top of the
+
+17:05  
+page two
+
+17:08  
+to create some distance between the text and the image above it.
+
+17:17  
+So this is also part of the Features section I'm I'll add it here just above the thumbnail section.
+
+17:31  
+See if that helps at all. It is working. Okay. Again, you sort of see the issue is actually made worse with the holidays picture, but it's fine with the remaining cards.
+
+17:47  
+Okay, so Well, let's do one more thing while we're here. It's not a matter of image selection or image sizing, exactly, but it's a matter of having the larger image region look more attractive than I have here. Orange and purple may be fine together, but I don't care for to my context. I don't think this should be more closely aligned with purple than something quite so contrasting as orange.
+
+18:12  
+So what I will probably do is try to change the Curt the feature card background color
+
+18:18  
+and see what options I have there. So feature,
+
+18:25  
+the feature, div, background color.
+
+18:28  
+Click on this.
+
+18:35  
+Find a shade of purple that is more pleasant. I'm
+
+18:46  
+so all I did was find the features div, and then my CSS,
+
+18:52  
+five background color property changes value by using the color picker. Here I'm
+
+19:00  
+and
+
+19:04  
+that's a little less. That's not great, but I don't know it's better. And let me go ahead and do this too. Let me go ahead and change
+
+19:13  
+the homepage image. It was me about 18 years old, a lot more hair, lot darker beard. Let's go and replace that. So there's nothing that you can that you wouldn't know how to do. But let's go ahead and go to the hero CSS,
+
+19:28  
+which is here,
+
+19:32  
+and let's replace it with another one I have in my folder, which
+
+19:38  
+I think is a cooler picture, is more much more recent, though not totally recent. The picture
+
+19:46  
+itself, I think, is a better choice, more interesting composition, all this, all this sort of stuff,
+
+19:55  
+because we're thinking mobile first. One thing I've observed is that it's.
+
+20:00  
+That of doing a text wrap. Oh, that's that's fine for the desktop view, but this becomes tricky when we're talking about mobile, mobile design, if we're thinking mobile first, this doesn't work very well.
+
+20:12  
+So just to make that point again, text wrap, text image, we understand that sort of phenomenon in Microsoft Word, and that's fine for Microsoft Word, because as a static medium, it doesn't it's not fluid. It doesn't change from printing to printing.
+
+20:29  
+But websites change all the time. It's on the devices that they're being displayed on, right? So this kind of arrangement of text and image doesn't it works fine for desktop, perhaps, but does not work especially well for mobile, and we're thinking mobile first.
+
+20:47  
+So what works better? So again, this is the text. This is the image. What Works better
+
+20:53  
+and mobile, but also works fine with desktop, is to
+
+20:59  
+have the image between the image between paragraphs, that way. There's no restocking necessary this. It'll it'll size and scale accordingly, but still be the same stacking of boxes or mobile as well as for desktop. And there's a much more mobile friendly approach, right? Which, which I think we should be consistent with, and try to implement with our with our project as well. So let's capture the CSS first, and then we'll,
+
+21:32  
+we'll adjust the HTML to accommodate it.
+
+21:38  
+So we'll create, we'll, we'll put in place some image classes so so images that will behave differently given different situations, classified differently because they're being used in different different kinds of PERT and different contexts on the
+
+21:54  
+site. So I'm capturing, skipping over this for now, and capturing the CSS first, so we'll see no immediate change, but it'll be
+
+22:03  
+helpful. So I think we'll go just below the universal image statement we started the video with
+
+22:12  
+and paste it in there.
+
+22:16  
+So we're creating three classes.
+
+22:21  
+Content image, large content, image, medium content, image, small. So we're kind of setting up we're setting up parameters for
+
+22:31  
+we're going to classify images differently based on how we want them to display our sub pages. So
+
+22:38  
+that's not going to make any changes immediately to our site itself.
+
+22:46  
+But if we classify, we go the HTML
+
+22:52  
+and we
+
+22:55  
+and we grab
+
+22:57  
+what's between the figure tags,
+
+23:00  
+and I'll borrow that syntax, but I'll change it for the different page. I'll use it on a different page. So this is the for the brothers playing together
+
+23:11  
+page, but I'll go ahead and
+
+23:14  
+do jazz understanding.
+
+23:18  
+So we're replacing the image that I have inserted Here
+
+23:24  
+with the same image
+
+23:33  
+and alt tag and
+
+23:40  
+so
+
+23:43  
+let's preview that page.
+
+23:49  
+So it's still kind of big, but notice how the whole score the whole page achieving, now appears on the screen once we begin scrolling. Instead of scrolling over more of the of the image we're getting, we scroll straight to the text. So it's not ideal still, but this, it is an improvement.
+
+24:08  
+So a more square, more landscape picture would probably fit better here. This is that this is so dramatically portrait in orientation and aspect ratio. It's not the best choice for this. It should be crops or of a different landscape orientation instead,
+
+24:24  
+but it still does work better.
+
+24:27  
+But then let's, um, let's add
+
+24:31  
+some images in between two with with different classifications. So this is being classified as content image large, which refers to
+
+24:41  
+this CSS here,
+
+24:45  
+and notice this is but there's a drop shadow that's being added to it for a little bit, little bit of depth and dimension. Was not flat on flat a little bit of spacing, a little more,
+
+24:56  
+little bit of texture almost introduced with this.
+
+25:00  
+Shadow.
+
+25:02  
+But let's add another image. So I'll try different page.
+
+25:09  
+So I'll try playing together.
+
+25:12  
+There's a reference in the page to
+
+25:19  
+hand position, so let's, let's put it, let's put an image
+
+25:23  
+here in between paragraphs. That's more of a medium, medium, medium class.
+
+25:33  
+So here's the hand, the hand position reference. So how the hand holds the guitar neck, the bass guitar neck.
+
+25:42  
+So do an image in search the way we know how.
+
+25:46  
+So we don't want the width.
+
+25:50  
+We do want the alt tag
+
+26:00  
+and we want the content Image class to be medium.
+
+26:12  
+So imagine again, that will look very much the same
+
+26:17  
+on mobile. So no restocking necessary, because it's already in a stack, mobile, friendly first, which is important.
+
+26:25  
+Okay, all right, so one thing that that I'm actually missing from the CSS code or the HTML code that the tutorial offers
+
+26:36  
+is the
+
+26:39  
+larger figure phrasing. So let me actually do this. Let me grab this here.
+
+26:49  
+Because notice there's the additional tagging of what's called fig caption, which is basically a caption for that figure, a caption for that image, right?
+
+27:01  
+So let's go ahead and capture this and see how that looks relative to what we just did. So
+
+27:09  
+this is what I just pasted in.
+
+27:14  
+So preview that.
+
+27:19  
+So the images just appear the same because they're they're classed the same, but this has an additional description, so it's not an alt tag, it's, it's, it's just readable text, but
+
+27:33  
+it's just a little little more bit of information in the immediate proximity to the Images describing right? So good use of proximity, little bit, little bit of additional detail that you'll need to, have to belabor or elaborate on in the paragraph itself. This is good.
+
+27:51  
+This is better.
+
+27:53  
+This does the job.
+
+27:56  
+This is more complete. And this is the code that you can get from the tutorial, so that I got from Step five, and
+
+28:06  
+then the media query is associated with this step.
+
+28:11  
+We should go in the CSS file, go ahead and put at the bottom of the media query section.
+
+28:20  
+This is all media queries. I believe it should
+
+28:40  
+be so nice and responsive,
+
+28:45  
+looking more and more professional.
+
+28:48  
+Homepage is improving. This will address this in the next video.
+
+28:54  
+Sizing more consistent, not perfect. Here.
+
+28:58  
+Color is to be worked on further,
+
+29:05  
+but it's becoming more professional, so
+
+29:09  
+okay, we'll work. We'll work on additional refinements, especially typology, working with text in our next video, i.
+
+Transcribed by https://otter.ai

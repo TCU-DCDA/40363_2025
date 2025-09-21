@@ -1,0 +1,97 @@
+Okay, now that you've seen a world with and a world without CSS, in terms of the example I showed of my creative portfolio, you see how HTML
+
+gets the content organized and basically arranged in links, but really by itself, as I hope that example that last video shows, it's
+
+visually insufficient. So in terms of personality, in terms of a warm, inviting sort of feel, a visual, a visual encouragement to keep on, to stay in the site and dig deeper into the site. HTML, by itself doesn't provide that. It can't provide that by itself. But that's okay, because we have a compatible language called Cascading Style Sheets CSS,
+
+that augments what HTML does design wise. So HTML is good for structuring the house, like roughing out framing the house so defining the spaces and where what content goes, where in the house.
+
+But the CSS is the design side of things, the style, the what the interior designer does for a house to make it more warm and inviting, so comfortable furniture, artwork,
+
+painting on the walls that is comforting and suits the mood of each room and the identity of the family, all the personality and branding that goes on as a matter of CSS.
+
+Okay, so CSS is not new. It's it's been around since, like this slide says, since 1999 so to pick up on the metaphor I used a second ago, where the HTML is kind of roughing out the frame and framing a house. HTML is structural. So building the underlying structure, the building of the building of the site,
+
+with CSS, as this slide suggests, is presentational. So for the appeal to give the presentation itself, there has to be an attractive sort of appearance is being controlled and developed and enhanced by
+
+the CSS. So the colors, the font choices.
+
+Okay, so there are three ways that we can possibly potentially manage CSS at our sites, but generally speaking, CSS is managed by a separate file, a dot css file. So it's usually a style dot CSS file that will contain the style for the whole site that will then modify and make more attractive the specific elements we identify with the CSS.
+
+Okay, so the best way that I know how to introduce CSS conceptually is that when the browser is calling up your current site, so that your current HTML based site, there are choices being made for you by default, by browsers default. So the choosing they're choosing for you a white background, they're choosing for you a black text, choosing for you a certain size of heading and subheading text when you tag it, h1 h2
+
+is deciding for you by default a certain font choice, in my case, is a serif font, which is fine, you have to get started somewhere, right? But what CSS does then it gives us the chance to override and redefine those defaults. If you don't like the color of the h1 and h2
+
+tags, for example, or although the content is tagged by h1 and h2
+
+we can override those defaults and choose our own colors for h1 h2 tags or tag content. Okay, so powerful sort of capacity of CSS is, then it gives us the ability to redefine the look and and default settings for
+
+how things are, how things appear once they're tagged.
+
+But selector is a tag you want to modify, so P or h1 or h2 or i, m, G, or whatever tags we've already started using, we want to modify this tag,
+
+and not just this tag with this particular property of this tag, so not just the p tag, but the font size of the of what gets tagged as p as paragraphs.
+
+And then you assign a new value if the browser has the font size as 12 on 12 pixels, we can override that by saying P font, hyphen, size, colon, 18 p, x for 18 pixels, right? So we can choose to say, Well, thanks, browser. We don't like your choices, so we're going to we want the font size to always be 18 for P, for P, tag, content, the
+
+example here is.
+
+Is four paragraphs text
+
+for all things that everything is tagged P tagged as a paragraph.
+
+Change the background behind it to blue. And so notice how, even though this is not HTML, this is a language, it still has the same sort of virtue
+
+of being readable in English, right? So P we know is abbreviation for paragraph.
+
+Background. Here is a shortened version of background, color, background, hyphen color,
+
+and we could have a hex on RGB value for the color. We could also use primary names like or familiar English names like blue or purple or Aqua. Okay, so selector is a tag that you want to modify.
+
+Property is the quality that you want, the feature of that of the tag that you want to specify in your changes. So I want to, I want to change start by addressing what goes on with the paragraph tags
+
+specifically. Let's, let's modify the background color behind the paragraph text
+
+and change that color that the value of that color to blue.
+
+Okay, so again, this is modifying the default settings of the browser for specific tags.
+
+Anything that's tagged a certain way will have a variety of qualities that we can modify. So background, color, font family, how the text aligns left and right, a border around that about that around that container, that box,
+
+the amount of space between the box, the boxes border, and the content itself, all that sort of stuff. So we could have then a chain of things within a single sort of CSS command
+
+that we modify, not just background. We want to modify a whole bunch of the default settings.
+
+Okay, so we have a list of things to change, to
+
+potentially modify,
+
+okay, so CSS sort of honors and picks up on and gives us control over the appearance of the boxes we make with our tagging in HTML, every tag pair creates a box, a conceptual box. So by putting content between 2p tags, we're putting that content into a paragraph box, right? So that box has invisible qualities that we can then play with and make, make visible and make make our own through through CSS styling,
+
+right? So there's going to be the height and width that we have to play with. We have padding, which is the space between the content, which is blue and the border which is black. So padding is like the bubble wrap that you'll use to pack your content to kind of space things out and kind of give a cushion between elements on your page. So the border is this black line here that can be set to different colors, different textures, different widths, and then the margin is the space between this element, they say, this paragraph and this image. So the margin is the space between.
+
+So padding is the space inside.
+
+A box.
+
+The margin is a space between boxes. So, I mean, we don't think of paragraphs as being boxes, per se, but for the design way, in a visual way, they can be conceived of and designed as if they are proper boxes. They're in their own separate containers that can be styled to our specifications. So given that the body box is the visible box, the stuff that we want our viewer to see, and all that content appears within the body tag, the CSS that will develop for the site will then will be modifying things primarily in the body box, almost exclusively in the body box. So the tags of paragraphs, 822, images, iframes, for video, all that stuff we want that our viewer to at some point see. That's the sort of stuff that gets modified by CSS, and that's the stuff that is contained exclusively in the body box, right?
+
+Okay, a quick point about color to kind of nail down the point I referred to earlier. So the example of the paragraph
+
+background that we wanted to redefine as blue. These are the kinds of options we have, right? So not just the primary colors of red, green and blue, but we have aqua, we have Fauci, we have lime, we have maroon, we have teal, we have olive Navy, which is a is different than blue. So we can use a fairly, a fair range of colors, just by their primary names, by.
+
+Their by their sort of English names.
+
+But if we are hip to or seek out or want to learn about more nuanced colors than than those primary names, we can use RGB, so red, green, blue, or just a or we can use a hexadecimal, which is another way of creating color.
+
+So, like, if you want to use TCS purple, so that'll show up. Like TCS website you'd use in 4d, 1979,
+
+that's that stands for, they'll they'll render then TCU is web purple. So the word purple that you that you can type in will be purple and the purple family, but the branded sort of the one purple that we're fond of as TCU, for the TCU family would be for 4d, 1979, but I
+
+think that's good enough for now. We'll reinforce the principles we just covered once we get back to redesigning our our files from last week,
+
+and we'll take things further, because CSS opens up a brand new
+
+region for us to further explore in our so.
+
+Transcribed by https://otter.ai

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Structure & Semantics | Web Development Foundations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: white;
+            margin-right: 0;
+        }
+
+        .slide:nth-child(even) {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #2980b9;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #27ae60;
+        }
+
+        p, li {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .code-example {
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            max-width: 700px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Fira Code', 'Courier New', monospace;
+        }
+
+        .code-line {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 8px 0;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .code-line:hover {
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        .keyword {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .string {
+            color: #2ecc71;
+        }
+
+        .attribute {
+            color: #e67e22;
+        }
+
+        .tag {
+            color: #f39c12;
+        }
+
+        .comment {
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: #f39c12;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #2980b9;
+        }
+
+        .nav-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .semantic-demo {
+            background: #ecf0f1;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #e74c3c;
+            max-width: 600px;
+        }
+
+        .page-layout {
+            background: #f8f9fa;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            max-width: 500px;
+        }
+
+        .layout-section {
+            background: #e9ecef;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .layout-section.header { background: #d4edda; border-left: 4px solid #28a745; }
+        .layout-section.nav { background: #cce5ff; border-left: 4px solid #007bff; }
+        .layout-section.main { background: #fff3cd; border-left: 4px solid #ffc107; }
+        .layout-section.aside { background: #f8d7da; border-left: 4px solid #dc3545; }
+        .layout-section.footer { background: #e2e3e5; border-left: 4px solid #6c757d; }
+
+        .comparison {
+            display: flex;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 1rem 0;
+        }
+
+        .comparison-box {
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .bad-example {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+        }
+
+        .good-example {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+
+        .accessibility-demo {
+            background: #e8f4f8;
+            border: 2px solid #17a2b8;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            max-width: 650px;
+        }
+
+        .heading-hierarchy {
+            background: #fff;
+            border: 2px solid #6f42c1;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            max-width: 600px;
+        }
+
+        .heading-example {
+            margin: 10px 0;
+            padding: 8px;
+            border-left: 4px solid #6f42c1;
+            background: #f8f9fa;
+        }
+
+        .heading-example h1 { font-size: 2rem; margin: 0; }
+        .heading-example h2 { font-size: 1.5rem; margin: 0; }
+        .heading-example h3 { font-size: 1.2rem; margin: 0; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.5rem; }
+            p, li { font-size: 1.1rem; }
+            .code-example { font-size: 0.9rem; padding: 1rem; }
+            .comparison { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation" id="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <h1>HTML Structure & Semantics</h1>
+            <h3>Creating Meaningful, Accessible Web Pages</h3>
+            <p>Building on HTML fundamentals for professional portfolios</p>
+            <div class="semantic-demo">
+                <h3>What You'll Master:</h3>
+                <ul style="text-align: left;">
+                    <li>Semantic HTML5 elements for page structure</li>
+                    <li>Proper heading hierarchy and organization</li>
+                    <li>Accessibility principles and best practices</li>
+                    <li>Professional page layout patterns</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 2: Why Semantics Matter -->
+        <div class="slide">
+            <h2>Why Semantic HTML Matters</h2>
+            <div class="comparison">
+                <div class="comparison-box bad-example">
+                    <h3>❌ Non-Semantic</h3>
+                    <div class="code-example" style="font-size: 0.9rem;">
+                        <div class="code-line">&lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="string">"header"</span>&gt;</div>
+                        <div class="code-line">&lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="string">"navigation"</span>&gt;</div>
+                        <div class="code-line">&lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="string">"content"</span>&gt;</div>
+                        <div class="code-line">&lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="string">"sidebar"</span>&gt;</div>
+                    </div>
+                    <p>Machines can't understand meaning</p>
+                </div>
+                <div class="comparison-box good-example">
+                    <h3>✅ Semantic</h3>
+                    <div class="code-example" style="font-size: 0.9rem;">
+                        <div class="code-line">&lt;<span class="tag">header</span>&gt;</div>
+                        <div class="code-line">&lt;<span class="tag">nav</span>&gt;</div>
+                        <div class="code-line">&lt;<span class="tag">main</span>&gt;</div>
+                        <div class="code-line">&lt;<span class="tag">aside</span>&gt;</div>
+                    </div>
+                    <p>Clear meaning for humans and machines</p>
+                </div>
+            </div>
+            <div class="accessibility-demo">
+                <h3>🎯 Benefits of Semantic HTML:</h3>
+                <ul style="text-align: left;">
+                    <li><strong>Screen readers</strong> can navigate your content properly</li>
+                    <li><strong>Search engines</strong> understand your page structure</li>
+                    <li><strong>Developers</strong> can read and maintain your code</li>
+                    <li><strong>Browsers</strong> can apply default styling and behavior</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 3: HTML5 Semantic Elements -->
+        <div class="slide">
+            <h2>HTML5 Semantic Elements</h2>
+            <div class="page-layout">
+                <div class="layout-section header">header</div>
+                <div class="layout-section nav">nav</div>
+                <div style="display: flex; gap: 10px;">
+                    <div class="layout-section main" style="flex: 2;">main</div>
+                    <div class="layout-section aside" style="flex: 1;">aside</div>
+                </div>
+                <div class="layout-section footer">footer</div>
+            </div>
+            <div class="semantic-demo">
+                <h3>🏗️ Element Purposes:</h3>
+                <ul style="text-align: left;">
+                    <li><strong>&lt;header&gt;</strong> - Site/page header with logo, title</li>
+                    <li><strong>&lt;nav&gt;</strong> - Navigation links and menus</li>
+                    <li><strong>&lt;main&gt;</strong> - Primary page content</li>
+                    <li><strong>&lt;aside&gt;</strong> - Sidebar, related content</li>
+                    <li><strong>&lt;footer&gt;</strong> - Site/page footer information</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: Complete Page Structure -->
+        <div class="slide">
+            <h2>Complete Semantic Page Structure</h2>
+            <div class="code-example">
+                <div class="code-line">&lt;<span class="tag">header</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">h1</span>&gt;Sarah's Portfolio&lt;/<span class="tag">h1</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">nav</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">a</span> <span class="attribute">href</span>=<span class="string">"#about"</span>&gt;About&lt;/<span class="tag">a</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">a</span> <span class="attribute">href</span>=<span class="string">"#projects"</span>&gt;Projects&lt;/<span class="tag">a</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;/<span class="tag">nav</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">header</span>&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&lt;<span class="tag">main</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">section</span> <span class="attribute">id</span>=<span class="string">"about"</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">h2</span>&gt;About Me&lt;/<span class="tag">h2</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;/<span class="tag">section</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">main</span>&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&lt;<span class="tag">footer</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">p</span>&gt;© 2024 Sarah Johnson&lt;/<span class="tag">p</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">footer</span>&gt;</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Section vs Article vs Div -->
+        <div class="slide">
+            <h2>Section vs Article vs Div</h2>
+            <div class="semantic-demo">
+                <h3>🧩 When to Use Each:</h3>
+                <div style="text-align: left; margin: 20px 0;">
+                    <p><strong>&lt;section&gt;</strong> - Themed groups of content</p>
+                    <p style="margin-left: 20px; color: #666;"><em>Example: "About Me", "My Skills", "Contact"</em></p>
+
+                    <p><strong>&lt;article&gt;</strong> - Standalone, complete content</p>
+                    <p style="margin-left: 20px; color: #666;"><em>Example: Blog posts, portfolio projects</em></p>
+
+                    <p><strong>&lt;div&gt;</strong> - Generic container for styling</p>
+                    <p style="margin-left: 20px; color: #666;"><em>Example: Layout boxes, style wrappers</em></p>
+                </div>
+            </div>
+            <div class="code-example">
+                <div class="code-line">&lt;<span class="tag">section</span> <span class="attribute">id</span>=<span class="string">"projects"</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">h2</span>&gt;My Projects&lt;/<span class="tag">h2</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">article</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">h3</span>&gt;Portfolio Website&lt;/<span class="tag">h3</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">p</span>&gt;My first web development project...&lt;/<span class="tag">p</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;/<span class="tag">article</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">section</span>&gt;</div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Heading Hierarchy -->
+        <div class="slide">
+            <h2>Proper Heading Hierarchy</h2>
+            <p>Headings create a <span class="highlight">table of contents</span> for your page</p>
+            <div class="heading-hierarchy">
+                <div class="heading-example">
+                    <h1>Sarah's Portfolio (h1)</h1>
+                </div>
+                <div class="heading-example" style="margin-left: 20px;">
+                    <h2>About Me (h2)</h2>
+                </div>
+                <div class="heading-example" style="margin-left: 20px;">
+                    <h2>My Projects (h2)</h2>
+                </div>
+                <div class="heading-example" style="margin-left: 40px;">
+                    <h3>Portfolio Website (h3)</h3>
+                </div>
+                <div class="heading-example" style="margin-left: 40px;">
+                    <h3>JavaScript Game (h3)</h3>
+                </div>
+                <div class="heading-example" style="margin-left: 20px;">
+                    <h2>Contact (h2)</h2>
+                </div>
+            </div>
+            <div class="accessibility-demo">
+                <h3>📝 Heading Rules:</h3>
+                <ul style="text-align: left;">
+                    <li><strong>One h1 per page</strong> - your main title</li>
+                    <li><strong>Don't skip levels</strong> - h1 → h2 → h3 (not h1 → h3)</li>
+                    <li><strong>Use for structure, not styling</strong> - CSS handles appearance</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7: Accessibility Fundamentals -->
+        <div class="slide">
+            <h2>Making Your Site Accessible</h2>
+            <div class="accessibility-demo">
+                <h3>♿ Essential Accessibility Features:</h3>
+                <div class="code-example">
+                    <div class="code-line comment">&lt;!-- Always include meaningful alt text --&gt;</div>
+                    <div class="code-line">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="string">"profile.jpg"</span> <span class="attribute">alt</span>=<span class="string">"Sarah smiling in a professional headshot"</span>&gt;</div>
+                    <div class="code-line">&nbsp;</div>
+                    <div class="code-line comment">&lt;!-- Use semantic elements --&gt;</div>
+                    <div class="code-line">&lt;<span class="tag">nav</span>&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">ul</span>&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">li</span>&gt;&lt;<span class="tag">a</span> <span class="attribute">href</span>=<span class="string">"#about"</span>&gt;About&lt;/<span class="tag">a</span>&gt;&lt;/<span class="tag">li</span>&gt;</div>
+                    <div class="code-line">&nbsp;&nbsp;&lt;/<span class="tag">ul</span>&gt;</div>
+                    <div class="code-line">&lt;/<span class="tag">nav</span>&gt;</div>
+                    <div class="code-line">&nbsp;</div>
+                    <div class="code-line comment">&lt;!-- Descriptive link text --&gt;</div>
+                    <div class="code-line">&lt;<span class="tag">a</span> <span class="attribute">href</span>=<span class="string">"resume.pdf"</span>&gt;Download my resume (PDF)&lt;/<span class="tag">a</span>&gt;</div>
+                </div>
+            </div>
+            <div class="comparison">
+                <div class="comparison-box bad-example">
+                    <h3>❌ Not Accessible</h3>
+                    <p style="font-family: monospace;">alt=""</p>
+                    <p style="font-family: monospace;">"Click here"</p>
+                    <p style="font-family: monospace;">&lt;div class="button"&gt;</p>
+                </div>
+                <div class="comparison-box good-example">
+                    <h3>✅ Accessible</h3>
+                    <p style="font-family: monospace;">alt="Descriptive text"</p>
+                    <p style="font-family: monospace;">"Download resume"</p>
+                    <p style="font-family: monospace;">&lt;button&gt;</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Validation and Quality -->
+        <div class="slide">
+            <h2>Validating Your HTML</h2>
+            <div class="semantic-demo">
+                <h3>🔍 Why Validate?</h3>
+                <ul style="text-align: left;">
+                    <li><strong>Catch errors</strong> before they become problems</li>
+                    <li><strong>Ensure compatibility</strong> across different browsers</li>
+                    <li><strong>Improve accessibility</strong> and user experience</li>
+                    <li><strong>Professional standards</strong> for portfolio projects</li>
+                </ul>
+            </div>
+            <div class="accessibility-demo">
+                <h3>🛠️ Validation Tools:</h3>
+                <p><strong>W3C HTML Validator:</strong> https://validator.w3.org/</p>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                    <p style="font-family: monospace; margin: 0;">1. Go to validator.w3.org</p>
+                    <p style="font-family: monospace; margin: 0;">2. Upload your HTML file</p>
+                    <p style="font-family: monospace; margin: 0;">3. Fix any errors shown</p>
+                    <p style="font-family: monospace; margin: 0;">4. Revalidate until clean</p>
+                </div>
+            </div>
+            <div class="page-layout">
+                <p><strong>Green checkmark ✅ = Professional quality HTML!</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Portfolio Page Example -->
+        <div class="slide">
+            <h2>Complete Portfolio Page Structure</h2>
+            <div class="code-example">
+                <div class="code-line">&lt;!<span class="keyword">DOCTYPE</span> html&gt;</div>
+                <div class="code-line">&lt;<span class="tag">html</span> <span class="attribute">lang</span>=<span class="string">"en"</span>&gt;</div>
+                <div class="code-line">&lt;<span class="tag">head</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">title</span>&gt;Sarah Johnson - Web Developer&lt;/<span class="tag">title</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">head</span>&gt;</div>
+                <div class="code-line">&lt;<span class="tag">body</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">header</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">h1</span>&gt;Sarah Johnson&lt;/<span class="tag">h1</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">nav</span>&gt;...&lt;/<span class="tag">nav</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;/<span class="tag">header</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">main</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">section</span> <span class="attribute">id</span>=<span class="string">"about"</span>&gt;...&lt;/<span class="tag">section</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">section</span> <span class="attribute">id</span>=<span class="string">"projects"</span>&gt;...&lt;/<span class="tag">section</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;/<span class="tag">main</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">footer</span>&gt;...&lt;/<span class="tag">footer</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">body</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">html</span>&gt;</div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Ready for Professional Development -->
+        <div class="slide">
+            <h2>You're Ready for Professional Portfolios!</h2>
+            <div class="semantic-demo">
+                <h3>HTML Structure Skills Mastered:</h3>
+                <ul style="text-align: left;">
+                    <li>✅ Semantic HTML5 elements (header, nav, main, aside, footer)</li>
+                    <li>✅ Proper document hierarchy and organization</li>
+                    <li>✅ Accessibility best practices and alt text</li>
+                    <li>✅ Meaningful link text and navigation</li>
+                    <li>✅ HTML validation and quality assurance</li>
+                    <li>✅ Professional page layout patterns</li>
+                </ul>
+            </div>
+            <div class="page-layout">
+                <h3>🎯 Project 1 Ready:</h3>
+                <p>You now have all the HTML knowledge needed to create a professional portfolio that:</p>
+                <ul style="text-align: left; margin-top: 10px;">
+                    <li>Passes HTML validation</li>
+                    <li>Works with screen readers</li>
+                    <li>Follows industry standards</li>
+                    <li>Impresses potential employers</li>
+                </ul>
+            </div>
+            <p><strong>Next: CSS styling to make it beautiful! 🎨</strong></p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next</button>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function updateSlidePosition() {
+            const presentation = document.getElementById('presentation');
+            presentation.style.transform = `translateX(-${currentSlideIndex * 100}vw)`;
+
+            document.getElementById('currentSlide').textContent = currentSlideIndex + 1;
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlideIndex === 0;
+            document.getElementById('nextBtn').disabled = currentSlideIndex === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            const newIndex = currentSlideIndex + direction;
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                currentSlideIndex = newIndex;
+                updateSlidePosition();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                changeSlide(1);
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left, go to next slide
+                } else {
+                    changeSlide(-1); // Swipe right, go to previous slide
+                }
+            }
+        }
+
+        // Initialize
+        updateSlidePosition();
+    </script>
+</body>
+</html>

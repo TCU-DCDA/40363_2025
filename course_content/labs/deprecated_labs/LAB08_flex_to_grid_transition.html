@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB08 - CSS Grid for Portfolio Layouts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .lab-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .lab-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+        .lab-header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        .content-section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .learning-outcomes {
+            background: #e8f4f8;
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .prerequisites {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', Monaco, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+        .code-block code {
+            display: block;
+            white-space: inherit;
+        }
+        .html-code {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+        }
+        .css-code {
+            background: #2d3748;
+            color: #e2e8f0;
+        }
+        .checklist {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .checklist h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .checklist li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #0c5460;
+            font-weight: bold;
+        }
+        .success-criteria {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .success-criteria h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        .debugging-tips {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .debugging-tips h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+        .next-steps {
+            background: #e2e3e5;
+            border: 1px solid #d6d8db;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .next-steps h3 {
+            color: #383d41;
+            margin-top: 0;
+        }
+        .task-number {
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .task-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #34495e;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .important {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #dc3545;
+            margin: 15px 0;
+        }
+        ol li {
+            margin-bottom: 10px;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-header">
+        <h1>Lab 08 – CSS Grid Portfolio Layouts</h1>
+        <p class="subtitle">Delivery Mode: In-Class Workshop ➜ Practice as Homework (Hybrid)<br>
+        <strong>Portfolio Connection:</strong> Building professional grid layouts for your Project 1 Portfolio Website</p>
+    </div>
+
+    <div class="time-breakdown" style="background: #e9ecef; border: 2px solid #6c757d; border-radius: 8px; padding: 20px; margin: 25px 0;">
+        <h3 style="color: #495057; margin-top: 0; text-align: center;">⏰ 80-Minute Class Breakdown</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background: #d4edda; border-left: 5px solid #28a745; padding: 20px; border-radius: 0 8px 8px 0;">
+                <h4>🏫 In-Class Work (80 minutes)</h4>
+                <ul>
+                    <li><strong>Minutes 1-20:</strong> Review LAB07, CSS Grid basics & Media Query fundamentals</li>
+                    <li><strong>Minutes 21-40:</strong> Task 1 - Enhanced Skills Grid (guided)</li>
+                    <li><strong>Minutes 41-60:</strong> Task 2 - About Section Grid (guided)</li>
+                    <li><strong>Minutes 61-75:</strong> Task 3 - Overall Page Layout Grid (guided)</li>
+                    <li><strong>Minutes 76-80:</strong> Preview homework tasks (especially Task 5 responsive adjustments)</li>
+                </ul>
+            </div>
+            <div style="background: #f8d7da; border-left: 5px solid #dc3545; padding: 20px; border-radius: 0 8px 8px 0;">
+                <h4>🏠 Homework (1.5-2 hours)</h4>
+                <ul>
+                    <li>Task 4 - Projects showcase grid</li>
+                    <li>Task 5 - Responsive grid adjustments</li>
+                    <li>Add personal content and polish</li>
+                    <li>Test on multiple devices</li>
+                    <li>GitHub submission</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Goal</h2>
+        <p>Build on your LAB07 Flexbox skills by learning simple CSS Grid patterns for enhanced portfolio layouts. We'll focus on beginner-friendly Grid techniques that improve your portfolio's visual structure while keeping the code understandable.</p>
+    </div>
+
+    <div class="learning-outcomes">
+        <h3>Learning Outcomes</h3>
+        <ul>
+            <li>Learn basic CSS Grid patterns that enhance your Flexbox layouts</li>
+            <li>Create simple grid-based sections for your portfolio</li>
+            <li>Understand when to use Grid vs. Flexbox in portfolio design</li>
+            <li>Apply beginner-friendly Grid techniques to real portfolio content</li>
+            <li>Build confidence with Grid fundamentals before advanced techniques</li>
+        </ul>
+    </div>
+
+    <div class="prerequisites">
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Completed LAB07 (Flexbox Layout Systems) with basic portfolio sections</li>
+            <li>Working portfolio with header, about, skills, and projects sections</li>
+            <li>Understanding of basic CSS Flexbox from LAB07</li>
+            <li>Portfolio Planning Worksheet content ready for enhanced layouts</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Building on Your LAB07 Foundation</h2>
+        <p>In LAB07, you built portfolio sections using simple Flexbox patterns. Now we'll enhance specific sections with basic CSS Grid techniques that make your portfolio look more professional while keeping the code understandable.</p>
+        
+        <div class="highlight">
+            <h4>When to Use Grid vs Flexbox (Simple Guidelines)</h4>
+            <ul>
+                <li><strong>Keep Flexbox for:</strong> Navigation bars, simple card layouts, centering content</li>
+                <li><strong>Use Grid for:</strong> Skills sections, project showcases, complex page layouts</li>
+                <li><strong>Simple Rule:</strong> If it's a row or column of items, use Flexbox. If it's a 2D layout, try Grid.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Media Query Fundamentals for Responsive Grids</h2>
+        <p>Before we dive into Grid layouts, let's understand the media queries we'll be using to make them responsive.</p>
+        
+        <div class="highlight">
+            <h4>Media Query Basics</h4>
+            <p><strong>Media queries</strong> allow us to apply different CSS rules based on screen size. Here's the basic syntax:</p>
+            <pre class="code-block css-code"><code>/* Mobile styles (default) */
+main {
+  padding: 2rem 1rem;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  main {
+    padding: 2rem;
+  }
+}
+</code></pre>
+            <p><strong>Note:</strong> The example above shows the concept. You'll apply media queries to your actual portfolio sections in the tasks that follow.</p>
+            <ul>
+                <li><strong>Mobile-first approach:</strong> Write styles for mobile first, then enhance for larger screens</li>
+                <li><strong>Breakpoints:</strong> Common screen widths where layouts change (480px, 768px, 1024px)</li>
+                <li><strong>min-width:</strong> "If screen is at least this wide, apply these styles"</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <h4>Why Mobile-First?</h4>
+            <ul>
+                <li>Most users browse on mobile devices</li>
+                <li>Easier to enhance simple layouts than simplify complex ones</li>
+                <li>Better performance - mobile devices get simpler CSS</li>
+                <li>Forces you to prioritize essential content</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h4>Testing Responsive Behavior</h4>
+            <p>Use browser dev tools to test different screen sizes:</p>
+            <ul>
+                <li><strong>Chrome/Firefox:</strong> F12 → Click device icon → Select different screen sizes</li>
+                <li><strong>Test common breakpoints:</strong> 320px (mobile), 768px (tablet), 1024px (desktop)</li>
+                <li><strong>Drag to resize:</strong> Watch how your layouts adapt smoothly</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Tasks</h2>
+
+        <div style="background: #d4edda; border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">1</span>
+                <h3>Enhanced Skills Grid Layout <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; background: #28a745; color: white; margin-left: 10px;">IN-CLASS: 20 min</span></h3>
+            </div>
+            
+            <p><strong>🏫 Complete this during our 80-minute class with instructor guidance</strong></p>
+            
+            <p>Improve your LAB07 skills section with a simple CSS Grid layout:</p>
+            
+            <h4>Replace your Flexbox skills container with this Grid version:</h4>
+            <pre class="code-block css-code"><code>.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+}
+
+.skill-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+</code></pre>
+
+            <div class="highlight">
+                <h4>Why this Grid pattern works better:</h4>
+                <ul>
+                    <li><code>repeat(auto-fit, minmax(200px, 1fr))</code> creates flexible columns</li>
+                    <li>Cards automatically fit the available space</li>
+                    <li>No need to calculate flex values or worry about wrapping</li>
+                    <li>Consistent card sizes across all screen sizes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #d4edda; border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">2</span>
+                <h3>Simple About Section Grid <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; background: #28a745; color: white; margin-left: 10px;">IN-CLASS: 20 min</span></h3>
+            </div>
+            
+            <p><strong>🏫 Complete this during our 80-minute class with instructor guidance</strong></p>
+            
+            <p>Use CSS Grid to create a more professional about section layout:</p>
+            
+            <pre class="code-block css-code"><code>.about-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 3rem 0;
+  align-items: center;
+}
+
+/* On larger screens, create a 2-column layout */
+@media (min-width: 768px) {
+  .about-section {
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
+  }
+}
+
+.about-image {
+  justify-self: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-text {
+  /* Text styling stays the same */
+}
+</code></pre>
+
+            <div class="highlight">
+                <h4>Why this works better than Flexbox:</h4>
+                <ul>
+                    <li>More precise control over image and text positioning</li>
+                    <li>Easier to create responsive layouts</li>
+                    <li>Image stays consistent size across screen sizes</li>
+                    <li>Cleaner code than complex Flexbox calculations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #d4edda; border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">3</span>
+                <h3>Simple Page Layout Grid <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; background: #28a745; color: white; margin-left: 10px;">IN-CLASS: 20 min</span></h3>
+            </div>
+            
+            <p><strong>🏫 Complete this during our 80-minute class with instructor guidance</strong></p>
+            
+            <p>Use CSS Grid to create consistent spacing between all your sections:</p>
+            
+            <pre class="code-block css-code"><code>/* Apply to your main container that holds all sections */
+main {
+  display: grid;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Responsive container padding */
+@media (min-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+}
+
+/* Consistent section spacing */
+section {
+  /* Individual section styling stays the same */
+}
+</code></pre>
+
+            <div class="highlight">
+                <h4>Benefits of this simple Grid layout:</h4>
+                <ul>
+                    <li>Consistent spacing between all sections automatically</li>
+                    <li>No need to manage margins on individual sections</li>
+                    <li>Easy to adjust overall page spacing</li>
+                    <li>Clean, professional appearance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f8d7da; border-left: 5px solid #dc3545; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">4</span>
+                <h3>Projects Showcase Grid <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; background: #dc3545; color: white; margin-left: 10px;">HOMEWORK: 45 min</span></h3>
+            </div>
+            
+            <p><strong>🏠 Complete this as homework after class</strong></p>
+            
+            <p>Enhance your projects section with a simple grid layout:</p>
+            
+            <pre class="code-block css-code"><code>.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* On tablets and up, show 2 columns */
+@media (min-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-card {
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+</code></pre>
+        </div>
+
+        <div style="background: #f8d7da; border-left: 5px solid #dc3545; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">5</span>
+                <h3>Responsive Grid Adjustments <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; background: #dc3545; color: white; margin-left: 10px;">HOMEWORK: 30 min</span></h3>
+            </div>
+            
+            <p><strong>🏠 Complete this as homework after class</strong></p>
+            
+            <p>Fine-tune your grid layouts for different screen sizes:</p>
+            
+            <pre class="code-block css-code"><code>/* Mobile-first responsive adjustments */
+
+/* Small phones (320px and up) */
+.skills-container {
+  grid-template-columns: 1fr;
+}
+
+/* Large phones and small tablets (480px and up) */
+@media (min-width: 480px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .skills-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+</code></pre>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="task-header">
+            <span class="task-number">6</span>
+            <h3>Portfolio Layout Integration</h3>
+        </div>
+        
+        <p>Create a cohesive layout system that integrates all sections:</p>
+        
+        <h4>HTML Structure with Semantic Elements:</h4>
+        <pre class="code-block html-code"><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;!-- Your header content --&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section id=&quot;about&quot;&gt;...&lt;/section&gt;
+    &lt;section id=&quot;skills&quot;&gt;...&lt;/section&gt;
+    &lt;section id=&quot;projects&quot;&gt;...&lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;!-- Your footer content --&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+        
+        <h4>CSS for Consistent Layout:</h4>
+        <pre class="code-block css-code"><code>/* Consistent container behavior for all major sections */
+header,
+main,
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Main element gets additional grid layout */
+main {
+  display: grid;
+  gap: 6rem;
+  padding: 2rem;
+}
+
+/* Consistent section headers */
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+</code></pre>
+    </div>
+
+    <div class="content-section">
+        <h2>Building on Your Portfolio Planning Worksheet</h2>
+        <p>Use your completed Portfolio Planning Worksheet to enhance your content with these new Grid layouts:</p>
+        <ol>
+            <li><strong>Skills Section:</strong> Your planned skills will look more professional in the new grid layout</li>
+            <li><strong>About Section:</strong> Grid gives better control over your personal story presentation</li>
+            <li><strong>Projects Section:</strong> Showcase your work more effectively with grid positioning</li>
+            <li><strong>Keep it Simple:</strong> Focus on clean, understandable code over complex layouts</li>
+        </ol>
+    </div>
+
+    <div class="checklist">
+        <h3>Required Portfolio Implementations</h3>
+        
+        <h4>Basic CSS Grid Layouts</h4>
+        <ul>
+            <li>Skills section using simple <code>repeat(auto-fit, minmax())</code> pattern</li>
+            <li>About section with responsive 2-column grid layout</li>
+            <li>Main page layout using grid for consistent section spacing</li>
+            <li>Projects section with basic grid layout (homework)</li>
+        </ul>
+
+        <h4>Responsive Behavior</h4>
+        <ul>
+            <li>Mobile-first approach maintained from LAB07</li>
+            <li>Grid layouts work on 320px screens and larger</li>
+            <li>Smooth transitions between mobile and desktop layouts</li>
+            <li>No horizontal scrolling on any screen size</li>
+        </ul>
+
+        <h4>Integration with LAB07</h4>
+        <ul>
+            <li>Navigation using Flexbox (from LAB07) maintained</li>
+            <li>Grid enhances rather than replaces existing layouts</li>
+            <li>Clean separation between Grid and Flexbox usage</li>
+            <li>Professional appearance building on LAB07 foundation</li>
+        </ul>
+
+        <h4>Code Quality</h4>
+        <ul>
+            <li>Clean, understandable CSS that you can explain</li>
+            <li>Simple Grid patterns without complex calculations</li>
+            <li>Consistent naming and organization</li>
+            <li>Comments explaining Grid layout decisions</li>
+        </ul>
+    </div>
+
+    <div class="success-criteria">
+        <h3>Success Criteria</h3>
+        <ul>
+            <li>Simple CSS Grid layouts implemented for key portfolio sections</li>
+            <li>Professional appearance using basic Grid techniques</li>
+            <li>Grid and Flexbox used appropriately without conflicts</li>
+            <li>Responsive layouts work across all device sizes</li>
+            <li>Portfolio content showcased effectively through improved layouts</li>
+            <li>Clean, beginner-friendly code that builds confidence</li>
+            <li>Ready for LAB09 responsive enhancements</li>
+            <li>Professional portfolio suitable for Project 1 submission</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Troubleshooting Common Beginner Issues</h2>
+        <ol>
+            <li><strong>Grid not displaying correctly:</strong>
+                <ul>
+                    <li>Make sure the container has <code>display: grid</code></li>
+                    <li>Check that <code>grid-template-columns</code> syntax is correct</li>
+                    <li>Use browser dev tools to inspect the grid</li>
+                </ul>
+            </li>
+            
+            <li><strong>Items not fitting properly:</strong>
+                <ul>
+                    <li>Adjust the <code>minmax()</code> values if items are too small or large</li>
+                    <li>Remember: first value is minimum, second is maximum</li>
+                    <li>Try different minimum widths: 200px, 250px, 300px</li>
+                </ul>
+            </li>
+            
+            <li><strong>Responsive behavior not working:</strong>
+                <ul>
+                    <li>Check your media query syntax: <code>@media (min-width: 768px) { }</code></li>
+                    <li>Make sure mobile styles come first (mobile-first approach)</li>
+                    <li>Test at different screen sizes using browser dev tools</li>
+                    <li>Verify breakpoint values match your design needs</li>
+                    <li>Check that CSS is properly nested inside media queries</li>
+                </ul>
+            </li>
+            
+            <li><strong>Grid and Flexbox conflicts:</strong>
+                <ul>
+                    <li>Don't apply both <code>display: grid</code> and <code>display: flex</code> to the same element</li>
+                    <li>Use Grid for the container, Flexbox for internal elements if needed</li>
+                    <li>Keep it simple - choose one approach per layout challenge</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="content-section">
+        <h2>Next Steps</h2>
+        
+        <h3>Portfolio Development Progression</h3>
+        <p>Your simple Grid layouts prepare you for:</p>
+        <ul>
+            <li><strong>LAB09:</strong> Responsive design optimization and accessibility features</li>
+            <li><strong>LAB10:</strong> Final polish, animations, and deployment preparation</li>
+            <li><strong>Project 1 Submission:</strong> Professional portfolio due Week 7 (revised timeline)</li>
+        </ul>
+
+        <h3>Grid Learning Path</h3>
+        <ul>
+            <li><strong>Current Focus:</strong> Simple, reliable Grid patterns</li>
+            <li><strong>Next Steps:</strong> Responsive refinements in LAB09</li>
+            <li><strong>Future Learning:</strong> Advanced Grid techniques in later courses</li>
+        </ul>
+
+        <p>Your LAB08 Grid foundation provides professional layout capabilities while maintaining the simplicity and clarity needed for beginners.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Homework Completion</h2>
+        <p><strong>Time Estimate:</strong> 1.5-2 hours to implement homework tasks and add personal content</p>
+        <p><strong>Submit:</strong> GitHub repository URL showing your enhanced portfolio with CSS Grid implementations</p>
+        <p><strong>Focus on:</strong> Getting the basic Grid patterns working well. Simple, clean layouts that you understand are better than complex layouts you don't!</p>
+    </div>
+</body>
+</html>

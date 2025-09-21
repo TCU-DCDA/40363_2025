@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Local Favorites</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">My Local Favorites</h1>
+            <p class="site-description">Track and organize your favorite local places</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Add New Favorite Section -->
+            <section class="add-section">
+                <h2>Add New Favorite</h2>
+                <form id="add-favorite-form" class="add-form">
+                    <div class="form-group">
+                        <label for="favorite-name">Place Name *</label>
+                        <input
+                            type="text"
+                            id="favorite-name"
+                            name="name"
+                            required
+                            placeholder="Enter the name of the place"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="favorite-category">Category *</label>
+                            <select id="favorite-category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="coffee">Coffee Shops</option>
+                                <option value="restaurants">Restaurants</option>
+                                <option value="parks">Parks & Recreation</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="study-spots">Study Spots</option>
+                                <option value="fitness">Fitness & Health</option>
+                                <option value="services">Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="favorite-rating">Rating</label>
+                            <select id="favorite-rating" name="rating">
+                                <option value="5">⭐⭐⭐⭐⭐ (5 stars)</option>
+                                <option value="4">⭐⭐⭐⭐ (4 stars)</option>
+                                <option value="3" selected>⭐⭐⭐ (3 stars)</option>
+                                <option value="2">⭐⭐ (2 stars)</option>
+                                <option value="1">⭐ (1 star)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="favorite-notes">Notes</label>
+                        <textarea
+                            id="favorite-notes"
+                            name="notes"
+                            placeholder="Add any notes about this place (what you like, recommendations, etc.)"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text">Add Favorite</span>
+                        <span class="btn-icon">+</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Search and Filter Section -->
+            <section class="search-section">
+                <h2>Find Your Favorites</h2>
+                <div class="search-controls">
+                    <div class="search-group">
+                        <label for="search-input" class="visually-hidden">Search favorites</label>
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Search by name, category, or notes..."
+                            class="search-input"
+                        >
+                        <button type="button" id="clear-search" class="btn btn-secondary btn-small">
+                            Clear
+                        </button>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="category-filter">Filter by category:</label>
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="coffee">Coffee Shops</option>
+                            <option value="restaurants">Restaurants</option>
+                            <option value="parks">Parks & Recreation</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="study-spots">Study Spots</option>
+                            <option value="fitness">Fitness & Health</option>
+                            <option value="services">Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Favorites Display Section -->
+            <section class="favorites-section">
+                <div class="section-header">
+                    <h2>Your Favorites</h2>
+                    <div class="favorites-stats">
+                        <span id="favorites-count">0 favorites</span>
+                        <button id="clear-all-btn" class="btn btn-danger btn-small" style="display: none;">
+                            Clear All
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Favorites will be dynamically inserted here -->
+                <div id="favorites-list" class="favorites-list">
+                    <!-- Placeholder content for empty state -->
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-icon">📍</div>
+                        <h3>No favorites yet!</h3>
+                        <p>Start building your collection by adding your first favorite place above.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 My Local Favorites. Built with HTML, CSS, and JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- Message Display Area -->
+    <div id="message-container" class="message-container"></div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 class="modal-title">Confirm Action</h3>
+            <p class="modal-message">Are you sure you want to perform this action?</p>
+            <div class="modal-actions">
+                <button id="modal-confirm" class="btn btn-danger">Confirm</button>
+                <button id="modal-cancel" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+        <div class="modal-backdrop"></div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

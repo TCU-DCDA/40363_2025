@@ -1,0 +1,97 @@
+0:05  
+So we've talked about the need for responsive design. We've talked about how responsive design is user friendly, how responsive design puts the user first, makes the content accessible primarily, and perhaps even initially, through a mobile device, so someone moves from the mobile version to tablet versions or to desktop versions of the site was site layout will adjust responsively to potentially add more features and functionality, but the essential information should be available clearly, plainly, accessibly through mobile view. So when we think about mobile first design in the context of the box model, we have two choices, two primary choices to consider at this stage, the first of the Flexbox model, which we'll get into today, and then the next video will likely cover then the grid layouts. So what I offer here is the wireframe view of a mobile site, and it's rearranged desktop version. The assumption here is that the content is the same in each colored region, but they're laid out differently given the width of the browser available, so there's more space and desktop. So the orange boxes arranged differently. There's less space in mobile, so the orange boxes are stacked into a column, right? So this is a further illustration of the value of the box model we've been talking about all semester long. Boxes aren't fluid, but they can be stacked and rearranged to respond to the container that they're being placed into. Okay? So I'll be pulling from this tutorial the way I have the past tutorials, and we should have some results pretty quickly. And again, I'm once again, sort of struck in a positive way by how much can be accomplished with a
+
+1:53  
+relatively few lines of code.
+
+2:01  
+So I'm going to start with GitHub Desktop, and I'm going to go to the local folder first. So I'm going to stay outside GitHub for a second, and outside VS code for a second to go specifically to the files on my laptop. So I have from past instruction week one, week two, archived in these rows of folders, and I go ahead, while I'm here and create a new folder called
+
+2:27  
+week three.
+
+2:33  
+Then inside that folder, we're going to create another folder
+
+2:38  
+on flex box. I'm and
+
+2:43  
+then to prepare for future work, I'll make a folder called red. And so with those changes in mind, I'll open up in Visual Studio code. So now that I'm back to Visual Studio. I have my way Three folder here, and then I have my sub folders here. So today we'll focus on this folder here. We'll put the content just, probably just two files, indexes a style sheet into this folder here. So with this folder selected, click on the new file, icon, type in index that HTML, make sure you're including the extension, and do well one more time to do style, singular dot CSS, so leave them both empty for now and uh.
+
+3:46  
+So the goal is to build, build a site that will have two usable versions, one that will be one desktop view on one mobile view. So we have our files created. They have our rationales discussed. So let's go ahead and grab this first step, one block of code, which is the entire HTML. We will be working with,
+
+4:18  
+18 lines of HTML, so not very much at all that will look like crap, not in the good way, not the CRP way, but look, look pretty boring in preview, right? So just those five, five boxes, right? So we have the inside the body box, we have the header box, we have the main box, then we have a section. And inside the section box, there's three soap boxes, three card boxes. So just for reference, when I use the word card, I'm referring to these elements here. So. Yeah, so navigation is the purple hero graphic, or banner is blue, and then the cards are the orange. But nothing much to look at, very little to look at. There's nothing engaging here at all. But let's go ahead and begin. So we're thinking mobile first. So we want to, we want to create this version first, before we add the code to have this emerge after certain conditions are met in the browser, right going to step two. Then let's grab the CSS. There is a bit more to grab, but not that much I'm
+
+5:45  
+so grab that. So
+
+5:47  
+this is the mobile styles first right, the base styles for the mobile sites, for foundational styles for the larger site. Paste that into your flex box styles dot css file so we've added 53 lines of CSS here, and then the changes are immediate, traumatic and kind of satisfying, but let's go ahead and explain what's going on. So this defines the body, the background, color and font, so nothing too profound. This defines the header, so the purple bar here, so I prefer, for example, does this see the immediate change I prefer for d1, 979, for my purples,
+
+6:42  
+the heights been set to 60 pixels by that from the tutorial. We can change that if we want to 10am maybe make it eight. Let's make it five. So margin bottom is the space, space pushing that this white space in between is being created by this box here, by the header box. So the margin bottom is the space beneath the border radius is in the curve of the corners. Right. If you want to make make it a more curve, we add to this the border radius number here
+
+7:26  
+I like my banners on my head square. So I'll go ahead and back this up to something a bit smaller, but there still go around this too. It's a little more little not quite so Pokey, not quite so jabbing, little more delicate than a squared rectangle. The heroes want to define what's the same way. So we'll make the hero section, but we'll make it maybe 10 EMS, maybe maybe 15, just to kind of have the spaces sized differently so they'll remind us more of what their function is. Well, the same thing with the margin bottom, same thing with the border radius. We also had our previous banners or here set up in flex the line item center and justify content center. Arranges this text here horizontally and vertically. The centers are in both directions. So for example, if we change justify content to rights, the whole text box moves off to the right. Okay, anything else should be pretty clear. Text is the foreground color. The background color is blue, the foreground color is white, the font weight is bolded. Okay, so this is where we get into the beginnings of the coding for the flex box.
+
+8:57  
+So notice
+
+9:00  
+the cards themselves, the three cards that we have, the three orange cards, one, two and three that we have here, are actually inside of a larger box called section, and it's called cards container, specifically class cards container. So the these are not floating, floating individually. They're put into a larger box that's that's largely invisible to us, but it is a container for the cards that we that we do see here. So there's a box, invisible box around this that's beneath the main box with the hero section, which is beneath, then the navigation box, or the header box. Okay, so look at how that is styled. Displays also this to the flex because we're working on Flex boxes, and flex is good to help things rearrange, either into a row or a column. So So here we have a column. I. Of boxes. Here we have a row of boxes. So the flex CSS is allowing us to move back and forth between these two depending on the width of the browser. So the Flex is good for arranging boxes, either either into a row or into a column or back and forth. So set up as a flex box here, but the initial sort of mobile, sort of orientation of those boxes is a column, so the flux direction of the box is a column. So to go back to our example, I could put it into row here.
+
+10:39  
+Doesn't look very good,
+
+10:43  
+but the flux direction is was determining if it's either a row or column. So we want for the mobile view to appear as a column. We'll set that here. So one last thing to observe in Curt set of properties here is there's a gap set between the boxes. So notice there's spacing between that's not set up by margin. In this case, it's set up by a gap in the larger card container, the larger Curt container, then it has gaps between elements.
+
+11:19  
+Okay, so the gap here is the spacing between. And there's nothing new here, new different colors, different heights, same border radius, same aligned and justified contents. So this is just defining the box itself. So the real sort of magic that's about to happen, or that's starting to happen, is based on what we're seeing here, right? And really specifically what's happening
+
+11:47  
+in this line here.
+
+11:52  
+Okay, so let's go ahead and reduce the the gap between back to 1am just to make it a little more responsive still. So this will be the navigation. Let's go ahead and change that here while we're talking about it.
+
+12:20  
+So for the header, class equals header, and change that to navigation, just for clear visual reminder.
+
+12:31  
+For the main class, I will put banner image and
+
+12:40  
+text
+
+12:43  
+then for card one, I will put
+
+12:47  
+topic one, topic Two, topic three,
+
+13:00  
+that way we know more what function, what content should go eventually into these spaces. Okay, so looking looking nice in a mobile environment. We can go to Preview, we can do the inspection that we've done before, but we can sort of see it's working well on the iphone four pro Max orientation looks good in Samsung, looks good at galaxy, and also it doesn't look bad in more of a desktop orientation. One thing that would be gained by by having having things go from a column to a row, in this broader view, is that we could sort of see what was going on with topics two and three without having to scroll, so we could get a sense, maybe what's going on in these other topics that they're both side by side instead of on top of each other, right? So let's demonstrate that pretty quickly.
+
+14:12  
+So going to believe step three of and it's just one batch of code here which also belongs in our CSS file at the very bottom. Again, the order of the CSS doesn't matter. Some media queries should come lower at the bottom of the page instead of the top of the page. We're just dealing with one break point, and the only thing that's changing is the that is the what's happening in the card container. So let's turn off the gap for a second. So I'll do a command for us. Let's just turn off that the gap is for a second. So I'm commenting out the code just for a moment to sort of, sort of see what happens if we they've always, they've always changes the flex direction and. And then this feature of the card, which we'll discuss in a second. So go here, over here, do a preview.
+
+15:17  
+Nothing's changed here, because we haven't changed the mobile CSS, but something should have changed if we broaden the browser here. So breakpoint, breakpoint, breakpoint, the same, breakpoint. So we talked a moment ago about how this could potentially, in desktop view, push the important content below the bottom of the screen. This will probably bring that information up more eye level.
+
+15:56  
+Let's
+
+15:58  
+demonstrate that with inspection. I so here's the more of a tablet size or desktop size. Here's the iPhone 14 size.
+
+16:21  
+So this brings the content higher on the page, which will help us to sort of see for scanning you want to jump to a specific subsection of your site, this will allow us to find that subset section more quickly. So this is also part of scan ability, also part of your user experience, also part of multiple mobile friendly design they're all rolled together into one, a happy, functioning set of code. So look as a review. If we're thinking column, we're thinking mobile, and if we're thinking row, we're thinking desktop.
+
+17:00  
+Gaps at space between flex items. So this has been pegged as flex. This has been pegged as flex. This has been these all have impacted flex or tagged as flex. Then, then the spacing between the flex elements is determined by gap, not by my margin, but by gap. So let's play with the flux one. We haven't discussed this part of it yet, which is part of the desktop CSS. So as the as the text says here, flex one, which is the addition to the card. Addition to this telling here in the mobile view determines the or helps to ensure that the cards are of equal within the desktop. So that goes to the desktop view, and they have now three cards side by side, they're all going to be the same width, so so they're responsive and relative to the width of the browser, but they're going to be the same as each other, right? So one will one or two won't stretch wider than the other one in the middle, for example. Okay? Media Queries we've discussed before, but just a quick study of the syntax, and because we're dealing with mobile first, we're dealing with a breakpoint that's defined as the minimum point, and this is a very common breakpoint. So we could add a breakpoint in between for tablets, but we won't for this tutorial. Okay, so.
+
+Transcribed by https://otter.ai

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 Resources: Links, Images, Lists & Base CSS</title>
+    <style>
+        .resources-container { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
+        .resources-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px solid #4d1979; }
+        .resources-title { font-size: 2.2em; color: #4d1979; margin-bottom: 10px; font-weight: bold; }
+        .resources-subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; font-style: italic; }
+        .week-section { margin-bottom: 40px; background: #f8f9fa; border-radius: 8px; padding: 20px; border-left: 5px solid #4d1979; }
+        .week-title { font-size: 1.5em; color: #4d1979; margin-bottom: 20px; font-weight: bold; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
+        .resource-card { margin-bottom: 25px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .resource-title { font-size: 1.3em; font-weight: bold; color: #4d1979; margin-bottom: 8px; }
+        .resource-title a { color: #4d1979; text-decoration: none; }
+        .resource-title a:hover { text-decoration: underline; }
+        .resource-type { display: inline-block; background: #e7f3ff; color: #0066cc; padding: 4px 8px; border-radius: 3px; font-size: 0.85em; font-weight: bold; margin-bottom: 10px; }
+        .resource-description { margin-bottom: 12px; color: #495057; }
+        .resource-highlights { background: #f8f9fa; padding: 12px; border-radius: 4px; border-left: 3px solid #4d1979; }
+        .resource-highlights ul { margin: 0; padding-left: 20px; }
+        .resource-highlights li { margin-bottom: 5px; color: #495057; }
+        .lab-connections { background: #fff3cd; padding: 12px; border-radius: 4px; border-left: 3px solid #ffc107; margin-top: 10px; }
+        .lab-connections strong { color: #856404; }
+        .beginner { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; font-weight: bold; margin-left: 10px; background: #d4edda; color: #155724; }
+        .overview-section { background: #e7f3ff; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid #0066cc; }
+        .overview-title { font-size: 1.4em; color: #0066cc; margin-bottom: 15px; font-weight: bold; }
+        .tips-section { background: #d4edda; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #28a745; }
+        .tips-title { font-size: 1.3em; color: #155724; margin-bottom: 15px; font-weight: bold; }
+        @media (max-width: 768px) { .resources-container { padding: 10px; } .resources-title { font-size: 1.8em; } .week-section { padding: 15px; } .resource-card { padding: 15px; } }
+    </style>
+    <meta name="description" content="Resources for Week 3 covering Lab 4 (Links, Images, Lists) and Lab 5 (Base CSS)">
+    <meta name="robots" content="noindex">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#4d1979">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body>
+    <div class="resources-container">
+        <header class="resources-header">
+            <h1 class="resources-title">Week 3 Resources</h1>
+            <p class="resources-subtitle">Links, Images, Lists & Base CSS</p>
+            <div style="background: #fff3cd; padding: 12px; border-radius: 5px; margin-top: 15px;">
+                <strong>📚 Purpose:</strong> Curated resources to support Lab 4 (Links, Images, Lists) and Lab 5 (Base CSS Foundation).
+            </div>
+        </header>
+
+        <main>
+            <section class="overview-section">
+                <h2 class="overview-title">Week 3 Focus: Media & CSS Foundations</h2>
+                <ul>
+                    <li><strong>Lab 4:</strong> Links, Images, and Lists Enhancement</li>
+                    <li><strong>Lab 5:</strong> Base CSS Foundation (external stylesheet, reset, spacing, type scale)</li>
+                    <li><strong>Key Skills:</strong> Link semantics, alt text, figure/figcaption, lists, CSS basics</li>
+                </ul>
+            </section>
+
+            <section class="week-section">
+                <h2 class="week-title">Resources for Lab 4</h2>
+
+                <div class="resource-card">
+                    <div class="resource-type">Documentation</div>
+                    <h3 class="resource-title">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="noopener">MDN: HTML anchor element (&lt;a&gt;)</a>
+                        <span class="beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">Link semantics, attributes, and best practices for accessible links.</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>Use descriptive link text; avoid raw URLs</li>
+                            <li>Add <code>rel="noopener"</code> for external links with <code>target="_blank"</code></li>
+                            <li>Understand inline vs. block-level link contexts</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Required link rules for Lab 4.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">Documentation</div>
+                    <h3 class="resource-title">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank" rel="noopener">MDN: HTML image element (&lt;img&gt;)</a>
+                        <span class="beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">Images with proper alt text and sizing considerations.</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>Write meaningful <code>alt</code> text; omit for decorative images</li>
+                            <li>Prefer real content images over purely decorative ones</li>
+                            <li>Use <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> for captions</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Add a second figure with caption ≤ 12 words.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">Reference</div>
+                    <h3 class="resource-title">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul" target="_blank" rel="noopener">MDN: Lists (ul, ol, li)</a>
+                        <span class="beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">When to use unordered vs. ordered lists; semantic grouping.</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>Use lists for grouped, related items</li>
+                            <li>Keep nesting shallow and intentional</li>
+                            <li>Pair with headings for scanability</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Build a resources list with descriptive text.</div>
+                </div>
+            </section>
+
+            <section class="week-section">
+                <h2 class="week-title">Resources for Lab 5</h2>
+
+                <div class="resource-card">
+                    <div class="resource-type">Guide</div>
+                    <h3 class="resource-title">
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS" target="_blank" rel="noopener">MDN: What is CSS?</a>
+                        <span class="beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">CSS fundamentals: how CSS works, selectors, and basic properties.</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>External stylesheets via <code>&lt;link&gt;</code> in <code>&lt;head&gt;</code></li>
+                            <li>Selector basics and cascade</li>
+                            <li>Typography and spacing primitives</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Link a single stylesheet across all pages.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">Reference</div>
+                    <h3 class="resource-title">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank" rel="noopener">MDN: box-sizing</a>
+                        <span class="beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">Use <code>box-sizing: border-box;</code> for predictable sizing.</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>Set global reset with <code>* { box-sizing: border-box }</code></li>
+                            <li>Establish base margin/padding reset</li>
+                            <li>Achieve consistent layout math</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Include a light reset and layout constraints.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">How-To</div>
+                    <h3 class="resource-title">
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals" target="_blank" rel="noopener">MDN: Styling text fundamentals</a>
+                        <span class="beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">Set readable body text, heading scale, and line-height.</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>Use rem units for scalable typography</li>
+                            <li>Define h1–h3 sizes and rhythm</li>
+                            <li>Constrain content width for readability</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Implement base typography and spacing scale.</div>
+                </div>
+            </section>
+
+            <section class="tips-section">
+                <h2 class="tips-title">💡 Week 3 Study Tips</h2>
+                <ul>
+                    <li><strong>Prepare Assets:</strong> Collect 3-5 meaningful external links and image candidates</li>
+                    <li><strong>Alt Text:</strong> Draft concise descriptions for each image</li>
+                    <li><strong>CSS Setup:</strong> Create a <code>css/</code> folder and link <code>styles.css</code></li>
+                    <li><strong>Commit Often:</strong> After each section and validation fix</li>
+                </ul>
+            </section>
+
+            <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #0066cc; text-align: center;">
+                <h3 style="color: #0066cc; margin-bottom: 15px;">🔗 Quick Reference</h3>
+                <p>This week you’ll enrich content with links, images, and lists, then lay a solid CSS foundation for consistent typography and spacing.</p>
+                <p><strong>Labs:</strong> 
+                    <a href="labs/LAB04_links_images_lists.html" target="_blank" rel="noopener">Lab 04 — Links, Images, and Lists</a> 
+                    and 
+                    <a href="labs/LAB05_base_css_foundation.html" target="_blank" rel="noopener">Lab 05 — Base CSS Foundation</a>.
+                </p>
+                <p><em>All resources are free and do not require paid subscriptions.</em></p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

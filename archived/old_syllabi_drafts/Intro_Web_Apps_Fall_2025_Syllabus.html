@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Intro to Web Applications – Fall 2025 (Syllabus)</title>
+<style>
+  :root { --bg:#ffffff; --accent:#4d1979; --accent-alt:#6a2ca8; --border:#ddd; --text:#222; --muted:#555; --table-head:#f5f5f9; }
+  body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; line-height:1.45; color:var(--text); margin:1.25rem; }
+  h1,h2,h3 { line-height:1.15; font-weight:600; color:var(--accent); margin:.85em 0 .4em; }
+  h1 { font-size:1.9rem; }
+  h2 { font-size:1.35rem; margin-top:2.2rem; }
+  h3 { font-size:1.1rem; text-transform:uppercase; letter-spacing:.04em; }
+  p { max-width:70ch; }
+  table { border-collapse:collapse; width:100%; margin:1.25rem 0; font-size:.95rem; }
+  caption { text-align:left; font-weight:600; padding:.5rem 0; color:var(--accent); }
+  thead th { background:var(--table-head); font-weight:600; }
+  th, td { border:1px solid var(--border); padding:.55rem .6rem; vertical-align:top; }
+  tbody tr:nth-child(even) { background:#fafafa; }
+  code { background:#f3f3f7; padding:.1rem .35rem; border-radius:4px; font-size:.85em; }
+  .pill { display:inline-block; background:var(--accent); color:#fff; padding:.15rem .5rem; border-radius:999px; font-size:.62rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+  .pill-core { background:#0b6b3a; }
+  .pill-stretch { background:#b34700; }
+  .legend { font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; display:inline-flex; gap:.4rem; align-items:center; }
+  .break { background:#fff3e0 !important; font-style:italic; }
+  .no-border { border:none !important; }
+  .small { font-size:.8rem; color:var(--muted); }
+  a { color:var(--accent-alt); text-decoration:none; }
+  a:focus, a:hover { text-decoration:underline; }
+  .grid2 { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
+  ul { margin:.4rem 0 .9rem 1.25rem; padding:0; }
+  li { margin:.25rem 0; }
+  hr { border:none; border-top:1px solid var(--border); margin:2.5rem 0 2rem; }
+  .note { background:#f0ecf7; border-left:4px solid var(--accent); padding:.75rem 1rem; margin:1rem 0; }
+  @media (max-width:680px){
+    table, thead, tbody, th, td, tr { font-size:.82rem; }
+    h1 { font-size:1.55rem; }
+    h2 { font-size:1.2rem; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Intro to Web Applications – Fall 2025 <span class="pill" style="background:#444" aria-label="Version 2 with Core and Stretch flags">v2</span></h1>
+  <p><strong>Meeting:</strong> Tue & Thu 12:30–2:00 PM &nbsp;|&nbsp; <strong>Start:</strong> Aug 19, 2025 &nbsp;|&nbsp; <strong>End:</strong> Dec 3, 2025<br>
+     <strong>Final Exam Window:</strong> Week 17 (TBD) &nbsp;|&nbsp; <strong>Fall Break:</strong> Oct 9 &nbsp;|&nbsp; <strong>Thanksgiving:</strong> Nov 27 &nbsp;|&nbsp; <strong>Instructor Out:</strong> Sep 11 (Async)</p>
+</header>
+<section>
+  <h2>Course Overview</h2>
+  <p>Project‑based introduction to web applications emphasizing audience empathy, accessibility, progressive enhancement, responsive and maintainable front‑end practice, light server interaction, and reflective iteration. AI assistants are used as collaborative tools (design critique, debugging suggestions, refactoring) with attribution.</p>
+  <div class="note"><strong>Final Outcome:</strong> A portfolio of 3–4 accessible, responsive, creative web apps (HTML, CSS, JS, light Node/Glitch) with documented decisions (accessibility, performance, user focus).</div>
+</section>
+<section>
+  <h2>Weekly Schedule (Projects + Labs)</h2>
+  <p class="small">All labs due <strong>Sunday 11:59 PM</strong> of the listed week. Multi‑lab weeks intentionally cluster complementary skills.</p>
+  <p class="small legend" aria-label="Legend for core and stretch work">
+    <span class="pill pill-core">Core</span> Essential path &nbsp;•&nbsp;
+    <span class="pill pill-stretch">Stretch</span> Enrichment (skip if catching up)
+  </p>
+  <table aria-describedby="sched-desc">
+    <caption>Week-by-Week Plan</caption>
+    <thead>
+      <tr>
+        <th scope="col">Week</th>
+        <th scope="col">Dates</th>
+        <th scope="col">Topics / Focus</th>
+        <th scope="col">Project Deliverable</th>
+        <th scope="col">Lab(s) Due (Sunday)</th>
+      </tr>
+    </thead>
+    <tbody id="sched-desc">
+      <tr>
+        <th scope="row">1</th>
+        <td>Aug 19, 21</td>
+        <td>Foundations: what is a web app? HTML, audience, scanability</td>
+        <td>About Me (v1)</td>
+        <td>Lab01 Audience & About (Aug 24)</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Aug 26, 28</td>
+        <td>Semantic structure & basic accessibility patterns</td>
+        <td>Personal Timeline page</td>
+        <td>Lab02 Scanability Pass + Lab03 CRAP Review (Aug 31)</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Sep 2, 4</td>
+        <td>Core CSS (selectors, spacing, proto‑typography)</td>
+  <td>Styled Timeline site <span class="pill pill-core">Core</span></td>
+        <td>Lab04 Git Workflow + Lab05 Planning & Inventory (Sep 7)</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Sep 9, 11*</td>
+        <td>Intro JS: events & variables (Sep 11 async)</td>
+  <td>Quote / Poem Generator <span class="pill pill-core">Core</span></td>
+        <td>JS Lab01 Event Playground + Lab06 Links/Images/Lists (Sep 14)</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Sep 16, 18</td>
+        <td>VS Code workflow; semantic grouping; early responsive thinking</td>
+  <td>Refined site (local) <span class="pill pill-core">Core</span></td>
+        <td>Lab07 Base CSS + Lab08 Scanability CSS (Sep 21)</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Sep 23, 25</td>
+        <td>GitHub Pages deploy; polish & accessibility pass</td>
+  <td>Live GitHub Pages site <span class="pill pill-core">Core</span></td>
+        <td>Lab09 Nav & Banner + Lab10 Quality/A11y Check (Sep 28)</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>Sep 30, Oct 2</td>
+        <td>DOM, arrays, loops; dynamic rendering</td>
+  <td>Gallery / Carousel <span class="pill pill-core">Core</span></td>
+        <td>JS Lab02 DOM from JSON (Oct 5)</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>Oct 7</td>
+        <td>JSON & object data (single session)</td>
+  <td>Digital Museum App <span class="pill pill-core">Core</span></td>
+        <td>Lab11 Media Query Refactor (Oct 12)</td>
+      </tr>
+      <tr class="break">
+        <th scope="row">—</th>
+        <td>Oct 9</td>
+        <td colspan="3">Fall Break – No Class / No Lab</td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>Oct 14, 16</td>
+        <td>API fetch, parsing, error handling basics</td>
+  <td>Random Art / Poetry App <span class="pill pill-core">Core</span></td>
+        <td>JS Lab03 Fetch & Error Handling (Oct 19)</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>Oct 21, 23</td>
+        <td>Server intro (Glitch), routing & environment</td>
+  <td>Simple Node.js Server <span class="pill pill-core">Core</span></td>
+        <td>Lab12 Flex → Grid + Lab13 Fluid Typography (Oct 26)</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>Oct 28, 30</td>
+        <td>Forms & validation UX</td>
+  <td>Story Submission Form <span class="pill pill-core">Core</span></td>
+        <td>Lab14 Accessible Hamburger Nav + Lab15 Responsive Images (Nov 2)</td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td>Nov 4, 6</td>
+        <td>Data persistence (JSON on Glitch)</td>
+  <td>Collaborative Story Wall <span class="pill pill-core">Core</span></td>
+        <td>Lab16 CSS Audit & Reduction (Nov 9)</td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td>Nov 11, 13</td>
+        <td>Final project planning (IA, wireframes, scope)</td>
+  <td>Proposal + Wireframe + Repo <span class="pill pill-core">Core</span></td>
+        <td>Lab17 Accessibility Deep Dive (Nov 16)</td>
+      </tr>
+      <tr>
+        <th scope="row">14</th>
+        <td>Nov 18, 20</td>
+        <td>Final Build – Iteration 1</td>
+  <td>Working Prototype <span class="pill pill-core">Core</span></td>
+        <td>Lab18 Performance Optimization (Nov 23)</td>
+      </tr>
+      <tr>
+        <th scope="row">15</th>
+        <td>Nov 25, 27</td>
+        <td><strong>Thanksgiving Break – Full Week Off</strong></td>
+        <td>—</td>
+        <td>Rest / Catch-Up (No New Lab)</td>
+      </tr>
+      <tr>
+        <th scope="row">16</th>
+        <td>Dec 2, 3*</td>
+        <td>Showcase & Reflection</td>
+  <td>Final App + Reflection <span class="pill pill-core">Core</span></td>
+        <td>Reflection Due (Dec 7)</td>
+      </tr>
+      <tr>
+        <th scope="row">17</th>
+        <td>Finals Week</td>
+        <td>Optional presentation / survey</td>
+        <td>Optional Enhancements</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="small">* Sep 11 asynchronous; Dec 3 is Wednesday showcase session.</p>
+</section>
+<section>
+  <h2>Lab Clusters</h2>
+  <table>
+    <caption>Lab Sequence Overview</caption>
+    <thead>
+      <tr><th scope="col">Labs</th><th scope="col">Focus Cluster</th><th scope="col">Key Competencies</th></tr>
+    </thead>
+    <tbody>
+  <tr><th scope="row">01–03 <span class="pill pill-core">Core</span></th><td>Audience & Readability</td><td>Empathy, scan patterns, CRAP</td></tr>
+  <tr><th scope="row">04–05 <span class="pill pill-core">Core</span></th><td>Workflow & Planning</td><td>Git hygiene, inventory, roadmap</td></tr>
+  <tr><th scope="row">06–08 <span class="pill pill-core">Core</span></th><td>Semantic + Base CSS</td><td>Lists, media, rhythm, hierarchy</td></tr>
+  <tr><th scope="row">JS01–JS03 <span class="pill pill-core">Core</span></th><td>Core JavaScript</td><td>Events, DOM templating, fetch/error handling</td></tr>
+  <tr><th scope="row">09–10 <span class="pill pill-core">Core</span></th><td>Navigation & Quality</td><td>Banner, accessible baseline audit</td></tr>
+  <tr><th scope="row">11–13 <span class="pill pill-core">Core</span> <span class="pill pill-stretch">Stretch: 13</span></th><td>Responsive & Type</td><td>Breakpoint economy, Grid, clamp()</td></tr>
+  <tr><th scope="row">14–15 <span class="pill pill-core">Core</span></th><td>Accessible Nav & Media</td><td>ARIA, toggle patterns, srcset</td></tr>
+  <tr><th scope="row">16–18 <span class="pill pill-stretch">Stretch</span></th><td>Maintainability & Perf</td><td>CSS reduction, deep a11y, Core Web Vitals (awareness)</td></tr>
+    </tbody>
+  </table>
+  <h3>Lab Delivery Modes & Grading Focus</h3>
+  <p class="small">Legend: <strong>IC</strong> In-Class • <strong>HW</strong> Homework • <strong>HY</strong> Hybrid • <strong>WRK</strong> Workshop/Peer • <strong>OPT</strong> Optional • <strong>SPR</strong> Sprint</p>
+  <table>
+    <thead><tr><th scope="col">Lab</th><th scope="col">Mode</th><th scope="col">Type</th><th scope="col">Notes</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">01</th><td>IC</td><td>Formative</td><td>Audience baseline</td></tr>
+      <tr><th scope="row">02</th><td>IC</td><td>Formative</td><td>Scan refinement</td></tr>
+      <tr><th scope="row">03</th><td>IC</td><td>Formative</td><td>CRAP critique</td></tr>
+      <tr><th scope="row">04</th><td>IC</td><td>Formative</td><td>Git onboarding</td></tr>
+      <tr><th scope="row">05</th><td>WRK</td><td>Formative</td><td>Planning workshop</td></tr>
+      <tr><th scope="row">06</th><td>IC</td><td>Formative</td><td>Semantic/media</td></tr>
+      <tr><th scope="row">07</th><td>HY</td><td>Summative Lite</td><td>Base CSS</td></tr>
+      <tr><th scope="row">08</th><td>IC</td><td>Formative</td><td>Hierarchy polish</td></tr>
+      <tr><th scope="row">09</th><td>HY</td><td>Summative Lite</td><td>Nav & banner</td></tr>
+      <tr><th scope="row">10</th><td>WRK</td><td>Formative</td><td>Peer audit</td></tr>
+      <tr><th scope="row">JS01</th><td>HY</td><td>Summative</td><td>Events + PE</td></tr>
+      <tr><th scope="row">JS02</th><td>HW</td><td>Summative</td><td>DOM templating</td></tr>
+      <tr><th scope="row">JS03</th><td>HW</td><td>Summative</td><td>Fetch resilience</td></tr>
+      <tr><th scope="row">11</th><td>HW</td><td>Summative</td><td>MQ refactor</td></tr>
+      <tr><th scope="row">12</th><td>HW</td><td>Summative</td><td>Flex→Grid</td></tr>
+  <tr><th scope="row">13</th><td>OPT</td><td>Stretch <span class="pill pill-stretch">Stretch</span></td><td>Fluid type</td></tr>
+      <tr><th scope="row">14</th><td>HY</td><td>Summative</td><td>Accessible nav</td></tr>
+      <tr><th scope="row">15</th><td>HW</td><td>Summative</td><td>Responsive images</td></tr>
+  <tr><th scope="row">16</th><td>HW</td><td>Summative <span class="pill pill-stretch">Stretch</span></td><td>CSS audit (choose if ahead)</td></tr>
+  <tr><th scope="row">17</th><td>WRK</td><td>Summative <span class="pill pill-stretch">Stretch</span></td><td>A11y remediation deep dive</td></tr>
+  <tr><th scope="row">18</th><td>SPR</td><td>Summative <span class="pill pill-stretch">Stretch</span></td><td>Performance awareness sprint</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Feedback intensity centers on HY / HW / SPR labs; IC & WRK emphasize rapid iteration and reflection. Core items prioritized in grading feedback; Stretch items receive feedback as time allows.</p>
+</section>
+<section>
+  <h2>AI Support Guidelines</h2>
+  <ul>
+    <li><strong>Use for:</strong> examples, debugging hints, refactoring suggestions, accessibility text, performance ideas.</li>
+    <li><strong>Avoid for:</strong> unreviewed code submission, bypassing readings, misrepresenting authorship.</li>
+    <li><strong>Document:</strong> substantial AI help in README or code comments.</li>
+  </ul>
+</section>
+<section>
+  <h2>Assessment Philosophy</h2>
+  <p>Mastery / completion model: feedback-driven iteration across dimensions (Accessibility, Responsiveness, Maintainability, Performance Awareness, Version Control Hygiene, Reflection). No punitive grading; progress tracked via checklists and milestone reflections.</p>
+</section>
+<section>
+  <h2>Policies</h2>
+  <ul>
+    <li><strong>Late Labs:</strong> 48h grace. Afterward accepted for feedback only (may lag).</li>
+    <li><strong>Collaboration:</strong> Discuss & pair; submit only code you personally understand.</li>
+    <li><strong>Accessibility:</strong> Evolving checklist (revised after Labs 10, 14, 17) must be met retroactively.</li>
+  </ul>
+</section>
+<section>
+  <h2>Tools Timeline</h2>
+  <ul>
+    <li>VS Code (Week 5)</li>
+    <li>Git/GitHub Pages (Week 6)</li>
+    <li>DevTools (Network, Coverage) Weeks 7–12</li>
+    <li>Glitch / Replit (Week 10)</li>
+    <li>Lighthouse / axe (Week 10+)</li>
+    <li>AI Assistant (Week 1+ expanding scope)</li>
+  </ul>
+</section>
+<section>
+  <h2>Reflections</h2>
+  <p>Short written reflections at Labs 10, 14, 18, and Final: articulate user‑first improvements, constraints managed, next iteration priorities.</p>
+</section>
+<section>
+  <h2>Final Project Minimums</h2>
+  <ul>
+    <li><span class="pill pill-core">Core</span> Deployed responsive app (GitHub Pages / Glitch hybrid acceptable).</li>
+    <li><span class="pill pill-core">Core</span> Accessibility baseline checklist met (contrast, landmarks, alt text, focus order).</li>
+    <li><span class="pill pill-core">Core</span> README: purpose, features, accessibility notes, two identified future performance opportunities.</li>
+    <li><span class="pill pill-stretch">Stretch</span> Documented performance snapshot & optimizations (if Perf Sprint attempted).</li>
+    <li><span class="pill pill-stretch">Stretch</span> Advanced a11y enhancements (ARIA live regions, reduced‑motion adaptations, etc.).</li>
+  </ul>
+  <p class="small"><strong>Essential Path Recap:</strong> Labs 01–12, 14, 15 + Final Project Core Minimums. Other labs = Stretch: attempt only after Core confidence.</p>
+</section>
+<hr>
+<p class="small">*Syllabus subject to iterative refinement—updates announced in LMS. Maintain empathy & user‑first framing across all optimization decisions.</p>
+</body>
+</html>

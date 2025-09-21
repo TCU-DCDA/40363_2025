@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            min-height: 600px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            width: 90%;
+            max-width: 1000px;
+            text-align: center;
+            padding: 40px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #c0c0c0;
+        }
+
+        p, li {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .column {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .navigation {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .slide-counter {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 1em;
+            z-index: 100;
+        }
+
+        .analogy {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #FFD700;
+        }
+
+        /* Variable Storage Animation */
+        .variable-demo {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .storage-box {
+            background: rgba(255,255,255,0.15);
+            border: 3px solid #FFD700;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 200px;
+            position: relative;
+            animation: boxFloat 0.8s ease-out both;
+        }
+
+        .storage-box:nth-child(1) { animation-delay: 0.3s; }
+        .storage-box:nth-child(2) { animation-delay: 0.6s; }
+        .storage-box:nth-child(3) { animation-delay: 0.9s; }
+
+        .box-label {
+            background: #FFD700;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9em;
+        }
+
+        .box-content {
+            margin-top: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #FFD700;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes boxFloat {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Data Type Visualization */
+        .data-types {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .data-type {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            min-width: 200px;
+            border: 2px solid;
+            transition: all 0.3s ease;
+            animation: dataTypeAppear 0.6s ease-out both;
+        }
+
+        .data-type:nth-child(1) {
+            border-color: #e74c3c;
+            animation-delay: 0.2s;
+        }
+        .data-type:nth-child(2) {
+            border-color: #3498db;
+            animation-delay: 0.4s;
+        }
+        .data-type:nth-child(3) {
+            border-color: #2ecc71;
+            animation-delay: 0.6s;
+        }
+
+        .data-type:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .data-type-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        .data-type h3 {
+            margin: 10px 0;
+            font-size: 1.3em;
+        }
+
+        .data-type .example {
+            font-family: 'Courier New', monospace;
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+
+        @keyframes dataTypeAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Function Machine Animation */
+        .function-machine {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            gap: 20px;
+        }
+
+        .function-box {
+            background: rgba(155, 89, 182, 0.3);
+            border: 3px solid #9b59b6;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            animation: machineHum 2s ease-in-out infinite;
+        }
+
+        .function-input, .function-output {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 2px solid #ecf0f1;
+            font-weight: bold;
+            min-width: 120px;
+        }
+
+        .function-arrow {
+            font-size: 2em;
+            color: #ecf0f1;
+            animation: arrowPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes machineHum {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Code Examples */
+        .code-example {
+            background: rgba(0,0,0,0.4);
+            border: 2px solid #34495e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-example::before {
+            content: 'JavaScript';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #34495e;
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8em;
+            border-bottom-left-radius: 10px;
+        }
+
+        .code-line {
+            margin: 8px 0;
+            font-size: 1.1em;
+            animation: typeWriter 0.5s ease-out both;
+        }
+
+        .code-line:nth-child(1) { animation-delay: 0.2s; }
+        .code-line:nth-child(2) { animation-delay: 0.4s; }
+        .code-line:nth-child(3) { animation-delay: 0.6s; }
+        .code-line:nth-child(4) { animation-delay: 0.8s; }
+
+        .comment {
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .keyword {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .string {
+            color: #2ecc71;
+        }
+
+        .number {
+            color: #e67e22;
+        }
+
+        @keyframes typeWriter {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Console Demo */
+        .console-demo {
+            background: #2c3e50;
+            border: 2px solid #34495e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            text-align: left;
+            color: #ecf0f1;
+        }
+
+        .console-prompt {
+            color: #3498db;
+            margin: 8px 0;
+        }
+
+        .console-output {
+            color: #2ecc71;
+            margin: 5px 0 15px 20px;
+        }
+
+        .console-error {
+            color: #e74c3c;
+            margin: 5px 0 15px 20px;
+        }
+
+        /* Progress indicators */
+        .learning-path {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            gap: 20px;
+        }
+
+        .step {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid #bdc3c7;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: relative;
+            animation: stepAppear 0.6s ease-out both;
+        }
+
+        .step.active {
+            border-color: #2ecc71;
+            background: rgba(46, 204, 113, 0.3);
+            color: #2ecc71;
+        }
+
+        .step:nth-child(odd) { animation-delay: 0.2s; }
+        .step:nth-child(even) { animation-delay: 0.4s; }
+
+        .step-arrow {
+            color: #bdc3c7;
+            font-size: 1.5em;
+        }
+
+        @keyframes stepAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Mistakes section */
+        .mistake-demo {
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .mistake-title {
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .fix-demo {
+            background: rgba(46, 204, 113, 0.2);
+            border: 2px solid #2ecc71;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .fix-title {
+            color: #2ecc71;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .two-column, .three-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 2em; }
+            p, li { font-size: 1.1em; }
+
+            .slide {
+                padding: 20px;
+            }
+
+            .variable-demo,
+            .data-types,
+            .function-machine {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .learning-path {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide-counter">
+            <span id="slideNumber">1</span> / <span id="totalSlides">10</span>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>JavaScript Fundamentals</h1>
+            <h3>From Static to Interactive</h3>
+            <p style="font-size: 1.1em; margin-top: 40px;">Adding the magic ingredient to web development</p>
+            <p style="font-size: 1em; margin-top: 20px;">WRIT 40363: Multimedia Authoring</p>
+
+            <div class="learning-path">
+                <div class="step active">1</div>
+                <div class="step-arrow">→</div>
+                <div class="step">2</div>
+                <div class="step-arrow">→</div>
+                <div class="step">3</div>
+                <div class="step-arrow">→</div>
+                <div class="step">4</div>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 20px;">Learn → Practice → Apply → Create</p>
+        </div>
+
+        <!-- Slide 2: The Missing Piece -->
+        <div class="slide">
+            <h2>The Missing Piece</h2>
+
+            <div class="analogy">
+                <h3>HTML + CSS + ??? = Interactive Websites</h3>
+                <p>You've learned to build beautiful, responsive websites. But they're like gorgeous photographs - beautiful to look at, but they don't respond when you interact with them.</p>
+            </div>
+
+            <div class="three-column">
+                <div class="column">
+                    <h3>🏗️ HTML</h3>
+                    <p>Structure and content</p>
+                    <p><em>"The skeleton"</em></p>
+                </div>
+                <div class="column">
+                    <h3>🎨 CSS</h3>
+                    <p>Styling and layout</p>
+                    <p><em>"The appearance"</em></p>
+                </div>
+                <div class="column" style="border: 3px solid #FFD700;">
+                    <h3>⚡ JavaScript</h3>
+                    <p>Behavior and interaction</p>
+                    <p><em>"The personality"</em></p>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px;"><strong>JavaScript is what makes websites come alive!</strong></p>
+        </div>
+
+        <!-- Slide 3: What JavaScript Actually Does -->
+        <div class="slide">
+            <h2>What JavaScript Actually Does</h2>
+
+            <p><strong>JavaScript makes websites respond to users:</strong></p>
+
+            <ul>
+                <li><strong>Click a button:</strong> Something happens (forms submit, menus open, content changes)</li>
+                <li><strong>Type in a search box:</strong> Suggestions appear instantly</li>
+                <li><strong>Scroll down:</strong> New content loads automatically</li>
+                <li><strong>Hover over an image:</strong> It zooms or changes</li>
+                <li><strong>Fill out a form:</strong> Errors are caught before you submit</li>
+                <li><strong>Play a video:</strong> Controls respond to your clicks</li>
+            </ul>
+
+            <div class="analogy">
+                <p><strong>Think of a smartphone:</strong></p>
+                <p>• Hardware = HTML (the structure)</p>
+                <p>• Design = CSS (how it looks)</p>
+                <p>• Apps & Software = JavaScript (what it can do)</p>
+            </div>
+
+            <p><strong>Without JavaScript, websites are like phones that can only display pictures!</strong></p>
+        </div>
+
+        <!-- Slide 4: Variables - Storage Boxes -->
+        <div class="slide">
+            <h2>Variables: Labeled Storage Boxes</h2>
+
+            <p><strong>Variables store information so you can use it later</strong></p>
+
+            <div class="variable-demo">
+                <div class="storage-box">
+                    <div class="box-label">studentName</div>
+                    <div class="box-content">"Alice"</div>
+                </div>
+                <div class="storage-box">
+                    <div class="box-label">age</div>
+                    <div class="box-content">20</div>
+                </div>
+                <div class="storage-box">
+                    <div class="box-label">isEnrolled</div>
+                    <div class="box-content">true</div>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">studentName</span> = <span class="string">'Alice'</span>;</div>
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">age</span> = <span class="number">20</span>;</div>
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">isEnrolled</span> = <span class="keyword">true</span>;</div>
+                <div class="code-line comment">// Now you can use these values anywhere!</div>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Like organizing your room:</strong> You put things in labeled boxes so you can find them later. Variables are labeled boxes for information.</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Data Types -->
+        <div class="slide">
+            <h2>Types of Information</h2>
+
+            <p><strong>JavaScript handles different kinds of data:</strong></p>
+
+            <div class="data-types">
+                <div class="data-type">
+                    <div class="data-type-icon">📝</div>
+                    <h3>Strings</h3>
+                    <p>Text and words</p>
+                    <div class="example">'Hello World!'<br/>"JavaScript rocks"<br/>`My name is ${name}`</div>
+                </div>
+                <div class="data-type">
+                    <div class="data-type-icon">🔢</div>
+                    <h3>Numbers</h3>
+                    <p>Math and counting</p>
+                    <div class="example">42<br/>3.14<br/>-17<br/>2024</div>
+                </div>
+                <div class="data-type">
+                    <div class="data-type-icon">✅</div>
+                    <h3>Booleans</h3>
+                    <p>True or false</p>
+                    <div class="example">true<br/>false<br/>(yes or no questions)</div>
+                </div>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Like sorting mail:</strong> Letters go in one pile, bills in another, packages somewhere else. JavaScript sorts information by type to handle it correctly.</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Functions - Code Recipes -->
+        <div class="slide">
+            <h2>Functions: Code Recipes</h2>
+
+            <p><strong>Functions are sets of instructions you can use over and over</strong></p>
+
+            <div class="function-machine">
+                <div class="function-input">Input<br/>("Alice")</div>
+                <div class="function-arrow">→</div>
+                <div class="function-box">
+                    <strong>greetStudent()</strong><br/>
+                    <small>Add "Hello" + name + "!"</small>
+                </div>
+                <div class="function-arrow">→</div>
+                <div class="function-output">Output<br/>("Hello Alice!")</div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">function</span> greetStudent(name) {</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">'Hello '</span> + name + <span class="string">'!'</span>;</div>
+                <div class="code-line">}</div>
+                <div class="code-line"></div>
+                <div class="code-line comment">// Use the function:</div>
+                <div class="code-line">greetStudent(<span class="string">'Alice'</span>); <span class="comment">// Returns "Hello Alice!"</span></div>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Like a recipe for cookies:</strong> Write the recipe once, then follow it whenever you want cookies. Functions are recipes for code tasks.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Your First JavaScript -->
+        <div class="slide">
+            <h2>Let's Try It: Browser Console</h2>
+
+            <p><strong>The browser console is your JavaScript playground</strong></p>
+
+            <div class="two-column">
+                <div class="column">
+                    <h3>How to Open Console</h3>
+                    <ul style="font-size: 1.1em;">
+                        <li><strong>Windows:</strong> F12 or Ctrl+Shift+I</li>
+                        <li><strong>Mac:</strong> Cmd+Option+I</li>
+                        <li><strong>Any browser:</strong> Right-click → Inspect → Console</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Try These Commands</h3>
+                    <div class="console-demo">
+                        <div class="console-prompt">> console.log('Hello World!')</div>
+                        <div class="console-output">Hello World!</div>
+                        <div class="console-prompt">> 2 + 3</div>
+                        <div class="console-output">5</div>
+                        <div class="console-prompt">> let name = 'Your Name'</div>
+                        <div class="console-prompt">> console.log('Hi ' + name)</div>
+                        <div class="console-output">Hi Your Name</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Like a calculator for code:</strong> Type JavaScript, see results immediately. Perfect for learning and testing ideas!</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Common Beginner Mistakes -->
+        <div class="slide">
+            <h2>Common Beginner Mistakes</h2>
+
+            <p><strong>Everyone makes these mistakes - here's how to fix them:</strong></p>
+
+            <div class="two-column">
+                <div class="column">
+                    <div class="mistake-demo">
+                        <div class="mistake-title">❌ Forgetting Quotes</div>
+                        <div class="code-example">
+                            <div class="code-line">let name = Alice;</div>
+                            <div class="console-error">Error: Alice is not defined</div>
+                        </div>
+                    </div>
+
+                    <div class="fix-demo">
+                        <div class="fix-title">✅ Use Quotes for Text</div>
+                        <div class="code-example">
+                            <div class="code-line">let name = <span class="string">'Alice'</span>;</div>
+                            <div class="console-output">✓ Works perfectly!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="mistake-demo">
+                        <div class="mistake-title">❌ Wrong Capitalization</div>
+                        <div class="code-example">
+                            <div class="code-line">let studentname = 'Alice';</div>
+                            <div class="code-line">console.log(studentName);</div>
+                            <div class="console-error">Error: studentName is not defined</div>
+                        </div>
+                    </div>
+
+                    <div class="fix-demo">
+                        <div class="fix-title">✅ Match Exactly</div>
+                        <div class="code-example">
+                            <div class="code-line">let studentName = 'Alice';</div>
+                            <div class="code-line">console.log(studentName);</div>
+                            <div class="console-output">Alice</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>JavaScript is case-sensitive and picky about syntax - but error messages help you learn!</strong></p>
+        </div>
+
+        <!-- Slide 9: Building Confidence -->
+        <div class="slide">
+            <h2>You're Ready to Program!</h2>
+
+            <div class="learning-path">
+                <div class="step active">✓</div>
+                <div class="step-arrow">→</div>
+                <div class="step active">✓</div>
+                <div class="step-arrow">→</div>
+                <div class="step active">✓</div>
+                <div class="step-arrow">→</div>
+                <div class="step active">4</div>
+            </div>
+
+            <p><strong>What you now understand:</strong></p>
+            <ul>
+                <li><strong>Variables:</strong> How to store information in labeled boxes</li>
+                <li><strong>Data Types:</strong> Strings (text), numbers, and booleans (true/false)</li>
+                <li><strong>Functions:</strong> How to create reusable code recipes</li>
+                <li><strong>Console:</strong> Where to practice and test your JavaScript</li>
+                <li><strong>Debugging:</strong> How to read error messages and fix problems</li>
+            </ul>
+
+            <div class="analogy">
+                <p><strong>You've learned the alphabet of programming!</strong> Now you're ready to start writing words, then sentences, then stories with JavaScript.</p>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 1.2em;"><strong>Next:</strong> Connecting JavaScript to your HTML pages to make them interactive!</p>
+        </div>
+
+        <!-- Slide 10: Next Steps -->
+        <div class="slide">
+            <h2>What's Coming Next</h2>
+
+            <p><strong>In our next session, you'll learn to:</strong></p>
+
+            <div class="three-column">
+                <div class="column">
+                    <h3>🎯 Find HTML Elements</h3>
+                    <p>Connect your JavaScript to buttons, forms, and content on your webpage</p>
+                </div>
+                <div class="column">
+                    <h3>🖱️ Handle User Actions</h3>
+                    <p>Make things happen when users click, type, or interact with your site</p>
+                </div>
+                <div class="column">
+                    <h3>✨ Change Content Live</h3>
+                    <p>Update text, images, and styles based on user interactions</p>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-line comment">// Preview of what you'll build:</div>
+                <div class="code-line"><span class="keyword">let</span> button = document.getElementById(<span class="string">'my-button'</span>);</div>
+                <div class="code-line">button.addEventListener(<span class="string">'click'</span>, <span class="keyword">function</span>() {</div>
+                <div class="code-line">&nbsp;&nbsp;alert(<span class="string">'You clicked me!'</span>);</div>
+                <div class="code-line">});</div>
+            </div>
+
+            <div class="analogy">
+                <p><strong>From static to dynamic:</strong> You've learned the programming fundamentals. Now you'll make websites that respond and react to your users!</p>
+            </div>
+
+            <p style="margin-top: 30px; font-style: italic;">Ready to bring your websites to life with JavaScript?</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button onclick="changeSlide(-1)">← Previous</button>
+        <button onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('slideNumber').textContent = currentSlide + 1;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) changeSlide(1); // Swipe left
+            if (touchEndX > touchStartX + 50) changeSlide(-1); // Swipe right
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "current": {
+    "location": "Fort Worth, TX",
+    "temperature": 72,
+    "condition": "Partly Cloudy",
+    "humidity": 65,
+    "windSpeed": 8,
+    "pressure": 30.12,
+    "visibility": 10,
+    "uvIndex": 6,
+    "icon": "⛅",
+    "lastUpdated": "2024-09-20T10:30:00Z"
+  },
+  "forecast": [
+    {
+      "day": "Today",
+      "date": "2024-09-20",
+      "high": 78,
+      "low": 62,
+      "condition": "Sunny",
+      "icon": "☀️",
+      "humidity": 60,
+      "windSpeed": 5,
+      "chanceOfRain": 0
+    },
+    {
+      "day": "Tomorrow",
+      "date": "2024-09-21",
+      "high": 75,
+      "low": 58,
+      "condition": "Cloudy",
+      "icon": "☁️",
+      "humidity": 70,
+      "windSpeed": 12,
+      "chanceOfRain": 20
+    },
+    {
+      "day": "Sunday",
+      "date": "2024-09-22",
+      "high": 80,
+      "low": 65,
+      "condition": "Partly Cloudy",
+      "icon": "⛅",
+      "humidity": 55,
+      "windSpeed": 8,
+      "chanceOfRain": 10
+    },
+    {
+      "day": "Monday",
+      "date": "2024-09-23",
+      "high": 73,
+      "low": 59,
+      "condition": "Rainy",
+      "icon": "🌧️",
+      "humidity": 85,
+      "windSpeed": 15,
+      "chanceOfRain": 80
+    },
+    {
+      "day": "Tuesday",
+      "date": "2024-09-24",
+      "high": 76,
+      "low": 61,
+      "condition": "Sunny",
+      "icon": "☀️",
+      "humidity": 50,
+      "windSpeed": 6,
+      "chanceOfRain": 5
+    }
+  ],
+  "meta": {
+    "source": "Local Weather Data",
+    "timezone": "America/Chicago",
+    "units": "fahrenheit"
+  }
+}

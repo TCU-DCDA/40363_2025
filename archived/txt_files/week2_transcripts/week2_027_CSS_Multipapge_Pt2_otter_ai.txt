@@ -1,0 +1,195 @@
+We still have a few steps left to take, from this week to multi page development tutorial,
+
+a few more code snippets to borrow, a few more refinements to make to our site.
+
+So we've covered steps one through four. We've backed up our work in the repository,
+
+created a sub pages. So now go ahead enhance the image styling.
+
+So I already copied this to
+
+my style dot CSS file. So go to this resource page and copy the same content, and we can play with it accordingly.
+
+This will make a nice little difference, subtle but still nice difference. But you are welcome to play with it to fit your sense of usability and your sense of brand identity or site site identity.
+
+So going to my VS code.
+
+I'm adding this image styling CSS to the styles that
+
+CSS file. I
+
+won't make a difference yet because these these classes have not been applied yet, but we can do those pretty quickly.
+
+But let me show you one mistake that I've made that I need to address
+
+myself and then also have you address so there's one. There was one step we missed earlier on, so on the homepage, just for reference, I've inserted this image here, right? And it's working well. It's sizing properly.
+
+It's colorful with the way of I've been incomplete in terms of how I have tagged this content. So I need to add to the image tag. I need to add what's called an alt tag, a, l, T, so they all alt tags are good for a couple different things. So I'm going to have
+
+so just every simple but clear description of the content of the image which will show up as an alternative to the image if the image doesn't display properly. Say, I mistyped. So
+
+I mistyped the file name knows what happens to the display of the image itself.
+
+So we get the broken image icon, but then we have a description of what should be showing up there, right? So this is the alt tag context. So this text is showing up as an alternative to the image because the image doesn't properly named in the tag itself. So that's benefit one of two, the other one is harder to demonstrate, but equally, if not more important. So we're used to going to a website and scrolling and clicking and interacting and reading, because we have the capacities to do so. Some viewers will be consuming your web content through screen readers. The computer would would read the read the slide by line, and read that back to you. For people who don't have the capacities to read text on a screen.
+
+So what happens when they hit this image on the home page? They can't see that?
+
+What the screen reader will do then, is read the alt tag.
+
+So if a screen reader is encountering this image on your on your site or in your site, it won't be able to obviously communicate the visual detail to the
+
+viewer, but it has the alt tag to refer to read this text here
+
+as a sort of a bridge between the paragraphs, right? So we know that in between the paragraphs, they'll know that an image has been inserted and it contains
+
+briefly this content, right? So it serves two purpose here. So all images should have have this, have an alt tag there. It doesn't have to be long. This probably, probably shouldn't be long, but it should be concise and descriptive of what the content is.
+
+So for your projects, if you haven't already inserted them,
+
+this, having the alt tag say an image to to reinforce the crap, the crap principle would be pretty good. Would be, would be, would be sufficient for for an alt tag. Then adjust that phrasing accordingly for each additional image you have. But
+
+there's ways we can actually make this, the image itself, a little more styled, a little more
+
+little less sharp on the edges, a little more dimensional in some ways. So let's go ahead and look at the CSS for this page. So say you want to style the your screenshots of your of your crap examples in a unique way. So we're how we have image classification, called analysis image so every image.
+
+That you are using to illustrate your analysis, you can tag this way, which will set the width 100%
+
+and make sure it's not to exceed 800 pixels. In this case, add some margin and a border has some border radius, which we'll show in a second, and then a small channel behind the image to give a little bit more depth, a little more dimension. So I'll go back to my HTML for this page, and I'll between the image and the source tags. I'll type in the word class equals quote, unquote analysis image.
+
+So this doesn't replace anything that just just I inserted this between the image, the IMG and the SRC text. So the so the difference will be subtle, but it'll be nice. So the edges around it, there's a slight little shadow behind it.
+
+But notice also that the picture still responds well, but doesn't get too big. So this goes super large. It doesn't doesn't become it's over too overwhelming. So it kind of caps out at 800 pixels. But then it does, it go smaller? Should the browser go smaller? But
+
+there's a little bit of, little bit of rounding going on. So the edges, the corners, have been rounded through the border radius,
+
+through the border radius. So we want that to be greater. Let's make it 18 instead. Let's see what that does.
+
+Let's say, let's make it even bigger, just to kind of make the point.
+
+Yeah, well, that's even, that's even, yeah, so you can see the point. So we're adjusting,
+
+we're softening the Curt, the corners of the image with the border radius CSS.
+
+We're adding a very gentle box shadow with
+
+with this here. So this off. This offsets the shadow a little bit from the image on the X, Y and Z axes. This the color. This is the transparency I'm uh,
+
+so if you want the the border to be a different color, we could make that,
+
+make that maybe pink, just to kind of sort of show that in action.
+
+Yeah, it's there. It's not it's not great, but it's there. If you
+
+want to see it more dramatically,
+
+make the borders color, what it is, but then make the
+
+border thickness. Here,
+
+there we go. So there's ways to get, again, stylized, personalized, and also make more more unique, but also more accessible your content through through these fairly limited number of additional lines. So I'll, I'll tone this down a bit.
+
+So there's one thing that we can add still too. So this is not the alt tag
+
+itself, but it's also additional text as a caption. So even those who don't know the people in the image, they'll still know what's being described, right? So for example, you may not have known about Paul McCartney or Getty Lee. Sorry for you if that's the case, but if you'll know who these people are, then I can add a quick image that
+
+will help to correct that. So going back to my index file, and I will
+
+add in the div class
+
+equals
+
+image caption.
+
+So a little more description that does that will reinforce, but not necessarily duplicate, what's in the what's in the alt tag, but let's see how that looks then what that adds to the image, so in close proximity to the image itself. So this helps just to kind of contextualize the content here, so it's a caption for an image.
+
+So that's steps Step five, the
+
+first half of step five, we could also then add some CSS to enhance the way the
+
+headings and links appear. So again, this is for you to copy and paste into your own project.
+
+What I would do, because we already have h1 h2 tags in place, or CSS in place, I would just put beneath that so I see. I'll go here.
+
+I'll go to my CSS file.
+
+I'll look for my h1 and h2 tags, and I.
+
+Paste in my content here.
+
+Okay, so this, this is a little bit redundant to what I have already have,
+
+but I'll go ahead and keep what I have here.
+
+My h1, h2, were previously set, so this color. So I'll leave that there, but I'll take that out of here, because it's not, it's not going to hurt anything, but also not going to help anything. So I'll just to avoid confusion, I'll remove this here. This is also, then probably increasing
+
+the font size, but also the cushioning around the image, the headings and subheadings too. So let's go ahead and take a peek at that. So this cut, this doesn't contradict or replace this. It enhances or adds to that in a way that we can combine if we want to, right? But because the font sizes are different and the bottom margin is different, so because some of these elements are different. There's it's good to keep the tags separately styled.
+
+So the little bit larger.
+
+There's this line beneath this, the h2 tags, which kind of helps create a divider between the sections.
+
+So real simple stuff, but the line that we're seeing beneath h2 is being
+
+created by this
+
+and spaced by this and this.
+
+So we can make it closer further away by playing with these values. Here,
+
+we can change the thickness
+
+of the borders here,
+
+we can have a darker by
+
+playing with the values here or
+
+different color.
+
+I don't want to so I'll keep it as pale gray, so subtle
+
+enhancements. But also, things are looking more a little more a little more organized, a little more sectioned out.
+
+Probably the lines help to reinforce the scan ability. So if I somehow miss this, which I probably won't, but as if I somehow do but I catch this, the line beneath it, I'll know I'm in a new section when I hit the line below and so on.
+
+So let's restyle then that the link text. So right now, the default is a standard underlying blue text when linked, purple when visited, right? So this would turn purple when we come back to this. So
+
+this is purple when visited, blue and freshly linked. But say we want to be purple all along, because blue is not part of the the branding we're using. We could turn the
+
+tagging on, and
+
+this overrides the defaults for the linking in the hover.
+
+So now these are more TCU purple to begin with, but also then don't underline until they're hovered over. So no tech, no text decoration here, until we hover. I Yeah,
+
+okay. Since we're talking about accessibility with the alt tags, let's talk about accessibility with our links as well. So if you're
+
+if you're screen reading, or if you're tapping or you're navigating the site with the Tab key instead of a mouse. Some mice
+
+require a certain degree of dexterity that people, all people will share. We could also then set up what's called the focus for each link, so that when we get to a link, it'll be outlined. So I'm going to the top of the page,
+
+I'm hitting the Tab thing a few times, and so notice,
+
+so this gives further. This is called, this is called a colon focus,
+
+which then gives a little more definition for additional accessibility, right? So it's one more consideration we're building in from the ground up. So it's ready to go in a variety of ways for a variety of audiences and their needs. So.
+
+I'll leave you to review the remaining tests on your own.
+
+Put a reminder of what's required for the assignments, and
+
+while we're thinking about it, while we're here, while we're wrapping up the session, let's go ahead and update our
+
+remote repository.
+
+Push that good stuff to origin. I'm
+
+and we have some template to complete for project two.
+
+So the colors can change, the font choices can change, the images certainly will change. The links will change.
+
+A lot of things can change, but you have something that's played with and tinker with right? So it's better to probably make some revisions to these elements than to start from scratch. So you'll know kind of you get a sense in the playing with these elements, how CSS works, how HTML works with CSS, all that good stuff.
+
+Okay, so.
+
+Transcribed by https://otter.ai

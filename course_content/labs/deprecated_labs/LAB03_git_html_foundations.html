@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 03 – Git Introduction & HTML Foundations</title>
+    <style>
+        /* D2L-friendly embedded styles */
+        .lab-container {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .lab-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4d1979;
+        }
+        
+        .lab-title {
+            font-size: 2.2em;
+            color: #4d1979;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .lab-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 5px solid #4d1979;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #4d1979;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        .task-box {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .task-header {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+        
+        .checklist {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .checklist ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .checklist li {
+            margin-bottom: 8px;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .tip {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .git-workflow {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #0066cc;
+        }
+        
+        a {
+            color: #4d1979;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ol li, ul li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .lab-container {
+                padding: 10px;
+            }
+            
+            .lab-title {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+            
+            .task-box {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-container">
+        <header class="lab-header">
+            <h1 class="lab-title">Lab 03 – Git Introduction & HTML Foundations</h1>
+            <p class="lab-subtitle">Delivery Mode: In-Class Activity (Foundation + Tool Introduction)</p>
+            <div class="highlight">
+                <strong>📋 Goal:</strong> Introduce version control with Git/GitHub while enhancing HTML knowledge and bringing previous work into a professional workflow.
+            </div>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2 class="section-title">Learning Outcomes</h2>
+                <ul>
+                    <li>Understand why version control is essential for web development</li>
+                    <li>Set up Git and GitHub workflow</li>
+                    <li>Apply semantic HTML5 elements effectively</li>
+                    <li>Create well-structured content with proper heading hierarchy</li>
+                    <li>Transition from file-based to repository-based development</li>
+                    <li>Implement accessible HTML practices</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Prerequisites</h2>
+                <ul>
+                    <li>Completed Lab 01 (First HTML File & VS Code)</li>
+                    <li>Completed Lab 02 (File Organization & Web Dev Concepts)</li>
+                    <li>VS Code installed with extensions</li>
+                    <li>Have your Lab 1-2 project files available</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Understanding the Need for Version Control</h2>
+                <p>Before we dive in, let's understand <strong>why</strong> we need Git:</p>
+                <ul>
+                    <li><strong>Problem:</strong> As projects grow, managing file versions becomes complex</li>
+                    <li><strong>Pain Point:</strong> You've likely experienced "final_v2_REAL_final.html" naming</li>
+                    <li><strong>Solution:</strong> Git tracks changes systematically and professionally</li>
+                    <li><strong>Benefit:</strong> Industry standard for collaboration and deployment</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Tasks</h2>
+                
+                <div class="task-box">
+                    <div class="task-header">1. Git and GitHub Setup</div>
+                    <ol>
+                        <li><strong>Create GitHub account</strong> (if you don't have one):
+                            <ul>
+                                <li>Go to <a href="https://github.com" target="_blank">github.com</a></li>
+                                <li>Sign up with your TCU email</li>
+                                <li>Choose a professional username</li>
+                            </ul>
+                        </li>
+                        <li><strong>Install GitHub Desktop:</strong>
+                            <ul>
+                                <li>Download from <a href="https://desktop.github.com" target="_blank">desktop.github.com</a></li>
+                                <li>Sign in with your GitHub account</li>
+                                <li>Complete the setup process</li>
+                            </ul>
+                        </li>
+                        <li><strong>Configure Git in VS Code:</strong>
+                            <ul>
+                                <li>Open VS Code</li>
+                                <li>Go to Source Control tab (should show Git options now)</li>
+                                <li>Sign in to GitHub when prompted</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">2. Create Your First Repository</div>
+                    <ol>
+                        <li><strong>Create new repository on GitHub:</strong>
+                            <ul>
+                                <li>Go to GitHub.com → "New" (green button)</li>
+                                <li>Repository name: <code>personal-website-foundation</code></li>
+                                <li>Set to <strong>Public</strong></li>
+                                <li>Check <strong>"Add a README file"</strong></li>
+                                <li>Click <strong>"Create repository"</strong></li>
+                            </ul>
+                        </li>
+                        <li><strong>Clone repository locally:</strong>
+                            <ul>
+                                <li>Click green <strong>"Code"</strong> button → <strong>"Open with GitHub Desktop"</strong></li>
+                                <li>Choose location: Desktop or Documents folder</li>
+                                <li>Click <strong>"Clone"</strong></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">3. Migrate Your Previous Work</div>
+                    <ol>
+                        <li><strong>Open repository in VS Code:</strong>
+                            <ul>
+                                <li>GitHub Desktop → "Open in VS Code" OR</li>
+                                <li>VS Code → File → Open Folder → select your cloned repo</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transfer your Lab 1-2 files:</strong>
+                            <ul>
+                                <li>Copy <code>index.html</code> from Lab 1 into your repository</li>
+                                <li>Copy <code>about.html</code> from Lab 2 into your repository</li>
+                                <li>Create <code>css/</code> and <code>images/</code> folders</li>
+                                <li>Copy any images you've added</li>
+                            </ul>
+                        </li>
+                        <li><strong>Organize your repository structure:</strong></li>
+                    </ol>
+                    <div class="code-block">personal-website-foundation/
+├── index.html          ← From Lab 1 (enhanced)
+├── about.html          ← From Lab 2
+├── css/                ← Empty for now
+├── images/             ← Any images you've added
+└── README.md           ← GitHub created this</div>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">4. Your First Commits</div>
+                    <ol>
+                        <li><strong>Make your first commit:</strong>
+                            <ul>
+                                <li>Open GitHub Desktop or VS Code Source Control</li>
+                                <li>You'll see your files listed as "Changes"</li>
+                                <li>Commit message: <code>Initial commit: Add foundation HTML files from Labs 1-2</code></li>
+                                <li>Click <strong>"Commit to main"</strong></li>
+                                <li>Click <strong>"Push origin"</strong> to sync to GitHub</li>
+                            </ul>
+                        </li>
+                        <li><strong>Make an improvement and commit again:</strong>
+                            <ul>
+                                <li>Edit your <code>index.html</code>: improve a heading or add content</li>
+                                <li>Save the file</li>
+                                <li>Return to GitHub Desktop/Source Control</li>
+                                <li>Commit message: <code>Enhance homepage content and structure</code></li>
+                                <li>Commit and push</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">5. HTML Foundations Enhancement</div>
+                    <p>Now that your work is safely in Git, let's enhance your HTML:</p>
+                    <ol>
+                        <li><strong>Improve semantic structure in both files:</strong>
+                            <ul>
+                                <li>Ensure proper <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> structure</li>
+                                <li>Use <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code> appropriately</li>
+                                <li>Add <code>&lt;aside&gt;</code> for supplementary content if relevant</li>
+                            </ul>
+                        </li>
+                        <li><strong>Enhance your <code>index.html</code>:</strong>
+                            <ul>
+                                <li>Add proper heading hierarchy (h1 → h2 → h3)</li>
+                                <li>Include meaningful <code>&lt;meta&gt;</code> description</li>
+                                <li>Add basic navigation structure (don't worry about links yet)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Enhance your <code>about.html</code>:</strong>
+                            <ul>
+                                <li>Ensure consistent structure with index.html</li>
+                                <li>Add more detailed content sections</li>
+                                <li>Practice semantic HTML elements</li>
+                            </ul>
+                        </li>
+                        <li><strong>Add accessibility improvements:</strong>
+                            <ul>
+                                <li>Ensure all images have proper <code>alt</code> attributes</li>
+                                <li>Use meaningful link text (no "click here")</li>
+                                <li>Proper heading hierarchy for screen readers</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">6. Git Workflow Practice</div>
+                    <ol>
+                        <li><strong>Make incremental commits</strong> as you work:
+                            <ul>
+                                <li><code>Improve semantic structure in index.html</code></li>
+                                <li><code>Add accessibility improvements to about page</code></li>
+                                <li><code>Enhance navigation structure</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>Learn to read your Git history:</strong>
+                            <ul>
+                                <li>GitHub Desktop → History tab</li>
+                                <li>See how your project evolves over time</li>
+                                <li>This is the power of version control!</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Content Requirements</h2>
+                
+                <div class="task-box">
+                    <div class="task-header">Enhanced index.html should include:</div>
+                    <ul>
+                        <li>Proper semantic HTML5 structure</li>
+                        <li>Professional <code>&lt;head&gt;</code> section with meta tags</li>
+                        <li>Clear heading hierarchy (h1, h2, h3)</li>
+                        <li>Navigation structure (even if links don't work yet)</li>
+                        <li>At least 3 main content sections</li>
+                        <li>Accessibility considerations</li>
+                    </ul>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">Enhanced about.html should include:</div>
+                    <ul>
+                        <li>Consistent structure with homepage</li>
+                        <li><strong>Background section:</strong> Personal/academic background</li>
+                        <li><strong>Skills section:</strong> What you're learning/good at</li>
+                        <li><strong>Goals section:</strong> Course and career objectives</li>
+                        <li><strong>Interests section:</strong> What drives your curiosity</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Success Criteria</h2>
+                <div class="checklist">
+                    <ul>
+                        <li>☐ GitHub account created and configured</li>
+                        <li>☐ Repository successfully created and cloned</li>
+                        <li>☐ Lab 1-2 work successfully migrated to Git</li>
+                        <li>☐ At least 3 meaningful commits made</li>
+                        <li>☐ Both HTML files use proper semantic structure</li>
+                        <li>☐ Consistent navigation structure across pages</li>
+                        <li>☐ All HTML validates without errors</li>
+                        <li>☐ Basic accessibility practices implemented</li>
+                        <li>☐ Repository visible on GitHub with commit history</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Submission Instructions</h2>
+                <ol>
+                    <li><strong>Ensure all work is committed and pushed</strong> to GitHub</li>
+                    <li><strong>Test your repository:</strong>
+                        <ul>
+                            <li>Visit your repository on GitHub.com</li>
+                            <li>Verify all files are present and up-to-date</li>
+                            <li>Check that commit messages are meaningful</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submit repository URL</strong> to D2L assignment:
+                        <ul>
+                            <li>Copy your repository URL from GitHub</li>
+                            <li>Paste into D2L submission: <code>https://github.com/yourusername/personal-website-foundation</code></li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <div class="git-workflow">
+                <h3>🔄 Git Workflow Summary</h3>
+                <p>Remember this pattern for all future work:</p>
+                <ol>
+                    <li><strong>Make changes</strong> to your files</li>
+                    <li><strong>Save</strong> your files (Cmd/Ctrl + S)</li>
+                    <li><strong>Commit</strong> with a meaningful message</li>
+                    <li><strong>Push</strong> to sync with GitHub</li>
+                    <li><strong>Repeat</strong> as you iterate and improve</li>
+                </ol>
+            </div>
+
+            <div class="tip">
+                <h3>💡 Troubleshooting Tips</h3>
+                <ul>
+                    <li><strong>GitHub Desktop not syncing?</strong> Check your internet connection and try "Fetch origin"</li>
+                    <li><strong>Files not showing in VS Code?</strong> Make sure you opened the repository folder, not individual files</li>
+                    <li><strong>Commit button grayed out?</strong> Make sure you've made changes and they're saved</li>
+                    <li><strong>Git seems overwhelming?</strong> Focus on the basic cycle: Change → Save → Commit → Push</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>🔮 Looking Ahead</h3>
+                <p>This Git workflow will now be your standard process for all future labs. You'll enhance this same repository with CSS, JavaScript, and more advanced features. The investment in learning Git now pays dividends throughout the course!</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

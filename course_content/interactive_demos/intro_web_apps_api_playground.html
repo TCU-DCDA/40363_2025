@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intro to Web Apps — JS API Playground</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151c34; --muted:#9aa4b2; --text:#f1f5f9; --accent:#4f46e5; --accent-2:#06b6d4; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(11,16,32,.95),rgba(11,16,32,.85));backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    h1{margin:8px 0 4px;font-size: clamp(22px, 3vw, 30px)} h2{margin:26px 0 12px;font-size: clamp(18px,2.4vw,24px)} h3{margin:18px 0 8px;font-size: clamp(16px,2vw,20px)}
+    .sub{color:var(--muted)}
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .tab{padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;cursor:pointer;user-select:none}
+    .tab.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));border-color:transparent}
+    section{display:none;padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));margin:16px 0}
+    section.active{display:block}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .card h4{margin:4px 0 8px}
+    .btn{appearance:none;border:none;border-radius:10px;padding:8px 12px;background:var(--accent);color:#fff;cursor:pointer}
+    .btn.alt{background:var(--accent-2);}
+    .btn:disabled{opacity:.6;cursor:not-allowed}
+    .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    input[type="text"], input[type="date"], input[type="number"], input[type="search"]{background:#0d142b;color:var(--text);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:8px 10px;width:100%}
+    code, pre{background:#0d142b;color:#e2e8f0;border-radius:10px}
+    pre{padding:10px;overflow:auto;max-height:220px;border:1px solid rgba(255,255,255,.08)}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.2);font-size:12px;color:var(--muted)}
+    .table{width:100%;border-collapse:collapse;font-size:14px}
+    .table th,.table td{padding:8px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .bar{height:16px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:8px}
+    details{background:#0d142b;border:1px solid rgba(255,255,255,.12);padding:10px;border-radius:10px}
+    footer{color:var(--muted);padding:28px 0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Intro to Web Apps — JavaScript API Playground</h1>
+      <div class="sub">Weekly-aligned practice: HTTP/JSON → Tables/Charts → Params/Error Handling → Mini‑App</div>
+      <div class="tabs" id="tabs">
+        <div class="tab active" data-target="w1">Week 1 · HTTP + JSON</div>
+        <div class="tab" data-target="w2">Week 2 · Tables + Visuals</div>
+        <div class="tab" data-target="w3">Week 3 · Params + Robustness</div>
+        <div class="tab" data-target="w4">Week 4 · Mini‑App + Keys</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Week 1 -->
+    <section id="w1" class="active">
+      <h2>Week 1 — HTTP + JSON Basics <span class="pill">fetch · async/await · DOM</span></h2>
+      <p class="muted">Goal: make a GET request, parse JSON, and render one or two fields to the page.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>JokeAPI — Programming joke</h4>
+          <div class="row"><button class="btn" onclick="exJoke()">Get Joke</button></div>
+          <pre id="jokeOut" class="muted">Click to fetch…</pre>
+          <details><summary>Challenge</summary>Change category to <code>Any</code> and exclude NSFW via query params <code>?blacklistFlags=nsfw</code>.</details>
+        </div>
+        <div class="card">
+          <h4>Bored API — Activity idea</h4>
+          <div class="row"><button class="btn" onclick="exBored()">Get Activity</button></div>
+          <pre id="boredOut" class="muted">Click to fetch…</pre>
+          <details><summary>Challenge</summary>Fetch 3 unique <code>education</code> activities (hint: loop until you have 3 unique texts).</details>
+        </div>
+        <div class="card">
+          <h4>Yes/No — Quick decision</h4>
+          <div class="row"><button class="btn" onclick="exYesNo()">Ask the Oracle</button></div>
+          <pre id="yesnoOut" class="muted">Click to fetch…</pre>
+          <details><summary>Challenge</summary>Build a tiny 2‑input UI: a question text field + button, then show the answer and GIF URL.</details>
+        </div>
+        <div class="card">
+          <h4>Dog CEO — Random dog image</h4>
+          <div class="row"><button class="btn" onclick="exDog()">Random Dog</button></div>
+          <div id="dogImgWrap" style="margin-top:8px"></div>
+          <details><summary>Challenge</summary>Fetch 3 image URLs and render a simple gallery.</details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Week 2 -->
+    <section id="w2">
+      <h2>Week 2 — Tables + Visuals <span class="pill">arrays · table DOM · simple bars</span></h2>
+      <p class="muted">Goal: transform JSON arrays into a table, then a quick visual without external libraries.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>REST Countries — Mini table</h4>
+          <div class="row">
+            <input type="text" id="countryInput" placeholder="canada, mexico, united states" />
+            <button class="btn" onclick="exCountries()">Build Table</button>
+          </div>
+          <div id="countriesTable" style="margin-top:10px"></div>
+          <details><summary>Challenge</summary>Add two more countries and sort by population descending.</details>
+        </div>
+        <div class="card">
+          <h4>USGS Earthquakes — Last 24h</h4>
+          <div class="row"><button class="btn" onclick="exQuakes()">Load Quakes</button></div>
+          <div id="quakesWrap" style="margin-top:10px"></div>
+          <details><summary>Challenge</summary>Compute average magnitude and show the top 10 by magnitude.
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Week 3 -->
+    <section id="w3">
+      <h2>Week 3 — Params + Robustness <span class="pill">search · query params · try/catch</span></h2>
+      <p class="muted">Goal: use query params, handle empty results, and show helpful error messages.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>The Met Museum — Search → results</h4>
+          <div class="row">
+            <input type="search" id="metTerm" placeholder="Search term e.g. van gogh" />
+            <button class="btn" onclick="exMet()">Search</button>
+          </div>
+          <div id="metOut" style="margin-top:10px"></div>
+          <details><summary>Challenge</summary>Paginate through 10 at a time. Add a filter to show only items with images.</details>
+        </div>
+        <div class="card">
+          <h4>Open Library — ISBN lookup</h4>
+          <div class="row">
+            <input type="text" id="isbn" placeholder="e.g. 0451526538" />
+            <button class="btn" onclick="exOpenLibrary()">Lookup</button>
+          </div>
+          <pre id="olOut" class="muted">Enter ISBN and click Lookup…</pre>
+          <details><summary>Challenge</summary>Handle invalid ISBNs gracefully and show a friendly message.</details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Week 4 -->
+    <section id="w4">
+      <h2>Week 4 — Mini‑App + Keys <span class="pill">APOD · OpenWeather (optional key) · project</span></h2>
+      <p class="muted">Goal: one end‑to‑end mini‑app (inputs → API → render). Note: client‑side API keys are public; prefer no‑key APIs or server proxies for real apps.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>NASA APOD — DEMO_KEY</h4>
+          <div class="row">
+            <input type="date" id="apodDate" />
+            <button class="btn" onclick="exAPOD()">Get APOD</button>
+          </div>
+          <div id="apodOut" style="margin-top:10px"></div>
+          <details><summary>Challenge</summary>Show a previous/next date navigator; display title + explanation + image/video.</details>
+        </div>
+        <div class="card">
+          <h4>Mini‑App Ideas</h4>
+          <ul class="muted">
+            <li><strong>Art Finder:</strong> Search The Met, list 10 results, click to preview details.</li>
+            <li><strong>Quake Watch:</strong> USGS top 10 by magnitude + simple bar visualization.</li>
+            <li><strong>Weather Reporter:</strong> (Optional key) Compare temps for 3 cities.</li>
+          </ul>
+          <details><summary>Rubric idea</summary>
+            <ul>
+              <li>✅ Fetch works and handles errors</li>
+              <li>✅ Clean DOM rendering (table or cards)</li>
+              <li>✅ One interaction (search, select, or filter)</li>
+              <li>✅ Short README in comments explaining your approach</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap">
+      <p>Built for teaching: no frameworks, no external libraries. All vanilla HTML/CSS/JS.</p>
+    </footer>
+  </main>
+
+<script>
+// --- tiny utilities ---
+const $ = (sel, el=document) => el.querySelector(sel);
+const el = (tag, attrs={}) => Object.assign(document.createElement(tag), attrs);
+const setHTML = (id, html) => { const n = document.getElementById(id); if(n) n.innerHTML = html; };
+const pretty = o => `<pre>${escapeHTML(JSON.stringify(o, null, 2).slice(0, 8000))}</pre>`;
+const escapeHTML = s => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
+
+async function safeGet(url) {
+  try {
+    const res = await fetch(url, { headers: { 'Accept': 'application/json' }});
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const ct = res.headers.get('content-type') || '';
+    if (ct.includes('application/json')) return await res.json();
+    return { text: await res.text() };
+  } catch (err) {
+    return { error: String(err) };
+  }
+}
+
+// --- Week 1 examples ---
+async function exJoke(){
+  const data = await safeGet('https://v2.jokeapi.dev/joke/Programming');
+  if(data.error){ setHTML('jokeOut', data.error); return; }
+  const out = data.type === 'single' ? data.joke : `${data.setup}\n\n${data.delivery}`;
+  setHTML('jokeOut', escapeHTML(out));
+}
+
+async function exBored(){
+  const data = await safeGet('https://www.boredapi.com/api/activity');
+  if(data.error){ setHTML('boredOut', data.error); return; }
+  setHTML('boredOut', `${escapeHTML(data.activity)}\n\nType: ${escapeHTML(data.type)} | Participants: ${data.participants}`);
+}
+
+async function exYesNo(){
+  const data = await safeGet('https://yesno.wtf/api');
+  if(data.error){ setHTML('yesnoOut', data.error); return; }
+  setHTML('yesnoOut', `Answer: ${escapeHTML(data.answer)}\nGIF: ${escapeHTML(data.image)}`);
+}
+
+async function exDog(){
+  const data = await safeGet('https://dog.ceo/api/breeds/image/random');
+  const wrap = $('#dogImgWrap');
+  wrap.innerHTML = '';
+  if(data.error){ wrap.textContent = data.error; return; }
+  const img = el('img', { src: data.message, alt: 'Random dog', style: 'max-width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15)'});
+  wrap.append(img);
+}
+
+// --- Week 2 ---
+async function exCountries(){
+  const input = $('#countryInput').value || 'canada, mexico, united states';
+  const names = input.split(',').map(s => s.trim()).filter(Boolean);
+  const rows = [];
+  for(const name of names){
+    const data = await safeGet(`https://restcountries.com/v3.1/name/${encodeURIComponent(name)}`);
+    if(Array.isArray(data) && data[0]){
+      const c = data[0];
+      rows.push({
+        name: c?.name?.common || name,
+        region: c?.region || '—',
+        population: c?.population || 0,
+        cca2: c?.cca2 || '—'
+      });
+    }
+  }
+  // table
+  let html = '<table class="table"><thead><tr><th>Name</th><th>Region</th><th>Population</th><th>Code</th></tr></thead><tbody>';
+  for(const r of rows){
+    html += `<tr><td>${escapeHTML(r.name)}</td><td>${escapeHTML(r.region)}</td><td>${r.population.toLocaleString()}</td><td>${escapeHTML(r.cca2)}</td></tr>`;
+  }
+  html += '</tbody></table>';
+  // quick bar visual of population
+  const max = Math.max(...rows.map(r=>r.population), 1);
+  html += '<div style="margin-top:12px">';
+  for(const r of rows){
+    const w = Math.max(6, Math.round((r.population / max) * 100));
+    html += `<div style="margin:6px 0">${escapeHTML(r.name)}<div class="bar" style="width:${w}%"></div></div>`;
+  }
+  html += '</div>';
+  setHTML('countriesTable', html);
+}
+
+async function exQuakes(){
+  const data = await safeGet('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson');
+  const feats = data.features || [];
+  const rows = feats.map(f => ({ place: f.properties?.place, mag: f.properties?.mag ?? null }));
+  const n = rows.length;
+  const mags = rows.map(r => r.mag).filter(m => typeof m === 'number');
+  const avg = mags.length ? (mags.reduce((a,b)=>a+b,0)/mags.length).toFixed(2) : '—';
+  rows.sort((a,b)=> (b.mag??-999) - (a.mag??-999));
+  let html = `<div class="muted">Events: ${n} | Avg magnitude: ${avg}</div>`;
+  html += '<table class="table"><thead><tr><th>Place</th><th>Mag</th></tr></thead><tbody>';
+  for(const r of rows.slice(0,10)){
+    html += `<tr><td>${escapeHTML(r.place||'—')}</td><td>${r.mag??'—'}</td></tr>`;
+  }
+  html += '</tbody></table>';
+  setHTML('quakesWrap', html);
+}
+
+// --- Week 3 ---
+async function exMet(){
+  const term = ($('#metTerm').value || 'van gogh').trim();
+  const search = await safeGet(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${encodeURIComponent(term)}&hasImages=true`);
+  const ids = (search.objectIDs || []).slice(0, 5);
+  if(ids.length === 0){ setHTML('metOut', `<div class="muted">No results for “${escapeHTML(term)}”. Try another term.</div>`); return; }
+  const cards = [];
+  for(const id of ids){
+    const obj = await safeGet(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`);
+    const title = obj.title || 'Untitled';
+    const artist = obj.artistDisplayName || '—';
+    const date = obj.objectDate || '—';
+    const img = obj.primaryImageSmall || '';
+    cards.push(`<div class="card"><h4>${escapeHTML(title)}</h4><div class="muted">${escapeHTML(artist)} — ${escapeHTML(date)}</div>${img?`<img src="${img}" alt="${escapeHTML(title)}" style="max-width:100%;margin-top:8px;border-radius:12px;border:1px solid rgba(255,255,255,.15)"/>`:''}</div>`);
+  }
+  setHTML('metOut', `<div class="grid">${cards.join('')}</div>`);
+}
+
+async function exOpenLibrary(){
+  const isbn = ($('#isbn').value || '0451526538').trim();
+  const url = `https://openlibrary.org/api/books?bibkeys=ISBN:${encodeURIComponent(isbn)}&format=json&jscmd=data`;
+  const data = await safeGet(url);
+  const book = data[`ISBN:${isbn}`];
+  if(!book){ setHTML('olOut', `No data for ISBN ${escapeHTML(isbn)}.`); return; }
+  const title = book.title || '—';
+  const authors = (book.authors||[]).map(a=>a.name).join(', ') || '—';
+  const cover = book.cover?.medium || book.cover?.large || '';
+  setHTML('olOut', `${escapeHTML(title)}\nby ${escapeHTML(authors)}\n${cover?`Cover: ${cover}`:''}`);
+}
+
+// --- Week 4 ---
+async function exAPOD(){
+  const date = $('#apodDate').value; // optional
+  const params = new URLSearchParams({ api_key: 'DEMO_KEY' });
+  if(date) params.set('date', date);
+  const data = await safeGet(`https://api.nasa.gov/planetary/apod?${params.toString()}`);
+  if(data.error){ setHTML('apodOut', data.error); return; }
+  const { title, explanation, url, media_type } = data;
+  let html = `<h3>${escapeHTML(title||'Astronomy Picture of the Day')}</h3><p class="muted">${escapeHTML(explanation||'')}</p>`;
+  if(media_type === 'image' && url){ html += `<img src="${url}" alt="APOD" style="max-width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15)"/>`; }
+  else if(url){ html += `<p><a class="btn alt" href="${url}" target="_blank" rel="noopener">Open media</a></p>`; }
+  setHTML('apodOut', html);
+}
+
+// Tabs
+$('#tabs').addEventListener('click', (e)=>{
+  const t = e.target.closest('.tab');
+  if(!t) return;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  const id = t.getAttribute('data-target');
+  document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+});
+</script>
+</body>
+</html>

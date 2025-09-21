@@ -1,0 +1,361 @@
+Hey. So I thought I would begin today's tutorial. Instead of going straight into the tutorial itself, I thought we'd look at some examples from the wild. So these are examples that came up and discussion from last week. So here's not the Patagonia homepage. By the Patagonia sub page, they have a section called stories, but you sort of notice how they have features similar to what we've we've been playing with so far. So top navigation,
+
+then a large, striking, interesting, windswept banner, image, Hero graphic right with text, text on top.
+
+And then we see what's arranged into what we call then the flux box tutorial, cards, right, individual cards. And then, so they're they have thumbnails, they have text, they're interactive, but we see the kind of the layout being similar to the rows the way we sort of thought about and played with the flux box tutorial. So this is, you know, what was, what we're doing. There is very much part of design these days, right? And it's a very useful way of getting a lot of content up pretty high on the page in a desktop view, so it is responsive. So we can go ahead and do an inspection of the other responsiveness with the Inspect tool. I
+
+Okay, so we have the, I just resize things to be, you know, sort of laptop, laptop size.
+
+So we have the banner image
+
+and the cards and set into rows with the thumbnails and text inside each one.
+
+So pretty clean. There's also notice the rounded edges in the corner. So we talked about that as well.
+
+We have then gaps between the elements that are giving some breathing room between them, so it doesn't look too too cluttered, even though there's a lot of information here. So if we give go to a smaller phone layout, so iPhone 14,
+
+we have in the card stacking, right? So, like what we did yesterday with Flux box, we have sort of what seems to be flux box and not an action
+
+in this mobile this iPhone mobile view. And
+
+one thing I realized that we could also do, because with phones, we have the option to go
+
+landscape or portraits, right? We have differentiation to play with, and things should respond to those, those changes as well
+
+you can there's a little phone icon with little arrows on top and bottom in different directions, you can rotate the view.
+
+Something interesting happens here, actually.
+
+So I went from a three card row
+
+to a column, which is what we did previously with the Flexbox tutorial.
+
+But notice what happens here, and this is leads us into today's discussion. If we flip, flip even the mobile device, let's see
+
+if we flip the iPhone 14, which
+
+is currently arranged as a column, and what could be Flexbox at the moment, we go here
+
+and we have two rows, right? So we're dealing both with things are arranging based on the available space of the window in both rows and count columns simultaneously. So it's not just a row or column, but it was a combination of both. So it's almost two dimensional, where flex boxes one dimensional, either a row or a column. Grid layout, which we'll get into today, allows us to combine both columns and rows in the same in the same container. So when we go back to this more extract view of things
+
+with the Flexbox tutorial, we started off with a column layout for mobile view. Because we're doing mobile first. We're thinking conceptualizing mobile first before then we sort of think about how things might rearrange sensibly and productively with a wider desktop view, right? So, orange column, orange row. But when you get into additional elements, older articles or older content or things are less important to for the viewer to see first, which would be the orange stuff here
+
+we have then
+
+a row here, like it took a gray row, like this, orange row, both four boxes instead of three. But then those four boxes arranged into both a column and row both, right? So we have columns and rows both going on here.
+
+So this, this tutorial, is available through the.
+
+Too well as as are the previous ones from last week and this week.
+
+Flexbox, again, is quote, unquote, one dimensional. So it works either with rows or columns, but not both simultaneously with grid. You can work in two dimensions. So it's you can work both and with rows and columns in the same design.
+
+So flex boxes for simple distributions raises for more structured and complex layouts.
+
+Okay, so let's go ahead, go ahead and get things set up the way we have before.
+
+So I'll start with our friend the purple cat.
+
+I don't need to, but you may need to do a commit to save the most recent files that you've edited. So go ahead and save your local changes so that this phrase here the local changes appears, and then let's go ahead and open up our current repository inside Visual cube Studio code,
+
+so I'm opening up into the flex box tutorial from last time, which is fine. We can keep we can keep this for reference again, remember just how simple the code is, both with the HTML, but also even relatively so with the CSS. The same will be true today with grid. Okay, so I'm going to close the Flexbox folder so I won't confuse myself. I'm going to open up the grid folder and then add in the same two files, the standard two files of index, dot HTML,
+
+and the same thing in the same folder, style, dot css, weekly folder, grid subfolder, style, dot CSS here,
+
+Week Three folder, grid folder, index, dot HTML file here, but otherwise, keep them empty for time being.
+
+We'll go to Step one, and we'll pull the basically HTML setup, so also a very small number of lines
+
+to grab,
+
+make sure we're inside our our grid, index file,
+
+paste in step one.
+
+So here we have 17 lines. So even fewer lines the body box, instead of a main we have what's called a grid container, which is going to have probably its own CSS attached to its own CSS class attached to it, which we'll examine in a moment.
+
+Header box is probably the navigation. Go
+
+ahead and change that there for for clarity. Hero is banner,
+
+image
+
+and features and gallery hold leave the same.
+
+So go ahead and preview this, and we'll have something
+
+underway, but not gripping at all.
+
+So again, to emphasize just what CSS does to HTML, the HTML is here as well as well structured. It makes a lot of good sense.
+
+It doesn't do much without the help of CSS, right? So CSS is a huge player in this conversation.
+
+We'll grab the simple mobile base styles,
+
+which isn't that much, but it will make a nice difference.
+
+So I'm going over to the style sheet here, so make sure you're in the right file, right? So I started in the HTML file as I should have, as I needed to, but now I'm going to the CSS file instead to paste in what I get from step two.
+
+So nothing's happening here, even though a lot of success has been put into place.
+
+I'll pause for a second and have you look just at the HTML code for a second.
+
+And there's a problem that we can correct, but there's a problem.
+
+So what is the problem?
+
+Okay, so you'll notice that what we what we copied from here, from the the
+
+code available here
+
+is working fine,
+
+but it's semantically incomplete. So the tutorial is, is is on track, but is missing a key element. So follow me here, and we always had this to come back to, but
+
+this should make a nice difference first, let's go ahead and kill what's available here.
+
+Here.
+
+And let's start outside of that. The default templates for an HTML page that we've done previously haven't done in a while. So you type in exclamation point tab,
+
+we get the more complete template. So what we copied before that gave us the body tag content, but did not give us this, which is very important for things to display properly in the browser. So we can put the code back in from here, from step one. So I'll take that and replace the body tags with what was the step one here.
+
+So that should help, but that may not be enough, and I'll ask you to reflect if there's still a problem. Okay,
+
+so nothing has changed during the preview, the simple preview, even though we do have a more semantically complete HTML page. So let me go back to hearing again and do a little sort of quiz.
+
+What's missing here? The styles are in place. The styles are not. There's no errors coming up here in terms of the styles being poorly, poorly formatted.
+
+There's no problems to identify here. So what's the issue? I would ask.
+
+Okay, so one thing, the thing that didn't come with the generation of this content,
+
+that we still need is to link this
+
+external style sheet to the HTML page.
+
+So this this page doesn't know to reference this file. It's the file is ready to go, but this doesn't know it needs to be calling in things from that file yet. So inside the head tag. So I'm just going to go just beneath the title
+
+here, I'm going to type in link.
+
+Now, we've done this before. REL
+
+equals quote, unquote style sheet.
+
+End, quote,
+
+HR, EF equals,
+
+and if we preview that, we have a much different creature here.
+
+So is missing this important connection from or between files. But again, do the do a preview,
+
+and it looks like yesterday, but we have the additional sort of gallery gray boxes here. I imagine it's still not responsive. It's not responsive yet because there's no media queries in place yet.
+
+I'm so the review of the CSS should be pretty straightforward, okay, so, because we're so
+
+instead for this page, instead of a main section inside the body,
+
+we have a a div, this class grid containers, we have a box, box that's basically a big name grid container,
+
+and that begins just before the opening body tag, or just after the opening body tag and before the closing body tag. So all the visible content is in the body and furthermore, on this on this page, all the visible content is also inside the first sub box called Grid container. So grid container then is styled pretty simply
+
+as a grid instead of flex. The display is set to grid because we're working with the more complex row and column combo. So we have to say this, this box will be a grid container, as opposed to nothing or as opposed to a flex container. The
+
+spacing between grid and flex elements is not called margin. It's called gap. That's a point we made before. Okay, so that's all that's being defined here.
+
+So then we have header, Hero features, and gallery has the next boxes that are being styled here. Let's see there other places. So the header boxes here.
+
+So again, I'll read, I'll call header navigation,
+
+I'll call hero banner,
+
+and I'll leave the features and items or gallery that as it
+
+is so these three or from, sorry, four boxes are being defined here.
+
+Header hero features gallery.
+
+Header hero features gallery, so background colors of
+
+to default if others don't, other codes don't work.
+
+Padding is this, in this case, is the space
+
+left and right, top and top and bottom, the cushion.
+
+Inside the box. So the space between the word navigation and the word banner, I'm sorry, the word navigation, top navigation, bottom, the space here, or the space here, or the space here, is a cushioning, a padding, a bubble wrap, basically of 20 pixels on on each side, and Texas line in the center. So it's being centered vertically by the padding. In this case, it's being centered horizontally by text align. So we have the color set to default here for all four, they're all the same color. The other colors fail. But then each one is giving given its own color, and
+
+that's all. It's happening in the next four lines,
+
+that background color and foreground color two.
+
+So I prefer again, my TCU purple, my purse, TCU purple, 4d, 1979,
+
+now that we have, then the features box,
+
+which then has just three kind of generic sub, sub div sub boxes inside of it. And the same thing, we have four generic sub sub boxes inside the gallery box. Okay, let's look at the syntax here. So we have
+
+display grid set up here, right? So this is a grid container, right? That's why it's called container.
+
+But we need to confirm that the other elements inside this larger, this larger grid container, are also should be displayed in the grid technique, or the grid layout approach. It's lines 21 and 27 so the one fr, let's, let's explain that first, then we'll compare that to what's going on in line 27 so grid, template, column. So things, set things up into a column
+
+with the available space. Fill that with one what's what's called one, fractional units. So basically, this one, this one fr here, is equal to sizing it 100% of that, of that containers, the larger containers width.
+
+So we have here, then in for a gallery,
+
+one fr, one Fr. That's not two fr for two fractional units, but one fractional unit plus one more fractional unit. I can see how this will be a little bit confusing. It took me some time to get my mind around it. Okay, so kind of to make the point maybe a little bit clearer. So say I change one fr, one fr to two fr, one Fr.
+
+So one box taking up the whole spaces, two boxes combined taking up the whole space.
+
+But they're different. They should be different sizes.
+
+So now item one and item three are twice as wide as item item two and item 422,
+
+those have been divided into three fractional units. Two of them are item one. One of them is item two to the to the fractional units here, or item three. One fractional unit is item four. To make that point even further,
+
+let's try this. Let's just get really kind of weird. So
+
+this is basically 1/3 or 2/6 of this fractional space. This is 4/6 of the fractional space,
+
+or two thirds, 1/3 two thirds. So that might help a little bit. But I think probably changing this to just this to like 10, for example, shouldn't change anything.
+
+It's maybe perhaps theoretically divided into 10 units, but it's all just one big sort of all that is being used for this one box. So take some practice. Take some playing.
+
+Let me return this to the original values. I
+
+So again, this is how things are displaying in the mobile view, right? So we're designing with this with this view in mind first.
+
+Well, we want things to rearrange themselves once we get to
+
+this view.
+
+Okay? So we need to define the break points, which is where the media query start, makes the changes, creates the conditions to change things, from layout one to layout two, where the mobile design will then rearrange itself into the desktop design. And that is grabbed from the tutorial.
+
+And the media query is pretty short, because really only two of the four of the four divs are being redesigned for the desktop view,
+
+so going to the bottom of the page. So media queries go at the bottom, not the top. Paste in this.
+
+Make a quick note. I'm.
+
+Okay, so we have the media query which we looked at before, right? The minimum width, not maximum. Minimum hyphen width is 768, which is a standard, standard break point.
+
+We're redefining simply the grid column arrangements of
+
+the feature box and the gallery box, and
+
+we'll talk about the syntax here in a second, but
+
+let's go ahead and preview that,
+
+so we may already notice the difference here.
+
+So original mobile view,
+
+so new
+
+desktop view,
+
+original mobile view, break points, new desktop view.
+
+And again, what this is doing is trying, is trying to get the as much information as you can higher in the screen, right?
+
+So we're sort of limited by mobile devices to have to scroll a lot because there's images to scroll past or scroll through our videos to look over
+
+before I get to the next block of written content. So that's part of the expectation here. But
+
+if we can, we have the space to do so, as we do on a laptop or desktop, we should try to get
+
+as much information as we can above the fold, which is above, before we before we start scrolling down beneath what's visible at the bottom of the screen. So this will help do that. So this is now in a column in the mobile view.
+
+The orange boxes are boxes are in a row.
+
+This is both rows and columns
+
+for the gallery items
+
+that's been flattened then or arranged simply into a single row in the desktop view to kind of bring that to lift that content higher and on the screen.
+
+Okay, so notice we just are redefining the features in gallery
+
+and just the grid template columns layout. So we went from one FL, one of our
+
+in the mobile view, or like for the feature section,
+
+we're going to the repeat three comma one fr, which is
+
+a more complex way of saying the same thing as we this
+
+is a more concise way of saying what they Probably should have done instead.
+
+One fr,
+
+one fr, I Yeah.
+
+Okay, so to be a little more parallel to this, so we started off in the mobile view
+
+with a
+
+single column of one box per row.
+
+Here we have a single row
+
+of three equally sized boxes,
+
+right? So it's basically doing what the grid was the Flexbox could do, but we're doing it all inside the grid method, which is, you know, helps it be a little more concise instead of having to combine both.
+
+So what is what that we had here originally says the same thing. So we had repeat three one Fr. Here
+
+is the same way of saying, one fr, one fr, one fr, so one fractional unit
+
+followed by two more fractional units of the same size.
+
+So then the same thing is happening here. We'll leave this in text. So this is basically the same as saying one fr, one fr, one fr, one fr, so one of our repeated four times. So what starts off as two
+
+FRS, fractional units here should go into one row of four fractional units. So
+
+so what I would suggest you do, I won't do it now, but what I suggest you do is to add boxes
+
+play with the number of FRS per
+
+per display, per layout, so per mobile layout versus per
+
+desktop layout.
+
+And then play with the width the numbers here relative to each other. So you can bet you can play with sizing
+
+by changing the value of one of the FRS you.
+
+Yeah. So right now in the mobile view, this is the this is the feature section. Mobile view of the boxes are all the same size, but if you want to, you can have
+
+the middle, the middle, the second box of the feature section be three
+
+times as big as the other two boxes. So it's being divided into
+
+five, five units. Three fifths of the of the unit
+
+belong just to the width of the feature two box.
+
+So I'll go ahead and return this to the original. I'm
+
+okay, so that's that's pretty much it for this tutorial, right? We've looked at an example,
+
+a couple examples from Vogue and Patagonia out in the world, the who are very different audiences, very different sites in terms of the content, but are using a similar underlying sort of structure
+
+that's not so far off from what we have here,
+
+right? So this is kind of a, not a universal form, but kind of a general sort of we're looking at, kind of the design in a meta level, so kind of a higher, higher view of the commonalities between the web page designs. So these wire frames help to illustrate one of many sort of broader templates that are that are commonly in use today. And so
+
+what we'll start playing with in the next set of videos is we have a page now that's been roughed out.
+
+We have the boxes then being assigned different purposes or different functions. So navigation, Banner, image, you know, primary content, secondary content, perhaps most time sensitive, most current content, interesting, but maybe a little little more dated content here, possibly. So there's a hierarchy that this helps to suggest it's a
+
+matter of consistent user experience, because they're going to expect navigation at the top. They can expect a strong visual impression being made with by a banner.
+
+Then we have room to imagine. Then where do our things go? Okay, so we've moved from this broader design to then how should we handle the elements, textual elements and visual elements that go inside these boxes?
+
+So one way I talked about was image sizing, but to also text sizing, text formatting will be part of our next set of videos.
+
+Thanks. You.
+
+Transcribed by https://otter.ai

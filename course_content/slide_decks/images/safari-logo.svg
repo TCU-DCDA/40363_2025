@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#007AFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0051D0;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="compassFace" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F0F0;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Outer circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#blueGrad)" stroke="#0051D0" stroke-width="4"/>
+  
+  <!-- Inner compass face -->
+  <circle cx="256" cy="256" r="200" fill="url(#compassFace)" stroke="#CCC" stroke-width="2"/>
+  
+  <!-- Compass markings -->
+  <g stroke="#333" stroke-width="2" fill="none">
+    <!-- Cardinal directions -->
+    <line x1="256" y1="76" x2="256" y2="96" stroke-width="3"/>
+    <line x1="256" y1="416" x2="256" y2="436" stroke-width="3"/>
+    <line x1="76" y1="256" x2="96" y2="256" stroke-width="3"/>
+    <line x1="416" y1="256" x2="436" y2="256" stroke-width="3"/>
+    
+    <!-- Secondary markings -->
+    <line x1="154" y1="154" x2="168" y2="168" stroke-width="2"/>
+    <line x1="358" y1="154" x2="344" y2="168" stroke-width="2"/>
+    <line x1="154" y1="358" x2="168" y2="344" stroke-width="2"/>
+    <line x1="358" y1="358" x2="344" y2="344" stroke-width="2"/>
+  </g>
+  
+  <!-- Compass needle -->
+  <g>
+    <!-- North needle (red tip) -->
+    <polygon points="256,256 246,180 256,160 266,180" fill="#FF3B30"/>
+    <!-- South needle (white with border) -->
+    <polygon points="256,256 246,332 256,352 266,332" fill="#FFFFFF" stroke="#333" stroke-width="1"/>
+  </g>
+  
+  <!-- Center dot -->
+  <circle cx="256" cy="256" r="6" fill="#333"/>
+  
+  <!-- N marking -->
+  <text x="256" y="45" font-family="-apple-system, Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFF">N</text>
+</svg>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 06 – CSS Foundation & Header Design</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+        }
+        h3 {
+            color: #7f8c8d;
+            margin-top: 1.5rem;
+        }
+        .phase {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .phase h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        code {
+            background: #ecf0f1;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        .success-criteria {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .debugging-tips {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .highlight {
+            background: #3498db;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .note {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Lab 06 – CSS Foundation & Header Design</h1>
+
+<div class="highlight">
+    <strong>Delivery Mode:</strong> In-Class to Homework (Hybrid)<br>
+    <strong>Goal:</strong> Transform your basic HTML structure into a professional-looking webpage by applying foundational CSS principles and creating an impressive header design.<br>
+    <strong>Portfolio Connection:</strong> This lab builds the foundation for your Project 1 Personal Portfolio Website.
+</div>
+
+<h2>Learning Outcomes</h2>
+<ul>
+    <li>Learn CSS reset, typography, and layout fundamentals</li>
+    <li>Build a professional split-screen header layout</li>
+    <li>Apply the CSS box model for proper spacing</li>
+    <li>Create visual hierarchy through typography</li>
+    <li>Use CSS debugging tools effectively</li>
+</ul>
+
+<h2>Prerequisites</h2>
+<ul>
+    <li>Completed Lab 05 (Base CSS Foundation) OR have basic HTML structure</li>
+    <li>Existing sandbox files with header layout (<code>header_text</code> and <code>header_pic</code> divs)</li>
+    <li>Basic understanding of linking external stylesheets</li>
+</ul>
+
+<h2>Lab Flow: From Basic to Professional</h2>
+
+<div class="phase">
+    <h3>Phase 1: "Clean Up" (15-20 minutes)</h3>
+    <p><strong>Goal:</strong> Remove debugging styles and establish a solid foundation</p>
+    
+    <p><strong>1. Remove Red Borders & Add CSS Reset:</strong></p>
+    <pre><code>/* Remove the red debugging borders first - instant visual improvement! */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}</code></pre>
+
+    <p><strong>2. Establish Typography Foundation:</strong></p>
+    <pre><code>body {
+  /* 
+    Font stack explanation:
+    - system-ui: Uses the OS default UI font (Segoe UI on Windows, San Francisco on Mac)
+    - -apple-system: Fallback for older Safari browsers
+    - sans-serif: Universal fallback if system fonts fail
+  */
+  font-family: system-ui, -apple-system, sans-serif;
+  
+  /* Line height 1.6 = 160% of font size - improves readability */
+  line-height: 1.6;
+  
+  /* #333 is dark gray - softer than pure black for better reading experience */
+  color: #333;
+}</code></pre>
+</div>
+
+<div class="phase">
+    <h3>Phase 2: "Make it Look Intentional" (20-25 minutes)</h3>
+    <p><strong>Goal:</strong> Refine the existing header layout to look professional</p>
+    
+    <p><strong>1. Improve Header Layout:</strong></p>
+    <pre><code>header {
+  display: flex;
+  align-items: center;
+  min-height: 60vh; /* Reasonable height - not too tall */
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #f8f9fa; /* Subtle background */
+}
+
+.header_text {
+  flex: 1; /* Takes up equal space */
+  padding: 2rem;
+}
+
+.header_pic {
+  flex: 1; /* Takes up equal space */
+  background-color: #e9ecef;
+  min-height: 300px;
+  border-radius: 8px; /* Subtle rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}</code></pre>
+
+    <p><strong>2. Add Content to Empty Divs (Portfolio-Ready):</strong></p>
+    <pre><code>&lt;!-- Update your HTML header_text div with real portfolio content --&gt;
+&lt;div class="header_text"&gt;
+  &lt;h1&gt;Your Full Name&lt;/h1&gt;
+  &lt;p&gt;Your professional tagline (e.g., "Web Developer" or "Digital Media Student")&lt;/p&gt;
+  &lt;p&gt;Brief value proposition - what makes you unique?&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Add placeholder for professional photo --&gt;
+&lt;div class="header_pic"&gt;
+  [Professional Photo Here]
+  &lt;!-- This will become your portfolio hero image --&gt;
+&lt;/div&gt;</code></pre>
+
+    <div class="note">
+        <strong>Portfolio Tip:</strong> This header will become the "hero section" of your Project 1 portfolio. Start thinking about:
+        <ul>
+            <li>Your professional brand and tagline</li>
+            <li>What makes you unique as a student/professional</li>
+            <li>A professional photo you can use</li>
+        </ul>
+    </div>
+</div>
+
+<div class="phase">
+    <h3>Phase 3: "Add Real Typography" (15 minutes)</h3>
+    <p><strong>Goal:</strong> Create clear visual hierarchy with professional typography</p>
+    
+    <pre><code>h1 {
+  font-size: 2.5rem; /* Large, clear headline */
+  font-weight: 700;  /* Bold for impact */
+  color: #2d3748;    /* Darker gray for headings */
+  margin-bottom: 1rem;
+  line-height: 1.2;  /* Tighter spacing for headings */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555; /* Slightly lighter for body text */
+}</code></pre>
+</div>
+
+<div class="phase">
+    <h3>Phase 4: "Polish" (15-20 minutes)</h3>
+    <p><strong>Goal:</strong> Add finishing touches for professional appearance</p>
+    
+    <p><strong>1. Improve Navigation (Portfolio-Ready):</strong></p>
+    <pre><code>nav {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+nav a {
+  color: #495057;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+
+/* Basic focus state for accessibility */
+nav a:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}</code></pre>
+
+    <p><strong>2. Add Main Content Styling:</strong></p>
+    <pre><code>main {
+  max-width: 800px; /* Prevents text from being too wide */
+  margin: 0 auto;   /* Centers the content */
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* Consistent spacing between paragraphs */
+p + p {
+  margin-top: 1rem;
+}</code></pre>
+</div>
+
+<div class="success-criteria">
+    <h2>Success Criteria</h2>
+    <p>By the end of this lab, your webpage should demonstrate:</p>
+    
+    <h3>Visual Improvements</h3>
+    <ul>
+        <li>Clean, professional appearance (no red debugging borders!)</li>
+        <li>Well-proportioned header with clear content areas</li>
+        <li>Readable typography with appropriate sizes and spacing</li>
+        <li>Consistent spacing throughout the page</li>
+        <li>Professional color choices</li>
+    </ul>
+    
+    <h3>Technical Skills</h3>
+    <ul>
+        <li>CSS reset properly implemented</li>
+        <li>Flexbox layout working correctly for header</li>
+        <li>Typography hierarchy established (h1 > h2 > h3 > p)</li>
+        <li>Box model understanding demonstrated through spacing</li>
+        <li>External stylesheet properly linked and organized</li>
+    </ul>
+    
+    <h3>Code Quality</h3>
+    <ul>
+        <li>CSS well-organized with helpful comments</li>
+        <li>No inline styles remaining</li>
+        <li>Consistent indentation and formatting</li>
+        <li>Meaningful class names and structure</li>
+        <li>Basic accessibility features implemented (focus states)</li>
+    </ul>
+    
+    <h3>Portfolio Readiness</h3>
+    <ul>
+        <li>Professional header that could serve as portfolio hero section</li>
+        <li>Content structure appropriate for personal branding</li>
+        <li>Design foundation suitable for Project 1 requirements</li>
+        <li>Typography system that supports portfolio content</li>
+    </ul>
+</div>
+
+<div class="debugging-tips">
+    <h2>Debugging Tips</h2>
+    <ol>
+        <li><strong>Header not displaying correctly?</strong>
+            <ul>
+                <li>Check that flexbox properties are applied to the header element</li>
+                <li>Verify both header_text and header_pic divs are inside the header</li>
+                <li>Use browser dev tools to inspect the flex layout</li>
+            </ul>
+        </li>
+        <li><strong>Fonts looking wrong?</strong>
+            <ul>
+                <li>Make sure the CSS file is properly linked in HTML head</li>
+                <li>Check for typos in font-family declarations</li>
+                <li>Verify the CSS is actually loading (check Network tab in dev tools)</li>
+            </ul>
+        </li>
+        <li><strong>Spacing issues?</strong>
+            <ul>
+                <li>Remember: margin creates space outside elements, padding inside</li>
+                <li>Use browser dev tools to visualize the box model</li>
+                <li>Check for margin collapse between adjacent elements</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<div class="note">
+    <h2>Next Steps & Portfolio Connection</h2>
+    <p><strong>Immediate Next Labs:</strong></p>
+    <ul>
+        <li>LAB07: Responsive design (mobile-first approach for Project 1)</li>
+        <li>LAB08: CSS Grid layouts for portfolio sections</li>
+        <li>LAB09: Media queries and accessibility features</li>
+    </ul>
+    
+    <p><strong>Project 1 Portfolio Preparation:</strong></p>
+    <ul>
+        <li>This header design will become your portfolio's hero section</li>
+        <li>Start planning your About, Skills, and Projects content</li>
+        <li>Consider what professional photo you'll use</li>
+        <li>Think about your personal brand and unique value proposition</li>
+    </ul>
+    
+    <p><strong>Remember:</strong> Project 1 is due Week 6 (September 25). This lab gives you the styling foundation, but you'll need responsive design and accessibility features covered in upcoming labs.</p>
+</div>
+
+<div class="highlight">
+    <h2>Homework Completion</h2>
+    <p><strong>Time Estimate:</strong> 1-2 hours to complete all phases and polish your design</p>
+    <p><strong>Submit:</strong> GitHub repository URL showing your updated CSS file and improved webpage design</p>
+    <p><strong>Portfolio Note:</strong> Keep this work! It will be the foundation for your Project 1 Personal Portfolio Website due September 25.</p>
+</div>
+
+</body>
+</html>

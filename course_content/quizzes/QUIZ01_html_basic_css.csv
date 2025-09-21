@@ -1,0 +1,22 @@
+type,title,question_text,points,option_a,option_b,option_c,option_d,correct_options
+MC,Q1,"Which line correctly declares an HTML5 document?",3,"<!DOCTYPE HTML5>","<!DOCTYPE html>","<html doctype=\"html5\">","<?doctype html?>",B
+MC,Q2,"Which element belongs in the <head> and not the <body>?",3,"<main>","<meta charset=\"UTF-8\">","<section>","<footer>",B
+MC,Q3,"What is the main purpose of the lang attribute on the <html> element?",3,"Sets the font for the page","Improves search engine keywords","Informs browsers/assistive tech of the page language","Enables CSS to load faster",C
+MC,Q4,"Choose the most semantic structure for a page’s primary content area:",3,"<div id=\"content\"> ... </div>","<main> ... </main>","<section role=\"content\"> ... </section>","<article id=\"main\"> ... </article>",B
+MC,Q5,"For a link that opens in a new tab, which attribute pairing is most appropriate for security/performance?",3,"target=\"_blank\" rel=\"noopener\"","target=\"new\" rel=\"noopener\"","target=\"_blank\" rel=\"nofollow\"","target=\"_new\" rel=\"noreferrer\"",A
+MC,Q6,"Which is the best use of alternative text (alt) for an informative image?",3,"Empty alt always","Describe the image’s meaning/purpose concisely","Copy the image filename","Repeat the surrounding caption verbatim",B
+MC,Q7,"Which snippet correctly links an external stylesheet?",3,"<style src=\"css/styles.css\"></style>","<link href=\"css/styles.css\">","<link rel=\"stylesheet\" href=\"css/styles.css\">","<script rel=\"stylesheet\" src=\"css/styles.css\"></script>",C
+MC,Q8,"Which CSS unit is recommended for scalable typography?",3,"px","rem","vh","% for all text",B
+MC,Q9,"What does box-sizing: border-box; help with?",3,"Adds borders automatically","Includes padding/border inside the element’s set width/height","Forces square boxes only","Removes default margins from all elements",B
+MC,Q10,"Which list is most appropriate for a set of steps that must happen in order?",3,"<ul>","<ol>","<dl>","<menu>",B
+TF,Q11,"Headings should not skip levels (e.g., use h2 after h1, not h3 directly).",2,True,False,,,A
+TF,Q12,"The <nav> element should be used for any group of links anywhere on the page.",2,True,False,,,B
+TF,Q13,"Decorative images should have empty alt (e.g., alt=\"\").",2,True,False,,,A
+TF,Q14,"Inline CSS is preferred over external stylesheets for maintainability.",2,True,False,,,B
+TF,Q15,"The <figure> element can contain an <img> and an optional <figcaption>.",2,True,False,,,A
+WR,Q16,"Explain why setting a clear heading hierarchy (h1 → h2 → h3) improves accessibility and page structure.",3,,,,,
+WR,Q17,"When should you use an ordered list (<ol>) vs. an unordered list (<ul>)? Give one example for each.",3,,,,,
+WR,Q18,"Why is rel=\"noopener\" recommended when using target=\"_blank\" on external links?",3,,,,,
+WR,Q19,"Identify one semantic or structural issue in the snippet and rewrite just the incorrect line(s).\n\n<!DOCTYPE html>\n<html>\n<head>\n  <title>My Page</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta charset=\"UTF-8\">\n  <html lang=\"en\">\n</head>\n<body>\n  <header>\n    <h3>My Portfolio</h3>\n  </header>\n  <main>\n    <section>\n      <h1>Projects</h1>\n      <p>Some recent work...</p>\n    </section>\n  </main>\n</body>\n</html>\n\nHint: Consider heading levels and required attributes on root elements.",1,,,,,
+MC,Q20,"Which CSS selector targets all <figure> elements?",0.5,".figure","#figure","figure","img + figcaption",C
+MC,Q21,"Which is the correct internal jump link to a section with id=\"skills\"?",0.5,"<a href=\"skills\">Skills</a>","<a href=\"#skills\">Skills</a>","<a anchor=\"skills\">Skills</a>","<a id=\"skills\">Skills</a>",B

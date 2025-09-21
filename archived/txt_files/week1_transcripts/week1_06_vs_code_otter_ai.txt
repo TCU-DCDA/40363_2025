@@ -1,0 +1,83 @@
+Hey, again, I thought this time we need to extend our journey into VS code, which is the tool that we'll use to edit the majority of our code for this course, so the HTML and CS and JavaScript, if we get into it. So this assumes that you already have your GitHub account created. It assumes that you have a repository created inside GitHub, and this assumes that you have a 60970 folder on your desktop that parallels what's on the repository and the GitHub servers, right? And we also assumes that you have installed Github desktop, which helps to be the bridge between the two folders, so the local one is the one that you have only you have access to, that you'll use to develop and cultivate your projects. So your development folder will be your local folder, the repository and GitHub will be the backup and OR, and NOT AND, OR, but, and eventually your host for the live website. So this assumes all that. So if you haven't go back to that video and do that one first, it'll make more sense and be a smoother ride through this video, which is should be fairly short and straightforward, but assume that you have the preparation from GitHub behind you, so to kind of visually review what we just covered.
+
+So this is the github.com
+
+version of our the folder we looked at before. This is the parallel version, the cloned version of the site that exists locally. So the three files here, you can see this three files named here, right? Things may add up here that will eventually push over here. And we do, we'll make that process where they will send files back and forth using GitHub Desktop, which you should already have set up. Github desktop will will be the tool that we're using to sort of choose which files we want to we want to send to back up and update our, our our existing repository files. But it also has a nice sort of gateway to open up quickly. Either your local view
+
+saves locally to this version here, so if you click on this button,
+
+that the local folder shows up,
+
+click on this button, the browser based remote repository shows up. So, or what you can also do, which we haven't done yet. What we can do right now is open the repository in VS code, right? So let's see what happens if you, if you click this button,
+
+it did just that. Okay, so this is so it happened for me, because I have VS code already installed, right? So for you, it's very simple.
+
+Let's do a quick search of VS code.
+
+So just download
+
+the version you want and unzip it, go back to GitHub Desktop and click the Open VS Code button. And so now you have all three files again. Here, boys, nice about these files. So this version of the files is that they're editable,
+
+right? So there this is, this is the code editor that you can use for HTML, for CSS, for JavaScript, for markdown VS code is well established. It seems to be a go to for a lot of Professional Coders, but a lot of new coders as well. Okay, so let's do this, and let's go ahead and kill the HTML you coded. You hand coded last video. Ignore that for now. Type in an exclamation point and then hit Tab.
+
+It creates for us a scaled down version of what we had encoded earlier, right? So this is the basic format of all HTML pages we just created. So so let's go ahead and make our own version of this that's similar to what we did originally. So type in h1 close and notice that once you, once you type in the first tag. This is a Heading tag. Now,
+
+when you type in a tag, oftentimes it will give you the closing tag to accompany it.
+
+Okay, so to create all this, all the sort of template code, I just typed exclamation point in a tab.
+
+And then I tabbed down between the two body tags.
+
+I typed h1 this is my first header, slash, h1 both in site Curt brackets, and I created a pair of p tags, which stand for paragraphs. It's an abbreviation for paragraphs. I'll type in the word Lorem, l, O, R, E, M, and hit Tab, and we'll get some some dummy content which law is, which is all in one line, which is kind of hard to read, but we can actually adjust that pretty simply
+
+if we go to our top.
+
+The menu says View and then down, drop down to the word wrap. It'll wrap the code inside the available window space so it won't go off the off the right margin, the way it just a second ago. Okay,
+
+so let me do that one more time.
+
+So open, Curt, P, close, caret,
+
+word, l, O, R, E, M, Lorem tab, and it's just, it's just some nonsense Latin, basically that
+
+it's placeholder text. Okay,
+
+so let's go ahead and close that. I'm sorry, save that.
+
+So next go to File and go to auto save, and make sure that that is selected, it'll save you from I mean, you can do Command or Control S as often as you need to, which is a great habit, but to make sure that that's happening, if you forget, it's good to have auto save selected, so make sure you have that selected.
+
+Further, we want to sort of see the changes that we've made. We will add what's called extension. So additional sort of features that are not part of the primary installation of this software, but you can add to it very simply and usually for free. So the extensions icon is little square. This is four squares here.
+
+And so for the first one, search, live preview.
+
+And you want the one that's made by Microsoft,
+
+and you want to install it
+
+to go back to see our files, then
+
+we go back to these little document icons here, but we
+
+want to see what this looks like
+
+in a browser.
+
+We can go to
+
+here, so Right, right, click on the file name,
+
+Show Preview.
+
+And now this is a browser version of broadly red version of
+
+what we've coded here,
+
+but it should update in real time.
+
+So you don't need to save the changes before you can preview them. You should, in most cases, it should update in real time. So if we added a third paragraph,
+
+should also appear as so it's really nice. So this is called the simple preview. What we see in the side by side with the code is a simple preview. It's not super sophisticated. So as you as your site becomes cooler and has more features and has more color and has more dynamic content, it will have a harder time keeping up, keeping up with the changes. So if you're not seeing you've made a change here, you know, you know you made the change here, but you're not seeing it reflected here. What you can also do is open the full page in a browser, and that will give you a proper view of how it'll actually look at a proper browser. This is kind of a simulation of a browser right here. It'll open up a new tab, and it'll give you a proper browser review, which will be more accurate, more faithful, indication of how your pages gonna look. One's live, okay, we connected
+
+GitHub to VS code, which is really important, so we can go that way. We can send files back and forth to GitHub very quickly. We've played we played with some HTML that we'll discuss much more deeply as we move forward. We installed the extensions Live Preview, which is going to allows us to do things like this right here. And then we've also set up auto save, life saving. Auto life saving. You.
+
+Transcribed by https://otter.ai

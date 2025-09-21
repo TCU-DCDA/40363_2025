@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Data Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/widgets.css">
+</head>
+<body class="theme-light">
+    <!-- Header with dashboard title and controls -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>My Personal Dashboard</h1>
+            <div class="header-controls">
+                <button id="theme-toggle" class="btn btn-secondary">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-text">Dark Mode</span>
+                </button>
+                <button id="refresh-data" class="btn btn-primary">
+                    <span>🔄</span>
+                    Refresh
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main dashboard grid -->
+    <main class="dashboard-container">
+        <!-- Weather Widget -->
+        <section class="widget weather-widget" id="weather-widget">
+            <div class="widget-header">
+                <h2>Weather</h2>
+                <button class="widget-toggle" data-widget="weather">−</button>
+            </div>
+            <div class="widget-content">
+                <div id="current-weather" class="current-weather">
+                    <div class="weather-loading">Loading weather data...</div>
+                </div>
+                <div id="weather-forecast" class="weather-forecast">
+                    <!-- Forecast data will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Quote Widget -->
+        <section class="widget quote-widget" id="quote-widget">
+            <div class="widget-header">
+                <h2>Daily Quote</h2>
+                <button class="widget-toggle" data-widget="quote">−</button>
+            </div>
+            <div class="widget-content">
+                <div id="daily-quote" class="quote-display">
+                    <div class="quote-loading">Loading inspirational quote...</div>
+                </div>
+                <div class="quote-controls">
+                    <select id="quote-category">
+                        <option value="motivation">Motivation</option>
+                        <option value="coding">Coding</option>
+                        <option value="learning">Learning</option>
+                    </select>
+                    <button id="new-quote" class="btn btn-small">New Quote</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Tasks Widget -->
+        <section class="widget tasks-widget" id="tasks-widget">
+            <div class="widget-header">
+                <h2>My Tasks</h2>
+                <button class="widget-toggle" data-widget="tasks">−</button>
+            </div>
+            <div class="widget-content">
+                <form id="add-task-form" class="task-form">
+                    <input type="text" id="new-task-input" placeholder="Add a new task..." required>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+                <div id="tasks-list" class="tasks-list">
+                    <!-- Tasks will be inserted here -->
+                </div>
+                <div class="tasks-stats">
+                    <span id="tasks-count">0 tasks</span>
+                    <span id="tasks-completed">0 completed</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Timer Widget -->
+        <section class="widget timer-widget" id="timer-widget">
+            <div class="widget-header">
+                <h2>Study Timer</h2>
+                <button class="widget-toggle" data-widget="timer">−</button>
+            </div>
+            <div class="widget-content">
+                <div class="timer-display">
+                    <div id="timer-time" class="timer-time">25:00</div>
+                    <div id="timer-status" class="timer-status">Ready to start</div>
+                </div>
+                <div class="timer-controls">
+                    <button id="timer-start" class="btn btn-primary">Start</button>
+                    <button id="timer-pause" class="btn btn-secondary" disabled>Pause</button>
+                    <button id="timer-reset" class="btn btn-secondary">Reset</button>
+                </div>
+                <div class="timer-presets">
+                    <button class="preset-btn" data-minutes="25">25 min</button>
+                    <button class="preset-btn" data-minutes="15">15 min</button>
+                    <button class="preset-btn" data-minutes="5">5 min</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Error message display -->
+    <div id="error-message" class="error-message hidden">
+        <span class="error-text"></span>
+        <button class="error-close">×</button>
+    </div>
+
+    <!-- Success message display -->
+    <div id="success-message" class="success-message hidden">
+        <span class="success-text"></span>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading dashboard...</div>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="js/utils/fetch-helper.js"></script>
+    <script src="js/utils/theme-manager.js"></script>
+    <script src="js/widgets/weather.js"></script>
+    <script src="js/widgets/quotes.js"></script>
+    <script src="js/widgets/tasks.js"></script>
+    <script src="js/widgets/timer.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

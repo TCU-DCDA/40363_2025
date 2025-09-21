@@ -1,0 +1,204 @@
+/* Theme System - Light and Dark Mode Support */
+
+/* Light Theme (Default) */
+.theme-light {
+    --bg-color: #f5f7fa;
+    --surface-color: #ffffff;
+    --text-color: #2d3748;
+    --text-light: #718096;
+    --primary-color: #4299e1;
+    --primary-hover: #3182ce;
+    --secondary-color: #e2e8f0;
+    --success-color: #48bb78;
+    --error-color: #f56565;
+    --warning-color: #ed8936;
+    --border-color: #e2e8f0;
+}
+
+/* Dark Theme */
+.theme-dark {
+    --bg-color: #1a202c;
+    --surface-color: #2d3748;
+    --text-color: #f7fafc;
+    --text-light: #a0aec0;
+    --primary-color: #63b3ed;
+    --primary-hover: #4299e1;
+    --secondary-color: #4a5568;
+    --success-color: #68d391;
+    --error-color: #fc8181;
+    --warning-color: #f6ad55;
+    --border-color: #4a5568;
+}
+
+/* Theme Toggle Button Specific Styles */
+#theme-toggle {
+    position: relative;
+    overflow: hidden;
+}
+
+#theme-toggle .theme-icon {
+    font-size: 1.125rem;
+    transition: transform var(--transition-medium);
+}
+
+#theme-toggle .theme-text {
+    transition: opacity var(--transition-medium);
+}
+
+/* Theme-specific icon and text updates */
+.theme-light #theme-toggle .theme-icon {
+    transform: rotate(0deg);
+}
+
+.theme-dark #theme-toggle .theme-icon {
+    transform: rotate(180deg);
+}
+
+.theme-light #theme-toggle .theme-text::after {
+    content: ' Mode';
+}
+
+.theme-dark #theme-toggle .theme-text::after {
+    content: ' Mode';
+}
+
+/* Smooth transitions for theme switching */
+body,
+.widget,
+.dashboard-header,
+input,
+select,
+.btn {
+    transition:
+        background-color var(--transition-medium),
+        color var(--transition-medium),
+        border-color var(--transition-medium);
+}
+
+/* Enhanced dark mode styling for specific components */
+.theme-dark .widget-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+}
+
+.theme-dark input[type="text"],
+.theme-dark select {
+    background: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.theme-dark input[type="text"]:focus,
+.theme-dark select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.1);
+}
+
+/* Dark mode scrollbar styling */
+.theme-dark ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.theme-dark ::-webkit-scrollbar-track {
+    background: var(--surface-color);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}
+
+/* Prefers-color-scheme support for users with system preference */
+@media (prefers-color-scheme: dark) {
+    .theme-auto {
+        --bg-color: #1a202c;
+        --surface-color: #2d3748;
+        --text-color: #f7fafc;
+        --text-light: #a0aec0;
+        --primary-color: #63b3ed;
+        --primary-hover: #4299e1;
+        --secondary-color: #4a5568;
+        --success-color: #68d391;
+        --error-color: #fc8181;
+        --warning-color: #f6ad55;
+        --border-color: #4a5568;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .loading-spinner {
+        animation: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --text-light: var(--text-color);
+    }
+
+    .theme-dark {
+        --border-color: #ffffff;
+        --text-light: var(--text-color);
+    }
+
+    .widget {
+        border-width: 2px;
+    }
+
+    .btn {
+        border: 2px solid transparent;
+    }
+
+    .btn-primary {
+        border-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+        border-color: var(--text-color);
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        --bg-color: white;
+        --surface-color: white;
+        --text-color: black;
+        --border-color: #666666;
+    }
+
+    .dashboard-header,
+    .header-controls,
+    .widget-toggle,
+    .btn,
+    .error-message,
+    .success-message,
+    .loading-overlay {
+        display: none !important;
+    }
+
+    .widget {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #666666;
+        margin-bottom: 1rem;
+    }
+
+    .dashboard-container {
+        display: block;
+        max-width: none;
+        padding: 0;
+    }
+}

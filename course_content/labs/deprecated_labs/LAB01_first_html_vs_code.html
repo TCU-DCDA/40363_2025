@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 01 – First HTML File & VS Code Workflow</title>
+    <style>
+        /* D2L-friendly embedded styles */
+        .lab-container {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .lab-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4d1979;
+        }
+        
+        .lab-title {
+            font-size: 2.2em;
+            color: #4d1979;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .lab-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 5px solid #4d1979;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #4d1979;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        .task-box {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .task-header {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .checklist {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .checklist ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .checklist li {
+            margin-bottom: 8px;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .tip {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+        
+        a {
+            color: #4d1979;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ol li, ul li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .lab-container {
+                padding: 10px;
+            }
+            
+            .lab-title {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+            
+            .task-box {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-container">
+        <header class="lab-header">
+            <h1 class="lab-title">Lab 01 – First HTML File & VS Code Workflow</h1>
+            <p class="lab-subtitle">Delivery Mode: In-Class Activity (Foundational)</p>
+            <div class="highlight">
+                <strong>📋 Goal:</strong> Create your first semantic HTML document and establish an efficient VS Code development workflow.
+            </div>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2 class="section-title">Learning Outcomes</h2>
+                <ul>
+                    <li>Set up a proper project structure for web development</li>
+                    <li>Create semantic HTML documents with proper structure</li>
+                    <li>Configure VS Code for efficient web development</li>
+                    <li>Understand file organization and naming conventions</li>
+                    <li>Practice professional file management for web projects</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Prerequisites</h2>
+                <ul>
+                    <li>VS Code installed</li>
+                    <li>Basic understanding of file systems and folders</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Tasks</h2>
+                
+                <div class="task-box">
+                    <div class="task-header">1. Project Setup</div>
+                    <ol>
+                        <li><strong>Create a project folder</strong> on your Desktop: <code>Lab01_YourLastName</code></li>
+                        <li><strong>Open this folder</strong> in VS Code (<code>File > Open Folder</code>)</li>
+                        <li><strong>Create the following file structure</strong> inside your project folder:</li>
+                    </ol>
+                    <div class="code-block">Lab01_YourLastName/
+├── index.html          ← Create this file from scratch
+├── css/                ← Create this folder (empty for now)
+└── images/             ← Create this folder (empty for now)</div>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">2. HTML Document Creation</div>
+                    <ol>
+                        <li>Create <code>index.html</code> with proper HTML5 structure:
+                            <ul>
+                                <li>DOCTYPE declaration</li>
+                                <li><code>&lt;html&gt;</code> with lang attribute</li>
+                                <li>Complete <code>&lt;head&gt;</code> section with meta tags</li>
+                                <li>Semantic <code>&lt;body&gt;</code> structure</li>
+                            </ul>
+                        </li>
+                        <li>Include the following elements:
+                            <ul>
+                                <li>Page title reflecting your name/purpose</li>
+                                <li>At least 3 levels of headings (h1, h2, h3)</li>
+                                <li>2-3 paragraphs of content</li>
+                                <li>Basic document structure using semantic HTML5 elements</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">3. VS Code Workflow Optimization</div>
+                    <ol>
+                        <li>Install and configure recommended extensions:
+                            <ul>
+                                <li>Live Server</li>
+                                <li>HTML CSS Support</li>
+                                <li>Auto Rename Tag</li>
+                                <li>Bracket Pair Colorizer</li>
+                            </ul>
+                        </li>
+                        <li>Set up Live Server for live preview:
+                            <ul>
+                                <li>Right-click <code>index.html</code> → "Open with Live Server"</li>
+                                <li>Test that changes appear automatically in browser</li>
+                            </ul>
+                        </li>
+                        <li>Practice VS Code shortcuts:
+                            <ul>
+                                <li><code>Cmd/Ctrl + /</code> for commenting</li>
+                                <li><code>Cmd/Ctrl + D</code> for multi-cursor selection</li>
+                                <li><code>Alt + Shift + Down</code> for duplicating lines</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">4. File Organization Best Practices</div>
+                    <ol>
+                        <li><strong>Implement proper naming conventions:</strong>
+                            <ul>
+                                <li>Use lowercase letters only</li>
+                                <li>Use hyphens for spaces (e.g., <code>about-me.html</code>)</li>
+                                <li>No special characters or spaces in filenames</li>
+                                <li>Descriptive but concise names</li>
+                            </ul>
+                        </li>
+                        <li><strong>Understand project structure:</strong>
+                            <ul>
+                                <li><code>index.html</code> is the main page (homepage)</li>
+                                <li><code>css/</code> folder will hold stylesheets (future labs)</li>
+                                <li><code>images/</code> folder will hold pictures and graphics</li>
+                                <li>Keep files organized and logical</li>
+                            </ul>
+                        </li>
+                        <li><strong>Practice good file management:</strong>
+                            <ul>
+                                <li>Save files frequently (<code>Cmd/Ctrl + S</code>)</li>
+                                <li>Keep your project folder clean</li>
+                                <li>Use meaningful names for everything</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Content Requirements</h2>
+                <p>Your HTML document should include:</p>
+                <ul>
+                    <li><strong>Header section:</strong> Your name and a brief introduction</li>
+                    <li><strong>About section:</strong> 2-3 paragraphs about yourself or your interests</li>
+                    <li><strong>Goals section:</strong> What you hope to learn in this course</li>
+                    <li><strong>Contact section:</strong> How to reach you (can be fictional for privacy)</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">HTML Structure Template</h2>
+                <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your Name - Introduction&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;!-- Navigation will go here later --&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;!-- Your content sections --&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;!-- Footer content --&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Success Criteria</h2>
+                <div class="checklist">
+                    <ul>
+                        <li>☐ Project folder properly organized with correct structure</li>
+                        <li>☐ Valid HTML5 document with proper semantic structure</li>
+                        <li>☐ Live Server successfully displays your page</li>
+                        <li>☐ All required content sections present and meaningful</li>
+                        <li>☐ VS Code extensions installed and functional</li>
+                        <li>☐ File naming conventions followed consistently</li>
+                        <li>☐ HTML validates without errors (test with HTML validator)</li>
+                        <li>☐ Project properly packaged for submission</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Submission Instructions</h2>
+                <ol>
+                    <li><strong>Test your work:</strong> Make sure your HTML displays correctly in Live Server</li>
+                    <li><strong>Validate your HTML:</strong> Use <a href="https://validator.w3.org/" target="_blank">W3C HTML Validator</a> to check for errors</li>
+                    <li><strong>Package for submission:</strong>
+                        <ul>
+                            <li>Select your entire project folder (<code>Lab01_YourLastName</code>)</li>
+                            <li>Create a ZIP file: <code>LastName_FirstName_Lab01.zip</code></li>
+                            <li>Ensure the ZIP contains your folder with index.html and other files</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submit to D2L:</strong> Upload your ZIP file to the Lab 01 assignment dropbox</li>
+                </ol>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Validation & Testing</h2>
+                <ol>
+                    <li>Test your page in Live Server</li>
+                    <li>Validate HTML using <a href="https://validator.w3.org/" target="_blank">W3C HTML Validator</a></li>
+                    <li>Check that page displays correctly</li>
+                    <li>Verify proper file organization</li>
+                </ol>
+            </section>
+
+            <div class="tip">
+                <h3>💡 Troubleshooting Tips</h3>
+                <ul>
+                    <li>If Live Server doesn't work, check that you opened the folder (not just the file)</li>
+                    <li>Use VS Code's built-in terminal for file operations if needed</li>
+                    <li>Check HTML syntax if page doesn't display as expected</li>
+                    <li>Ensure proper indentation for code readability</li>
+                    <li>Ask questions in class if you get stuck - that's what we're here for!</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>🔮 Next Steps</h3>
+                <p>This HTML file and project structure will serve as the foundation for future labs where we'll add CSS styling, learn version control, and build more complex websites. Keep your project folder organized - you'll use it again!</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

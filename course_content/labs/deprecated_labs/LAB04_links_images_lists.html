@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 04 – Links, Images, and Lists Enhancement</title>
+    <style>
+        /* D2L-friendly embedded styles */
+        .lab-container { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
+        .lab-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px solid #4d1979; }
+        .lab-title { font-size: 2.2em; color: #4d1979; margin-bottom: 10px; font-weight: bold; }
+        .lab-subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; font-style: italic; }
+        .section { margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 20px; border-left: 5px solid #4d1979; }
+        .section-title { font-size: 1.5em; color: #4d1979; margin-bottom: 15px; font-weight: bold; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
+        .task-box { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .task-header { font-size: 1.2em; font-weight: bold; color: #495057; margin-bottom: 10px; padding: 8px 12px; background: #e9ecef; border-radius: 4px; }
+        .highlight { background: #fff3cd; padding: 8px 12px; border-radius: 5px; margin: 10px 0; border-left: 4px solid #ffc107; }
+        .code-block { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 4px; padding: 15px; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .checklist { background: #d1ecf1; padding: 15px; border-radius: 5px; border-left: 4px solid #17a2b8; }
+        .checklist ul { margin: 0; padding-left: 20px; }
+        .checklist li { margin-bottom: 8px; }
+        .git-workflow { background: #e7f3ff; padding: 15px; border-radius: 5px; border-left: 4px solid #0066cc; }
+        .tip { background: #d4edda; padding: 15px; border-radius: 5px; border-left: 4px solid #28a745; }
+        a { color: #4d1979; text-decoration: none; } a:hover { text-decoration: underline; }
+        ol li, ul li { margin-bottom: 8px; }
+        @media (max-width: 768px) { .lab-container { padding: 10px; } .lab-title { font-size: 1.8em; } .section { padding: 15px; } .task-box { padding: 10px; } }
+    </style>
+    <meta name="robots" content="noindex">
+</head>
+<body>
+    <div class="lab-container">
+        <header class="lab-header">
+            <h1 class="lab-title">Lab 04 – Links, Images, and Lists Enhancement</h1>
+            <p class="lab-subtitle">Delivery Mode: In-Class Activity (Formative)</p>
+            <div class="highlight">
+                <strong>📋 Goal:</strong> Enrich semantic variety with purposeful links, images, and lists while practicing Git workflow.
+            </div>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2 class="section-title">Learning Outcomes</h2>
+                <ul>
+                    <li>Apply accessible link text and external link attributes</li>
+                    <li>Use <code>&lt;figure&gt;</code>, <code>&lt;img&gt;</code>, and <code>&lt;figcaption&gt;</code> effectively</li>
+                    <li>Organize related content with semantic lists</li>
+                    <li>Reinforce iterative Git workflow with meaningful commits</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Prerequisites</h2>
+                <ul>
+                    <li>Completed Lab 03 (Git Introduction & HTML Foundations)</li>
+                    <li>Active Git repository with existing HTML foundation</li>
+                    <li>Understanding of semantic HTML structure</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Git Workflow Setup</h2>
+                <p>Work in your existing <code>personal-website-foundation</code> repository from previous labs.</p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Tasks</h2>
+                <div class="task-box">
+                    <div class="task-header">1. Resources Section (External Links)</div>
+                    <ol>
+                        <li>Add a new section named <strong>Resources</strong> with an unordered list of <strong>3 external links</strong>.</li>
+                        <li>Each link uses descriptive text (no raw URLs) and unique domains.</li>
+                        <li>Add <code>target="_blank"</code> and <code>rel="noopener"</code> for external links as needed.</li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">2. Internal Jump Link</div>
+                    <ol>
+                        <li>Add <code>id</code> to a lower-page heading (e.g., <code>id="skills"</code>).</li>
+                        <li>From your top nav or intro, add an internal link to that ID (e.g., <code>&lt;a href="#skills"&gt;Skip to skills&lt;/a&gt;</code>).</li>
+                        <li>Test the jump in the browser.</li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">3. Image Audit</div>
+                    <ol>
+                        <li>Review current images and identify purely decorative ones.</li>
+                        <li>For decorative images, plan to replace with CSS backgrounds later; add an HTML comment <code>&lt;!-- candidate for CSS background --&gt;</code>.</li>
+                        <li>Ensure meaningful images include concise, descriptive <code>alt</code> text.</li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">4. Add a Second Figure</div>
+                    <ol>
+                        <li>Add a new <code>&lt;figure&gt;</code> containing <code>&lt;img&gt;</code> and <code>&lt;figcaption&gt;</code>.</li>
+                        <li>Keep caption ≤ 12 words and relevant to the image.</li>
+                        <li>Verify image path and loading; test with a placeholder if needed.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Link Rules</h2>
+                <ul>
+                    <li>External links use <code>rel="noopener"</code> when <code>target="_blank"</code> is present.</li>
+                    <li>No raw URLs as link text; write human-friendly, descriptive labels.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Git Workflow for This Lab</h2>
+                <div class="git-workflow">
+                    <p><strong>Commit after each major task:</strong></p>
+                    <ul>
+                        <li><code>Add external resources section with links</code></li>
+                        <li><code>Implement internal navigation links</code></li>
+                        <li><code>Add figure elements with proper captions</code></li>
+                        <li><code>Improve accessibility and link semantics</code></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Success Criteria</h2>
+                <div class="checklist">
+                    <ul>
+                        <li>☐ ≥ 4 total external links on the page</li>
+                        <li>☐ Internal jump link works as expected</li>
+                        <li>☐ Second <code>&lt;figure&gt;</code> with concise caption added</li>
+                        <li>☐ Accessibility improved with descriptive link text and <code>alt</code></li>
+                        <li>☐ All changes committed and pushed to GitHub</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Submission Instructions</h2>
+                <p><strong>Submit repository URL</strong> to D2L — use your existing <code>personal-website-foundation</code> repository.</p>
+            </section>
+
+            <div class="tip">
+                <h3>💡 Stretch</h3>
+                <p>Add an ordered list explaining a 3‑step process you follow (e.g., researching a topic).</p>
+            </div>
+        </main>
+        <section class="section">
+            <h2 class="section-title">Related Resources</h2>
+            <ul>
+                <li><a href="../Week_3_Resources.html" target="_blank" rel="noopener">Week 3 Resources: Links, Images, Lists & Base CSS</a></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

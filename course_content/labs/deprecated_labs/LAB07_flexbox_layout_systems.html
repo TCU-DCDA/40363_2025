@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB07 - Flexbox Portfolio Layouts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .lab-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .lab-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+        .lab-header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        .content-section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .learning-outcomes {
+            background: #e8f4f8;
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .prerequisites {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .in-class-work {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .homework-work {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', Monaco, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+        .html-code {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            color: #2d3748;
+            white-space: pre-wrap;
+        }
+        .css-code {
+            background: #2d3748;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+        }
+        .checklist {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .checklist h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .checklist li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #0c5460;
+            font-weight: bold;
+        }
+        .success-criteria {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .success-criteria h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        .time-indicator {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .in-class-time {
+            background: #28a745;
+            color: white;
+        }
+        .homework-time {
+            background: #dc3545;
+            color: white;
+        }
+        .task-number {
+            background: #28a745;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .task-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #34495e;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .important {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #dc3545;
+            margin: 15px 0;
+        }
+        ol li {
+            margin-bottom: 10px;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        .time-breakdown {
+            background: #e9ecef;
+            border: 2px solid #6c757d;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .time-breakdown h3 {
+            color: #495057;
+            margin-top: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-header">
+        <h1>Lab 07 – Flexbox Portfolio Layouts</h1>
+        <p class="subtitle">Delivery Mode: In-Class Workshop ➜ Practice as Homework (Hybrid)<br>
+        <strong>Portfolio Connection:</strong> Building flexible layouts for your Project 1 Portfolio Website</p>
+    </div>
+
+    <div class="time-breakdown">
+        <h3>⏰ 80-Minute Class Breakdown</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="in-class-work">
+                <h4>🏫 In-Class Work (80 minutes)</h4>
+                <ul>
+                    <li><strong>Minutes 1-15:</strong> Review LAB06 & discuss Flexbox foundations</li>
+                    <li><strong>Minutes 16-35:</strong> Task 1 - Skills Section (guided)</li>
+                    <li><strong>Minutes 36-55:</strong> Task 2 - About Section (guided)</li>
+                    <li><strong>Minutes 56-75:</strong> Task 3 - Projects Section (guided)</li>
+                    <li><strong>Minutes 76-80:</strong> Preview homework tasks</li>
+                </ul>
+            </div>
+            <div class="homework-work">
+                <h4>🏠 Homework (1.5-2 hours)</h4>
+                <ul>
+                    <li>Task 4 - Navigation enhancement</li>
+                    <li>Task 5 - Section spacing and polish</li>
+                    <li>Add your personal content</li>
+                    <li>Test responsiveness</li>
+                    <li>GitHub submission</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Goal</h2>
+        <p>Apply Flexbox to create flexible, professional portfolio content sections, building on your LAB06 header foundation with simple, beginner-friendly layout patterns.</p>
+    </div>
+
+    <div class="learning-outcomes">
+        <h3>Learning Outcomes</h3>
+        <ul>
+            <li>Build portfolio content sections using basic Flexbox patterns</li>
+            <li>Create simple, flexible layouts for skills, projects, and about sections</li>
+            <li>Practice fundamental Flexbox properties with real portfolio content</li>
+            <li>Develop confidence with Flexbox before learning more advanced techniques</li>
+            <li>Build professional-looking layouts using simple, reliable patterns</li>
+        </ul>
+    </div>
+
+    <div class="prerequisites">
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Completed LAB06 (CSS Foundation & Header Design) with working Flexbox header</li>
+            <li>Completed Portfolio Planning Worksheet (content planned and ready to implement)</li>
+            <li>Understanding of CSS box model and basic Flexbox from LAB06</li>
+            <li>Basic knowledge of CSS selectors and properties</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Building on Your LAB06 Flexbox Foundation</h2>
+        <p>In LAB06, you learned basic Flexbox with your header layout. Now we'll apply those same simple principles to build your portfolio content sections, keeping the patterns straightforward and beginner-friendly.</p>
+        
+        <div class="highlight">
+            <h4>Simple Flexbox Patterns We'll Use</h4>
+            <ul>
+                <li><strong><code>display: flex</code></strong> - Make containers flexible</li>
+                <li><strong><code>flex-wrap: wrap</code></strong> - Allow items to wrap to new lines</li>
+                <li><strong><code>gap</code></strong> - Add consistent spacing between items</li>
+                <li><strong><code>flex: 1</code></strong> - Make items grow to fill space equally</li>
+                <li><strong><code>min-width</code></strong> - Ensure items don't get too small</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Tasks</h2>
+
+        <div class="in-class-work">
+            <div class="task-header">
+                <span class="task-number">1</span>
+                <h3>Simple Skills Section Layout <span class="time-indicator in-class-time">IN-CLASS: 20 min</span></h3>
+            </div>
+            
+            <p><strong>🏫 Complete this during our 80-minute class with instructor guidance</strong></p>
+            
+            <h4>Update your HTML structure:</h4>
+            <pre class="code-block html-code"><code>&lt;section class="skills-section" id="skills"&gt;
+    &lt;h2&gt;My Skills&lt;/h2&gt;
+    &lt;div class="skills-container"&gt;
+        &lt;div class="skill-card"&gt;
+            &lt;h3&gt;Web Development&lt;/h3&gt;
+            &lt;p&gt;HTML, CSS, learning JavaScript&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="skill-card"&gt;
+            &lt;h3&gt;Design&lt;/h3&gt;
+            &lt;p&gt;Visual design, user experience&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="skill-card"&gt;
+            &lt;h3&gt;Tools&lt;/h3&gt;
+            &lt;p&gt;VS Code, Git, GitHub&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="skill-card"&gt;
+            &lt;h3&gt;Communication&lt;/h3&gt;
+            &lt;p&gt;Writing, presentation, teamwork&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+            <h4>Apply simple Flexbox styling:</h4>
+            <pre class="code-block css-code"><code>.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.skill-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+            </code></pre>
+
+            <div class="highlight">
+                <h4>Why this works:</h4>
+                <ul>
+                    <li><code>flex: 1</code> makes all cards grow equally</li>
+                    <li><code>min-width: 200px</code> prevents cards from getting too narrow (mobile-friendly)</li>
+                    <li><code>flex-wrap: wrap</code> moves cards to new lines when needed</li>
+                    <li>Simple and reliable pattern</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="in-class-work">
+            <div class="task-header">
+                <span class="task-number">2</span>
+                <h3>Simple About Section Layout <span class="time-indicator in-class-time">IN-CLASS: 20 min</span></h3>
+            </div>
+            
+            <p><strong>🏫 Complete this during our 80-minute class with instructor guidance</strong></p>
+            
+            <h4>HTML structure:</h4>
+            <pre class="code-block html-code"><code>&lt;section class="about-section" id="about"&gt;
+    &lt;div class="about-image"&gt;
+        &lt;img src="path/to/your/photo.jpg" alt="Your Name - Professional Photo"&gt;
+    &lt;/div&gt;
+    &lt;div class="about-text"&gt;
+        &lt;h2&gt;About Me&lt;/h2&gt;
+        &lt;p&gt;Your compelling personal story from your Planning Worksheet...&lt;/p&gt;
+        &lt;p&gt;What you're studying, your interests, and your goals...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+            <h4>Simple Flexbox styling:</h4>
+            <pre class="code-block css-code"><code>.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 0;
+  align-items: center;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-text {
+  flex: 2;
+  min-width: 250px;
+}
+            </code></pre>
+
+            <div class="highlight">
+                <h4>Why this works:</h4>
+                <ul>
+                    <li>Image and text stack on mobile (due to min-width and flex-wrap)</li>
+                    <li>Text takes twice as much space as image (<code>flex: 2</code> vs <code>flex: 1</code>)</li>
+                    <li><code>align-items: center</code> keeps content aligned nicely</li>
+                    <li>Mobile-friendly min-widths that work on 320px screens</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="in-class-work">
+            <div class="task-header">
+                <span class="task-number">3</span>
+                <h3>Simple Projects Section Layout <span class="time-indicator in-class-time">IN-CLASS: 20 min</span></h3>
+            </div>
+            
+            <p><strong>🏫 Complete this during our 80-minute class with instructor guidance</strong></p>
+            
+            <h4>HTML structure:</h4>
+            <pre class="code-block html-code"><code>&lt;section class="projects-section" id="projects"&gt;
+    &lt;h2&gt;My Projects&lt;/h2&gt;
+    &lt;div class="projects-container"&gt;
+        &lt;article class="project-card"&gt;
+            &lt;div class="project-content"&gt;
+                &lt;h3&gt;Class Website Project&lt;/h3&gt;
+                &lt;p&gt;A simple website I built using HTML and CSS for this class.&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Skills used:&lt;/strong&gt; HTML, CSS, Flexbox&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        
+        &lt;article class="project-card"&gt;
+            &lt;div class="project-content"&gt;
+                &lt;h3&gt;Portfolio Planning&lt;/h3&gt;
+                &lt;p&gt;Research and planning for my personal portfolio website.&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Skills used:&lt;/strong&gt; Research, planning, design thinking&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        
+        &lt;article class="project-card"&gt;
+            &lt;div class="project-content"&gt;
+                &lt;h3&gt;Future Project&lt;/h3&gt;
+                &lt;p&gt;A placeholder for a project I plan to build this semester.&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Skills to learn:&lt;/strong&gt; JavaScript, responsive design&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+            <h4>Simple Flexbox styling:</h4>
+            <pre class="code-block css-code"><code>.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-card {
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  margin-bottom: 0.5rem;
+}
+            </code></pre>
+
+            <div class="highlight">
+                <h4>Why this works:</h4>
+                <ul>
+                    <li><code>flex-direction: column</code> stacks projects vertically</li>
+                    <li>Simple, clean layout that's easy to understand</li>
+                    <li>Consistent spacing with <code>gap</code></li>
+                    <li>Professional appearance without complexity</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="homework-work">
+            <div class="task-header">
+                <span class="task-number">4</span>
+                <h3>Basic Navigation Improvement <span class="time-indicator homework-time">HOMEWORK: 30 min</span></h3>
+            </div>
+            
+            <p><strong>🏠 Complete this as homework after class</strong></p>
+            
+            <h4>HTML structure (add to your header):</h4>
+            <pre class="code-block html-code"><code>&lt;nav&gt;
+    &lt;div class="nav-container"&gt;
+        &lt;a href="#" class="logo"&gt;Your Name&lt;/a&gt;
+        &lt;div class="nav-links"&gt;
+            &lt;a href="#about"&gt;About&lt;/a&gt;
+            &lt;a href="#skills"&gt;Skills&lt;/a&gt;
+            &lt;a href="#projects"&gt;Projects&lt;/a&gt;
+            &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+            <h4>Simple Flexbox styling:</h4>
+            <pre class="code-block css-code"><code>.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #28a745;
+}
+            </code></pre>
+        </div>
+
+        <div class="homework-work">
+            <div class="task-header">
+                <span class="task-number">5</span>
+                <h3>Section Spacing and Polish <span class="time-indicator homework-time">HOMEWORK: 45 min</span></h3>
+            </div>
+            
+            <p><strong>🏠 Complete this as homework after class</strong></p>
+            
+            <h4>Container and section styling:</h4>
+            <pre class="code-block css-code"><code>/* Main container for all sections */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive container padding */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Consistent section spacing */
+section {
+  padding: 3rem 0;
+}
+
+/* Section headings */
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+/* Add some visual interest to section headings */
+section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #28a745;
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+            </code></pre>
+        </div>
+    </div>
+    <div class="content-section">
+        <h2>Building on Your Portfolio Planning Worksheet</h2>
+        <p>Use your completed Portfolio Planning Worksheet to fill in your content:</p>
+        <ol>
+            <li><strong>Skills Section:</strong> Add your planned skills and technologies</li>
+            <li><strong>About Section:</strong> Use your personal story and background</li>
+            <li><strong>Projects Section:</strong> Include current and planned projects</li>
+            <li><strong>Keep it Simple:</strong> Focus on clear, readable content over complex layouts</li>
+        </ol>
+    </div>
+
+    <div class="checklist">
+        <h3>Required Portfolio Implementations</h3>
+        
+        <h4>Basic HTML Structure</h4>
+        <ul>
+            <li>Skills section with simple card structure</li>
+            <li>About section with image and text areas</li>
+            <li>Projects section with project cards</li>
+            <li>Navigation section with logo and links</li>
+            <li>Proper semantic elements (section, nav, etc.)</li>
+        </ul>
+
+        <h4>Simple Flexbox Layouts</h4>
+        <ul>
+            <li>Skills container using <code>display: flex</code> and <code>flex-wrap: wrap</code></li>
+            <li>About section with image and text using simple flex patterns</li>
+            <li>Navigation using <code>justify-content: space-between</code></li>
+            <li>Project cards with consistent spacing using <code>gap</code></li>
+            <li>Clean, readable layouts without complex calculations</li>
+        </ul>
+
+        <h4>Professional Appearance</h4>
+        <ul>
+            <li>Consistent spacing throughout all sections</li>
+            <li>Clear visual hierarchy with headings and content</li>
+            <li>Professional color scheme and typography</li>
+            <li>Content matches your Portfolio Planning Worksheet</li>
+            <li>Clean, beginner-friendly CSS that you understand</li>
+        </ul>
+
+        <h4>Portfolio Readiness</h4>
+        <ul>
+            <li>Layout works on different screen sizes (due to flex-wrap)</li>
+            <li>Professional appearance suitable for portfolio website</li>
+            <li>Content showcases your skills and personality</li>
+            <li>Code is clean and well-organized</li>
+            <li>Ready for further enhancement in future labs</li>
+        </ul>
+    </div>
+
+    <div class="success-criteria">
+        <h3>Success Criteria</h3>
+        <ul>
+            <li>Simple Flexbox layouts implemented for all portfolio sections</li>
+            <li>Clean, beginner-friendly CSS that you can explain and understand</li>
+            <li>Professional appearance using basic Flexbox properties</li>
+            <li>Portfolio content sections work together cohesively</li>
+            <li>Layouts are flexible and work on different screen sizes</li>
+            <li>Code follows patterns learned in class without complex calculations</li>
+            <li>Content structure aligns with Portfolio Planning Worksheet</li>
+            <li>Ready for next lab's enhancements</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Troubleshooting Common Beginner Issues</h2>
+        <ol>
+            <li><strong>Items not wrapping to new lines:</strong>
+                <ul>
+                    <li>Make sure you have <code>flex-wrap: wrap</code> on the container</li>
+                    <li>Check that items have a <code>min-width</code> set</li>
+                </ul>
+            </li>
+            
+            <li><strong>Spacing looks uneven:</strong>
+                <ul>
+                    <li>Use <code>gap</code> property instead of margins for consistent spacing</li>
+                    <li>Make sure all containers have the same gap value</li>
+                </ul>
+            </li>
+            
+            <li><strong>Content not centering:</strong>
+                <ul>
+                    <li>Use <code>align-items: center</code> to center vertically</li>
+                    <li>Use <code>justify-content: center</code> to center horizontally</li>
+                    <li>Remember: these go on the flex container, not the items</li>
+                </ul>
+            </li>
+            
+            <li><strong>Layout breaking on mobile:</strong>
+                <ul>
+                    <li>Check your <code>min-width</code> values - they might be too large</li>
+                    <li>Make sure you're using <code>flex-wrap: wrap</code></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="content-section">
+        <h2>Next Steps</h2>
+        
+        <h3>Portfolio Development Progression</h3>
+        <p>Your simple Flexbox layouts prepare you for:</p>
+        <ul>
+            <li><strong>LAB08:</strong> Enhanced layouts with CSS Grid (or more advanced Flexbox)</li>
+            <li><strong>LAB09:</strong> Responsive design and mobile optimization</li>
+            <li><strong>LAB10:</strong> Final polish and animations</li>
+            <li><strong>Project 1 Submission:</strong> Professional portfolio due Week 7 (revised timeline)</li>
+        </ul>
+
+        <h3>Focus on Mastery</h3>
+        <ul>
+            <li>Practice these basic patterns until they feel natural</li>
+            <li>Experiment with different content in your sections</li>
+            <li>Ask questions about anything that doesn't make sense</li>
+            <li>Remember: simple, working code is better than complex, broken code</li>
+        </ul>
+
+        <p>Your LAB07 foundation provides the essential layout skills needed to create a professional portfolio while building confidence with Flexbox fundamentals.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Homework Completion</h2>
+        <p><strong>Time Estimate:</strong> 1.5-2 hours to implement all basic flexbox layouts</p>
+        <p><strong>Submit:</strong> GitHub repository URL showing your portfolio with simple, working Flexbox layouts</p>
+        <p><strong>Focus on:</strong> Getting the basic patterns working well rather than trying to make everything perfect. Simple, clean layouts are the goal! Poop!</p>
+    </div>
+</body>
+</html>

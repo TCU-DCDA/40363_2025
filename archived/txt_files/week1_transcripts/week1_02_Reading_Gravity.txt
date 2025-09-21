@@ -1,0 +1,127 @@
+Hey, y'all some more intro concepts to build on what we've discussed so far.
+
+So we've talked before about the need for non academic texts to be visually, literally, visually appealing, right? So the Adele and the nutrition example we looked at in the past presentation.
+
+Got their initial attraction, their initial attention, based on their visual cues, more so than the text itself. The text was has to be sort of introduced through the visuals first before people dove in and start reading the actual textual content. So still, still talking about literal visual appeal, and how that sort of affects reading in a web environment, and how we can format and prepare our content for the for that kind of reading. And so we'll talk about both in this presentation.
+
+So
+
+images as we've seen in the magazine, examples from before, color, as we will have the ample opportunity to use in our websites, change, what's called Reading gravity,
+
+so they have a different weight than text, if you Will. And I'll illustrate that with this.
+
+So the concept here is that image is way, way more than text. And by that we mean they kind of pull the eye away from the text. So if you're if you're not, if you're just looking at the screen in general, or the slide in general, I
+
+would imagine if you just kind of relax for a second and turned off your focus, your eyes would probably drift to the image illustrations on the left. I
+
+mean, in this example, that's actually more interesting because there's more information being provided. So this is maybe not the best example in terms of apples to apples comparisons, but the images try draw our eye have more weight
+
+to draw our eye, then the text to the right does.
+
+So once we add color, then the gravity changes.
+
+So I'm guessing in this example, I'm assuming in this example, that if you let your eyes go relaxed, if you relax your focus, rather,
+
+your eyes will drift towards the photorealistic image to the left, right. In this case, the the illustration to the right provides more detail and more sort of information in general, visual, visual information in general. But that doesn't really matter in terms of our attention. Our initial attention will still go towards the more realistic looking colored illustration to the left, right. So
+
+images themselves will always sort of draw the eye away from text.
+
+And color will always drive and draw the eye away from black and white elements. So text and black and white images both right. So that affects the reading gravity. So if you put, if you have a magazine and you have or a website, that's just all text, and then there's the pathway through that text is pretty clear, right, pretty standard, left to right, top to bottom. In English,
+
+if you start introducing color and images and embedded video and animations and
+
+charts and whatever it may be, then the eye doesn't have the quite the clearest senses. Where I should go from point A to point point z, right,
+
+the path isn't as obvious with with once we introduce color or or or or images.
+
+So that affects then what we call reading gravity, right? So different layouts
+
+pull the eye differently through the text. So there's certain patterns of reading that we're accustomed to in books. So like reading a novel, we know that we're going to encounter text that look about maybe it looks like this, and so our eye will do, we'll we'll do this. This is called the Z letter, Z pattern that just Z's down the page, left to right. So
+
+there's the graphic above, but we kind of ignore that. Once we get past that, we just kind of fall into a natural Z path, which we're very accustomed to.
+
+But once we get into
+
+website specifically, we're skipping magazine layout strategies to talk about web design strategies instead. One of the original theories, or original sort of assertions about web reading was that the gravity does change, because there is going to be images, there are there will be text, there will be color, there will be
+
+animations or video, there may be another, other multimedia elements, and so all that together does kind of changes, then changes the ground rules as to how the eye will be.
+
+Pass, pass through or and make, make sense of what's on the screen.
+
+So there is, then
+
+that's reality one. Reality two is that web text is back lit, right? So you're reading off a paper. The light, you know, bounces gently from the light source off the paper to your eyes, so it's kind of refracted or deflected, right?
+
+Or the proper physics term of optics is so the so the reading paper is easier on the eyes than reading off the screen.
+
+Reading on the screen is more taxing on the eyes because the light is coming straight from the screen, so the light, so the light source is not bouncing off, gently off the surface. It's coming straight from the surface, out of the surface.
+
+So that's more fatiguing. I mean, it's a literal phenomenon. It's more fatiguing. You could probably read for text that you're really deeply interested in. You could read Paper, paper text longer for a longer stretch than you could
+
+a web based text. So what that does then is that that sort of Curt
+
+forces. I don't know what the right word is, but the resulting behavior is that the eye doesn't read in a careful Z pattern. It reads in a more scanning F pattern, so kind of looking and scanning, glancing around for the most important, interesting information.
+
+So this has been studied with eye scans, and this study is actually pretty old, and I'll show you a more recent example in a moment. But
+
+notice something. There's a lot of information on the screen, but notice where the eye is going. And so it's not a perfect F, obviously, but the eye is kind of scanning, but not scanning like this, carefully top to bottom, scanning like the left margin and the top of the page, primarily leaving what's in the lower right hand corner
+
+largely unattended. So the hot spots with the yellow and orange, the color spots are the the blue or the empty, empty sections of the page. So that that's we as web authors, we need to
+
+anticipate and expect this kind of behavior from our user, right? We're sort of thinking about how the user will receive and consume and
+
+and stay invested in our website, we have to sort of prepare for how they'll likely read it. And this is not a matter of intelligence. It's not a matter of interest or intention. It's a matter of saving your eyes sort of strength, or
+
+trying to reduce the fatigue in your eyes with looking at web text, right? So we do it, I do it. You do it unconsciously. Anyway, assume the same of your audience. Okay,
+
+so let me actually change screens for one second to show you a more, more recent illustration of that same principle.
+
+So what's been called the F pattern is now, probably more usefully, is described as a layer cake pattern.
+
+So we're still talking about scanning. We're still talking about
+
+the eye,
+
+the I not reading the careful Z pattern that we're talking about, but the F pattern has been sort of redefined to be more of a letter cake. So you're looking for the icing and you're skipping the cake part.
+
+The icing, of course, is the best part, too. So I understand the metaphor.
+
+So the blue dots are where the eye is going with the eye of the studies. Scans are are landing most often,
+
+and notice that they the most attention like this. There's headings and subheadings here and images in the middle. Lot
+
+of attention at the top of the page. For this pulled quote for one lot of attention on the subheadings, and notice that the eye is not spending a lot of time on the actual the written content,
+
+maybe very helpful information, but, but the eye is scanning, at least scanning first to make sure. Well, is this worth reading? Okay, then I will. Maybe, if I'm invested, I'll go ahead and read the section that's most appropriate to my appropriate to my question,
+
+another example of the layer caking.
+
+So again, notice
+
+the absence of attention in the text itself. So the text is important. Words are important to communicate ideas to people who speak the same language as you.
+
+It's one of our best methods that is tested by millennia of use, right?
+
+But when it comes to web components, and even in this case that we.
+
+Have almost these two parallel channels, so the eye is going sort of frequently to the images, definitely hanging on the left margin, and again, spending the least amount of time where the text is, where the bulk of the text is. The text is smaller in this example, let's look at this. The font is smaller than the example with the body text,
+
+so the headings and sometimes are easier to read, right, because you can see them more from a distance, right?
+
+So they're easier to sort of interpret or process than the small text, which requires more careful attention. We're more more brain power,
+
+a greater cognitive load, if you will. So we're trying to save our strength, to save our energy and reduce fatigue. So we kind of do the layer to layer F pattern or layer cake pattern instead.
+
+So part of writing well for the web is anticipating how your content will be consumed.
+
+So part of that is mobile design, which we'll talk about elsewhere or later. So designing for different different screen widths, different screen dimensions and orientations and such.
+
+But also then knowing that formulating your content so that even if your reader is looking at the letter cake kind of way or an F kind of way,
+
+they'll still be able to pull away
+
+the key concepts have a strong gist of what the page is about,
+
+enough perhaps to have them encourage them to read deeper. So it's a matter of it's a matter of usability, and so you user interface, user experience, UI, UX is part of what we're talking about. We're not going to go deep, deep, deep into it. And of course, the short project be, of course, by itself, but that's what we're talking about. How is the user user interface design so that it maximizes and engages the user experience, you know, makes it a pleasant user experience, and users have different needs, but when one need is to protect their eye stamina reading text in a different, different environment, you.
+
+Transcribed by https://otter.ai

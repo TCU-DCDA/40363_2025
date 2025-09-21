@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 05 – Base CSS Foundation</title>
+    <style>
+        /* D2L-friendly embedded styles */
+        .lab-container { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
+        .lab-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px solid #4d1979; }
+        .lab-title { font-size: 2.2em; color: #4d1979; margin-bottom: 10px; font-weight: bold; }
+        .lab-subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; font-style: italic; }
+        .section { margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 20px; border-left: 5px solid #4d1979; }
+        .section-title { font-size: 1.5em; color: #4d1979; margin-bottom: 15px; font-weight: bold; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
+        .task-box { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; border: 1px solid #dee2e6; }
+        .task-header { font-size: 1.2em; font-weight: bold; color: #495057; margin-bottom: 10px; padding: 8px 12px; background: #e9ecef; border-radius: 4px; }
+        .highlight { background: #fff3cd; padding: 8px 12px; border-radius: 5px; margin: 10px 0; border-left: 4px solid #ffc107; }
+        .code-block { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 4px; padding: 15px; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin: 15px 0; white-space: pre-wrap; }
+        .checklist { background: #d1ecf1; padding: 15px; border-radius: 5px; border-left: 4px solid #17a2b8; }
+        .checklist ul { margin: 0; padding-left: 20px; }
+        .checklist li { margin-bottom: 8px; }
+        .git-workflow { background: #e7f3ff; padding: 15px; border-radius: 5px; border-left: 4px solid #0066cc; }
+        .tip { background: #d4edda; padding: 15px; border-radius: 5px; border-left: 4px solid #28a745; }
+        a { color: #4d1979; text-decoration: none; } a:hover { text-decoration: underline; }
+        ol li, ul li { margin-bottom: 8px; }
+        @media (max-width: 768px) { .lab-container { padding: 10px; } .lab-title { font-size: 1.8em; } .section { padding: 15px; } .task-box { padding: 10px; } }
+    </style>
+    <meta name="robots" content="noindex">
+</head>
+<body>
+    <div class="lab-container">
+        <header class="lab-header">
+            <h1 class="lab-title">Lab 05 – Base CSS Foundation</h1>
+            <p class="lab-subtitle">Delivery Mode: In-Class to Homework (Hybrid)</p>
+            <div class="highlight">
+                <strong>📋 Goal:</strong> Introduce a single external stylesheet and establish foundational typography and spacing while practicing Git workflow.
+            </div>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2 class="section-title">Learning Outcomes</h2>
+                <ul>
+                    <li>Link and manage a single external CSS file across pages</li>
+                    <li>Apply a light reset and predictable box model</li>
+                    <li>Establish readable type scale and vertical rhythm</li>
+                    <li>Constrain content width for comfortable reading</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Prerequisites</h2>
+                <ul>
+                    <li>Completed Lab 04 (Links, Images, and Lists Enhancement)</li>
+                    <li>Active Git repository with HTML foundation</li>
+                    <li>Understanding of HTML structure and file organization</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Git Workflow Setup</h2>
+                <p>Continue working in your <code>personal-website-foundation</code> repository from previous labs.</p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Tasks</h2>
+                <div class="task-box">
+                    <div class="task-header">1. Create and Link Stylesheet</div>
+                    <ol>
+                        <li>Create a <code>css/</code> folder and a file named <code>styles.css</code>.</li>
+                        <li>Link it in the <code>&lt;head&gt;</code> of each HTML page:
+                            <div class="code-block">&lt;link rel="stylesheet" href="css/styles.css"&gt;</div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">2. Add a Light Reset</div>
+                    <ol>
+                        <li>Apply predictable sizing and remove default spacing:
+                            <div class="code-block">* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }</div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">3. Typography Foundation</div>
+                    <ol>
+                        <li>Set a readable system font stack and base line-height on <code>body</code>.</li>
+                        <li>Define h1–h3 sizes (use rem; <code>clamp()</code> optional).</li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">4. Layout Constraints & Rhythm</div>
+                    <ol>
+                        <li>Constrain main content width (e.g., <code>max-width: 70ch; margin: 0 auto; padding: 1.25rem;</code>).</li>
+                        <li>Add vertical rhythm (e.g., <code>p + p { margin-top: 1rem; }</code>).</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Rules</h2>
+                <ul>
+                    <li>No inline styles remain — remove earlier demo styles</li>
+                    <li>Use <code>rem</code> units for typography</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Git Workflow for This Lab</h2>
+                <div class="git-workflow">
+                    <p><strong>Commit your CSS work systematically:</strong></p>
+                    <ul>
+                        <li><code>Create CSS foundation with reset and typography</code></li>
+                        <li><code>Add responsive layout constraints and spacing</code></li>
+                        <li><code>Implement heading scale and visual hierarchy</code></li>
+                        <li><code>Link CSS to all HTML pages</code></li>
+                    </ul>
+                    <p><strong>Remember:</strong> Your CSS file needs to be committed and pushed to GitHub!</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Success Criteria</h2>
+                <div class="checklist">
+                    <ul>
+                        <li>☐ Visual improvement without breaking structure</li>
+                        <li>☐ Single external stylesheet controls presentation</li>
+                        <li>☐ CSS file properly linked and committed</li>
+                        <li>☐ All changes pushed to GitHub</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Submission Instructions</h2>
+                <p><strong>Submit repository URL</strong> to D2L — use your existing <code>personal-website-foundation</code> repository. Verify that <code>css/styles.css</code> is visible on GitHub.</p>
+            </section>
+
+            <div class="tip">
+                <h3>💡 Stretch</h3>
+                <p>Implement <code>:root</code> custom properties for font sizes and a spacing scale.</p>
+            </div>
+        </main>
+        <section class="section">
+            <h2 class="section-title">Related Resources</h2>
+            <ul>
+                <li><a href="../Week_3_Resources.html" target="_blank" rel="noopener">Week 3 Resources: Links, Images, Lists & Base CSS</a></li>
+                <li><a href="../Week_4_Resources.html" target="_blank" rel="noopener">Week 4 Resources: Typography Polish & Flexbox</a> (looking ahead)</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

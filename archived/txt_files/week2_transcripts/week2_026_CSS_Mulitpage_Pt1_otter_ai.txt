@@ -1,0 +1,195 @@
+Hey, crew, it's Curt Rode again where we are plugging ahead into the final Videos of the Week Two instruction. We've made things pretty with CSS. We'll maintain that prettiness as we begin to build out a larger sites. So we'll have a multi page site by the end of this video.
+
+Okay, so without further ado, I'll show you one problem I was having, and then one quick solution for that problem. So first, the example of what's gone temporarily wrong with my site. So may have noticed this last time, but as we were developing this, which is looking better and better. I seem to have lost and in the process of what I did in previous videos, I seem to have lost my links in my navigation bar. So, but that's not the case. They're still here. They're just they're just hiding.
+
+They shouldn't be hiding, but they are because I haven't fully set things up this way. So let me show you some CSS to correct that as an easy fix, and copy and paste mostly of what we have previously. So it's super, super simple, but it'll make a nice difference. So to go to my VS code.
+
+So what we did previously was we had to restyle the links that appeared inside the nav bar. Because the nav bar is purple, we need to have this text contrast that. So we made the navbar link text white.
+
+So we set this up previously you should have that you should also have. Then this in place. That's the hover. So when your mouse goes over the link, it changes its appearance. Is what we had before. But what's happened is that I've clicked on those links, right so you know, the links don't go anywhere yet, it's still the appearance that I've gone to those pages previously, because I have clicked those links previously.
+
+So what I need to add is this right here? Okay, so that changes the behavior or the appearance with that page has been visited. So notice what I've done is I have really, I basically just copy and pasted my my original a colon link CSS, and it said, personally, I don't feel as much need in this for the small of a site to distinguish between visited and unvisited links, so I'm gonna basically have them styled the same. So I go back to my page, the links are here again, and then they will change states,
+
+or they behave differently when I hover over them. So
+
+we're working towards a multi page site. So say, for project two, you'll want a four page site. We have placeholders for that, and you do want four pages, and we'll make space for those four pages as we move through this video, so the pages don't exist yet, besides the homepage and style sheet, but we've also been adding to a lot this week and making a lot more attractive. So let's go ahead and prepare the navigation first before we make the pages they link to. So we have here in the index file, we have here in the index file the nav box, which is the top purple box
+
+here, was sitting in the stage for this functional piece of the site here.
+
+And right now we have the placeholder hashtags where the link destination should, should reside. So a simple change, what needs to happen is this change has to be applied to every single page, which is we'll do simply in a second. So to the first hashtag for home. So leave home as it is, but for the first hashtag, type in index, dot, HTML, this page
+
+doesn't exist yet, but for the second hashtag,
+
+type in about that HTML
+
+and then change the link, one text, the word about to
+
+the third link. We'll call this one crap analysis. You may have already seen that it basically what the product is, is applying the CSS we've learned this week to the site you started last week in HTML. So this was a part of the content of the site. Will be the
+
+reformatting, a restyling of the analysis you did last week for for homework one. So type in
+
+the black text here
+
+is the link text, the text that will become linked.
+
+The blue text here is the file that will be linking to. So then the last link can be maybe contact me.
+
+Change the last pound sign here or hashtag here to the just to contact that HTML.
+
+So again, none of these pages, besides the first one, is this, but let's go ahead and sort of see that there's enough visual change in our navigation we can, sort of, if you look in the lower, lower left hand corner of your browser, you.
+
+If you hover to simply hover over
+
+the link text, you'll see the lower left, left hand corner. For me, it's in a green box that will be linking to. So
+
+now let's build the pages that we want to
+
+link to, because I'll leave this page alone, but I will duplicate it.
+
+The easiest way is to simply copy and then paste back in. So you should have an index dot HTML and then file called index copy. So do that again. So basically, you can probably just do a command C and A command V, yeah, there we go. So Command C for copy, Command V, for paste. Well, then call the new copy. Call us one crap analysis.
+
+So very important,
+
+the way you spell things here in the new file name needs to be spell identical to how it's spelled here, if there's any sort of mismatch, punctuation wise, spacing wise, file extension wise, whatever. This doesn't spell identically to this and vice versa, then the link won't work.
+
+And to make sure we were able to distinguish quickly between the pages we're on, let's on the prep Analysis page.
+
+Let's take out the banner
+
+so the banner is there on the first page to make a strong first impression, but to have that same banner on all the subsequent pages is kind of redundant and unnecessary beyond the first impression, because they will have the same style navigation bar to show that we're still in the same site. We'll have then the content begin higher on the page for the subject, for the body patients. So we can do that, but we can raise the content above the bottom of the screen
+
+by just simply getting rid of the the banner.
+
+And then, for my age one here,
+
+I'll type in maybe week one
+
+crap analysis you have, probably is more meaningful text anyway, because this is going to be probably filled with your crap analysis.
+
+So I still have the placeholder text here, but you probably have, you probably have your text, your HTML from last week, where you could simply just have that as your crap Analysis page. And that's fine. You want to make sure it's styled then the way we've developed this week, but the content itself could be the same. Okay? So to make mine a little more more like yours,
+
+I'll go ahead and add some relevant subheadings.
+
+I'll take out my links, because that's not what we what we're here about right now. So
+
+let's go ahead and review our sites.
+
+So the home page takes us to the home page. Crown just takes to a new page. There we go. So home page, crap page, crap. Page, home page.
+
+Okay, so you're starting the project with the content of one, one of four pages basically already taken care of. If
+
+there's things you want to add, things you want to clarify, things you want to refine images you want to swap out, you're welcome to do so. If you want to improve your analysis. You're welcome, of course, to do so.
+
+I would encourage you to do so if you have those insights. So let's go ahead and make the other pages, but I'll make the other pages based on the now the crap Analysis page, right? So I will click on that
+
+control, Ctrl C to copy, Ctrl V to
+
+paste.
+
+Or name this file to about
+
+for the h1 here my line 25
+
+and because this is COVID that I want to get rid of, I will.
+
+I'll go ahead and kill the contents
+
+inside the main tag, except for the h1
+
+so go ahead and test that. It's always good to take baby steps before you move too far forward. So home. Titans here. Nice, strong visual impression about me is empty for now, graph analysis is for you probably going to be in better, better shape than mine. Contact me doesn't exist yet, so you should have access to the other other pages from
+
+each of the sub pages. Okay,
+
+so do contact me, since about a little more cleaned up.
+
+Control C, the about file, Control V, the about copy. Rename about copy
+
+simply the word contact. So try to keep your file names as simple as possible, as simple.
+
+Yet as descriptive as possible.
+
+So contact hyphen page or contact me when
+
+you want to dot HTML, that's not necessary. It's the word contact. We'll get the word we'll get the point across. And index is always the name for the homepage, index is always the name for the homepage, index is always the homepage index is always the name for the homepage. So let's go ahead and then go to our contact page. We've created that
+
+everything here is otherwise fine, but instead of about me, I'll put into contact. Me
+
+test this out, and then we'll make one other couple small changes, and then we'll be pretty much there, so going back here,
+
+home, works about, works, crap, works contact me. Works from, contact me about works
+
+from, contact me, crap, works from, contact me home, works so it all seems consistent.
+
+So one thing to keep in mind, any changes you make to one navigation bar you'll have to make to all navigation bars
+
+if you, for example, add a link
+
+to your
+
+homepage. You called resume.
+
+You're editing successfully this page
+
+so that will now show up on your home page,
+
+not properly displayed, but if you go to the other pages, it doesn't show up there, right? So adding something to this page here doesn't automatically update the entire navigation. So this has to go to the navigation bar of each of the other three pages. But that's not required of the second project the week. Weeks to projects. I'll go ahead and take that out, but I just wanted to make that point. Okay, to make that point. Another small point to make, though,
+
+is for each page here we have
+
+60970,
+
+in the in the tab text here.
+
+So that's not bad, but it's also not really very descriptive as to what page or what files actually open.
+
+So we could probably distinguish each page with also with the proper title and the title tags in the head region, which is above the body box. So rode portfolio home is what I'm putting for the index.
+
+So here I have on the index page, I have that text now showing up as my tab.
+
+So do the same thing. Then for the other pages,
+
+I'll copy that.
+
+So your choice for these tabs, for these titles, page by page, is up to you, based on the content of your page, right and your and your voice, and what you think is going to be most helpful to your user, more, most importantly, but you know, then say, we're in this page here, and
+
+you want to go back to your site, you know which page you're returning to us immediately from this.
+
+So we know that the page we're returning to now is a different page because the tab, the title is different here. Okay, so again, usability eliminate the user's guesswork, so we know we're on the same page because the notification is static in a good way is it doesn't change. It shouldn't it shouldn't change page by page.
+
+We can get to that that newer content faster if we don't have to scroll over content we've seen before. Okay, all right. So there is a resource page in detail, since we're looking at detail
+
+for week two.
+
+So there's a multi page tutorial here that gives some broader reminders about backing up with with GitHub, but also gives, I wouldn't grab, all the, all the, all the content, but what exists for the About Me page and then between the main tags?
+
+So I'll go to the About Me page here.
+
+I'll scratch what's not currently in my h1 because I'm about to replace that anyway, just to give a little bit of a template to fill out. So now about should have its own content.
+
+And the subtitles here can be different for you. You can rearrange them, you can add or subtract whatever you want. Or we can do the same thing for the contact me page, gray.
+
+Thing between the main tags again,
+
+copy that go to contact.
+
+Kill the h1 here, because I'm about to replace it.
+
+So let's see here going back to the home page.
+
+So again, this will be redesigned to give a general overview of the site itself, what the site contains. So welcome statements, but also should give the reader incentive to go further. So reason why they be they benefit from clicking further into the site, like with a welcome broad view of what the site contains, broad view of what you want your audience to see specifically once they get into the content of each page, and then encouragement then to dig further to find out even more about about what the site has to offer them. I'm not asking you to pause, to copy in my code the way I have in past videos. I am giving you access to the code that I'm copying
+
+through this resource here in pizza well, which is in the week two section of the table of contents.
+
+Okay, so just to follow my own advice, my own recommendation, my own purported wisdom. Oh, I think it's important to commit changes we've made so we don't lose our work. So go back to our purple cat.
+
+Go to the right repository
+
+and leave a note to yourself, update nav and build
+
+sub pages. I'm
+
+Yeah.
+
+Okay, so a couple more concerns, but we're making great progress. I mean, then you can and you have a template now for your next assignment. So once you have HTML that you've developed and tested and used and like at your disposal, which I hope you you're seeing that you have now. You can repurpose it. You can build on it for the same product, to refine it, or you can you can copy it as you have from week one to week two to build a new project. You.
+
+Transcribed by https://otter.ai

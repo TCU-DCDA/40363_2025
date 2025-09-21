@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 Resources: Typography Polish & Flexbox Layout</title>
+    <style>
+        /* D2L-friendly embedded styles */
+        .resources-container { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
+        .resources-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px solid #4d1979; }
+        .resources-title { font-size: 2.2em; color: #4d1979; margin-bottom: 10px; font-weight: bold; }
+        .resources-subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; font-style: italic; }
+        .week-section { margin-bottom: 40px; background: #f8f9fa; border-radius: 8px; padding: 20px; border-left: 5px solid #4d1979; }
+        .week-title { font-size: 1.5em; color: #4d1979; margin-bottom: 20px; font-weight: bold; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
+        .resource-card { margin-bottom: 25px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .resource-title { font-size: 1.3em; font-weight: bold; color: #4d1979; margin-bottom: 8px; }
+        .resource-title a { color: #4d1979; text-decoration: none; }
+        .resource-title a:hover { text-decoration: underline; }
+        .resource-type { display: inline-block; background: #e7f3ff; color: #0066cc; padding: 4px 8px; border-radius: 3px; font-size: 0.85em; font-weight: bold; margin-bottom: 10px; }
+        .resource-description { margin-bottom: 12px; color: #495057; }
+        .resource-highlights { background: #f8f9fa; padding: 12px; border-radius: 4px; border-left: 3px solid #4d1979; }
+        .resource-highlights ul { margin: 0; padding-left: 20px; }
+        .resource-highlights li { margin-bottom: 5px; color: #495057; }
+        .lab-connections { background: #fff3cd; padding: 12px; border-radius: 4px; border-left: 3px solid #ffc107; margin-top: 10px; }
+        .lab-connections strong { color: #856404; }
+        .difficulty-badge { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; font-weight: bold; margin-left: 10px; }
+        .beginner { background: #d4edda; color: #155724; }
+        .overview-section { background: #e7f3ff; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid #0066cc; }
+        .overview-title { font-size: 1.4em; color: #0066cc; margin-bottom: 15px; font-weight: bold; }
+        .tips-section { background: #d4edda; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #28a745; }
+        .tips-title { font-size: 1.3em; color: #155724; margin-bottom: 15px; font-weight: bold; }
+        @media (max-width: 768px) { .resources-container { padding: 10px; } .resources-title { font-size: 1.8em; } .week-section { padding: 15px; } .resource-card { padding: 15px; } }
+    </style>
+    <meta name="description" content="Resources for Week 4 covering Project 1 Portfolio Planning and Lab 6 (CSS Foundation & Header Design)">
+    <meta name="robots" content="noindex">
+</head>
+<body>
+    <div class="resources-container">
+        <header class="resources-header">
+            <h1 class="resources-title">Week 4 Resources</h1>
+            <p class="resources-subtitle">Portfolio Planning & CSS Foundation</p>
+            <div style="background: #fff3cd; padding: 12px; border-radius: 5px; margin-top: 15px;">
+                <strong>📚 Purpose:</strong> Resources to support <strong>Project 1 Planning</strong> and <strong>Lab 6</strong> (CSS Foundation & Header Design) — building toward your portfolio website.
+            </div>
+        </header>
+
+        <main>
+            <section class="overview-section">
+                <h2 class="overview-title">Week 4 Focus: Portfolio Planning + CSS Foundation</h2>
+                <ul>
+                    <li><strong>Project 1 Planning:</strong> Complete Portfolio Planning Worksheet (submit as PDF)</li>
+                    <li><strong>Lab 6:</strong> CSS Foundation & Header Design for Portfolio</li>
+                    <li><strong>Key Skills:</strong> Content planning, CSS reset, typography, semantic HTML, accessibility basics</li>
+                </ul>
+            </section>
+
+            <section class="week-section">
+                <h2 class="week-title">Resources for Project 1 Planning & Lab 6</h2>
+
+                <!-- Project 1 Planning Resources -->
+                <div class="resource-card highlight-card" style="border-left: 4px solid #007acc;">
+                    <div class="resource-type">Planning</div>
+                    <h3 class="resource-title">
+                        <a href="Project1_Portfolio_Planning_Worksheet.html" target="_blank" rel="noopener">Portfolio Planning Worksheet</a>
+                        <span class="difficulty-badge beginner">Required</span>
+                    </h3>
+                    <p class="resource-description">Complete and submit as PDF. Plan your content before you code.</p>
+                    <div class="resource-highlights">
+                        <strong>Complete This First:</strong>
+                        <ul>
+                            <li>Define your target audience and goals</li>
+                            <li>Plan your content sections and hierarchy</li>
+                            <li>Consider accessibility from the start</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Why This Matters:</strong> Content-first planning makes building your portfolio much easier and more purposeful.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">Lab Instructions</div>
+                    <h3 class="resource-title">
+                        <a href="labs/LAB06_css_typography_polish.md" target="_blank" rel="noopener">Lab 6: CSS Foundation & Header Design</a>
+                        <span class="difficulty-badge beginner">Portfolio Prep</span>
+                    </h3>
+                    <p class="resource-description">Build professional CSS foundation with header design inspired by modern portfolios.</p>
+                    <div class="resource-highlights">
+                        <strong>Lab 6 Focus:</strong>
+                        <ul>
+                            <li>CSS reset and typography foundation</li>
+                            <li>Header layout with logo/navigation area</li>
+                            <li>Accessibility basics and semantic HTML</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Portfolio Connection:</strong> Sets up the foundation for your Project 1 portfolio website.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">Foundation</div>
+                    <h3 class="resource-title">
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals" target="_blank" rel="noopener">MDN: CSS Typography Fundamentals</a>
+                        <span class="difficulty-badge beginner">Essential</span>
+                    </h3>
+                    <p class="resource-description">Build readable typography with system fonts and proper spacing.</p>
+                    <div class="resource-highlights">
+                        <strong>Key Concepts:</strong>
+                        <ul>
+                            <li>System font stacks for reliable display</li>
+                            <li>rem units for scalable typography</li>
+                            <li>Line-height and spacing for readability</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Supports Lab 6 typography foundation and cross-platform compatibility.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">Tool</div>
+                    <h3 class="resource-title">
+                        <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener">WebAIM Contrast Checker</a>
+                        <span class="difficulty-badge beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">Verify color contrast meets WCAG (4.5:1 for body text).</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>Check normal vs. large text thresholds</li>
+                            <li>Test hover/focus states as well as default</li>
+                            <li>Record chosen colors in CSS custom properties</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Confirms accessibility requirement in Lab 6.</div>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #28a745;">
+                    <div class="resource-type">Design Inspiration</div>
+                    <h3 class="resource-title">
+                        <a href="https://curtrode.github.io/elisa_carol/#home" target="_blank" rel="noopener">Portfolio Header Design Example</a>
+                        <span class="difficulty-badge intermediate">Inspiration</span>
+                    </h3>
+                    <p class="resource-description">Modern portfolio header design for Lab 6 inspiration (focus on layout, not responsiveness yet).</p>
+                    <div class="resource-highlights">
+                        <strong>Notice:</strong>
+                        <ul>
+                            <li>Clean header with logo/navigation area</li>
+                            <li>Professional typography hierarchy</li>
+                            <li>Effective use of whitespace</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Header design pattern to adapt in Lab 6 (without responsiveness for now).</div>
+                </div>
+            </section>
+
+            <section class="week-section">
+                <h2 class="week-title">Next Steps — Looking Ahead to Lab 7</h2>
+
+                <div class="resource-card">
+                    <div class="resource-type">Guide</div>
+                    <h3 class="resource-title">
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener">MDN: Flexbox — complete guide</a>
+                        <span class="difficulty-badge beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">Core concepts: main/cross axis, alignment, wrapping, gaps.</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>Parent: <code>display: flex</code>, direction, wrap, gap</li>
+                            <li>Children: grow/shrink/basis; alignment utilities</li>
+                            <li>Common patterns: nav bars, cards, split layouts</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Builds the layout system in Lab 7.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">Interactive</div>
+                    <h3 class="resource-title">
+                        <a href="https://flexboxfroggy.com/" target="_blank" rel="noopener">Flexbox Froggy</a>
+                        <span class="difficulty-badge beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">Hands-on practice with Flexbox properties in a fun game.</p>
+                    <div class="resource-highlights">
+                        <strong>Focus:</strong>
+                        <ul>
+                            <li>justify-content / align-items / align-content</li>
+                            <li>flex-direction / flex-wrap</li>
+                            <li>order / align-self</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Reinforces alignment options used in lab layouts.</div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-type">Reference</div>
+                    <h3 class="resource-title">
+                        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">CSS-Tricks: A Complete Guide to Flexbox</a>
+                        <span class="difficulty-badge beginner">Beginner</span>
+                    </h3>
+                    <p class="resource-description">Quick-reference visuals for all Flexbox properties.</p>
+                    <div class="resource-highlights">
+                        <strong>Highlights:</strong>
+                        <ul>
+                            <li>Cheat-sheet style property summaries</li>
+                            <li>Examples for common component patterns</li>
+                            <li>Great for troubleshooting layout issues</li>
+                        </ul>
+                    </div>
+                    <div class="lab-connections"><strong>Lab Connection:</strong> Keep open while building Lab 7 layouts.</div>
+                </div>
+            </section>
+
+            <section class="tips-section">
+                <h2 class="tips-title">💡 Week 4 Study Tips</h2>
+                <ul>
+                    <li><strong>Plan First:</strong> Complete the Portfolio Planning Worksheet before coding</li>
+                    <li><strong>Content-First:</strong> Define your sections and hierarchy before styling</li>
+                    <li><strong>Foundation Focus:</strong> Start with CSS reset, typography, and basic header layout</li>
+                    <li><strong>System Fonts:</strong> Use reliable font stacks that work across platforms</li>
+                    <li><strong>Accessibility Mindset:</strong> Consider semantic HTML and color contrast from the start</li>
+                </ul>
+            </section>
+
+            <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #0066cc; text-align: center;">
+                <h3 style="color: #0066cc; margin-bottom: 15px;">🔗 Quick Reference</h3>
+                <p><strong>This Week:</strong>
+                    <a href="Project1_Portfolio_Planning_Worksheet.html" target="_blank" rel="noopener">Portfolio Planning Worksheet</a>
+                    and
+                    <a href="labs/LAB06_css_typography_polish.md" target="_blank" rel="noopener">Lab 06 — CSS Foundation & Header Design</a>.
+                </p>
+                <p><em>All resources are free and do not require paid subscriptions.</em></p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

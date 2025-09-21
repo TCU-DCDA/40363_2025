@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Web Development?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4d1979 0%, #663399 100%);
+            color: white;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            min-height: 600px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+            padding: 40px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #c0c0c0;
+        }
+
+        p, li {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .column {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .frontend {
+            border-left: 5px solid #c0c0c0;
+        }
+
+        .backend {
+            border-left: 5px solid #c0c0c0;
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .slide-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 1em;
+            z-index: 100;
+        }
+
+        .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .analogy {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #c0c0c0;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .tech-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 15px;
+            min-width: 220px;
+            max-width: 280px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tech-item-image {
+            border-radius: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+            width: 100%;
+        }
+
+        .tech-item-text {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 10px;
+            flex-grow: 1;
+        }
+
+        .tech-item img {
+            width: calc(100% - 30px);
+            height: 150px;
+            object-fit: contain;
+            border-radius: 8px;
+            animation: imageFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            margin-bottom: 15px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .tech-item:hover img {
+            transform: scale(1.1);
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+        }
+
+        .tech-item h3 {
+            font-size: 1.4em;
+            margin: 15px 0 10px 0;
+            color: #fff;
+        }
+
+        .tech-item p {
+            font-size: 1em;
+            margin: 8px 0;
+        }
+
+        /* Image-text column layouts */
+        .image-text-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .image-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Adjusted tech stack for column layout */
+        .tech-stack-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .tech-item-horizontal {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 300px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .tech-item-horizontal img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 8px;
+            animation: imageFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+            background: rgba(255,255,255,0.9);
+            padding: 8px;
+            flex-shrink: 0;
+        }
+
+        .tech-item-horizontal:hover img {
+            transform: scale(1.1);
+        }
+
+        .tech-item-horizontal:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(10px);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .tech-item-horizontal .tech-content {
+            flex-grow: 1;
+        }
+
+        .tech-item-horizontal h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2em;
+        }
+
+        /* Stacked tech boxes layout */
+        .tech-stack-stacked {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tech-box {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 20px;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tech-box:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(10px);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .tech-box-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tech-box img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+            animation: imageFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            background: rgba(255,255,255,0.9);
+            padding: 10px;
+        }
+
+        .tech-box:nth-child(1) img { animation-delay: 0s; }
+        .tech-box:nth-child(2) img { animation-delay: 0.5s; }
+        .tech-box:nth-child(3) img { animation-delay: 1s; }
+
+        .tech-box:hover img {
+            transform: scale(1.1);
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+        }
+
+        .tech-box-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tech-box h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+            color: #fff;
+        }
+
+        .tech-box p {
+            margin: 5px 0;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        .tech-box .description {
+            color: #e0e0e0;
+            font-weight: normal;
+        }
+
+        .slide.active .tech-box {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .slide.active .tech-box:nth-child(1) { animation-delay: 0.2s; }
+        .slide.active .tech-box:nth-child(2) { animation-delay: 0.4s; }
+        .slide.active .tech-box:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .tech-item:nth-child(1) img { animation-delay: 0s; }
+        .tech-item:nth-child(2) img { animation-delay: 0.5s; }
+        .tech-item:nth-child(3) img { animation-delay: 1s; }
+
+        @keyframes imageFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .slide.active .tech-item {
+            animation: slideUpStagger 0.8s ease-out;
+        }
+
+        .slide.active .tech-item:nth-child(1) { animation-delay: 0.3s; }
+        .slide.active .tech-item:nth-child(2) { animation-delay: 0.6s; }
+        .slide.active .tech-item:nth-child(3) { animation-delay: 0.9s; }
+
+        /* Content-specific illustrations and animations */
+        .house-illustration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 3em;
+        }
+
+        .house-parts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .roof { 
+            font-size: 0.8em; 
+            animation: buildHouse 0.8s ease-out 0.5s both;
+        }
+        .walls { 
+            font-size: 1em; 
+            animation: buildHouse 0.8s ease-out 0.8s both;
+        }
+        .foundation { 
+            font-size: 0.6em; 
+            animation: buildHouse 0.8s ease-out 1.1s both;
+        }
+
+        @keyframes buildHouse {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .restaurant-illustration {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            font-size: 2.5em;
+        }
+
+        .dining-room, .kitchen {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .dining-room {
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+
+        .kitchen {
+            animation: slideInRight 1s ease-out 0.8s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .tech-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 4em;
+        }
+
+        .person-building {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skeleton { 
+            font-size: 0.8em; 
+            animation: assemblePerson 0.8s ease-out 0.5s both;
+        }
+        .clothing { 
+            font-size: 0.9em; 
+            animation: assemblePerson 0.8s ease-out 0.8s both;
+        }
+        .personality { 
+            font-size: 0.7em; 
+            animation: assemblePerson 0.8s ease-out 1.1s both;
+        }
+
+        @keyframes assemblePerson {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .netflix-visual {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 3em;
+        }
+
+        .netflix-logo {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            animation: logoGlow 3s ease-in-out infinite alternate;
+            filter: drop-shadow(0 4px 12px rgba(229, 9, 20, 0.4));
+        }
+
+        @keyframes logoGlow {
+            from {
+                filter: drop-shadow(0 4px 12px rgba(229, 9, 20, 0.4));
+                transform: scale(1);
+            }
+            to {
+                filter: drop-shadow(0 8px 20px rgba(229, 9, 20, 0.6));
+                transform: scale(1.02);
+            }
+        }
+
+        /* Instagram styling */
+        .instagram-visual {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .instagram-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 25px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-radius: 20px;
+            animation: instagramGlow 3s ease-in-out infinite alternate;
+            box-shadow: 0 4px 15px rgba(188, 24, 136, 0.3);
+        }
+
+        .instagram-logo {
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+            animation: instagramGlow 3s ease-in-out infinite alternate;
+            filter: drop-shadow(0 4px 12px rgba(188, 24, 136, 0.4));
+        }
+
+        .ig-icon {
+            font-size: 2.5em;
+            color: white;
+        }
+
+        .ig-text {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        @keyframes instagramGlow {
+            from {
+                box-shadow: 0 4px 15px rgba(188, 24, 136, 0.3);
+                transform: scale(1);
+            }
+            to {
+                box-shadow: 0 8px 25px rgba(188, 24, 136, 0.5);
+                transform: scale(1.02);
+            }
+        }
+
+        /* Backend styling */
+        .backend-visual {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .backend-image {
+            max-width: 200px;
+            height: auto;
+            border-radius: 15px;
+            animation: backendPulse 3s ease-in-out infinite alternate;
+            filter: drop-shadow(0 4px 12px rgba(52, 152, 219, 0.4));
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+        }
+
+        @keyframes backendPulse {
+            from {
+                filter: drop-shadow(0 4px 12px rgba(52, 152, 219, 0.4));
+                transform: scale(1);
+            }
+            to {
+                filter: drop-shadow(0 8px 20px rgba(52, 152, 219, 0.6));
+                transform: scale(1.05);
+            }
+        }
+
+        .screen {
+            position: relative;
+            padding: 20px;
+            border: 3px solid #c0c0c0;
+            border-radius: 10px;
+            background: rgba(0,0,0,0.3);
+            animation: screenGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes screenGlow {
+            from {
+                box-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(192, 192, 192, 0.6);
+            }
+        }
+
+        .code-stack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .code-layers {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .html-layer, .css-layer, .js-layer {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .html-layer {
+            background: rgba(230, 126, 34, 0.3);
+            border: 2px solid #e67e22;
+            animation: stackLayer 0.6s ease-out 0.3s both;
+        }
+
+        .css-layer {
+            background: rgba(52, 152, 219, 0.3);
+            border: 2px solid #3498db;
+            animation: stackLayer 0.6s ease-out 0.6s both;
+        }
+
+        .js-layer {
+            background: rgba(241, 196, 15, 0.3);
+            border: 2px solid #f1c40f;
+            animation: stackLayer 0.6s ease-out 0.9s both;
+        }
+
+        @keyframes stackLayer {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .portfolio-visual {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 2.5em;
+        }
+
+        .building-blocks {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .block {
+            padding: 15px;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid #c0c0c0;
+            animation: buildUp 0.5s ease-out both;
+        }
+
+        .block:nth-child(1) { 
+            height: 60px; 
+            animation-delay: 0.3s;
+        }
+        .block:nth-child(2) { 
+            height: 60px; 
+            animation-delay: 0.5s;
+        }
+        .block:nth-child(3) { 
+            height: 60px; 
+            animation-delay: 0.7s;
+        }
+
+        @keyframes buildUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide illustrations initially */
+        .slide:not(.active) .house-illustration,
+        .slide:not(.active) .restaurant-illustration,
+        .slide:not(.active) .tech-visual,
+        .slide:not(.active) .netflix-visual,
+        .slide:not(.active) .code-stack,
+        .slide:not(.active) .portfolio-visual {
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 2em; }
+            p, li { font-size: 1.1em; }
+            
+            .slide {
+                padding: 20px;
+            }
+
+            .house-illustration,
+            .restaurant-illustration,
+            .tech-visual,
+            .netflix-visual,
+            .code-stack,
+            .portfolio-visual {
+                font-size: 2em;
+            }
+
+            .building-blocks {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .block {
+                width: 60px;
+                height: auto !important;
+                padding: 10px;
+            }
+        }
+
+        /* --- Frontend Technologies (Slide 5) Enlarged Layout Overrides --- */
+        .slide.frontend-tech { /* widen this specific slide */
+            max-width: 1400px;
+            width: 95%;
+        }
+        .frontend-tech .tech-stack { /* switch to responsive grid to utilize width */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            align-items: stretch;
+            justify-items: center;
+            margin-top: 40px;
+        }
+        .frontend-tech .tech-item { /* let cards grow */
+            max-width: none;
+            min-width: 0;
+            width: 100%;
+            padding: 30px;
+        }
+        .frontend-tech .tech-item img { /* bigger, proportional images */
+            width: 100%;
+            height: clamp(220px, 30vh, 360px);
+            margin: 0 0 18px 0;
+        }
+        .frontend-tech .tech-item-text { /* reduce inner chrome for more visual focus */
+            background: none;
+            padding: 10px 0 0;
+        }
+        .frontend-tech h2 { margin-bottom: 15px; }
+        .frontend-tech .tech-item h3 { font-size: 1.6em; }
+        .frontend-tech .tech-item p { font-size: 1.05em; }
+        .frontend-tech .tech-item img { transition: transform .4s ease; }
+        .frontend-tech .tech-item:hover img { transform: scale(1.08); }
+        @media (max-width: 768px) {
+            .frontend-tech .tech-stack { gap: 30px; }
+            .frontend-tech .tech-item img { height: clamp(160px, 28vh, 260px); }
+        }
+
+        /* --- Backend Development (Slide 6) Enlarged Left Image Overrides --- */
+        .slide.backend-tech { /* allow a bit wider to balance enlarged image */
+            max-width: 1300px;
+            width: 92%;
+        }
+        .backend-tech .image-text-layout { /* adjust column proportions */
+            grid-template-columns: 1.1fr 1fr; /* slightly favor image */
+            gap: 60px;
+            align-items: center;
+        }
+        .backend-tech .image-column { /* give image room */
+            justify-content: center;
+        }
+        .backend-tech .backend-image { /* enlarge image */
+            max-width: none;
+            width: 100%;
+            height: clamp(260px, 42vh, 520px);
+            object-fit: contain;
+            padding: 25px; /* keep existing white background feel */
+        }
+        .backend-tech h2 { margin-bottom: 20px; }
+        .backend-tech ul li { font-size: 1.15em; }
+        .backend-tech .text-column ul { max-width: 640px; }
+        .backend-tech .backend-image { transition: transform .5s ease, filter .5s ease; }
+        .backend-tech .backend-image:hover { transform: scale(1.04); filter: drop-shadow(0 10px 24px rgba(52,152,219,0.55)); }
+        @media (max-width: 1000px) {
+            .backend-tech .image-text-layout { grid-template-columns: 1fr; gap: 40px; }
+            .backend-tech .backend-image { height: clamp(220px, 38vh, 420px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide-counter">
+            <span id="slideNumber">1</span> / <span id="totalSlides">8</span>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>What is Web Development?</h1>
+            <h3>Frontend vs. Backend</h3>
+            <p style="font-size: 1.1em; margin-top: 40px;">WRIT 40363: Multimedia Authoring</p>
+        </div>
+
+        <!-- Slide 2: What is Web Development? -->
+        <div class="slide">
+            <h2>What is Web Development?</h2>
+            
+            <!-- Visual illustration of building concept -->
+            <div class="house-illustration">
+                <div class="house-parts">
+                    <div class="roof">🏠 Frontend (What Users See)</div>
+                    <div class="walls">🧱 Structure & Design</div>
+                    <div class="foundation">⚙️ Backend (Behind the Scenes)</div>
+                </div>
+            </div>
+            
+            <div class="analogy">
+                <strong>Think of it like building a house:</strong>
+                <ul>
+                    <li><strong>Frontend:</strong> The beautiful exterior and interior design</li>
+                    <li><strong>Backend:</strong> The plumbing, electrical, and foundation</li>
+                    <li><strong>Full-Stack:</strong> The architect who designs both</li>
+                </ul>
+            </div>
+            
+            <p>Web development is creating websites and applications that people can use through their web browsers.</p>
+        </div>        <!-- Slide 3: The Big Picture -->
+        <div class="slide">
+            <h2>Two Main Areas</h2>
+            
+            <!-- Restaurant analogy visualization -->
+            <div class="restaurant-illustration">
+                <div class="dining-room">
+                    <div>🍽️</div>
+                    <div style="font-size: 0.4em; margin-top: 10px;">FRONTEND<br/>Dining Room</div>
+                </div>
+                <div class="kitchen">
+                    <div>👨‍🍳</div>
+                    <div style="font-size: 0.4em; margin-top: 10px;">BACKEND<br/>Kitchen</div>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column frontend">
+                    <h3>Frontend</h3>
+                    <p>What users see and interact with</p>
+                    <p><em>"The restaurant dining room"</em></p>
+                </div>
+                <div class="column backend">
+                    <h3>Backend</h3>
+                    <p>Behind-the-scenes functionality</p>
+                    <p><em>"The restaurant kitchen"</em></p>
+                </div>
+            </div>
+            <p style="margin-top: 30px;"><strong>This semester, we're focusing on Frontend!</strong></p>
+        </div>
+
+        <!-- Slide 4: Frontend Deep Dive -->
+        <div class="slide">
+            <h2>Frontend Development</h2>
+            
+            <!-- Person building analogy -->
+            <div class="tech-visual">
+                <div class="person-building">
+                    <div class="personality">✨ JavaScript (Personality)</div>
+                    <div class="clothing">👔 CSS (Styling)</div>
+                    <div class="skeleton">🦴 HTML (Structure)</div>
+                </div>
+            </div>
+            
+            <p><strong>Everything users see and interact with directly</strong></p>
+            <ul>
+                <li><strong>Visual Design:</strong> Colors, fonts, layouts, images</li>
+                <li><strong>User Interface:</strong> Buttons, menus, forms</li>
+                <li><strong>User Experience:</strong> How easy and pleasant it is to use</li>
+                <li><strong>Responsiveness:</strong> Works on phones, tablets, computers</li>
+                <li><strong>Interactivity:</strong> Clicking, scrolling, animations</li>
+            </ul>
+        </div>
+
+        <!-- Slide 5: Frontend Technologies -->
+    <div class="slide frontend-tech">
+            <h2>Frontend Technologies</h2>
+            <p><strong>The three languages we'll learn:</strong></p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <img src="images/html2.png" alt="HTML Logo">
+                    <div class="tech-item-text">
+                        <h3>HTML</h3>
+                        <p>Creates the structure and content of web pages</p>
+                        <p><em>"The skeleton of a building"</em></p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <img src="images/css2.png" alt="CSS Logo">
+                    <div class="tech-item-text">
+                        <h3>CSS</h3>
+                        <p>Controls the visual styling and layout</p>
+                        <p><em>"The paint and decorations"</em></p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <img src="images/js2.png" alt="JavaScript Logo">
+                    <div class="tech-item-text">
+                        <h3>JavaScript</h3>
+                        <p>Adds interactivity and dynamic behavior</p>
+                        <p><em>"The personality and actions"</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Backend Overview -->
+    <div class="slide backend-tech">
+            <h2>Backend Development</h2>
+            
+            <div class="image-text-layout">
+                <div class="image-column">
+                    <img src="images/backend.png" alt="Backend Development" class="backend-image">
+                </div>
+                <div class="text-column">
+                    <p><strong>The behind-the-scenes magic users don't see</strong></p>
+                    <ul>
+                        <li><strong>Server Logic:</strong> Processing requests and responses</li>
+                        <li><strong>Databases:</strong> Storing and retrieving information</li>
+                        <li><strong>Security:</strong> User authentication, data protection</li>
+                        <li><strong>APIs:</strong> How different systems communicate</li>
+                        <li><strong>Performance:</strong> Making everything run fast and efficiently</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Real-World Example -->
+        <div class="slide">
+            <h2>Real-World Example: Netflix</h2>
+            
+            <!-- Netflix logo visualization -->
+            <div class="netflix-visual">
+                <img src="images/Netflix-logos-side-by-side-3679101094.jpg" alt="Netflix Logo" class="netflix-logo">
+            </div>
+            
+            <div class="two-column">
+                <div class="column frontend">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>Movie thumbnails and descriptions</li>
+                        <li>Search bar and filters</li>
+                        <li>Play/pause buttons</li>
+                        <li>User profile interface</li>
+                        <li>Responsive design for all devices</li>
+                    </ul>
+                </div>
+                <div class="column backend">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>User account management</li>
+                        <li>Movie recommendation algorithms</li>
+                        <li>Video streaming infrastructure</li>
+                        <li>Payment processing</li>
+                        <li>Content database management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Real-World Example: Instagram -->
+        <div class="slide">
+            <h2>Real-World Example: Instagram</h2>
+            
+            <!-- Instagram logo visualization -->
+            <div class="instagram-visual">
+                <img src="images/91-916750_ig-logo-instagram-hd-png-download-3326753582.png" alt="Instagram Logo" class="instagram-logo">
+            </div>
+            
+            <div class="two-column">
+                <div class="column frontend">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>Photo filters and editing tools</li>
+                        <li>Stories with swipe navigation</li>
+                        <li>Infinite scroll feed</li>
+                        <li>Camera integration</li>
+                        <li>Profile grids and layouts</li>
+                        <li>Real-time likes and comments</li>
+                    </ul>
+                </div>
+                <div class="column backend">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Image processing and compression</li>
+                        <li>Content recommendation algorithms</li>
+                        <li>Real-time messaging system</li>
+                        <li>User authentication and security</li>
+                        <li>Content delivery networks (CDN)</li>
+                        <li>Analytics and insights data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Why Start with Frontend? -->
+        <div class="slide">
+            <h2>Why Start with Frontend?</h2>
+            
+            <!-- Building blocks visualization -->
+            <div class="portfolio-visual">
+                <div class="building-blocks">
+                    <div class="block">
+                        <img src="images/html5-icon.svg" alt="HTML5" style="width: 45px; height: 45px; object-fit: contain;">
+                    </div>
+                    <div class="block">
+                        <img src="images/css-icon.svg" alt="CSS3" style="width: 45px; height: 45px; object-fit: contain;">
+                    </div>
+                    <div class="block">
+                        <img src="images/javascript-logo.png" alt="JavaScript" style="width: 45px; height: 45px; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+            
+            <ul>
+                <li><strong>Immediate Visual Results:</strong> See your code come to life instantly</li>
+                <li><strong>Creative Expression:</strong> Combine technical skills with design thinking</li>
+                <li><strong>User-Focused:</strong> Learn to think about audience and accessibility</li>
+                <li><strong>Foundation Skills:</strong> HTML, CSS, and JavaScript are essential for all web work</li>
+                <li><strong>Portfolio Building:</strong> Create projects you can show and share</li>
+            </ul>
+            <div class="analogy">
+                <p><strong>Remember:</strong> Every backend needs a frontend, but you can build amazing things with just frontend skills!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button onclick="changeSlide(-1)">← Previous</button>
+        <button onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('slideNumber').textContent = currentSlide + 1;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) changeSlide(1); // Swipe left
+            if (touchEndX > touchStartX + 50) changeSlide(-1); // Swipe right
+        }
+    </script>
+</body>
+</html>

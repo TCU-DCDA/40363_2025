@@ -1,0 +1,367 @@
+So we got a good taste in the last video of what CSS can do in terms of making content more attractive, make it seem like less work to get through, make it more appealing, more inviting.
+
+Let's think ahead to a larger site then our next steps, instead of a navigation system that won't function quite yet because the pages that it will link to don't exist quite yet, but we'll have a placeholder for it that will make sense visually.
+
+So let's create we want to create a navigation system so a top navigation, a top box of links that will take us to away from our homepage, in this case, to sub pages of the site. So what we can do is go, go inside the body tag. I want my navigation to appear the very top of the page. So I want my navigation to appear right here above. Welcome to my site be a bar that spans the width of the browser. So we can use an HTML tag called nav. So I'm in the index page here. Just make sure you're in the HTML page
+
+and call it simply nav. So I've put it outside the main box, and I'll explain why in a second.
+
+I put the the nav pair of tags side by side, in between, both in between the body and the main opening tags. So line 15 will have both tags. So I don't want to capture a lot of content. I want to capture just some new content, just for the navigation of the very top and above the main primary content of the page inside the body. So we
+
+save that preview that,
+
+and nothing's happened yet, because there's no content between the tags,
+
+and there's no style yet given to those tags. So there's just kind of they're they're ready to get, they're ready to serve. They're ready to be put to use, but they anything. Need a little more information, content wise and style wise to display appropriately. So let's work on the style, the styling setup at first.
+
+So in this case, I want to create
+
+some space in my CSS file, so make sure you were installed on CSS.
+
+And we'll start by typing in NAV, nav with the curly brackets. And let's
+
+make a width of 100%
+
+right? So unlike the body content itself inside the main box. I want the banner to go the full width of the browser window, right? So be kind of a frame. The banner and the footer both will be kind of a frame for the site,
+
+and then inset from that beneath that will be the body content with the margins left and right. That'll be in the main section. But that's why I put the
+
+nav. Bar outside the main tag, because I don't want the nav bar to be affected by the name the main tag. CSS,
+
+I want that to have have independent styling.
+
+Okay, okay, so I want to be 100% going back to style dot CSS. Want to be 100% wide, and I want to use TC purple again, because I'm fond of it and it's part of a growing pattern for my site.
+
+So I wanted the background color to be the TCU purple. So background hyphen color. So background hyphen color is the full proper name of that which will be different than the text color itself, which will be the foreground color. So let's
+
+go ahead and do that too.
+
+So if you see background
+
+hyphen color, that's the background color, obviously, if you see color by itself, that's the foreground color. That's usually the more often than not, the text color on top of the background color of whatever that may be.
+
+Okay, so let's go ahead and save this and preview our HTML page and sort of see if that see that's showing up.
+
+Oh, interesting. Okay, okay.
+
+Because the box itself has no content. There's
+
+nothing to see yet, but if we add some content to it, we should be able to see something.
+
+There we go. Okay, so interesting point that I had forgotten. So the styles are there, but just because there's no content yet, inside that box, the box was collapsed, but you put some content into the box, open the box up, expand the box rather and then you can sort of see the broader styling. So the background was purple, the background purple and stuff. Okay,
+
+let's do a full, full.
+
+Browser view. So the space is defined. It does span the full width as a kind of frame for the page. We'll have a we'll have a footer. Eventually they'll, they'll kind of complete the frame.
+
+Oh, they have some content here that is white. The color is white on top of a purple background. So things are happening there. Let me go
+
+ahead and define the space a little bit further
+
+back in my CSS,
+
+I'll give it a more more specific heights,
+
+some more defined rather height.
+
+So the height of the box now is called 10 VA VH, which is 10 viewer heights. So this is 10% of the larger height of the page, or this is 10% of the largest height of the page.
+
+So the next line,
+
+please include so display colon, flex semi colon.
+
+We'll explain this in more detail next week, but it's good to have a have it in place now. So as we move into responsive design, this is a good thing to have already sort of as part of the larger build.
+
+But don't worry about it right now. It's not, not really important to what we accomplished today, but it will be important to what we accomplish later down in the course.
+
+But right now, that's the text is a little bit cramped. We're cramping adverse when it comes to the content, so I want the text to be
+
+maybe hovering more in the middle, between the top and bottom of the navigation bar. So we'll add this line here,
+
+so that centers it vertically, not horizontally, but vertically. And so that looks nice, but it also is. It is slammed against the left margin here, left edge of the navigation box. So I would like to do in the to
+
+apply the the a of the crap principle, the CR, AP principle, I like this text to line up with the left margin of the text here. So I'll add what's called padding
+
+and make the padding value match
+
+the margin left value here
+
+for the main, main content.
+
+So this is all consistent with with the a of crap alignment to other elements in the page, for a sense of unity and and
+
+consistency and pattern, we're
+
+going to take probably a kind of a turn that you wouldn't expect. I mean, I could, I could just type in additional text here
+
+for additional placeholder links.
+
+I can do that. I used to do it this way, and we
+
+can eventually make those proper links to proper pages when those pages exist. So
+
+we can do it that way, that will communicate. This is probably a navigation system, but we wanted to, again, sort of anticipate responsive design eventually. But we wanted to kind of again have things built so that when we get to that point, it'll be ready to go. So let's not do it this way. So go ahead and type in when I typed in, and we'll, we'll make use of that content.
+
+So then that have your nav tags, have it defined in the CSS as having these, these properties.
+
+Then go your HTML page and then have the nav tags with this content in between. I'll take out the line the punctuation between others. Have the tags itself, but instead of having it as of just a block of text, which it is currently, let's make it an unordered list.
+
+Okay, so let's, let's make a UL box inside the nav box,
+
+which apply some styling, because the padding is not different, but
+
+again, padding is like wrapping of a vase to be shipped. So margin is the space between elements. So the space between the body by the left margin, the left edge of the body box, left edge of the main box, padding is space between the content of a box and the
+
+edges of that box. So this is padding here. This would being being applied. So this is subtle, but they do sort of they.
+
+Are separate and control differently.
+
+Okay, so I'm going to put each each link name as online,
+
+which is just for my purposes here. It doesn't affect how things are displaying here currently,
+
+but inside the UL box, the unordered list box that is
+
+inside now the nav box, let's add then the Li and list item boxes here too.
+
+So each link name will have its own Li, and the Li is not for link, it's for list item and
+
+notice what's happening in the preview.
+
+So it's showing up as a link. I'm sorry, showing up as a list, so showing up as a list, but the list is now, because it's
+
+vertical, it's going outside the box, right? Because the content is,
+
+it was format. So we can, we can override that to make it display instead
+
+of being a column, text would be a real text instead. Okay, so let's work on that. First, we have to restore the default of the list, not here. We want this to basically to appear as it's appearing.
+
+We want to be styled uniquely appears nicely inside this space here. So let's go to our style sheet
+
+and play with the cell here. I'm
+
+okay, so we want then to use the UL tagging of the UL box to help build our navigation that will be responsive eventually, eventually,
+
+but we wanted to be styled differently than a regular, numbered or ordered list that appears in this in the page. So we want this text to stay black and to
+
+be on a white background. We want this text to be white but being a purple background. So we need to style them separately.
+
+So you can have selectors that are in that are inside selectors. So the for the for the unordered lists that appear inside the navigation Right? So there's no, there's no punctuation in between, so that for the navigations,
+
+UL or the UL that's inside a navigation box. So it's different than this, because this is separated by a comma. So this, these are still distinct boxes. This is a box within a box.
+
+So the UL is inside the nav. So for every time the UL is put inside of a nav box,
+
+take away
+
+its bullet point, the text decoration or the style of a list, the selling of the list with a bullet point or a number, take that away. Remove that sort of, that kind of styling, that type of styling.
+
+So, list, hyphen, style, hyphen, type, colon, space, none.
+
+So, to make it vertical, I'm sorry, make it horizontal.
+
+Type in display colon flex, and we're making our content flexible. Another way of putting is fluid. So depending on the container is showing up and it'll rearrange itself to accommodate the sizing and available space in the responsive box. Okay? So we want to then turn off the the the well,
+
+we want to turn off the padding of the default unordered list and turn off the margin as well.
+
+And then we want spacing in between each each list item. So we want to put what's called a gap in 20 between each list item.
+
+So I'll pause for a second. Let's make sure you get all that down for both business styling,
+
+for nav
+
+and for nav UL, again, there's no punctuation here. This is different than this.
+
+This style is two separate tags.
+
+This style is a tag inside another tag.
+
+So I like a unique instance of this tag when it appears in this in this instance inside a nav tag. In this case,
+
+then it will be, it'll
+
+be styled in this way. Okay, okay, so that's looking more functional.
+
+But notice also how we didn't change the fonts and we didn't change the
+
+size. So if we wanted to have a smallest.
+
+Has a smaller font size. So let's try nesting in NAV,
+
+Li
+
+fonts.
+
+There we go.
+
+So originally, when we see it set up this way
+
+that's sharing the styling of this. So this refers to all the Allies throughout the whole site
+
+to override this restyling. And to make specific, the selling we want for this, for this section, for this small sub part of the larger page, we need to resell it again to be more aligned with what we hope for.
+
+So this is like this. So the UL, the unordered list, is restyled accordingly inside the navigation, and its list items are also restyled accordingly to inside the navigation. The punctuation makes a huge difference.
+
+So each list item will become a link to that a sub page for the site. Each list item will be an internal link to
+
+the sub pages of the site. So these are external links here going to go into outside websites, we can use the same basic syntax to create internal links too. So it's really very similar.
+
+So inside the first LI tag, put it inside of that in a box, ref equals,
+
+and I have quote unquote pound sign just as a reminder to put a reference there eventually. So
+
+something weird is happening that we'll need to talk about. But let's go ahead and finish off the linking first. This is this is all happening properly. It's just obviously not going to work once we launch the site.
+
+But inside the list item box, then we type in a space ref equals
+
+a quote, unquote pound sign. And that's the pound sign is a placeholder for a link Reference link page that will get in place later. The link text then is followed that by closing a tag which is then followed by the closing null type, so you can use that tagging identically for the remaining three links. In this case, things are looking strange to the right, but they will
+
+be better in a second.
+
+So make sure that each each link here before the closing LI tag includes the closing a tag. Okay, so this is all properly linked. So a ref equals pound sign here, closing tag there. Same thing here, same thing here. So check your word make sure the a tags are all inside the list item tags, link text is all in white here, then this all should be identical. Li, hey, her refugals, pound, close, carat, the first four lines, okay, okay, so that's working if you've put if you mouse over your example, you can sort of see the pointer turning to a hand. But we're working with the default style still.
+
+So the default styling for Link is blue and blue text that's underlined, so that's that lets us know very quickly that this is links
+
+text. So because we've not styled anything differently, that's the default, and it works just fine here. We could change if we want to, but we don't need to out of necessity, right?
+
+We have to here, because I like the purple. The purple fits my vibe with the blue on top of the purple does not work at all, right? So we need to change how link text, how the a tag text appears inside the navigation bar here, specific. So same technique that we use here, we'll use here, not the same code exactly, but the same technique.
+
+So for the net, for the links that appear inside the navigation.
+
+So nav space,
+
+a colon link. And I think you have to have,
+
+you need to have this all, one string of characters. There's no space between a colon link.
+
+Well, the the color of link text, in this case, listed being able to make it white, and that's my day difference that that will the small little change. So although the length linking text that appears inside the navigation
+
+should be a color that contrasts the background. So in this case, white, if you want to be different than white, you could say maybe a lot light
+
+gray. See how that looks. So a little bit toned down, but still legible. So right now, we have probably two indications that these are links a they're in.
+
+Bar that's conventional space for navigations, but also is reinforcing that is the underlining takes place with a tag content. Well, it kind of adds to the visual flutter a little bit so you can take it off. Okay, so we'll still know it's a link by its placement. We'll still know it's a link also by the if we notice the cursor changing from an arrow to a little hand icon, and
+
+there's one way, another way we could do too is to make some little more confirmation.
+
+If you copy and paste the same CSS from here down to here and change the word link to hover.
+
+So hover, it means what happens when you put your mouse over the over the linked content.
+
+So hover is, is, is when. So the the the
+
+pointer change to change it to a hand when you hover the mouse over the link content. So when you hover that you can change the color so,
+
+so that will show its link tag, linkable text. But also we could have text decoration returned to just for a second.
+
+So that'll care for the yellow. I'll actually, I'll put this back to white, the link itself back to white,
+
+and change this to light gray.
+
+Hopefully that's not too subtle,
+
+and try dark gray.
+
+So that's why we have again, we have visual confirmation that. So
+
+before everyone clicks, they'll know that this is going to take us someplace,
+
+uh, eventually, for this site, it'll take us to other pages that we've built for the larger project. So there's nesting going on even in CSS, right? So there's navigation styling that goes on, but then things that we nest inside that. So for UL is nested inside navigations, we need to restyle that for the different design strategies we're using for the navigation bar,
+
+for boxes inside boxes, still for navigate for Link items inside navigations, we made further changes and for Link behavior and link appearance. Rather,
+
+we have nesting of commands here that override the defaults that are setting up the
+
+stylings here, right?
+
+So I think as a default in terms of good practice. So the default here in terms of having links underlined to confirm that they are, in fact, links, that is the best practice, right? So again, it's not about your your own creative vision. It's about usability for your audience. There's no question, if I want you to website before they'll know this is probably going to be a link, even if the text doesn't say it is.
+
+So by having by removing it initially here, that is kind of going against the best the best of best practices, so you need to compensate for that to a certain extent, but have a change, at least when you hover over it.
+
+Okay, so I'll leave this. This is all, let's see almost all the CSS for this. For this video, I'll go ahead and tighten things up a little bit so you can sort of see everything in one everything in one one screen.
+
+So this is the collective CSS for one of this demonstration.
+
+Then I'll, in a moment, go to and you can pause your pause your playback to look at the new HTML,
+
+which is
+
+specifically this section here. So lines 15 through 22 you
+
+Yeah.
+
+So I'm going to go ahead, while I'm thinking about it, and it's all it's part of the larger framing of the site, with the with the navigation bar we just created. Let's go ahead and make a foot or two while we're here. Much simpler process we can add to it on content that'll suit our purpose down the road.
+
+But let's do this, and this is actually pretty, pretty simple and efficient. Let's go back to our CSS page.
+
+Let's copy all
+
+of our nav CSS. That's all that we've done this session. So my lines, one.
+
+One through 29
+
+I'll copy all of it space down beneath the closing brace of
+
+nav a hover, paste all this. I'm pasting it just right below that and then changing, sorry, with my line 31
+
+changing the word nav to not banner, the word nav to footer,
+
+so the bottom bar of the page that we'll create in a second.
+
+So we've just duplicated all the CSS from this session, all the nav CSS, CSS from this session.
+
+Duplicate all that, pasted it below, and then changed all the the
+
+references to NAV to footer, right? So they'll be designed the same for repetition of design, because they are serving this similar framing framing function, and the
+
+links will need to be if there's any links in that content, they'll have to be redesigned as well. So
+
+we may not use the the navigation list in quite the same way, but we'll sort of leave that in place. Should we need it down the Rode but
+
+now we notice that there's still an there's still nothing that has happened here, because see this even if we refresh the page.
+
+So we've created all those fancy, beautiful, new sets of CSS for the footer, but there's no footer showing out.
+
+That's because nothing's been tagged as the footer region yet. So it is a, not a CSS problems than HTML HTML problem till we've restyled the footer tag, but we haven't applied the footer tag yet in the HTML file yet. So that's pretty easily done. So down below, just outside the main box of the main the closing main tag, and just out just before the closing body tag. So between.
+
+So I'll put in footer.
+
+Now, if we put down there, we have a parallel purple box, little band that expands the whole width of the page.
+
+How about we type in contact me
+
+and then give an email address that you want to
+
+share on the internet, so searchable to all who care to search for. But
+
+we want to make this an actual link to your actual email address. So let's do that. So I'll make just the my email address itself
+
+the link.
+
+So a
+
+ref equals mail to all one word, colon, your web, your email address.
+
+So close, quote, close, Curt, close, the closing. A tag needs to be moved then to just before the closing footer tag.
+
+So now, if we click on that, it should open up your your email client. So I'll, I'll give you a view of that that's maybe kind of hard to see here.
+
+So all I did was add it, add in the content of line 64 i So punctuation is vitally important. And I mean, you could have the whole contact me phrase also included in the link, but I wanted to specify just this. It does then share the same features as the linking text above,
+
+but, but I think it needs also share. One thing it's not doing yet, it needs to share the the font choice and maybe font size of other content.
+
+So we want to tag,
+
+tag the textual contents of the footer as p so we'll share that styling.
+
+And that way should it be a little more? There we go, a
+
+little more part of the master design, the main design.
+
+Okay, so some really important work, mostly achieved through CSS.
+
+And the more we use CSS, the more we build our page out and our sign out, the multiple pages, we'll sort of see how efficient This is.
+
+We'll get on to banners and more in future videos you.
+
+Transcribed by https://otter.ai

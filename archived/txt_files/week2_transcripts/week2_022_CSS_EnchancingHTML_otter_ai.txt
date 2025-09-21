@@ -1,0 +1,281 @@
+So at this point, we have seen both
+
+a world with and a role without. CSS.
+
+Got an overview, a sense of what it can do to complement and enhance and really extend considerably HTML, where HTML structures the website,
+
+CSS prepares it for presentation. It's
+
+not just the organization of good content, but also the appealing presentation through CSS. And so that's what we will get hands on practice with in this video.
+
+So to go back into VS code, I find it's oftentimes simplest to go to GitHub Desktop first, or purple cat friend, where we had the option to, again, view the files locally, or we could go into the editing of the code itself locally
+
+in Visual Studio. So let's go ahead and choose that option, and we can sort of see where we left things.
+
+So let's do this. So it has a layer cake structure in place as a short paragraph in bold text place. It's got an image that might be a little bit too big, but still, it's in place. So it's set up for basic structure and scan ability, but that's considered an essential, but still inadequate. In terms of the big the big picture, it has to be much more inviting than this. It still seems pretty cold. It's organized thoughtfully. It's prepared for web reading, but it's not ready for the interview, not dressed for the interview, if you will. So let's, let's add some styles, some choices make this even more legible than it is through font size, through font color. And then we'll begin beautifying our sites.
+
+As we touched on in the last video, there are three ways of managing CSS, so let's kind of, let's prepare for the CSS before we begin coding CSS. The most practical, the primary way that you'll want to sort of think about organizing your CSS is through a separate CSS file
+
+that we can create here real quick. So in the File Explorer, click on the new file icon and then call a file style, dot CSS. So it's really important you add the extension dot CSS for the browser and VS code both know the difference between what you want in these files, you need to you need to include the proper extension. So the HTML has to be here, PNG, JPEG has to be here, and CSS has to be here. So I've inadvertently put the file here in the images folder. I can simply drag it out. So I should be able to drag it out and into the main folder. So this should be outside the images folder.
+
+Okay, let's make one more bit of preparation before we can sort of see the magic that CSS will make possible. So we need to sort of say, hey index file or hey HTML file. We have some CSS ready for you. It can be found here, right? So we need to create a link to this from to the from this file here to this file here. So let's
+
+this tab inside the head, because the head is the is the is the sort of the meta content for the page to display. Well, okay, so to link this file here to this file here,
+
+we need to add a bit of information to the head of the page, so not the body. This is not visible content for your viewer. This is for the page to display properly, which is suitable for the head region. So open Curt link, because we're creating a link,
+
+R, E, L, for, excuse me, for relative. It's linking to a style sheet.
+
+The style sheet, the style sheet we're trying to reference, is called
+
+dot css,
+
+and so make sure that the file name here is identically spelled here. So if it's styles plural here, it needs to be styles plural here, if it's style singular, here, needs to be style singular here, make sure you close it with a curt bracket. So
+
+let me just show you one quick side note, so say I forgot to type in the closing bracket. So then the line itself, line seven of the of the of the head region. It looks okay, but notice there's the head. The closing head tag is red,
+
+so that indicates someplace above there's an there's an issue. It doesn't say exactly what what it is. But in the case something hasn't been tagged properly or punctuated properly or whatever. So if you see red, go back, go back to that area of your code just above to sort of see what, what typos you may have introduced, which is a natural part of the process, but this helps us to
+
+not pinpoint, but generally locate. I.
+
+Know what the problems might exist. So when I put the Curt, the closing Curt bracket in
+
+the head tag turned properly blue again.
+
+So we have this, this file here, linked to the HTML file here, through this, through the what I have in line seven. So line numbers don't, don't matter in terms of if you're if you're a link here is in line, line 10, as long as it's between the head tags, you should be fine. Shouldn't affect the functioning of your of your CSS. It's more for reference, for conversation sake. I might say something like, make sure you have
+
+coded into your page. What I have in line seven, right? So it doesn't have to be line seven in your in your code, but it has to be the same general location.
+
+Okay, alright. So let's test this.
+
+The pages as we left it functional, but certainly not pretty.
+
+But let me add some more purple, because I'm TCU loyal, I'll add some purple to make my my heading purple, and sort of see how that works. And then I'll change the font, the font type too. Okay, so I'm gonna click, click this right here to turn off the assistance. We may get back into AI as we go for not going to turn it off. So right now, I want to change the, maybe the font choice and the font color of the of just the h1 tag. So that's another way of putting it. I want to change the I want to select this tag. It's called the selector results of the tag that we want to we want to modify.
+
+And I want to change the defaults in the following ways. Oh, I want to change the color to TCU purple for the 1979,
+
+you may choose your own color, but I'm choosing TCU purple. And before I go further, I'm going to check to see if that's working. Okay, that has been changed. It's maybe kind of hard to see, but this is purple, not black. So we want to change the font as well, so it's font family, and there's a good number. We can't go as crazy with fonts and on the web that we can on print and print, but we can make some personalized choices that are different than the default choice. So I will choose, I have a long relationship with Gill Sans. Let's try that one, and so check that out and see if that works. Okay, quite different. Okay, so they've become a little more unique. So I'm making my choices. I'm choosing Gill Sans. You can choose whatever font you want, and you will have even more options than than what we have here
+
+through font family,
+
+but let's just use the available fonts from, from, VS code at the moment. Okay. So one thing that I need to do, I thought I had done before, but need to do make sure, is I want to make sure that my code is wrap, is wrapping, so I can sort of see it in the full window, and it doesn't have I don't need to go off screen to view it.
+
+So view word wrap.
+
+Okay, so the h1 tag is a tag that we're selecting to change, to modify from its defaults. So it's the h1 here is the selector
+
+inside curly braces. So
+
+that's part of the punctuation for this CSS statement.
+
+Then the next is the property we want to change from the default specifically. So the select this has a lot of qualities, a lot of properties. We're choosing this one property here to modify. So selector, property, and we're changing the property to this value.
+
+I wanted to contrast still nicely the white background, so I'm going to choose a darker color. The TC purple fits that description.
+
+So selector, property, value,
+
+selector, still a still different property, in this case, different set of values. Here, selector, curly brace,
+
+property, colon,
+
+value, semicolon,
+
+so the semicolon indicates I'm done with it. I'm done with with the changes for this property. But there may be more. So I'll add additional ones here. Say you want to make sure, for repetition, that the h1 and h2 share both the same color and the same font. Two ways of doing that, one
+
+simpler than the other. I just copy and pasted the h1 and duplicated it by changing the selector h2
+
+which works, right? So that's an obvious way to do it. It adds more line to code than there are other method, but it'll be a way of doing it.
+
+What.
+
+You could also do is,
+
+and then in the selector region,
+
+in line one, for me, have line one comma,
+
+h1, comma, h2, and see if that does the same thing it does.
+
+So you can modify, so if you want to modify some defaults, and then there's some elements share default that you want to modify across. Modify across the site. You can have a collective selector here, so you can select, in a sense, or put in the selected space more than one tag. So whichever makes more sense to you. It might make sense to separate, it might make more sense to combine either way, obviously gets the job done.
+
+Okay, so let's change the paragraph in a variety of ways. It's awfully small. There's not much space between lines. It's maybe not the most original font. So let's try that. So we'll start a new CSS statement. We want to modify and select the p tag,
+
+curly braces,
+
+and let's try. I can choose the same font family if I want to, if
+
+you want to, recommendations, probably not an absolute rule. I would probably make the more
+
+decorative font, the fancier font, the larger text, and make a plainer font, the simpler font, the body text to make sure you're not compromising legibility.
+
+So that sort of updates and has some repetition of the font choice, the font family. But let's play the font size and then spacing between the lines. This is very tightly single spaced.
+
+Let's see if we can sort of air things out a little bit. So font size is font hyphen size. We'll explain this number of this value later, but let's go ahead and put in like 1.3
+
+em,
+
+and that makes it more legible. And so this is really important. And so you're not designing for if you're 25 years old and have decent eyesight,
+
+you're not designing for your vision. You're designing for a stranger's vision. But larger font size benefits everybody. So if you if you need, if you can refine print, fine print or not.
+
+Larger font size is still easier to read, but you'll lose audience. You'll lose potential audience if you have the tiny font size like, like the original default, right? So it's not just if it looks good to you, if it looks good to you, and those who have different ability than you do, vision is different, the
+
+sense of color is different, right? So you want to make sure you're accommodating those differences, not just looks good, simply
+
+narrowly to you.
+
+Okay? So that helps, I think, makes the text more, little more inviting. The font is more fun, and then the the font size is more accessible to more readers. So let me modify the paragraphs default settings for the line spacing, double spacing, single spacing is not, is not part of the vocabulary of HTML. It's called line height.
+
+So basically, the space between lines, the height between lines,
+
+and we'll work with the same values here, like so maybe 1.2
+
+that's more double spaced looking, but it gives much more granular control. This way, two
+
+is probably too much.
+
+1.6 is looking pretty good. Maybe try to try 1.5
+
+that's even better.
+
+Again. So white spaces creates a friendlier vibe. So things that are compacted, especially if it's textual data that's compacted, that's not friendly, it's not it's not easily read. It's it looks like a lot of work if it's aired out through spaces, you know, through the layer caking of headings and subheadings, but also aired out and the paragraph itself,
+
+it's going to be we'll have more patients going through, more of that content aired out. We'll have more patience with the con or the content.
+
+Okay. So interesting thing is, has occurred, which I didn't anticipate, but it makes complete sense, if once you start thinking about the boxes that HTML creates. So notice, and this may be happening for you too. Was an easy fix that our list hasn't, has not been updated in terms of the font font or font size or font spacing.
+
+So there's a couple ways we can address that. But because this is a different this is being formatted by a different tag.
+
+Tag. It won't yet have the same formatting features that we just added to the paragraph tag.
+
+So the links are are tagged as paragraphs, so they look they look like the body text, but the list is back tagged as something, as a, as a, in this case, a, an OL, an ordered list. So it's going to have different formatting at the moment, we can change that, of course, because we have control over that with CSS.
+
+So let's try a couple different methods. Let's try simply see what happens when we type in UL,
+
+didn't do anything. Okay,
+
+so let's do what we did. Let's try. Let's try.
+
+Li. There we go. So
+
+we're not changing what's tagged. The larger, the larger box of the list we're charging. We're changing the LI tag.
+
+We're reformatting not this, but this, these boxes.
+
+So we reformatting the LI tag, which then is more aired out, but also is of a compatible font with the body, the paragraph text, and shares the same sort of enhanced legibility.
+
+So we've, we've set up our first bit of CSS.
+
+We've actually through even though we have basically two statements here, we've modified four tags, which is pretty efficient, and these, each of these tags are subject to additional modifications if we want to. So say we want to make a change just to the h2 tag that will differ from the h1 tag. So say we want whenever we use these h2 tags throughout the whole site, so we want only the h2 tags to be italicized. So we could italicize each h2 as we go in to the HTML, line by line, enter in one statement that will change all the ages H twos at once. So it helps you kind of get a sense of the efficiency of CSS. So fonts
+
+style italic. So we'll go back and preview.
+
+So if this worked properly, all the h2 tags will share the same color and font choices the h1 but it unlike the h1 should also be italicized.
+
+There we go. So contrast and repetition both between the h1 h2 tags. So every time we tag anything h2 throughout the whole site, it will be italicized. So if you don't want that, we don't include this here. But if we do want that, we can save ourselves a lot of additional tagging, line by line, by having the one statement here. So this is only a small taste, but hopefully it's a helpful taste of what CSS can do to modify and override the default settings that browsers use to render specific tags.
+
+The one one critique that I have still is that the text is pretty cramped against the left and right margin right, so there's not much breathing room here. So there's white space between and above, but not much white space left and right. So if you have a real wide browser,
+
+that's also going to make it harder to read,
+
+because the eye has to keep a 30 line across more than natural span of text. So this is harder to read
+
+than this would be,
+
+because the eye doesn't have to jump back so far to go to the next line.
+
+But this is much will be much harder to read to keep your high eye on the proper pathway. So you want to accommodate different browser widths so it looks it looks decent in both environments. So we can do that with an existing tag, but we have to use some some new CSS to create that. So let's go ahead and add a box inside the body box called main. It's like Main Street.
+
+So this would be the main sub box in the body box.
+
+So open carrot, the word main, M, A, M, a, I, N, close, caret, then open. Caret, slash main and the closing care the closing tag, the off switch, the closing of the box, the main box, put that just above
+
+the closing body tag. So the closing main tag should be right above the closing body tag. The opening main tag should be just inside, just
+
+beneath the.
+
+Opening body tag.
+
+Okay, so let's use this tag for a constructive purpose, and the purpose that I that I have in mind in this case, is to add some margin to the
+
+pace reading pathways is manageable no matter how wide the browser is. Okay? So we go back to our friendly CSS, and we want to modify the main tag.
+
+We want to use main tag as a selector, and then we want to change we want to change the margin.
+
+So say, we want to add maybe a 10% buffer on both sides, so 10% of the available screen width, leaving the text to be the body content to be 80% of the available screen space. So let's try that. So 10%
+
+margin, left and right.
+
+So the word margin, then the colon, and then the space, 10%
+
+colon. So
+
+the margin, colon, 10% semicolon,
+
+so make sure the punctuation is there. So this is happening between the mains, curly brackets.
+
+And so outside the P and the Li is curly brackets. So spacing things out a little bit more between might be actually be helpful. Okay, so that actually helps pretty well. That's kind of what I'm shooting for. So I'm shooting 10%
+
+you can choose a larger or smaller number, but I think having some cushion again is it makes the text more inviting look like less work. And that would that will work, apply even as we change the browser with and that looks pretty good. I'm actually fairly pleased with that.
+
+So let me show you a quick way to sort of test the how things are working are not working.
+
+So I gotta highlight the the
+
+main statement here, I'm going to hit control, or maybe on a PC control, Mac command, command, forward slash. And
+
+what that does is, was called, commenting out the code, right? So you're basically, it's still there you want. You just want to see how it's, how it's working. So we're going to comment it out. So we're, we'll, we'll basically turn it off. Believe the text in place where they have just have this punctuation around it. So this is the, this is the the content with the main css, the margin CSS commented out or turned off temporarily. If you want to undo, if you want to turn the main content back on, just anything commands
+
+slash, forward, slash, and you can, and you can see, this is nice. This is, this is this is working. Content is meaningless. Picture maybe only is meaningful to me personally. Maybe not see all, but in
+
+terms of something that's a little more inviting, a little more appealing, a little more encouraging, to say, Okay, it's, let's see, let's, let's spend a little more time scanning so we can sort of see if this is of interest to our personal needs. So one, one point to make, though, small point, but also important
+
+that I added the space I wanted left and right, right. So that's a nice, nice cushion on both sides, the margin on both sides. But I also added cushion up here on top that I don't I don't necessarily need right? Having the having the title, the content, begin at the top of the page, is not a problem.
+
+So I can be a little more specific as to where I want the margin to go, right? So right now, adding the 10, 10% margin, as I have here,
+
+as it doesn't distinguish which sides it goes to. It goes to all four sides of that box, so left, right, and also top and bottom. So I can specify if I want to, where do I want the margin to go? So if I type in Mar, use the word margin, hyphen, left, I
+
+and then
+
+margin hyphen rights also 10%
+
+that'll specify in target which borders I want to
+
+I Want to
+
+apply margin too.
+
+So that way I'm at the top of the page and not a problematic way
+
+with so there's no margin up here. Besides, it's a small cushion above the h1 text, but I still have the margin left and right, and the bottom of the page should be fine too.
+
+Yeah, there's no margin there. We could add margin if you wanted to. If you want to add some margin to the bottom or the top, we could maybe use a smaller, smaller value. So, margin, hyphen, top,
+
+save, say, 5% i.
+
+So that returns some margin to the top, which is not a problem. Return some margin to the bottom, which it helps it seem a little less cramped in the bottom. So if
+
+a lot of creative control, a lot of creative control. A lot of creative control. Part of, I think, the learning curve is sort of coming to terms with how much control you actually have. Once you get a CSS and begin playing with it, you have such crazy control over the design of your of your project, right? We're working in academic writing. You're just cool or fun, you know? Basically, you go ahead and accept generally the formatting of the Microsoft Word documentation that you're using here. You have much more creative room to mess around, while the creative choices that you could make you don't need to make, because you also want to keep the viewers reading habits, reading needs, abilities in mind, so you don't lose your audience. So again, you're right. You're designing not to achieve your own sort of unique artistic vision. You're designing to
+
+make your content attractive, interesting, available to a stranger. It's user centered design, user focused design, as opposed to
+
+sort of the kind of classic sort of definition of creativity, which focuses on the creative spirit, the creative soul,
+
+that has room to get involved here. But it's not about that, and most most most websites, it's about the user, what they and what they can
+
+what they can find of value and find engaging in your in your site.
+
+Okay, so this is a good place to pause. We will get into more things very quickly.
+
+We'll want to add a banner. So I have images, but we also sites are often the times distinguished by the banners that they have,
+
+at least on the landing page and the homepage. They have a large sort of visual statement being made before we get into the before we start getting into the content below.
+
+So we will design that space and then design a navigation space so we can sort of build towards a a
+
+larger, more robust site with more content, more organized, more organized content
+
+that will allow us to go further into our CSS, but also reinforce our skills with HTML.
+
+Transcribed by https://otter.ai

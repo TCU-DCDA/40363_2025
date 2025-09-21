@@ -1,0 +1,339 @@
+Hey, this time we're going to get into building a banner. So we spent some time in the last set of videos building a navigation area. We it doesn't fully function yet because the pages that will be linked there don't exist yet,
+
+but we will be moving that way shortly. But first, let's build an attractive sort of initial visual impression that'll be our banner. So have navigation bar up top as we left it left last time. Then we'll have a banner image as a large, dramatic banner image beneath it, right? And then we'll go into our web content. So remember that we're, you know, part of the success of a website, or most written communication, is its visual appeal. And if you remember, back to the to the magazine examples from the early lectures, that visual information is is part of the hook, right? So we can't text by itself does not hook. So it makes sense that most landing pages that you go to, most homepage that you go to you'll see you'll see images before you see text, or you'll see images far more than you see text that on first impression.
+
+So first a little prep work on your part. Add to your
+
+project folder, your local folder, an image you want to use for your banner. So this is for practice today, so it doesn't have to be it could be pretty much anything
+
+today, but my suggestion is that you find an image that is
+
+a landscape instead of portrait, so it'll spread nicely across the the width of the of the browser. The proportion that I have here is 91920,
+
+so 1920, by 1080, if it's larger, we can shrink it down. If it's smaller, we can, we can boop it up, bump it up.
+
+But also make sure if you can, or try to find some image that has some sort of empty space on one side. So we will have this background image here that will that I'll use for my demonstration, but I'll be laying text over it as the page, as a site's title, so
+
+I want to have some more neutral space that's flatter and less visually busy to put some text on top of
+
+so I'm assuming you've put a image folder inside an image file, rather inside your image folder for your local, any local folder for the project.
+
+So here is my 60970, folder. Here is my images folder, and here are my images, with this one added today to be, to be my better image. We're going to
+
+do something a little bit different, this time, a little more organized, even than the past videos,
+
+where I have an outline that I'll be working with. I'll be grabbing some code from that I will eventually share with you as well. So I still want you guys to kind of go through this video to
+
+understand the steps and why we're doing what when to walk through and talk through what we're doing at each step. But if you want to reference the code, make sure you got things typed in properly. You'll have access to this resource soon. So let's go in to our purple cat friend. If you have any files that you haven't committed recently, go ahead and create a description of what you've done. So I've updated my images.
+
+That's what I've done. Yours might be more comprehensive than that,
+
+but one reason it's good to kind of relaunch your session from GitHub folder is that you'll you'll be reminded that you have files to perhaps commit from the last session that you haven't haven't committed yet. So before I move on to the next stage, I'm going to go ahead and commit these changes to to my remote repository. So commit to main, push to origin. So let's go straight to the project inside VS code. So let me give you an idea of what we're shooting towards. So the code that we that I'll share with you through this tutorial, will lead us to this kind of result. It'll look quite different, because your image will probably be quite different from mine. So this is what we're shooting towards. It kind of sets a vibe for the site, the tone for the site, and creates, hopefully, a visual hook. So I'll leave that open to refer to it as we go. Keep this open too. So what we did
+
+last time with the navigation, let's take a similar strategy for the banner area, and we'll put the code in place in the HTML first, and then we'll develop the parallel CSS that will then give it its body, its size, its color, its image, all that good stuff. So I'm going to grab this here,
+
+and I'm going to go to my index file. So to use this as a reference, the banner area, which is the image plus text here will be beneath the.
+
+Navigation area that we've already already defined.
+
+So the banner area will go beneath the navigation area that we've already defined.
+
+So I'll copy a copy the code from the tutorial
+
+that I'll share with you at some points, and let's space things out so you can sort of see what's what's going on here. So it's going to separate the boxes a little bit.
+
+So when I grabbed the content from here,
+
+I copied not one box, one set of code, certainly, but actually four boxes.
+
+The banner box itself, the larger container for all the all the banner content. So images and text both a Banner text box that is will contain all the text in the page, but notice that the text itself is class has different tags, so they're put into separate boxes. There's banner name and better title. So while we're here, we might as well go ahead and put something personal, your name, perhaps here, and maybe your title for your sites here. So go ahead and just have something as meaningful to you, descriptive, but still temporary properly for the larger project. So let's sort of see what that's doing. So we'll preview this page here.
+
+First way to preview is to do what we've done before, is to right click on the file name and go to Show Preview. Another way to preview two is to go up here and then look for the two column icon with the
+
+magnifying glass. They'll show preview as well. So you get a sense of how it's looking. It's not horrible, I guess maybe at this point, but it could be much better. Yeah. I mean, the text is there. The text is what we want Texas, proper font and proper color. It's formatted the way the h1 and h2 are elsewhere on the site, so the space is opening up. But obviously it's not the same thing is what we get. We'll have eventually here, but we're moving in that direction,
+
+so let's keep on moving.
+
+Refer back to the tutorial.
+
+Okay, let's take a larger block, and then let's work on the banner box first. So the first big box. Let's work on that first which will make a pretty, pretty big impression.
+
+And if I'm going too fast in my description, I'm trying to keep these videos short. You always have permission to, obviously, and the opportunity to pause and pause the screen so you could get the full code before you before you continue the next steps. So if I brush through this, make sure you pause so you can grab the grab this content here that's new to today's tutorial.
+
+Okay, and again, make sure this this new content, the banner div class equals banner box and the sub boxes are going inside your index file.
+
+So if you have Curt brackets, odds are you dealing with HTML and so it should be entered into an HTML file. Okay, so let's then go back to our step two and get the initial CSS styling for the basic banner. It looks like a lot. It is a fair bit. But also this is commented and notated pretty thoroughly too. So there's a lot. There's more lines here than there are actually functioning lines of code. So we'll copy that again. Just make sure we grabbed it. We'll make sure that we move over to our style dot CSS file, and I'm going to put this after the footer, but before the h1 h2 because, because the banner is higher in the page, want the CSS higher in the CSS style sheet. So I was copying what I just pasted,
+
+and what's green is notes to us, notes to people who are reading the sort of the Code view of the project.
+
+The functioning code is the red and green text here.
+
+Okay, so there's a lot of code here to study, but let's break it down into smaller chunks. So like the Martin, the the nav bar itself and the footer both, I'm setting the width to 100%
+
+so this is out. This is not, does not have the margins that the main section has. This extends outside the margins of the main section, so it's full the full width of the browser window. So I said shared shares that feature. So I'll go ahead and duplicate that code here, so we've already seen this.
+
+So we're doing what we're doing here is defining the initial height. So we made the navigation 10 VH for viewer heights. So 10% of the available
+
+space, of the height of the window,
+
+resetting then the banner to 70 VH,
+
+so 70% of the viewer height. So.
+
+Uh, and then we're setting as a follows, called the fallback color. So the if the image that we're about to put in fails to load, it'll default to this color. So
+
+just take a moment to grab just what I've uh, what I've opened up here in the in these three lines. So my line, 6466
+
+and 68 so pause and grab those lines if you haven't gotten them yet, and
+
+make sure it's inside of a dot banner.
+
+So let's go to our preview and see how it's looking. So it is working. Again, not rates, but the space has been defined. The fallback green color is showing up because the image place, the image file is not available yet. It's not encoded yet. So let's go ahead and add in the image itself and see how that's looking.
+
+And so your path will be different than mine. So this is the path to intercept subdirectory where the image is being saved.
+
+Let's see if that works. It does work, your
+
+address will be something more like this. If it doesn't work, send me a quick email and we'll straighten it out. But
+
+you should be able to insert a background image the way you did. Inserted a an image here. Let me show you back in the index file,
+
+so it should be more like this.
+
+This is different because this is not, this is not a background image we're working with here, but the pathway, the code for the URL source is should be more like this. So the full images folder and then the file inside that,
+
+so that my syntax will not work perfectly well for you, probably okay. So go back, going back to the CSS.
+
+So let's notice what's going on? The image actually has more contrast. There's more going on. The images have been cut off quite a bit. The
+
+text is not showing up well. On top of that, and there's a space navigation and then the banner image that I don't care for. So we got some refinement still, but we're certainly making progress. So let me unleash a little more code.
+
+Bracket on size cover
+
+so notice what that does.
+
+So that pulls in the whole image to be contained inside the box. It's covering the box.
+
+And I'll turn this off again. I'll just post them, put them side by side. I'm
+
+so background size, cover
+
+on, background size cover off, right? So you might, you'll see more of the image if you have the background cover, background size, cover
+
+turned on. Okay,
+
+and I like that, because this gives, this gives this is a little darker, so it's probably easier to put light text above than this brighter area of the image here. So let's see what happens when we do this.
+
+So that's a matter of responsive design. So as we
+
+so notice how with with the before we go on and unleash the next line of code, notice how when we resize the browser, the image gets cropped,
+
+which may not be a problem with certain images, but I like having the blue with the yellows
+
+and oranges and reds here. So I like having both as part of the image, as a banner image all the time, but resizing the browser means the image is not or shows that the image is not responsive, or not entirely responsive.
+
+So I wanted to resize basically, and keep the center point where the center of the image in the center of the screen, even as you reduce the width of the browser window.
+
+So let's do that. So background position is what we're playing with. So that way the middle point stays the middle point,
+
+no matter how big the browser is the what's the middle stays the middle. So it does get crops, but if it's cropping, it's cropping on both sides, not just on one side. So that's accomplished again, with
+
+background position center. Okay, this, this don't really change much for me. But if you have a small an image that's too small for the browser space, it may sort of like fill it in several like, almost tile the same image in several times over.
+
+Oh, this doesn't change much for me. I don't think, but
+
+if your image was square, kind of ensure that the image stays the size of the browser window and not not repeat itself, not tile itself into a repeating pattern. Okay. This one will become clear as we go forward, so nothing will change visibly here.
+
+I don't think, yeah, not yet.
+
+So just to kind of lay some groundwork, further groundwork, for responsive design, because this larger box called banner has both it now, both images and text. Inside of it, there are a couple different boxes that have to be managed flexibly and as the as we move towards responsive design. So we're making, we're kind of laying the that foundation here, so we'll, we'll make more use of that as we move forward. You
+
+one
+
+thing I wanted to draw to your attention that I'm noticing in my front in my project, which may be happening with yours or will happen at some point with yours, there's some color coding going on here. So there's kind of a brown text here, which is all it simply indicates that it's been modified since we started this session. This is however, red, right? So that indicates that there's some issues with the code somewhere, some typos, some moments where the code is broken, something that we have to fix real quick. So one way to kind of troubleshoot that is to open up this lower bottom panel here that you can switch on and off here,
+
+which gives us a number of views that will be helpful to us at various stages. But probably most helpful here is it gives us the problem tab. Problems. Tab has identified two which is what matches the number here. There's two issues it's finding in the style sheet, which is consistent with what we're seeing here. And it gives us an idea where there's you know what, what is wanting to find that it's not quite seeing yet.
+
+So expected CSS curly. Expected in line 87
+
+and line 130 so the instructions here are not precise enough but, but they give us an idea of where to look for the problem. So what had happened? So notice what's going on here. So this is, this is CSS that's probably color coded. This is a comment that's probably properly color coded, but this is, this is a CSS that should be red and blue, like this is red and blue, but it's not, for some reason, good screen, and that's happening because this comments not been fully turned off yet, so my toggling back and forth
+
+this way
+
+has left has broken up, broken things up a little bit. So if I close this comments so this turns back on.
+
+But then also notice we have kind of a stray ending comment here, and that
+
+took care of actually both problems.
+
+So it does its best to give you instructions as to what's wrong. It's not always precise or it doesn't describe it in the way that makes sense to us, but it does indicate, hey, there's a problem here. Look into it and try to see if you can find the typo that you're looking for. So it might be missed punctuation,
+
+it might be typo,
+
+unknown. Property justifies intent, right?
+
+So it sometimes pinpoints the problem. Sometimes it says, Hey, look here, look in this roughest entity. Either way, it's helpful, right? So there's some something that's displaying weirdly in your in your CS, in your browser view or your preview. Go to this tab here, open up the little Problems tab in the problems window, and sort of see at least where to look. And actually doing that for me, took care of a display issue that I was having, but there was some white space here initially that I didn't want. Didn't know what was happening, and the text hadn't relocated yet.
+
+But now that I have found the typo and corrected that typo, this space has been taken away,
+
+and this is moved to the right, which is where we wanted. Eventually we want the style differently. Still, this is moving in the right direction, right? So some other things fell back into place once I got rid of that typo situation, which is helpful. Okay, okay, so
+
+let's see if we can clean up this text a little bit because this is the text. Is there is not the font is proper,
+
+but it's not showing up at all against this blue blue background, purple on blue is not very poor contrast. The contrast is not strong enough. Contrast needs to be different. White on black,
+
+white on purple,
+
+purple on white, right? So those these contrast well.
+
+This contrast poorly. So he was, let's improve this contrast here, and was positioned a bit better to get things more attractive and more more functional, to help them do their job better.
+
+So going back to the tutorial, I'm.
+
+And why not go ahead and just while we're thinking about it, let's go ahead and do a quick Github desktop refresh of the of the repository.
+
+So doing that, as you move between steps, I mean, as you'll be reminded by this tutorial, is always a good practice. So let's do some text container styling. So I'll grab this here. I will insert it and explain it in a moment,
+
+I'm going to back to my CSS. I'm going just below the most recent batch of CSS pertinent to the banner. So
+
+so this goes this refers to what happens in and the index file.
+
+This box here, so all the content gear will begin to have the styling that we give, that we're about to define with that last copy and paste. It kind of sets the stage for the stylings of Banner name and Banner title. So
+
+just pasting that and let's see what's happened.
+
+Nothing at the moment.
+
+Let's do a fresh preview. This is, this is the
+
+example we're shooting towards. So this is not it yet.
+
+Oh, okay, I have a typo, right? So I didn't copy and paste all the content. Okay? So one thing that is this gives me occasion to talk about as a ties to a point I made briefly in past videos, is that CSS, as we've already talked about, helps to sort of override the default, modify the defaults of the browser with our own stylings for paragraphs with headings with images with links, right? So it modifies the default settings for those various elements, those various tags. What you can also do is basically extend, not just, not just enhance, but also extend HTML
+
+by creating tags of your own. In effect, what we're doing here,
+
+and we'll show it, we'll see a better looking at the tip, we're creating a div class.
+
+So basically, the div class is one kind of sort of pseudo tag that we complete ourselves,
+
+that's sort of purpose unique to our to our needs. So if an HTML tag doesn't exist for something that we want to format in a certain way, we can create a div and a class, class of div. And div is short for divider or division, like a subset of the larger thing. So this division of the larger
+
+browser window will have these classifications. It will have these have this unique styling. So it's not a tag, precisely is maybe a pseudo tag. Might be another name for it, another word for it, but it's kind of a one off thing that you're making for yourself that will serve, then
+
+the purpose of restyling something, that you restyling content on your page. Then the way that the HTML by itself doesn't currently do right? So it's really powerful and really extends considerably what you can do with CSS. So we have actually three, three classes or four classes being defined here. So so you can actually have a class for h1 and h2
+
+Okay, so there's to set up a div class,
+
+as we already have done successfully, is
+
+with a dot banner. So the banner tag itself doesn't exist,
+
+but dot banner says we're making, this is a this is a
+
+a diver we're creating for ourselves that we're going to style in our in our specified way, that will then use them to insert and format content in our HTML page.
+
+Dot
+
+tag name is a way to create a div class. Okay, so we've already done use one div class by
+
+creating the banner space and putting the banner content into it so far with the image background, the background image and the text that we've used so far. So I had you all copy and paste this, which is what the next step involves. But I was a little bit hasty in my copy and pasting, and so I forgot to copy the opening. I Okay,
+
+this is how the page looks now with the typo in place.
+
+So put the typo, put the period back where it belongs, to make to define this as a proper div class, and that moves the text over.
+
+Right? So moves the text over 8% give some spacing between so turn it off for a second, turn
+
+it back on, and it kind of airs things out a little bit. Sorry, but what's not probably most noticeable is the right justification going on, which makes sense and should line up with the content below fairly well. It does.
+
+So there's alignment here with the with the other elements in the page. So again, part of the crap principle that's being set up by by this here. So make sure, again, this is a mistake that that's easily made. I just made it myself right in front of you by copying pasting. Make sure you copy and paste the whole thing.
+
+So even a period which is easy to miss, which I obviously, I just did it, I just missed that period, uh, makes a huge difference in terms of things working properly. Okay, so we open the full browser views, I get the more more dramatic look. So position better, still not legible color wise.
+
+So going
+
+no close that out to open more space,
+
+let's add a bit more CSS
+
+to modify first the banner name. So I'm going to capture the curly bracket at the end through the period at the beginning.
+
+So dot, Banner, name. Banner, hyphen name, down to the closing curly bracket.
+
+Make sure that's outside the banner, text, curly brackets.
+
+Turn some of this off, and hopefully you'll I won't cause problems down the road.
+
+So the banner name, which is the name for Yeah, which is my proper name in this example,
+
+needs to be legible against the sort of dark, dark blue background, the purple that we had originally from the age one tag was not going to cut it in this case. So whatever goes into a banner, name, div, or better, Name box will now be styled white. So that is
+
+that's showing up as white now to refer back to the code.
+
+So what gets poured into
+
+Banner, name
+
+here. Class is better name here.
+
+Better name here is what we grab. There
+
+will be
+
+whites and
+
+the font family is the same as the font family
+
+that we're using that I'm using elsewhere, right? So you're, you probably don't want to copy this. You want to choose the fonts that you're that you're working with
+
+for the larger site.
+
+Okay, so the but the white is making a nice difference, but I think the size is kind of small, right? Given how much space they have to fill and the room we have to play with, the size is kind of small.
+
+So let's play with that a little bit. So we'll turn off this comment here.
+
+So we made a font size 3.5 m, when m we used before with body,
+
+with body context, the paragraph text. So
+
+that's a fair bit larger. We can make it larger still, even, even more so. So I'll change mine to maybe even four, see how. If that's too big, it might be too obnoxious, but let's try
+
+4.0
+
+I zero.
+
+Yeah, I like seeing my name in print, of course, but that actually uses the space better. So that's been addressed. Let's put let's see if there's ways we can enhance this further. And again, the changes I'm making are ones that are based on my image, and my image is relationship to the text on top of it. So the image of the choices that I make in the next few steps may or may not apply to you. I'm giving you an idea the kinds of things to talk to think about as you're trying to make sure your text is legible against the hopefully a cool, dramatic, but sort of properly laid out banner image. So the
+
+sizing will make a difference. The color will make a difference in contrast, right? That helps, certainly, but there's additional refinements we could make.
+
+I'll see that makes much of a difference.
+
+Doesn't make that much of a difference, but, if you're if your font is not thick, if it's not in bold, yet, put it in bold will give it more dimension, more body,
+
+so that might make a little more more visible.
+
+Margin is the impact.
+
+Adding between this and other other elements, so maybe there's a little more spacing involved, so things don't get cluttered together, jammed together too
+
+much. One that thing that definitely will will work, probably not necessarily in my case, because the white is reading pretty good, pretty well against the background, but adding a text shadow
+
+can help as well.
+
+And so you can, I think you can sort of see it here.
+
+If you look closely, I'm zooming in, you can
+
+sort of see this kind of a little bit of a lift between the text and the background. So me, let me turn off the so you can
+
+probably see it more dramatically. Over here, there's a little sort of, you can see, there's a slight, slight hint of a shed of a gray shadow here gives the impression that the text is hovering just a little bit above the background image, instead of being so if you know Photoshop and what drop shadows do for text and Photoshop, same principle here.
+
+So let me turn that on and off and sort of see if we can
+
+appreciate the difference.
+
+So I think, yeah, I mean, I can tell the difference. I hope you can too. I'm hoping zooming in it will help. Um,
+
+this is not bad because it contrasts all the colors that are behind it, but if we add the shadow as a backup, it gives a little more dimension, and especially the text is kind of fluid and will reposition itself. It's good to have that separation, because the colors will change as the browser resizes. Okay, okay, so I'm gonna pause right now and then we'll resume. You.
+
+Transcribed by https://otter.ai

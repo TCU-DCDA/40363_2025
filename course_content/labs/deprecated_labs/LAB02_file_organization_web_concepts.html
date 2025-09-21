@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 02 – File Organization & Web Development Concepts</title>
+    <style>
+        /* D2L-friendly embedded styles */
+        .lab-container {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .lab-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4d1979;
+        }
+        
+        .lab-title {
+            font-size: 2.2em;
+            color: #4d1979;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .lab-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 5px solid #4d1979;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #4d1979;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        .task-box {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .task-header {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+        
+        .checklist {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .checklist ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .checklist li {
+            margin-bottom: 8px;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .tip {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+        
+        a {
+            color: #4d1979;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ol li, ul li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .lab-container {
+                padding: 10px;
+            }
+            
+            .lab-title {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+            
+            .task-box {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-container">
+        <header class="lab-header">
+            <h1 class="lab-title">Lab 02 – File Organization & Web Development Concepts</h1>
+            <p class="lab-subtitle">Delivery Mode: In-Class Activity (Foundation Building)</p>
+            <div class="highlight">
+                <strong>📋 Goal:</strong> Understand professional web development file management, expand HTML knowledge, and prepare for version control workflows.
+            </div>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2 class="section-title">Learning Outcomes</h2>
+                <ul>
+                    <li>Master professional file organization for web projects</li>
+                    <li>Understand the relationship between HTML, CSS, and JavaScript</li>
+                    <li>Learn about web browsers, servers, and how websites work</li>
+                    <li>Practice multi-page website structure</li>
+                    <li>Prepare for collaborative development workflows</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Prerequisites</h2>
+                <ul>
+                    <li>Completed Lab 01 (First HTML File & VS Code Workflow)</li>
+                    <li>VS Code configured with recommended extensions</li>
+                    <li>Understanding of basic HTML structure</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Tasks</h2>
+                
+                <div class="task-box">
+                    <div class="task-header">1. Project Enhancement & Organization</div>
+                    <ol>
+                        <li><strong>Create a new project folder:</strong> <code>Lab02_YourLastName</code></li>
+                        <li><strong>Copy your Lab 01 work</strong> into this new folder as a starting point</li>
+                        <li><strong>Expand your file structure:</strong></li>
+                    </ol>
+                    <div class="code-block">Lab02_YourLastName/
+├── index.html          ← Enhanced from Lab 01
+├── about.html          ← New page to create
+├── css/                ← Still empty but important
+│   └── (future styles)
+├── images/             ← Add sample images if desired
+│   └── profile.jpg     ← Optional: add your photo
+└── README.txt          ← Project description file</div>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">2. Multi-Page Website Structure</div>
+                    <ol>
+                        <li><strong>Enhance your <code>index.html</code>:</strong>
+                            <ul>
+                                <li>Improve content based on Lab 01 feedback</li>
+                                <li>Add basic navigation structure (prepare for linking)</li>
+                                <li>Ensure semantic HTML5 elements are used properly</li>
+                            </ul>
+                        </li>
+                        <li><strong>Create <code>about.html</code>:</strong>
+                            <ul>
+                                <li>Copy the basic structure from index.html</li>
+                                <li>Change the title and main content</li>
+                                <li>Create 3-4 sections: background, education, interests, goals</li>
+                                <li>Practice consistent HTML structure across pages</li>
+                            </ul>
+                        </li>
+                        <li><strong>Add basic navigation:</strong>
+                            <ul>
+                                <li>Simple <code>&lt;nav&gt;</code> element in both pages</li>
+                                <li>Prepare for linking (we'll activate links in future labs)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">3. Professional File Management</div>
+                    <ol>
+                        <li><strong>Implement advanced naming conventions:</strong>
+                            <ul>
+                                <li>Consistent lowercase file names</li>
+                                <li>Meaningful, descriptive names</li>
+                                <li>Proper file extensions (.html, .css, .jpg, etc.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Understand relative paths:</strong>
+                            <ul>
+                                <li>How files reference each other</li>
+                                <li>Folder structure importance</li>
+                                <li>Why organization matters for larger projects</li>
+                            </ul>
+                        </li>
+                        <li><strong>Create a project README.txt:</strong></li>
+                    </ol>
+                    <div class="code-block">Project: Personal Website Foundation
+Course: WRIT 40363 - Intro to Web Applications
+Lab: 02 - File Organization & Web Development Concepts
+
+Files included:
+- index.html: Homepage with introduction
+- about.html: Detailed about page
+- css/: Folder for future stylesheets
+- images/: Folder for website images
+
+Notes: This project demonstrates proper file organization
+and multi-page HTML structure.</div>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">4. Web Development Concepts Deep Dive</div>
+                    <ol>
+                        <li><strong>Understanding the Web Stack:</strong>
+                            <ul>
+                                <li>How browsers interpret HTML</li>
+                                <li>Where CSS fits in the picture</li>
+                                <li>Role of JavaScript (preview)</li>
+                                <li>Client vs. server concepts</li>
+                            </ul>
+                        </li>
+                        <li><strong>File Relationships:</strong>
+                            <ul>
+                                <li>How HTML pages link together</li>
+                                <li>How CSS will style HTML (preview for next week)</li>
+                                <li>How images are embedded</li>
+                                <li>Asset management concepts</li>
+                            </ul>
+                        </li>
+                        <li><strong>Professional Workflow Preview:</strong>
+                            <ul>
+                                <li>Why file organization matters in teams</li>
+                                <li>How version control fits (preview for Lab 3)</li>
+                                <li>Industry standard practices</li>
+                                <li>Preparing for deployment concepts</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">5. Quality Assurance & Testing</div>
+                    <ol>
+                        <li><strong>Cross-page consistency:</strong>
+                            <ul>
+                                <li>Same navigation structure</li>
+                                <li>Consistent heading hierarchy</li>
+                                <li>Similar footer information</li>
+                            </ul>
+                        </li>
+                        <li><strong>File validation:</strong>
+                            <ul>
+                                <li>Both HTML files validate without errors</li>
+                                <li>All file paths work correctly</li>
+                                <li>Images display properly (if included)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Content Requirements</h2>
+                
+                <div class="task-box">
+                    <div class="task-header">Enhanced index.html should include:</div>
+                    <ul>
+                        <li>Improved content from Lab 01</li>
+                        <li>Basic navigation structure</li>
+                        <li>At least 3 semantic sections</li>
+                        <li>Professional presentation</li>
+                    </ul>
+                </div>
+
+                <div class="task-box">
+                    <div class="task-header">New about.html should include:</div>
+                    <ul>
+                        <li><strong>Background section:</strong> Brief personal/academic background</li>
+                        <li><strong>Education section:</strong> Current studies and academic interests</li>
+                        <li><strong>Interests section:</strong> Hobbies, passions, what drives you</li>
+                        <li><strong>Goals section:</strong> What you hope to achieve in this course and beyond</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Success Criteria</h2>
+                <div class="checklist">
+                    <ul>
+                        <li>☐ Project folder properly organized with logical structure</li>
+                        <li>☐ Two valid HTML5 documents with proper semantic structure</li>
+                        <li>☐ Consistent navigation structure across both pages</li>
+                        <li>☐ All files follow naming conventions</li>
+                        <li>☐ README.txt file documents the project clearly</li>
+                        <li>☐ Both pages display correctly in Live Server</li>
+                        <li>☐ Content is meaningful and well-written</li>
+                        <li>☐ File organization demonstrates understanding of web project structure</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Submission Instructions</h2>
+                <ol>
+                    <li><strong>Test both pages:</strong> Ensure both HTML files display correctly</li>
+                    <li><strong>Validate your HTML:</strong> Use W3C validator for both files</li>
+                    <li><strong>Check file organization:</strong> Ensure all files are properly named and organized</li>
+                    <li><strong>Package for submission:</strong>
+                        <ul>
+                            <li>Select your entire project folder (<code>Lab02_YourLastName</code>)</li>
+                            <li>Create a ZIP file: <code>LastName_FirstName_Lab02.zip</code></li>
+                            <li>Verify ZIP contains all required files and folders</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submit to D2L:</strong> Upload your ZIP file to the Lab 02 assignment dropbox</li>
+                </ol>
+            </section>
+
+            <div class="tip">
+                <h3>💡 Troubleshooting Tips</h3>
+                <ul>
+                    <li>Use Live Server to test both pages</li>
+                    <li>Check that file paths are correct (case-sensitive)</li>
+                    <li>Ensure consistent structure between pages</li>
+                    <li>Ask questions about web development concepts - understanding the big picture is important!</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>🔮 Looking Ahead</h3>
+                <p>This organized project structure will be perfect for introducing version control in Lab 3. You'll learn how Git helps manage files like these and why professional developers use it. Your well-organized project will make the transition to Git much smoother!</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

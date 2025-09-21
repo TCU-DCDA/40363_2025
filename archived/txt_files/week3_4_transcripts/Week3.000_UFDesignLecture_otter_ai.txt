@@ -1,0 +1,82 @@
+0:01  
+Okay, so in our learning about HTML and CSS the first two weeks, try to keep the conversation our audiences needs. So that's mostly been focused on scan ability, so being able to read quickly web content that'd be too tiresome to read sort of carefully, line by line in the Z pattern, right?
+
+0:23  
+So I would say, I don't think it's too much to sort of claim that the way we're approaching
+
+0:31  
+our development of our websites and the content that those sites will contain is driven by kinds of empathy, so not our needs, not our desires, not our wants,
+
+0:41  
+and that our esthetics purely, but the needs of someone else, the concerns of someone else. So that's why we're looking into week three, into what's called responsive design, which is also known as mobile first or user first design. So the terms, actually, I want to define them separately, but they're very interdependent. They complement each other really well, but we're talking about designing for multiple devices, largely mobile devices, in order to meet the users where they are most likely to consume our content. Okay,
+
+1:16  
+so responsive design is design that is responsive. What that means is, the content of a web page will respond to the screen dimensions. That is, the content is poured into, right? So it has a certain has certain behavior that will sort of respond to the container that will sort of hold and display the content. So big screens, if it's 21 inches wide, or if it's 13 inches wide, or if it's three or four inches wide, it'll still look not the same, but still be arranged in a very usable, friendly way, for the for the for the user, right? So that's responsive design. So the response the content responds to the container that it finds itself in.
+
+2:01  
+That's important because, and this stat blows my mind
+
+2:07  
+that the majority, the clear majority, of web content is being consumed on mobile devices, so not on laptops, non desktop machines, but on mobile devices. If we want our content to be read, we have to have it showing up well, effectively, attractively in smaller devices, not beautiful screens like a laptop or desktop might have, but on a functional and usable touchscreen that we find on iPhones and Samsung phones and things like that on smartphones. So the practical implication of all this, or the practical application rather, of all this, is that we need to keep mobile devices first and foremost in our design planning. So the assumption here is that as we imagine our new site, we imagine it as a mobile site first that then changes and re sort of rearranges itself as it goes into larger, larger and larger screens. So it's not a technical sort of concern so much coding wise, there's some additional CSS to play with, but it's more the creative like we need to start with this very small canvas first and design something look good there, good there, first, and then move from there and imagine reimagining site in larger and larger spaces. So this makes much the same practical points, that the foundation of your site is the mobile content, like the core, basic, fundamental mobile experience. So the content that's essential for someone who's coming to the site quickly or unlimited with a limited device.
+
+3:40  
+And so the basic features, the basic functions, the basic but essential content, is what you should primarily focus on as you as you build out to your site, as it goes, as the screen grows to be the size of a tablet. You can add further enhancements or different features as it grows even larger to a laptop or a desktop screen, and you have room still for further enhancements. You're not leaving with the coolest thing you know how to develop. Website wise, you're starting off with the most essential info you want to share. So prioritizing content over functionality. So this makes the same points. So you can sort of see the example to the right. So on the desktop version has an image, has additional bullet items, has a more, more complete navigation system that's visible. There's room for that kind of additional, those additional features, but, but there should still be a very usable, very intuitive interface for the mobile user first, and that's what we see on the left. So another way of characterizing this that's, I think, separate from but still compatible with the first two definitions we just offered of responsive and mobile first design is user first design. We're doing all this because we want you.
+
+5:00  
+Users to read our content.
+
+5:03  
+So I really appreciate this phrase. This is an approach that prioritizes actual user needs, behaviors and constraints. So what they need,
+
+5:15  
+the behaviors of their own behaviors as well, in terms of reading and such, in terms of the F pattern and layer cake pattern, and also their constraints. So constraints may be physical limitations. Constraints may be have they may only own a smartphone and not have a laptop to look at your site on,
+
+5:34  
+but also the internet speed, right? We all, we might be in a very fast Wi Fi right now, not everyone has that same privilege, right? So a site that has a bunch of lovely images that are all 20 megabytes in size, it might look okay on my speedy Wi Fi, but would take forever to load into my smartphone that's on a 3g network, for example. So there are constraints that we need to keep in mind, both physical limitations of the user, but also the constraints they have economically, in terms of the devices they can afford, how many devices they can afford, and the Internet access they have after the at their disposal. All those are things that we need to keep in mind as we've designed primarily for the user who will likely be using a mobile device, and so therefore it needs to be easily viewed on the smaller screen.
+
+6:34  
+So notice how the hand illustration, kind of the roughing out the rough draft idea that's being illustrated to the left is imagining, really first the mobile version, what the next first version will be, which will be the mobile implementation that then sort of is reimagined as next iteration, as displaying with more features, more elements and a larger screen.
+
+6:58  
+So the three definitions of responsive mobile first and user first design, we can add three more concepts that will kind of lead us into the coding, sort of applications, or the coding techniques that will develop this week to
+
+7:15  
+make sites that work well across different digital environments. So one, the first one is more conceptual, so thinking of our content as fluid, as flexible. But also then we'll look at how that's sort of set up in a surprisingly simple way, technically with CSS, through what's called a media query, or a set of media queries. So the fluid design idea is you
+
+7:38  
+think about pouring water from a bottle to a large glass, to a small glass, to a bowl and to a vase. So each container, each different container, would have its own shape and volume available, and the water would sort of adapt itself to the shape of the next container. So the assumption in this illustration here is that each volume of water is the same, but you notice how it is taking, taking the shape of the container, so all the same content, but it's sort of, it's is designed, through its nature, to be fluid, so that it sort of adapts to and sort of comfortably fits in no matter what container it's poured into. So we've already prepared for that
+
+8:24  
+with some of the image sizing and percentages, percentages that we set up so far.
+
+8:31  
+So by setting our image, our images in line as we insert them, as we tag the image content to with 100%
+
+8:40  
+the working by percentages is working with with our anticipating a mobile experience. So we've already laid some groundwork by working with percentages, instead of fixed numbers like pixels,
+
+8:51  
+to make sure that our content even early on, before we get too deep into responsive design, that things are still being set up, initially flexibly that will be even, even more and more flexible and even more more fluid as we move forward.
+
+9:05  
+In terms of the coding knowledge required is actually pretty straightforward. It assumes, of course, as you already do, that you have some understanding of what CSS does in terms of redefining defaults for the browser, right? So the default the browser, without further instructions, will display things based on a set way that you can politely adjust with your own CSS. So font color, heading, color, font size, image, padding, all that sort of stuff can be set up through our CSS to override and sort of personalize and make more accessible our content.
+
+9:43  
+So we're still using CSS as we know how to use it, so to override browser defaults, but it's thinking more expansively about what CSS can do and thinking about the conditions in which our changes will be
+
+9:59  
+utilized.
+
+10:00  
+Yes. And by that I mean we have different screens, different screen sizes, different screen dimensions. So a large font on a big screen, so a font that appears larger than big screen might be too big for a mobile device. So as the screen scales down, we have to have the font, a font size for a title or a banner scale down with it, or the margins might be nice, nice and necessary for a large screen, but as we get to a smaller screen, those margins maybe be less necessary, because that would pinch the content too, too narrow to be read easily by pouring the content into a different flask or different beaker, or differences the test tube or changing the conditions in which the content is being viewed, right? So the CSS needs to be modified with each changing circumstance. And it's not that's not dozens to worry about this usually two or three different conditions to accommodate for.
+
+10:58  
+So I'll wrap this 10,000 foot overview of responsive design here with some final quick thoughts that we're designing with the mobile devices first, because that's what users will, first and foremost, likely use to access our websites, right? So you want to optimize the site display wise,
+
+11:26  
+file wise, so that it's it performs at its best possible way, in its best possible way on a mobile device. So to optimize for mobile, that means we need to think, we need to keep things simple and more focused in our design planning at this early stage,
+
+11:44  
+again, we're not showing off our skills. We're accommodating other people's needs, right? We're not showing off what's cool to us. We're thinking about what other people might need from us in a more empathetic way, right? So I think as we started this presentation, there's strategy involved, of course, because people are we want, we want our content to get into people's hands, into their devices. So we need to meet them where we're well, where the where they likely live online anyway, and that's likely through a mobile device, right? And once they find us in a mobile environment, we give them what they need. First and foremost, if they're interested, when I go to a full site, they can find more features and more functionality and the cool, the cooler tech stuff there, but have the site be simple and attractive and inspiring to spend to spend more time with your brands, with your information, with your content, with your calls to action encourage that that interest there to sustain their interest to go to a different device and look at more more features and on a larger screen. Okay, we will see how this works technically in the next set of videos.
+
+Transcribed by https://otter.ai

@@ -1,0 +1,31 @@
+So before we get into more advanced matters concerning HTML or CSS, we need to make sure we're backing up our work to GitHub, right? So that's one step that we haven't taken in a while. So let's do so now, since we've made so many nice updates to our index page using HTML. Okay, so if you go to get to Github desktop, the purple cat or purple cat friend,
+
+you'll notice that there's some files. The file here called index, which you've just been editing in the HTML sequence, has a bunch of changes to include,
+
+so you want to make sure you're updating that to commit those those changes. So includes the images, includes the links, includes the bullet the in this case, the numbered list. So we want all those, all those recent changes to be
+
+updated to the GitHub servers, to the remote repository on GitHub. So this was just one file we've we've committed so far, or maybe more. If you haven't updated since you've created your images folder, it'll include that too,
+
+but make sure you go ahead and commit that,
+
+push to origin.
+
+And then so we can look at our local folder. My timestamp here is today, at 857,
+
+go on GitHub.
+
+This has been updated just now
+
+that includes images,
+
+includes links
+
+and includes a numbered list. So this is the current version. Okay, so when you finish a session of editing, it's always a good idea to go to GitHub
+
+Desktop
+
+and commit the changes you've made in that session just to periodically be and frequently backing up your work.
+
+Okay, that's it. Applause.
+
+Transcribed by https://otter.ai

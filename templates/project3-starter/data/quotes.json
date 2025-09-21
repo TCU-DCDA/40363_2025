@@ -1,0 +1,120 @@
+{
+  "categories": {
+    "motivation": [
+      {
+        "text": "The only way to do great work is to love what you do.",
+        "author": "Steve Jobs",
+        "id": "mot001"
+      },
+      {
+        "text": "Innovation distinguishes between a leader and a follower.",
+        "author": "Steve Jobs",
+        "id": "mot002"
+      },
+      {
+        "text": "Life is what happens to you while you're busy making other plans.",
+        "author": "John Lennon",
+        "id": "mot003"
+      },
+      {
+        "text": "The future belongs to those who believe in the beauty of their dreams.",
+        "author": "Eleanor Roosevelt",
+        "id": "mot004"
+      },
+      {
+        "text": "It is during our darkest moments that we must focus to see the light.",
+        "author": "Aristotle",
+        "id": "mot005"
+      },
+      {
+        "text": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        "author": "Winston Churchill",
+        "id": "mot006"
+      }
+    ],
+    "coding": [
+      {
+        "text": "First, solve the problem. Then, write the code.",
+        "author": "John Johnson",
+        "id": "cod001"
+      },
+      {
+        "text": "Code is like humor. When you have to explain it, it's bad.",
+        "author": "Cory House",
+        "id": "cod002"
+      },
+      {
+        "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
+        "author": "Harold Abelson",
+        "id": "cod003"
+      },
+      {
+        "text": "The best error message is the one that never shows up.",
+        "author": "Thomas Fuchs",
+        "id": "cod004"
+      },
+      {
+        "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+        "author": "Martin Fowler",
+        "id": "cod005"
+      },
+      {
+        "text": "Experience is the name everyone gives to their mistakes.",
+        "author": "Oscar Wilde",
+        "id": "cod006"
+      },
+      {
+        "text": "The most important property of a program is whether it accomplishes the intention of its user.",
+        "author": "C.A.R. Hoare",
+        "id": "cod007"
+      }
+    ],
+    "learning": [
+      {
+        "text": "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+        "author": "Mahatma Gandhi",
+        "id": "lea001"
+      },
+      {
+        "text": "The beautiful thing about learning is that nobody can take it away from you.",
+        "author": "B.B. King",
+        "id": "lea002"
+      },
+      {
+        "text": "Education is the most powerful weapon which you can use to change the world.",
+        "author": "Nelson Mandela",
+        "id": "lea003"
+      },
+      {
+        "text": "The more that you read, the more things you will know. The more that you learn, the more places you'll go.",
+        "author": "Dr. Seuss",
+        "id": "lea004"
+      },
+      {
+        "text": "Learning never exhausts the mind.",
+        "author": "Leonardo da Vinci",
+        "id": "lea005"
+      },
+      {
+        "text": "The expert in anything was once a beginner.",
+        "author": "Helen Hayes",
+        "id": "lea006"
+      },
+      {
+        "text": "I am always doing that which I cannot do, in order that I may learn how to do it.",
+        "author": "Pablo Picasso",
+        "id": "lea007"
+      },
+      {
+        "text": "Tell me and I forget, teach me and I may remember, involve me and I learn.",
+        "author": "Benjamin Franklin",
+        "id": "lea008"
+      }
+    ]
+  },
+  "meta": {
+    "totalQuotes": 21,
+    "categories": ["motivation", "coding", "learning"],
+    "lastUpdated": "2024-09-20T12:00:00Z"
+  }
+}

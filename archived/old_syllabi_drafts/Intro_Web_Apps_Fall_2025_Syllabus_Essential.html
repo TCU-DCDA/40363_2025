@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Intro to Web Applications – Fall 2025 (Essential Path)</title>
+<style>
+  :root { --bg:#ffffff; --accent:#213547; --accent2:#0b6b3a; --border:#d9d9e0; --muted:#58606a; --warn:#b34700; }
+  body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; line-height:1.5; margin:1.4rem clamp(.75rem,3vw,2.5rem); color:#222; background:var(--bg); }
+  h1,h2,h3 { line-height:1.15; font-weight:600; color:var(--accent); margin:.95em 0 .45em; }
+  h1 { font-size:2rem; }
+  h2 { font-size:1.35rem; margin-top:2.2rem; }
+  h3 { font-size:1.05rem; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); }
+  p,li { max-width:72ch; }
+  table { border-collapse:collapse; width:100%; font-size:.92rem; margin:1.25rem 0 2rem; }
+  th,td { border:1px solid var(--border); padding:.55rem .6rem; vertical-align:top; }
+  thead th { background:#f4f6f9; font-weight:600; }
+  tbody tr:nth-child(even){ background:#fafbfc; }
+  caption { text-align:left; font-weight:600; padding:.4rem 0 .6rem; color:var(--accent); }
+  ul { margin:.4rem 0 .9rem 1.2rem; padding:0; }
+  code { background:#f1f3f6; padding:.15rem .35rem; border-radius:4px; font-size:.85em; }
+  .pill { display:inline-block; padding:.18rem .55rem; border-radius:999px; font-size:.6rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:#fff; background:var(--accent2); }
+  .note { background:#eef7f1; border-left:4px solid var(--accent2); padding:.75rem 1rem; margin:1.2rem 0; }
+  .muted { color:var(--muted); font-size:.8rem; }
+  .deemph { color:var(--muted); }
+  a { color:var(--accent2); text-decoration:none; }
+  a:hover,a:focus { text-decoration:underline; }
+  hr { border:none; border-top:1px solid var(--border); margin:2.75rem 0 2rem; }
+  footer { font-size:.7rem; color:var(--muted); margin-top:3rem; }
+  @media (max-width:680px){ h1 { font-size:1.55rem; } h2 { font-size:1.2rem; } table,thead,tbody,th,td,tr { font-size:.8rem; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Intro to Web Applications – Fall 2025 <span class="pill">Essential Path</span></h1>
+  <p class="deemph">This pared‑down syllabus highlights the minimum successful path for first‑time beginners. Use alongside the full syllabus (v2) for optional enrichment items.</p>
+  <div class="note"><strong>Goal:</strong> Confidently produce an accessible, semantic, responsive front‑end with light JavaScript (events, DOM templating, simple fetch) and solid Git workflow. Performance deep dives, advanced typography, audits, and optimization sprints are <em>optional</em>.</div>
+</header>
+<section>
+  <h2>Learning Outcomes (Essential)</h2>
+  <ul>
+    <li>Create semantic, accessible HTML structures (landmarks, alt text, headings, lists).</li>
+    <li>Design readable, responsive layouts with core CSS (flex, simple media queries, type scaling basics).</li>
+    <li>Use Git/GitHub for version control; publish via GitHub Pages.</li>
+    <li>Add interactivity with beginner‑friendly JavaScript: events, arrays, rendering templated content into the DOM.</li>
+    <li>Fetch and display JSON data with basic error messaging (graceful fallback).</li>
+    <li>Apply an accessibility baseline checklist throughout iterations.</li>
+    <li>Reflect on user needs and articulate improvements in brief write‑ups.</li>
+  </ul>
+</section>
+<section>
+  <h2>Week-by-Week (Core Only)</h2>
+  <p class="muted">Labs due Sundays 11:59 PM. If you fall behind, finish the current week's Core lab before revisiting prior optional material.</p>
+  <table>
+    <caption>Essential Schedule</caption>
+    <thead>
+      <tr><th scope="col">Week</th><th scope="col">Focus</th><th scope="col">Project / Milestone</th><th scope="col">Core Lab(s)</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">1</th><td>HTML foundations, audience, scanability</td><td>About Me (v1)</td><td>Lab01 Audience/About</td></tr>
+      <tr><th scope="row">2</th><td>Semantic structure & accessibility basics</td><td>Timeline Page (structure)</td><td>Lab02 Scanability + Lab03 CRAP</td></tr>
+      <tr><th scope="row">3</th><td>Core CSS: selectors, spacing, hierarchy</td><td>Styled Timeline (v1)</td><td>Lab04 Git Workflow + Lab05 Planning</td></tr>
+      <tr><th scope="row">4</th><td>Semantic polish + media & lists (reinforce)</td><td>Refined Timeline</td><td>Lab06 Links/Images/Lists</td></tr>
+      <tr><th scope="row">5</th><td>Base CSS system (rhythm, typography start)</td><td>Style System Applied</td><td>Lab07 Base CSS + Lab08 Scanability CSS</td></tr>
+      <tr><th scope="row">6</th><td>Navigation & banner patterns; deploy</td><td>Live GitHub Pages Site</td><td>Lab09 Nav/Banner + Lab10 Quality/A11y</td></tr>
+      <tr><th scope="row">7</th><td>Intro JavaScript: events & variables</td><td>Interactive Quote/Poem</td><td>JS Lab01 Event Playground</td></tr>
+      <tr><th scope="row">8</th><td>DOM templating & arrays</td><td>Gallery / Dynamic List</td><td>JS Lab02 DOM from JSON</td></tr>
+      <tr><th scope="row">9</th><td>Fetch basics + user feedback for errors</td><td>Data-Driven Mini App</td><td>JS Lab03 Fetch & Error Handling</td></tr>
+      <tr><th scope="row">10</th><td>Responsive refinement (flex → light grid)</td><td>Refined Responsive Layout</td><td>Lab12 Flex → Grid</td></tr>
+      <tr><th scope="row">11</th><td>Accessible navigation & toggle patterns</td><td>Accessible Nav Integrated</td><td>Lab14 Accessible Hamburger Nav</td></tr>
+      <tr><th scope="row">12</th><td>Responsive images basics (srcset, sizes)</td><td>Image-Optimized Site</td><td>Lab15 Responsive Images</td></tr>
+      <tr><th scope="row">13</th><td>Final project planning (scope, wireframe)</td><td>Proposal + Wireframe</td><td>— (Planning Workshop)</td></tr>
+      <tr><th scope="row">14</th><td>Final build iteration 1</td><td>Working Prototype</td><td>—</td></tr>
+      <tr><th scope="row">15</th><td>Thanksgiving (catch-up)</td><td>Stabilize & Polish</td><td>—</td></tr>
+      <tr><th scope="row">16</th><td>Showcase & reflection</td><td>Final App + Reflection</td><td>Reflection</td></tr>
+    </tbody>
+  </table>
+  <p class="muted"><strong>Removed / Optional (Stretch in full syllabus):</strong> Fluid typography clamp(), advanced performance sprint, deep CSS audit & reduction, advanced accessibility remediation, full Core Web Vitals metrics.</p>
+</section>
+<section>
+  <h2>Core Labs List</h2>
+  <ul>
+    <li>Labs 01–12 (excluding any designated stretch in full version)</li>
+    <li>Lab14 Accessible Navigation</li>
+    <li>Lab15 Responsive Images</li>
+    <li>Reflection (Final Week)</li>
+  </ul>
+  <p class="muted">If you finish all above comfortably, consult full syllabus for next stretch target—choose only one at a time.</p>
+</section>
+<section>
+  <h2>Final Project Minimums (Essential)</h2>
+  <ul>
+    <li>Deployed responsive site/app (GitHub Pages; optional simple hosted JSON if provided).</li>
+    <li>Accessibility baseline: headings, alt text, color contrast, focus visible, nav landmarks.</li>
+    <li>At least one interactive JS enhancement (event-driven or fetched data render).</li>
+    <li>README: purpose, audience, features, accessibility notes, two potential future performance ideas.</li>
+    <li>Short reflection: What improved most? Where would you iterate next?</li>
+  </ul>
+</section>
+<section>
+  <h2>Reflection Touchpoints</h2>
+  <ul>
+    <li>After Lab10 (accessibility & readability improvements)</li>
+    <li>After Lab15 (responsive images impact & tradeoffs)</li>
+    <li>Final (growth narrative + next steps)</li>
+  </ul>
+</section>
+<section>
+  <h2>Tool Onboarding Order</h2>
+  <ol>
+    <li>Weeks 1–2: Browser DevTools (Elements, basic contrast check)</li>
+    <li>Week 3: Git local commits</li>
+    <li>Week 6: GitHub Pages deployment</li>
+    <li>Week 7: Simple JS console debugging</li>
+    <li>Week 9: Fetch + network panel basics</li>
+    <li>Week 11: Basic axe scan (awareness only)</li>
+  </ol>
+</section>
+<section>
+  <h2>Progress Tracking</h2>
+  <p>Maintain a single checklist file (checklist.md) marking completion of: semantic structure, navigation, responsive layout, interactive component, fetch usage, accessibility baseline, images optimized, reflections written.</p>
+</section>
+<hr>
+<footer>
+  Essential Path v1. Generated as a simplified companion to full syllabus (v2). Use the full document for enrichment options when ahead and confident.
+</footer>
+</body>
+</html>

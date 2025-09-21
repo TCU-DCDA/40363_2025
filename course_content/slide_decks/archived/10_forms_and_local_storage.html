@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms & Local Storage | Web Development Fundamentals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: white;
+            margin-right: 0;
+        }
+
+        .slide:nth-child(even) {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #2980b9;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #27ae60;
+        }
+
+        p, li {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .code-example {
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            max-width: 700px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Fira Code', 'Courier New', monospace;
+        }
+
+        .code-line {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 8px 0;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .code-line:hover {
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        .keyword {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .string {
+            color: #2ecc71;
+        }
+
+        .number {
+            color: #e67e22;
+        }
+
+        .variable {
+            color: #f39c12;
+        }
+
+        .comment {
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .function-name {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: #f39c12;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #2980b9;
+        }
+
+        .nav-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .storage-demo {
+            background: #ecf0f1;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #9b59b6;
+            max-width: 600px;
+        }
+
+        .form-visual {
+            background: #f8f9fa;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            max-width: 500px;
+        }
+
+        .form-field {
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-field input, .form-field select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .interactive-demo {
+            background: #f8f9fa;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1rem 0;
+            max-width: 650px;
+        }
+
+        .demo-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0.5rem;
+        }
+
+        .demo-output {
+            background: #e9ecef;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+            min-height: 50px;
+            border: 1px solid #dee2e6;
+            font-family: monospace;
+        }
+
+        .storage-visual {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 2rem 0;
+            max-width: 700px;
+            gap: 2rem;
+        }
+
+        .storage-box {
+            background: #ecf0f1;
+            border: 2px solid #9b59b6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            min-width: 150px;
+            flex: 1;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: #e74c3c;
+        }
+
+        .comparison-table {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1rem 0;
+            max-width: 600px;
+        }
+
+        .table-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin: 5px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .table-header {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px 5px 0 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.5rem; }
+            p, li { font-size: 1.1rem; }
+            .code-example { font-size: 0.9rem; padding: 1rem; }
+            .storage-visual { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation" id="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <h1>Forms & Local Storage</h1>
+            <h3>Capturing User Input & Saving Data</h3>
+            <p>The final pieces for your interactive web applications</p>
+            <div class="storage-demo">
+                <h3>What You'll Master Today:</h3>
+                <ul style="text-align: left;">
+                    <li>Creating and handling forms</li>
+                    <li>Validating user input</li>
+                    <li>Saving data with localStorage</li>
+                    <li>Building persistent applications</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 2: HTML Forms Review -->
+        <div class="slide">
+            <h2>HTML Forms: Collecting Information</h2>
+            <div class="form-visual">
+                <h3>Favorite Restaurant Form</h3>
+                <div class="form-field">
+                    <label>Restaurant Name:</label>
+                    <input type="text" placeholder="Enter restaurant name" />
+                </div>
+                <div class="form-field">
+                    <label>Rating:</label>
+                    <select>
+                        <option>5 - Excellent</option>
+                        <option>4 - Very Good</option>
+                        <option>3 - Good</option>
+                        <option>2 - Fair</option>
+                        <option>1 - Poor</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label>Cuisine Type:</label>
+                    <input type="text" placeholder="e.g., Italian, Mexican" />
+                </div>
+                <button class="submit-btn">Add to Favorites</button>
+            </div>
+        </div>
+
+        <!-- Slide 3: Form HTML Structure -->
+        <div class="slide">
+            <h2>Building Forms with HTML</h2>
+            <div class="code-example">
+                <div class="code-line">&lt;<span class="keyword">form</span> id=<span class="string">"restaurantForm"</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="keyword">label</span>&gt;Restaurant Name:&lt;/<span class="keyword">label</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="keyword">input</span> type=<span class="string">"text"</span> id=<span class="string">"name"</span> required&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="keyword">label</span>&gt;Rating:&lt;/<span class="keyword">label</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="keyword">select</span> id=<span class="string">"rating"</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="keyword">option</span> value=<span class="string">"5"</span>&gt;5 - Excellent&lt;/<span class="keyword">option</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="keyword">option</span> value=<span class="string">"4"</span>&gt;4 - Very Good&lt;/<span class="keyword">option</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;/<span class="keyword">select</span>&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="keyword">button</span> type=<span class="string">"submit"</span>&gt;Add Restaurant&lt;/<span class="keyword">button</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="keyword">form</span>&gt;</div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Handling Form Submission -->
+        <div class="slide">
+            <h2>Processing Form Data with JavaScript</h2>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">form</span> = document.<span class="function-name">getElementById</span>(<span class="string">"restaurantForm"</span>);</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line"><span class="variable">form</span>.<span class="function-name">addEventListener</span>(<span class="string">"submit"</span>, <span class="keyword">function</span>(event) {</div>
+                <div class="code-line">&nbsp;&nbsp;event.<span class="function-name">preventDefault</span>();</div>
+                <div class="code-line comment">&nbsp;&nbsp;// Prevent page refresh</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">let</span> <span class="variable">name</span> = document.<span class="function-name">getElementById</span>(<span class="string">"name"</span>).value;</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">let</span> <span class="variable">rating</span> = document.<span class="function-name">getElementById</span>(<span class="string">"rating"</span>).value;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;console.<span class="function-name">log</span>(<span class="string">"Name: "</span> + <span class="variable">name</span>);</div>
+                <div class="code-line">&nbsp;&nbsp;console.<span class="function-name">log</span>(<span class="string">"Rating: "</span> + <span class="variable">rating</span>);</div>
+                <div class="code-line">});</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Form Validation -->
+        <div class="slide">
+            <h2>Validating User Input</h2>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">function</span> <span class="function-name">validateForm</span>(name, rating) {</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">if</span> (name.trim() === <span class="string">""</span>) {</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="function-name">alert</span>(<span class="string">"Please enter a restaurant name"</span>);</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">false</span>;</div>
+                <div class="code-line">&nbsp;&nbsp;}</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">if</span> (<span class="variable">rating</span> &lt; <span class="number">1</span> || <span class="variable">rating</span> &gt; <span class="number">5</span>) {</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="function-name">alert</span>(<span class="string">"Rating must be between 1 and 5"</span>);</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">false</span>;</div>
+                <div class="code-line">&nbsp;&nbsp;}</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">true</span>;</div>
+                <div class="code-line">}</div>
+            </div>
+            <div class="storage-demo">
+                <p><strong>Good validation:</strong> Helps users enter correct information and prevents errors in your app!</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Local Storage Introduction -->
+        <div class="slide">
+            <h2>localStorage: Your Browser's Memory</h2>
+            <p>Save data that <span class="highlight">persists between browser sessions</span></p>
+            <div class="storage-visual">
+                <div class="storage-box">
+                    <h3>Your App</h3>
+                    <p>Creates data</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="storage-box">
+                    <h3>localStorage</h3>
+                    <p>Saves data</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="storage-box">
+                    <h3>Later Visits</h3>
+                    <p>Data still there!</p>
+                </div>
+            </div>
+            <div class="comparison-table">
+                <div class="table-row table-header">
+                    <span>Without localStorage</span>
+                    <span>With localStorage</span>
+                </div>
+                <div class="table-row">
+                    <span>Data disappears on refresh</span>
+                    <span>Data stays forever</span>
+                </div>
+                <div class="table-row">
+                    <span>Start over every time</span>
+                    <span>Pick up where you left off</span>
+                </div>
+                <div class="table-row">
+                    <span>Frustrating for users</span>
+                    <span>Great user experience</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Using localStorage -->
+        <div class="slide">
+            <h2>Saving and Loading Data</h2>
+            <div class="code-example">
+                <div class="code-line comment">// Save a single value</div>
+                <div class="code-line">localStorage.<span class="function-name">setItem</span>(<span class="string">"userName"</span>, <span class="string">"Sarah"</span>);</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Get a value back</div>
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">name</span> = localStorage.<span class="function-name">getItem</span>(<span class="string">"userName"</span>);</div>
+                <div class="code-line">console.<span class="function-name">log</span>(<span class="variable">name</span>);</div>
+                <div class="code-line comment">// Prints: "Sarah"</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Save an array (convert to string first)</div>
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">favorites</span> = [<span class="string">"Pizza"</span>, <span class="string">"Burgers"</span>, <span class="string">"Tacos"</span>];</div>
+                <div class="code-line">localStorage.<span class="function-name">setItem</span>(<span class="string">"favorites"</span>, JSON.<span class="function-name">stringify</span>(<span class="variable">favorites</span>));</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Get array back (convert from string)</div>
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">saved</span> = JSON.<span class="function-name">parse</span>(localStorage.<span class="function-name">getItem</span>(<span class="string">"favorites"</span>));</div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Complete Example -->
+        <div class="slide">
+            <h2>Building a Persistent Favorites List</h2>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">function</span> <span class="function-name">addRestaurant</span>(name, rating, cuisine) {</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">let</span> <span class="variable">favorites</span> = <span class="function-name">loadFavorites</span>();</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">let</span> <span class="variable">newRestaurant</span> = {</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;name: <span class="variable">name</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;rating: <span class="variable">rating</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cuisine: <span class="variable">cuisine</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;id: <span class="function-name">Date</span>.<span class="function-name">now</span>()</div>
+                <div class="code-line">&nbsp;&nbsp;};</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="variable">favorites</span>.<span class="function-name">push</span>(<span class="variable">newRestaurant</span>);</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="function-name">saveFavorites</span>(<span class="variable">favorites</span>);</div>
+                <div class="code-line">}</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line"><span class="keyword">function</span> <span class="function-name">saveFavorites</span>(favorites) {</div>
+                <div class="code-line">&nbsp;&nbsp;localStorage.<span class="function-name">setItem</span>(<span class="string">"restaurants"</span>, JSON.<span class="function-name">stringify</span>(<span class="variable">favorites</span>));</div>
+                <div class="code-line">}</div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Loading Saved Data -->
+        <div class="slide">
+            <h2>Loading Data When Page Opens</h2>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">function</span> <span class="function-name">loadFavorites</span>() {</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">let</span> <span class="variable">saved</span> = localStorage.<span class="function-name">getItem</span>(<span class="string">"restaurants"</span>);</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">if</span> (<span class="variable">saved</span>) {</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> JSON.<span class="function-name">parse</span>(<span class="variable">saved</span>);</div>
+                <div class="code-line">&nbsp;&nbsp;} <span class="keyword">else</span> {</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> [];</div>
+                <div class="code-line comment">&nbsp;&nbsp;&nbsp;&nbsp;// Return empty array if no data</div>
+                <div class="code-line">&nbsp;&nbsp;}</div>
+                <div class="code-line">}</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Load data when page first opens</div>
+                <div class="code-line">window.<span class="function-name">addEventListener</span>(<span class="string">"load"</span>, <span class="keyword">function</span>() {</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">let</span> <span class="variable">favorites</span> = <span class="function-name">loadFavorites</span>();</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="function-name">displayFavorites</span>(<span class="variable">favorites</span>);</div>
+                <div class="code-line">});</div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Ready for Project Success -->
+        <div class="slide">
+            <h2>You're Ready to Build Amazing Apps!</h2>
+            <div class="storage-demo">
+                <h3>Complete Skill Set:</h3>
+                <ul style="text-align: left;">
+                    <li>✅ Create interactive forms</li>
+                    <li>✅ Validate user input</li>
+                    <li>✅ Save data with localStorage</li>
+                    <li>✅ Load data on page start</li>
+                    <li>✅ Build persistent applications</li>
+                </ul>
+            </div>
+            <div class="interactive-demo">
+                <h3>Your Favorites Tracker Will:</h3>
+                <p>✨ Remember all favorites between visits</p>
+                <p>🔍 Let users search and filter</p>
+                <p>📝 Validate all user input</p>
+                <p>🎯 Provide excellent user experience</p>
+                <button class="demo-button" onclick="testStorage()">Test localStorage</button>
+                <div class="demo-output" id="storage-output">Click to test browser storage!</div>
+            </div>
+            <p><strong>Time to create something users will love! 🚀</strong></p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next</button>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function updateSlidePosition() {
+            const presentation = document.getElementById('presentation');
+            presentation.style.transform = `translateX(-${currentSlideIndex * 100}vw)`;
+
+            document.getElementById('currentSlide').textContent = currentSlideIndex + 1;
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlideIndex === 0;
+            document.getElementById('nextBtn').disabled = currentSlideIndex === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            const newIndex = currentSlideIndex + direction;
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                currentSlideIndex = newIndex;
+                updateSlidePosition();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                changeSlide(1);
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left, go to next slide
+                } else {
+                    changeSlide(-1); // Swipe right, go to previous slide
+                }
+            }
+        }
+
+        // Interactive demo function
+        function testStorage() {
+            const output = document.getElementById('storage-output');
+            const testData = {
+                name: "Demo Restaurant",
+                rating: 5,
+                cuisine: "Italian",
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Save to localStorage
+            localStorage.setItem('demo-restaurant', JSON.stringify(testData));
+
+            // Load from localStorage
+            const loaded = JSON.parse(localStorage.getItem('demo-restaurant'));
+
+            output.innerHTML = `
+                <strong>Saved and loaded successfully!</strong><br>
+                Restaurant: ${loaded.name}<br>
+                Rating: ${loaded.rating} stars<br>
+                Cuisine: ${loaded.cuisine}<br>
+                Saved at: ${loaded.timestamp}
+            `;
+        }
+
+        // Initialize
+        updateSlidePosition();
+    </script>
+</body>
+</html>

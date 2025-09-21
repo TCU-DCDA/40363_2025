@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB08.2 - Color Design & Personal Branding</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .lab-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .lab-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+        .lab-header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        .content-section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .learning-outcomes {
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .prerequisites {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', Monaco, monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+        .code-block code {
+            display: block;
+            white-space: inherit;
+        }
+        .html-code {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            color: #2d3748;
+        }
+        .css-code {
+            background: #2d3748;
+            color: #e2e8f0;
+        }
+        .color-palette-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .color-swatch {
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            font-size: 0.85rem;
+        }
+        .tech-blue { background: linear-gradient(135deg, #3b82f6, #1e40af); }
+        .warm-professional { background: linear-gradient(135deg, #f59e0b, #dc2626); }
+        .modern-gradient { background: linear-gradient(135deg, #8b5cf6, #06b6d4); }
+        .creative-vibrant { background: linear-gradient(135deg, #ec4899, #f97316); }
+        .nature-calm { background: linear-gradient(135deg, #10b981, #059669); }
+        .elegant-purple { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+        
+        .checklist {
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+            border: 1px solid #bee5eb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .checklist h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .checklist li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        .checklist li:before {
+            content: "🎨";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .success-criteria {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .success-criteria h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        .task-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .task-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, #667eea, #764ba2) 1;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #34495e;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .important {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #dc3545;
+            margin: 15px 0;
+        }
+        .color-theory-box {
+            background: linear-gradient(135deg, #e2e3e5 0%, #d6d8db 100%);
+            border: 1px solid #d6d8db;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .color-theory-box h3 {
+            color: #383d41;
+            margin-top: 0;
+        }
+        ol li {
+            margin-bottom: 10px;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        .resource-link {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 20px 0;
+        }
+        .before-after > div {
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .before {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+        }
+        .after {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-header">
+        <h1>Lab 08.2 – Color Design & Personal Branding</h1>
+        <p class="subtitle">Transform Your Grid Layouts with Professional Color Schemes<br>
+        <strong>Portfolio Enhancement:</strong> Adding personality and professional polish to your Project 1 Portfolio</p>
+    </div>
+
+    <div class="content-section">
+        <h2>🎨 Why Color Matters in Portfolio Design</h2>
+        <p>Now that you've mastered CSS Grid layouts in LAB08, it's time to bring your portfolio to life with strategic color choices. Professional color design isn't just about making things "look pretty" – it's about:</p>
+        <ul>
+            <li><strong>Personal Branding:</strong> Colors communicate your professional personality</li>
+            <li><strong>Industry Alignment:</strong> Different fields have color expectations</li>
+            <li><strong>User Experience:</strong> Good color choices improve readability and navigation</li>
+            <li><strong>Memorability:</strong> A cohesive color scheme makes your portfolio unforgettable</li>
+        </ul>
+    </div>
+
+    <div class="learning-outcomes">
+        <h3>Learning Outcomes</h3>
+        <ul>
+            <li>Understand basic color theory principles for web design</li>
+            <li>Choose professional color palettes that align with your career goals</li>
+            <li>Apply CSS custom properties (variables) for consistent color management</li>
+            <li>Enhance your existing grid layouts with strategic color implementation</li>
+            <li>Create accessible color combinations that meet contrast requirements</li>
+            <li>Build a cohesive visual brand across all portfolio sections</li>
+        </ul>
+    </div>
+
+    <div class="prerequisites">
+        <h3>Prerequisites</h3>
+        <ul>
+            <li><strong>Completed LAB08</strong> with working CSS Grid layouts</li>
+            <li>Basic understanding of CSS properties and selectors</li>
+            <li>Portfolio sections (header, about, skills, projects) ready for enhancement</li>
+            <li>Portfolio Planning Worksheet with career goals and target industry identified</li>
+        </ul>
+        
+        <div class="important">
+            <h4>⚠️ Important: This lab BUILDS ON LAB08</h4>
+            <p>All CSS suggestions in this lab are designed to <strong>enhance</strong> your existing LAB08 code, not replace it. You'll be adding colors and visual improvements while keeping your grid layouts intact.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>🌈 Color Theory Crash Course</h2>
+        
+        <div class="color-theory-box">
+            <h3>Essential Color Concepts</h3>
+            <ul>
+                <li><strong>Color Harmony:</strong> Colors that work well together (complementary, analogous, triadic)</li>
+                <li><strong>Contrast:</strong> Difference between light and dark for readability</li>
+                <li><strong>Saturation:</strong> Intensity of color (bright vs. muted)</li>
+                <li><strong>Psychology:</strong> Emotional associations with different colors</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h4>🎯 Professional Portfolio Color Guidelines</h4>
+            <ul>
+                <li><strong>2-3 Colors Maximum:</strong> Too many colors look unprofessional</li>
+                <li><strong>60-30-10 Rule:</strong> 60% neutral, 30% primary color, 10% accent</li>
+                <li><strong>Industry Awareness:</strong> Tech likes blues/grays, Creative allows bold colors, Finance prefers conservative</li>
+                <li><strong>Accessibility First:</strong> Ensure sufficient contrast for all users</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>🎨 Professional Color Palette Options</h2>
+        <p>Choose one palette that aligns with your career goals and personal style:</p>
+
+        <h3>Tech Professional</h3>
+        <div class="color-palette-demo">
+            <div class="color-swatch tech-blue">Primary<br>#3b82f6</div>
+            <div class="color-swatch" style="background: #1e40af;">Secondary<br>#1e40af</div>
+            <div class="color-swatch" style="background: #93c5fd; color: #1e40af;">Accent<br>#93c5fd</div>
+        </div>
+        <p><strong>Best for:</strong> Software development, IT, data science, engineering</p>
+
+        <h3>Warm Professional</h3>
+        <div class="color-palette-demo">
+            <div class="color-swatch warm-professional">Primary<br>#f59e0b</div>
+            <div class="color-swatch" style="background: #dc2626;">Secondary<br>#dc2626</div>
+            <div class="color-swatch" style="background: #fbbf24; color: #dc2626;">Accent<br>#fbbf24</div>
+        </div>
+        <p><strong>Best for:</strong> Marketing, education, consulting, project management</p>
+
+        <h3>Modern Creative</h3>
+        <div class="color-palette-demo">
+            <div class="color-swatch modern-gradient">Primary<br>#8b5cf6</div>
+            <div class="color-swatch" style="background: #06b6d4;">Secondary<br>#06b6d4</div>
+            <div class="color-swatch" style="background: #10b981;">Accent<br>#10b981</div>
+        </div>
+        <p><strong>Best for:</strong> UX/UI design, digital marketing, content creation</p>
+
+        <h3>Creative Vibrant</h3>
+        <div class="color-palette-demo">
+            <div class="color-swatch creative-vibrant">Primary<br>#ec4899</div>
+            <div class="color-swatch" style="background: #f97316;">Secondary<br>#f97316</div>
+            <div class="color-swatch" style="background: #fbbf24; color: #dc2626;">Accent<br>#fbbf24</div>
+        </div>
+        <p><strong>Best for:</strong> Graphic design, photography, arts, creative writing</p>
+
+        <h3>Nature Professional</h3>
+        <div class="color-palette-demo">
+            <div class="color-swatch nature-calm">Primary<br>#10b981</div>
+            <div class="color-swatch" style="background: #059669;">Secondary<br>#059669</div>
+            <div class="color-swatch" style="background: #6ee7b7; color: #059669;">Accent<br>#6ee7b7</div>
+        </div>
+        <p><strong>Best for:</strong> Environmental science, sustainability, health, wellness</p>
+
+        <h3>Elegant Professional</h3>
+        <div class="color-palette-demo">
+            <div class="color-swatch elegant-purple">Primary<br>#7c3aed</div>
+            <div class="color-swatch" style="background: #a855f7;">Secondary<br>#a855f7</div>
+            <div class="color-swatch" style="background: #c4b5fd; color: #7c3aed;">Accent<br>#c4b5fd</div>
+        </div>
+        <p><strong>Best for:</strong> Business, finance, law, luxury industries</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Tasks</h2>
+
+        <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">1</span>
+                <h3>Set Up CSS Custom Properties (Variables)</h3>
+            </div>
+            
+            <p>Create a professional color system using CSS custom properties for easy management and compatibility with your LAB08 code:</p>
+            
+            <h4>Add this to the top of your CSS file (after any existing :root section):</h4>
+            <pre class="code-block css-code"><code>/* Color System - Choose ONE palette from above */
+/* Add this to your existing CSS file, don't replace existing code */
+:root {
+  /* Tech Professional Theme */
+  --primary-color: #3b82f6;
+  --secondary-color: #1e40af;
+  --accent-color: #93c5fd;
+  
+  /* Supporting Colors */
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --background-light: #f9fafb;
+  --background-white: #ffffff;
+  --border-light: #e5e7eb;
+  
+  /* Gradients */
+  --primary-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --accent-gradient: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+}
+
+/* Ensure compatibility with LAB08 layout containers */
+header,
+main,
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}</code></pre>
+
+            <div class="highlight">
+                <h4>💡 Why CSS Custom Properties?</h4>
+                <ul>
+                    <li><strong>Consistency:</strong> Change one value, update everywhere</li>
+                    <li><strong>Maintainability:</strong> Easy to experiment with different colors</li>
+                    <li><strong>Professional:</strong> Industry standard approach</li>
+                    <li><strong>Flexibility:</strong> Can create variations and themes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">2</span>
+                <h3>Transform Your Skills Grid with Color</h3>
+            </div>
+            
+            <p>Enhance your LAB08 skills grid with your chosen color palette:</p>
+            
+            <h4>Update your existing .skill-card CSS with these color enhancements:</h4>
+            <pre class="code-block css-code"><code>/* Keep your existing LAB08 grid container */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Enhanced skill-card with colors */
+.skill-card {
+  padding: 1.5rem;
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: 8px; /* Keep consistent with LAB08 */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none; /* Remove the original border */
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.skill-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}</code></pre>
+
+            <div class="highlight">
+                <h4>🎨 Alternative: Category-Based Colors</h4>
+                <p>Want different colors for different skill types? Add these classes to your existing LAB08 structure:</p>
+                <pre class="code-block css-code"><code>/* Add these classes to your HTML skill cards */
+.skill-card.technical {
+  background: var(--primary-gradient);
+}
+
+.skill-card.creative {
+  background: var(--accent-gradient);
+}
+
+.skill-card.communication {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+}
+
+/* Keep all your LAB08 responsive behavior */
+@media (min-width: 480px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}</code></pre>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">3</span>
+                <h3>Enhance Project Cards with Brand Colors</h3>
+            </div>
+            
+            <p>Enhance your LAB08 project showcase with professional color treatment:</p>
+            
+            <pre class="code-block css-code"><code>/* Keep your existing LAB08 grid container */
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* On tablets and up, show 2 columns */
+@media (min-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Enhanced project-card with brand colors */
+.project-card {
+  padding: 2rem;
+  background: var(--background-white);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px; /* Keep consistent with LAB08 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-left-color: var(--secondary-color);
+}
+
+.project-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.project-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Optional: Add a "featured" project variant */
+.project-card.featured {
+  background: var(--primary-gradient);
+  color: white;
+  border-left: 4px solid var(--accent-color);
+}
+
+.project-card.featured h3,
+.project-card.featured p {
+  color: white;
+}</code></pre>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 5px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">4</span>
+                <h3>Create Colorful Section Headers</h3>
+            </div>
+            
+            <p>Enhance your LAB08 section headers with gradient treatments:</p>
+            
+            <pre class="code-block css-code"><code>/* Build on your existing LAB08 section headers */
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  color: var(--text-dark);
+  /* Add gradient text effect */
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Fallback for browsers that don't support background-clip */
+  color: var(--primary-color);
+}
+
+/* Enhanced underline with your brand colors */
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+}
+
+/* Alternative: Simple colored headers if gradients don't work */
+.simple-header h2 {
+  color: var(--primary-color);
+  background: none;
+  -webkit-text-fill-color: initial;
+}</code></pre>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 5px solid #dc3545; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">5</span>
+                <h3>Design Your Header & Navigation</h3>
+            </div>
+            
+            <p>Create a cohesive header that works with your LAB08 main layout:</p>
+            
+            <pre class="code-block css-code"><code>/* Professional header styling */
+header {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+  /* Ensure compatibility with LAB08 layout */
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+header .tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Navigation styling that works with your existing layout */
+nav {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Responsive friendly */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Ensure header works with LAB08 main container */
+main {
+  /* Keep your existing LAB08 main styling */
+  display: grid;
+  gap: 4rem; /* or 6rem as set in LAB08 */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}</code></pre>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 5px solid #dc3545; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <div class="task-header">
+                <span class="task-number">6</span>
+                <h3>Add Interactive Color Elements</h3>
+            </div>
+            
+            <p>Create engaging interactive elements that respond to user actions:</p>
+            
+            <pre class="code-block css-code"><code>/* Call-to-action buttons */
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--primary-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Accent elements */
+.highlight-box {
+  background: var(--accent-color);
+  color: var(--text-dark);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Contact section styling */
+.contact-info {
+  background: var(--background-light);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}</code></pre>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>🔍 Before & After: The Color Difference</h2>
+        <div class="before-after">
+            <div class="before">
+                <h4>❌ Before: Basic Gray Layout</h4>
+                <ul>
+                    <li>Bland, forgettable appearance</li>
+                    <li>No personality or brand identity</li>
+                    <li>Looks like every other portfolio</li>
+                    <li>Doesn't reflect your professional goals</li>
+                </ul>
+            </div>
+            <div class="after">
+                <h4>✅ After: Branded Color Design</h4>
+                <ul>
+                    <li>Professional, memorable appearance</li>
+                    <li>Clear personal brand identity</li>
+                    <li>Industry-appropriate color choices</li>
+                    <li>Engaging, interactive elements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>🛠 Accessibility & Color Contrast</h2>
+        
+        <div class="important">
+            <h4>⚠️ Accessibility is NOT Optional</h4>
+            <p>Your color choices must be accessible to all users, including those with visual impairments.</p>
+        </div>
+
+        <div class="highlight">
+            <h4>✅ Accessibility Checklist</h4>
+            <ul>
+                <li><strong>Contrast Ratio:</strong> Text should have at least 4.5:1 contrast with background</li>
+                <li><strong>Color Independence:</strong> Don't rely solely on color to convey information</li>
+                <li><strong>Testing Tools:</strong> Use WebAIM Contrast Checker or browser dev tools</li>
+                <li><strong>Alternative Indicators:</strong> Use icons, text, or patterns alongside color</li>
+            </ul>
+        </div>
+
+        <pre class="code-block css-code"><code>/* Accessible color combinations example */
+.accessible-text {
+  /* Good contrast: white text on dark background */
+  background: var(--primary-color);
+  color: white; /* High contrast */
+}
+
+.accessible-link {
+  color: var(--primary-color);
+  text-decoration: underline; /* Visual indicator beyond just color */
+}
+
+.accessible-button {
+  background: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-color);
+  /* Focus state for keyboard users */
+}
+
+.accessible-button:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}</code></pre>
+    </div>
+
+    <div class="resource-link">
+        <h3>🔗 Essential Color Resources</h3>
+        <ul>
+            <li><strong>Coolors.co:</strong> Generate and explore professional color palettes</li>
+            <li><strong>Adobe Color:</strong> Color wheel and harmony tools for advanced combinations</li>
+            <li><strong>WebAIM Contrast Checker:</strong> Ensure your colors meet accessibility standards</li>
+            <li><strong>Paletton.com:</strong> Create color schemes based on color theory</li>
+            <li><strong>Material Design Colors:</strong> Google's professional color system</li>
+        </ul>
+    </div>
+
+    <div class="checklist">
+        <h3>🎨 Color Implementation Checklist</h3>
+        
+        <h4>Color System Setup</h4>
+        <ul>
+            <li>CSS custom properties defined for all brand colors</li>
+            <li>Chosen color palette aligns with career goals</li>
+            <li>Consistent color usage across all sections</li>
+            <li>Fallback colors provided for older browsers</li>
+        </ul>
+
+        <h4>Visual Enhancement</h4>
+        <ul>
+            <li>Skills grid enhanced with gradient backgrounds</li>
+            <li>Project cards have branded color accents</li>
+            <li>Section headers use color to create hierarchy</li>
+            <li>Interactive elements respond to hover/focus</li>
+        </ul>
+
+        <h4>Professional Polish</h4>
+        <ul>
+            <li>Header establishes strong brand presence</li>
+            <li>Navigation is visually integrated with overall design</li>
+            <li>Call-to-action elements are prominent and engaging</li>
+            <li>Overall design feels cohesive and intentional</li>
+        </ul>
+
+        <h4>Accessibility & Quality</h4>
+        <ul>
+            <li>All text meets WCAG contrast requirements</li>
+            <li>Color is not the only way information is conveyed</li>
+            <li>Focus states are clearly visible</li>
+            <li>Design works well for colorblind users</li>
+        </ul>
+    </div>
+
+    <div class="success-criteria">
+        <h3>✅ Success Criteria</h3>
+        <ul>
+            <li><strong>Professional Brand Identity:</strong> Color choices reflect your target industry and personal style</li>
+            <li><strong>Visual Hierarchy:</strong> Colors guide users through your content effectively</li>
+            <li><strong>Accessibility Compliance:</strong> All color combinations meet contrast standards</li>
+            <li><strong>Consistent Implementation:</strong> Color system is applied uniformly across all sections</li>
+            <li><strong>Enhanced User Experience:</strong> Interactive elements provide clear feedback</li>
+            <li><strong>Memorable Design:</strong> Portfolio stands out while remaining professional</li>
+            <li><strong>Industry Appropriateness:</strong> Color choices align with your career field</li>
+            <li><strong>Technical Excellence:</strong> CSS custom properties used correctly and efficiently</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>🎯 Industry-Specific Color Guidance</h2>
+        
+        <h3>Technology & Engineering</h3>
+        <ul>
+            <li><strong>Colors:</strong> Blues, grays, clean whites</li>
+            <li><strong>Style:</strong> Minimal, modern, trustworthy</li>
+            <li><strong>Avoid:</strong> Overly bright or flashy colors</li>
+        </ul>
+
+        <h3>Creative & Design</h3>
+        <ul>
+            <li><strong>Colors:</strong> Bold, expressive, unique combinations</li>
+            <li><strong>Style:</strong> Artistic, personality-driven</li>
+            <li><strong>Avoid:</strong> Boring or overly conservative palettes</li>
+        </ul>
+
+        <h3>Business & Finance</h3>
+        <ul>
+            <li><strong>Colors:</strong> Navy, deep greens, professional purples</li>
+            <li><strong>Style:</strong> Conservative, trustworthy, established</li>
+            <li><strong>Avoid:</strong> Neon or overly casual colors</li>
+        </ul>
+
+        <h3>Healthcare & Science</h3>
+        <ul>
+            <li><strong>Colors:</strong> Calming blues, clean greens, medical whites</li>
+            <li><strong>Style:</strong> Clean, trustworthy, professional</li>
+            <li><strong>Avoid:</strong> Aggressive reds or anxiety-inducing combinations</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>🚀 Next Steps</h2>
+        <p>With your enhanced color design, your portfolio now has:</p>
+        <ul>
+            <li>A strong professional brand identity</li>
+            <li>Visual appeal that captures attention</li>
+            <li>Industry-appropriate color choices</li>
+            <li>Accessible design that works for all users</li>
+        </ul>
+
+        <p><strong>Ready for LAB09:</strong> Your colorful, well-designed portfolio is now prepared for responsive optimization and final polish.</p>
+        
+        <div class="highlight">
+            <h4>💡 Pro Tip: Document Your Choices</h4>
+            <p>Create a simple style guide documenting your color choices and their hex codes. This shows professional thinking and makes future updates easier!</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>📝 Submission Guidelines</h2>
+        <p><strong>Submit:</strong> Your enhanced portfolio with professional color implementation</p>
+        <p><strong>Include:</strong> A brief comment in your CSS explaining your color palette choice and target industry</p>
+        <p><strong>Test:</strong> Verify your design works well on different devices and meets accessibility standards</p>
+        
+        <div class="important">
+            <h4>🎯 Focus on Consistency</h4>
+            <p>A simple, consistently applied color scheme is far better than complex colors used inconsistently. Quality over quantity!</p>
+        </div>
+    </div>
+</body>
+</html>

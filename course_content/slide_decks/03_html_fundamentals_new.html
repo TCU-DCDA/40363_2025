@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Fundamentals | Web Development Foundations</title>
+    <link rel="stylesheet" href="css/presentation.css">
+    <style>
+        /* Presentation-specific styles only */
+        .document-visual {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            max-width: 500px;
+            font-family: monospace;
+        }
+
+        .doc-section {
+            background: #e9ecef;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+
+        .element-demo {
+            background: #fff;
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            max-width: 600px;
+        }
+
+        .element-example {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .element-tag {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-family: monospace;
+            margin-right: 15px;
+            min-width: 80px;
+        }
+
+        .element-purpose {
+            color: #495057;
+        }
+
+        .attribute-demo {
+            background: #f8f9fa;
+            border: 2px solid #f39c12;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            max-width: 650px;
+        }
+
+        .attr-example {
+            background: #fff3cd;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border-left: 4px solid #f39c12;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation" id="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <h1>HTML Fundamentals</h1>
+            <h3>The Foundation of Every Website</h3>
+            <p>Building blocks for creating structured web content</p>
+            <div class="foundation-demo">
+                <h3>What You'll Learn:</h3>
+                <ul style="text-align: left;">
+                    <li>HTML document structure and anatomy</li>
+                    <li>Essential HTML elements for content</li>
+                    <li>Attributes and how they enhance elements</li>
+                    <li>Creating links, images, and lists</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 2: HTML Document Structure -->
+        <div class="slide">
+            <h2>Every HTML Document Has the Same Structure</h2>
+            <div class="analogy-box">
+                <p><strong>Think of HTML like a house:</strong></p>
+                <p>📄 DOCTYPE = Building permit</p>
+                <p>🏠 html = The entire house</p>
+                <p>🧠 head = The attic (information not visible to visitors)</p>
+                <p>🏡 body = The living space (what visitors see)</p>
+            </div>
+            <div class="code-example">
+                <div class="code-line">&lt;!<span class="keyword">DOCTYPE</span> html&gt;</div>
+                <div class="code-line">&lt;<span class="tag">html</span> <span class="attribute">lang</span>=<span class="string">"en"</span>&gt;</div>
+                <div class="code-line">&lt;<span class="tag">head</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">title</span>&gt;My First Website&lt;/<span class="tag">title</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">head</span>&gt;</div>
+                <div class="code-line">&lt;<span class="tag">body</span>&gt;</div>
+                <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">h1</span>&gt;Welcome to my site!&lt;/<span class="tag">h1</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">body</span>&gt;</div>
+                <div class="code-line">&lt;/<span class="tag">html</span>&gt;</div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Head vs Body -->
+        <div class="slide">
+            <h2>Head vs Body: What Goes Where?</h2>
+            <div class="two-column">
+                <div class="column">
+                    <div class="doc-section">
+                        <h3>👤 HEAD Section</h3>
+                        <p><strong>Information ABOUT the page</strong></p>
+                        <ul style="text-align: left; font-size: 1.1rem;">
+                            <li>Page title (browser tab)</li>
+                            <li>CSS links</li>
+                            <li>Meta information</li>
+                            <li>Search engine data</li>
+                        </ul>
+                        <p><em>Visitors don't see this directly</em></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="doc-section">
+                        <h3>🏡 BODY Section</h3>
+                        <p><strong>Content visitors see</strong></p>
+                        <ul style="text-align: left; font-size: 1.1rem;">
+                            <li>Text and headings</li>
+                            <li>Images and videos</li>
+                            <li>Links and buttons</li>
+                            <li>Everything visible</li>
+                        </ul>
+                        <p><em>This is your actual content</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Essential Text Elements -->
+        <div class="slide">
+            <h2>Essential Text Elements</h2>
+            <div class="element-demo">
+                <div class="element-example">
+                    <div class="element-tag">h1-h6</div>
+                    <div class="element-purpose">Headings (h1 is biggest, h6 is smallest)</div>
+                </div>
+                <div class="element-example">
+                    <div class="element-tag">p</div>
+                    <div class="element-purpose">Paragraphs of text</div>
+                </div>
+                <div class="element-example">
+                    <div class="element-tag">strong</div>
+                    <div class="element-purpose">Important text (bold)</div>
+                </div>
+                <div class="element-example">
+                    <div class="element-tag">em</div>
+                    <div class="element-purpose">Emphasized text (italic)</div>
+                </div>
+            </div>
+            <div class="code-example">
+                <div class="code-line">&lt;<span class="tag">h1</span>&gt;Main Title&lt;/<span class="tag">h1</span>&gt;</div>
+                <div class="code-line">&lt;<span class="tag">h2</span>&gt;Section Title&lt;/<span class="tag">h2</span>&gt;</div>
+                <div class="code-line">&lt;<span class="tag">p</span>&gt;This is a paragraph with &lt;<span class="tag">strong</span>&gt;important&lt;/<span class="tag">strong</span>&gt; text.&lt;/<span class="tag">p</span>&gt;</div>
+                <div class="code-line">&lt;<span class="tag">p</span>&gt;Another paragraph with &lt;<span class="tag">em</span>&gt;emphasized&lt;/<span class="tag">em</span>&gt; text.&lt;/<span class="tag">p</span>&gt;</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Lists -->
+        <div class="slide">
+            <h2>Creating Lists</h2>
+            <div class="two-column">
+                <div class="column">
+                    <h3>Unordered Lists (Bullets)</h3>
+                    <div class="code-example">
+                        <div class="code-line">&lt;<span class="tag">ul</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">li</span>&gt;Coffee&lt;/<span class="tag">li</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">li</span>&gt;Tea&lt;/<span class="tag">li</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">li</span>&gt;Water&lt;/<span class="tag">li</span>&gt;</div>
+                        <div class="code-line">&lt;/<span class="tag">ul</span>&gt;</div>
+                    </div>
+                    <p><strong>Result:</strong></p>
+                    <ul style="font-size: 1.1rem;">
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Water</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Ordered Lists (Numbers)</h3>
+                    <div class="code-example">
+                        <div class="code-line">&lt;<span class="tag">ol</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">li</span>&gt;Wake up&lt;/<span class="tag">li</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">li</span>&gt;Brush teeth&lt;/<span class="tag">li</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;<span class="tag">li</span>&gt;Eat breakfast&lt;/<span class="tag">li</span>&gt;</div>
+                        <div class="code-line">&lt;/<span class="tag">ol</span>&gt;</div>
+                    </div>
+                    <p><strong>Result:</strong></p>
+                    <ol style="font-size: 1.1rem;">
+                        <li>Wake up</li>
+                        <li>Brush teeth</li>
+                        <li>Eat breakfast</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Links -->
+        <div class="slide">
+            <h2>Creating Links</h2>
+            <p>Links are the <span class="highlight">connections</span> between web pages</p>
+            <div class="code-example">
+                <div class="code-line comment">&lt;!-- Link to another website --&gt;</div>
+                <div class="code-line">&lt;<span class="tag">a</span> <span class="attribute">href</span>=<span class="string">"https://www.google.com"</span>&gt;Visit Google&lt;/<span class="tag">a</span>&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">&lt;!-- Link to another page on your site --&gt;</div>
+                <div class="code-line">&lt;<span class="tag">a</span> <span class="attribute">href</span>=<span class="string">"about.html"</span>&gt;About Me&lt;/<span class="tag">a</span>&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">&lt;!-- Email link --&gt;</div>
+                <div class="code-line">&lt;<span class="tag">a</span> <span class="attribute">href</span>=<span class="string">"mailto:your@email.com"</span>&gt;Send Email&lt;/<span class="tag">a</span>&gt;</div>
+            </div>
+            <div class="foundation-demo">
+                <p><strong>Key Points:</strong></p>
+                <ul style="text-align: left;">
+                    <li><code>href</code> = "hypertext reference" (where the link goes)</li>
+                    <li>Text between tags = what visitors see and click</li>
+                    <li>Always use descriptive text (not "click here")</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7: Images -->
+        <div class="slide">
+            <h2>Adding Images</h2>
+            <div class="code-example">
+                <div class="code-line">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="string">"photo.jpg"</span> <span class="attribute">alt</span>=<span class="string">"A beautiful sunset over the mountains"</span>&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">&lt;!-- Images from the web --&gt;</div>
+                <div class="code-line">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="string">"https://example.com/image.jpg"</span> <span class="attribute">alt</span>=<span class="string">"Description"</span>&gt;</div>
+            </div>
+            <div class="attribute-demo">
+                <h3>🔗 Important Image Attributes:</h3>
+                <div class="attr-example">
+                    <strong>src</strong> = "source" - where the image file is located
+                </div>
+                <div class="attr-example">
+                    <strong>alt</strong> = "alternative text" - describes the image for screen readers
+                </div>
+                <div class="attr-example">
+                    <strong>width</strong> = controls image width (optional)
+                </div>
+                <div class="attr-example">
+                    <strong>height</strong> = controls image height (optional)
+                </div>
+            </div>
+            <div class="analogy-box">
+                <p><strong>Why alt text matters:</strong> Screen readers use it to describe images to visually impaired users. Always include meaningful descriptions!</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Attributes Explained -->
+        <div class="slide">
+            <h2>Attributes: Extra Information for Elements</h2>
+            <p>Attributes provide <span class="highlight">additional information</span> about HTML elements</p>
+            <div class="code-example">
+                <div class="code-line">&lt;<span class="tag">p</span> <span class="attribute">id</span>=<span class="string">"intro"</span> <span class="attribute">class</span>=<span class="string">"highlight"</span>&gt;Important paragraph&lt;/<span class="tag">p</span>&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&lt;<span class="tag">a</span> <span class="attribute">href</span>=<span class="string">"contact.html"</span> <span class="attribute">title</span>=<span class="string">"Go to contact page"</span>&gt;Contact&lt;/<span class="tag">a</span>&gt;</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="string">"logo.png"</span> <span class="attribute">alt</span>=<span class="string">"Company logo"</span> <span class="attribute">width</span>=<span class="string">"200"</span>&gt;</div>
+            </div>
+            <div class="attribute-demo">
+                <h3>🏷️ Common Attributes:</h3>
+                <div class="attr-example">
+                    <strong>id</strong> = unique identifier for an element
+                </div>
+                <div class="attr-example">
+                    <strong>class</strong> = groups elements for styling
+                </div>
+                <div class="attr-example">
+                    <strong>title</strong> = tooltip text on hover
+                </div>
+                <div class="attr-example">
+                    <strong>href</strong> = destination for links
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: File Organization -->
+        <div class="slide">
+            <h2>Organizing Your Website Files</h2>
+            <div class="document-visual">
+                <h3>📁 Recommended File Structure:</h3>
+                <div style="text-align: left; line-height: 1.6;">
+                    my-website/<br>
+                    ├── index.html<br>
+                    ├── about.html<br>
+                    ├── css/<br>
+                    │&nbsp;&nbsp;&nbsp;└── style.css<br>
+                    ├── images/<br>
+                    │&nbsp;&nbsp;&nbsp;├── logo.png<br>
+                    │&nbsp;&nbsp;&nbsp;└── photo.jpg<br>
+                    └── js/<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;└── script.js
+                </div>
+            </div>
+            <div class="foundation-demo">
+                <h3>📝 Best Practices:</h3>
+                <ul style="text-align: left;">
+                    <li><strong>index.html</strong> = your homepage (loads automatically)</li>
+                    <li><strong>Lowercase names</strong> with no spaces</li>
+                    <li><strong>Organize by type</strong> (css/, images/, js/)</li>
+                    <li><strong>Descriptive names</strong> (about.html not page2.html)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 10: Ready to Build -->
+        <div class="slide">
+            <h2>You're Ready to Create Web Pages!</h2>
+            <div class="foundation-demo">
+                <h3>HTML Skills You've Mastered:</h3>
+                <ul style="text-align: left;">
+                    <li>✅ Document structure (DOCTYPE, html, head, body)</li>
+                    <li>✅ Text elements (headings, paragraphs, emphasis)</li>
+                    <li>✅ Lists (ordered and unordered)</li>
+                    <li>✅ Links to other pages and sites</li>
+                    <li>✅ Images with proper alt text</li>
+                    <li>✅ Attributes to enhance elements</li>
+                    <li>✅ File organization best practices</li>
+                </ul>
+            </div>
+            <div class="analogy-box">
+                <h3>🚀 Next Steps:</h3>
+                <p>You now have the <strong>building blocks</strong> to create any web page. Next, we'll learn about <strong>semantic HTML</strong> to make your pages more meaningful and accessible!</p>
+            </div>
+            <p><strong>HTML is the foundation - everything else builds on this! 🏗️</strong></p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next</button>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+    </div>
+
+    <script src="js/presentation.js"></script>
+</body>
+</html>

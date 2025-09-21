@@ -1,0 +1,379 @@
+Hey everybody, it's me once again, with a
+
+hopefully fairly quick presentation on some basic design principles, visual design.
+
+Since we're talking about making our web content literally visually appealing, design is an important consideration, but also, excuse me also, because we're designing with accessibility in mind for those who don't have the same
+
+acuity, visually or otherwise, that
+
+others may have, need to design content with them in mind as well. So this will address the needs of both parties all concerned you.
+
+So let's talk a bit about visual design, some very basic but very useful concepts of visual design.
+
+This is concepts that are are meant that have been assembled for non designers. So those of us who don't have a design background can still think and practice these principles. Think about and practice these principles in ways to improve our own designs. Be there on print documents, like
+
+in photo you know that we make with Photoshop or Illustrator
+
+or even Canva or other design tools, or the website, the websites will build for this class.
+
+So this is a matter of visual appeal, the literal visual appeal that we talked about
+
+being so important for the communication with non academic audiences. It's also a matter of accessibility, so making sure that
+
+our content is designed in a way that will be
+
+more readily available to those who don't have the same capacities that we may otherwise have. So same visual capacities, same
+
+hearing capacities that other people may have, should still be welcome and still find meaning and value in your site, and that would be established in large part from the design.
+
+So from 1994
+
+or back in 94
+
+a designer Robin Williams. So not the comedian who's passed away, but a
+
+designer who's interested in sort of helping non designers learn how to design better. Wrote a book called The non designers design book,
+
+where she boiled down a lot of sophisticated design theory into four principles, contrast, repetition, alignment and proximity.
+
+So C, R, A, P, C, contrast, R, repetition, a, alignment, P, proximity. So we'll go through and illustrate each one with some examples, and then we'll wind up this.
+
+Video with a critique of not critique, but a application of these principles to to a website or two. And then
+
+then we'll begin thinking about how this may inform and benefit us as we work in our projects for this
+
+course. So all the all the four principles, contrast, repetition, alignment, proximity, are different ways we make visual meaning. So contrast, like repetition and alignment, proximity is a matter of meaning making. So by that, in this case, I mean things that are different, that have different meaning, different value, different significance should be designed differently
+
+to reinforce their difference in meaning and significance.
+
+So things that are designed that have contrasting designs
+
+are read visually to are perceived visually to have different meanings or different levels of significance.
+
+So contrast of color, contrast the font size, contrast of texture, contrast of any number of things, but then you know the things that are so contrast. Here, for example, is the the very strong contrast between a black background and a annoyed text of the of the slide banner. That's one example, right off the bat of contrast. So black ink on white paper is so popular because the contrast is so accessible and so readable.
+
+The.
+
+Says the black, the black background of the white text is less conventional, but still very strong in contrast and still fairly fairly readable across a variety of circumstances. So we have, in this example, we have five,
+
+five paper boats, all about the same size,
+
+but we give more attention to one over the other four, because it's of its contrast to the others. So the design, the technique and folding, is the same for the boat,
+
+but they use different paper. Apparently, they use red paper instead of white paper. So the red boat is in the foreground. So we may give it more attention because it's in the foreground, it's more in focus than the than the boat in the background, but also we give it that much more attention, that much more significance,
+
+that much more of our focus because it's red and the others are white, so
+
+it's distinguished, and so therefore, because because it's distinguished, we give it more we give them more meaning because of the color contrast, we give them given more significance, more meaning. So really simple to do, but really powerful technique, and notice how this affects the visual, the reading gravity, when our eyes go to the contrasting elements instead of dwelling on the ones that are most similar to each other.
+
+Okay, so the sort of the flip side of contrast is repetition. So where things that would mean different things or elements that mean have different significance in the composition should be designed visually differently in in contrast from each other.
+
+The same sort of works in reverse, things that are similar in meaning or have a similar significance should have the same design, should, so should. So once you establish a certain way of handling body text, so font choice, font size, font color, for example, every time that you use by text, watch your whole site. You should have the same font size. Find Bucha, font choice, font color for that text too. So once you see a representation of a design pattern, you say, Well, hey, this means this is serving the same kind of function that this text did earlier.
+
+So it creates pattern, but also kind of helps us reinforce
+
+quickly that this is has the same sort of tier of meaning that the other elements designed the same way would have, would also have
+
+so repetitions available here or put into practice here through a couple of things,
+
+you can pause to take a moment to reflect, which what you would notice over the other repetition.
+
+What's probably most obvious is the color pink between the background of the artwork to the left and the background of the tour dates to the right.
+
+The image of Bjork. I assume that's Bjork?
+
+Yes, the image of Bjork
+
+is abstract and artistic to the left as more,
+
+yeah, obviously the photographic in the right, but still the pattern of seeing her face twice over. But also notice how the title is treated with the brushstroke the hand brush strokes that she hears only voices
+
+that also kind of echoes the painterly, artistic quality of the image to the left, so in their eyebrows and the eye shadow and the hair treatment,
+
+we sort of see what seems like maybe brush strokes there as well.
+
+So
+
+contrast is being established in a variety of ways.
+
+If the tour dates beneath Bucha to the right were green, we may not feel the same sort of sense of consistency, although we may think we're working at two different articles, but because the pink repeats that we know are the same meaning space right.
+
+Another,
+
+another example of contrast, though, in this case, is so we have the body text being treated the same way, same color, same size throughout the whole
+
+the whole
+
+bulk of the of the right page, but it contrasts the styling of the title. It also contrast what's called the pull quotes. So that's this time. It's intuition, only, no brain, please. Probably a quote from the article itself that's being pulled out to be, to be kind of provided.
+
+COVID, probably to get the reader to read it, to read further and more deeply.
+
+And so it's treated differently too, right? So much larger and italicized gray punctuated
+
+to kind of give it its own sort of design quality, because it doesn't mean quite the same thing, and probably a more significant passage or phrase or sentence from the article relative to others. So the contrast reinforces that, but the repetition is here as well. So good example of both
+
+alignment is
+
+aligning elements in relationship to each other, horizontally or vertical, vertically.
+
+So,
+
+everything that you lay out on the page should should either on the horizontal axis or the or the vertical axis
+
+share that axis with another element so
+
+so alignment, we mean nothing should be placed on the page. Arbitrarily, every element should have some visual connection with another element on the page, and that visual connection is some either vertical or horizontal alignment.
+
+So left and right justification of a Word document is one simple example of that. To help we say we have a clean and sophisticated look established quickly by just having not rough margin left and right, but rough margins, at least on the left is not also on the right, but that, but if you start adding pictures and pull quotes and other kinds of elements, you'll have more alignment to play with to make sure you keep that clean fresh look.
+
+So we have basically, you know, we have a skillet, we have food items if text
+
+that is roughly the same for both the
+
+content wise are roughly the same for both images. But notice how the one on the right is cleaner tighter,
+
+because there's an alignment going on here. There's sort of a column that's established, maybe by the width of the of the pan, of the skillet,
+
+and so all the on the run example, so all the food elements above are all inside that same column where they're being tossed on the floor, across the across the counter in the lot example, in a very sloppy way,
+
+because there's, There's there's no real there's no clear alignment going on there. We see, you know, the left and right of the food is lined up with the left and right of the skillet, which then continues and extends down to the text below. So best recipes is put into one line and the left example, the sloppier example, best recipes is put into two lines
+
+and with additional font, font sizing. So this becomes part of the column created by the skillet, and that's reinforced then further by the
+
+by the food items straight above it, right? So there's a middle in the middle of the composition, there's a nice, clean column of of all the content,
+
+so same elements, but they put put into a single column that's kind of roughly a fixed width, not not entirely fixed, but roughly a rough, roughly the same width helps to create some what was, what's the I clean, sophisticated, fresh look. So it's cleaner, it seems more artful.
+
+I think a professional chef would be able to toss that the ingredients
+
+sort of cleanly above the skillet, where a bad, bad chef like myself would toss things and they skillet along the kitchen and make a huge mess. So the right uses alignment very, very strongly to create that sense of sophistication.
+
+And lastly, then we have proximity. So proximity basically means nearness or closeness. So things that mean the same have the same kind of meaning? Should be placed close together. Things that are further apart mean something are suggesting they mean something different. And that's nicely illustrated by this so a business card, so you can pause and sort of think about how the nearness of the information helps to communicate
+
+differently, that the you know, the different function, different values that the that the groupings have right. So things that we see three groups of of information here,
+
+so positive and reflect and see what, what each.
+
+Group has has in common with each other, but in contrast to the other elements,
+
+so the name and the person's title are in the upper left, right, so name and professional identity maybe in the upper left
+
+to the right for all for half the card, almost we have
+
+icons that sort of abstractly reinforce
+
+what's
+
+the the title, the the identity that
+
+the icons to the right then sort of reinforce that identity more abstractly with computer based or internet based iconography, so emojis and Wi Fi signals and mouse mouse pointers and computer screens are all part of the domain and part of the world and daily experience of what designers that makes sense they be here
+
+in a fairly playful way, not not too serious, not too heavy,
+
+but still professional, because they're nicely aligned and grouped together. And then the lower left hand corner,
+
+each line, each of the three lines, is some kind of contact information, right? So instead of putting these things more randomly across the card and grouping them shows that they have similar meanings together
+
+by grouping, by spacing the groups apart, means the things that are separated mean something different, all part of the larger meaning of the composition, but they don't there's there's little subsets of meaning or different information being being grouped in the different regions of The design.
+
+So let's go on to a web example.
+
+Oh, I'm sorry.
+
+So this is not in the CR AP order, but the we have
+
+each
+
+each principle illustrated here graphically, abstractly, but graphically. So we see repetition at work, we see proximity at work. We see alignment at work. We see contrast at work.
+
+So let's go on to a web example. So
+
+uh, okay, this is a pretty well known one, the one
+
+that you're familiar with, when you can access easily yourself, and as a site, you probably go to frequently yourself. Tc.edu,
+
+so not a lot going on. I was all very clean, very professional, very well done, very expensive to produce. So you know, professional grade web design going on here.
+
+But as you scroll through the page, you can see there are a lot of elements here that are that need to be sensibly
+
+put put in relationship to each other.
+
+So I'll do some scrolling. Then we'll go back and sort of evaluate and critique and sort of see where we see the crap principle and action. So
+
+and
+
+one thing I want you to notice that we'll talk about more, maybe as we move forward,
+
+notice how little we have some things that are centered, but very few things are centered.
+
+Centering is a,
+
+with all due respect, a sloppy sort of from my
+
+point of view, it's one of my hobby horses, I guess, or one of my pet peeves, but it suggests that things are it's kind of a false sense of design. If you want to design something, to center it and you're done, it's not that simple. And also that's not, it's not that effective as a design principle. So
+
+notice there are some standard elements here, but that there's not, there's not these over overarching
+
+technique being used. It's much more
+
+nuanced than that, in a way that I think is very is pretty slick and pretty cool. Okay, okay, so,
+
+so we have two different elements. We have a contrast here with the the
+
+promise. There's no place like TCU. So.
+
+Um contrast of strong purple against the white background. So we're very, very legible, very readable and very branded, right? Which makes sense. No nothing around the purple
+
+um contrast here to the text below. But notice how there's repetition here to the banner above, right? So that's the same value of purple, are almost the same value of purple, so contrast from the background to the text alignment rode
+
+repetition from the text to the upper banner for this title text here,
+
+so much larger than the paragraph below right, which is more body text or more contextualizing information here.
+
+So very strong contrast in font size. This is all caps, very thick, sort of blocky font. This is more of a conventional non serif font.
+
+But notice that these two elements right, which are are contrasting so strongly and so importantly, are still on the same left margin here. So left justified,
+
+right? So even though they mean something different and are designed in a very strongly, strong, strongly contrasting way, there's still a strong sense of relationship established because of the alignment
+
+that's further illustrated then by this very faint frogs
+
+logo, right where we have this align this. It's, it's very different in terms of meaning. It's, it's very
+
+different in terms of meaning, but it also lines up basically, is right justified with the other two elements in this part of the screen,
+
+right? So, strong alignment here, strong contrast here, stronger position here,
+
+right. Okay, okay,
+
+let's see if we can find another example. Here we go.
+
+Probably a typo, right here. Should that be the TCU difference?
+
+Easy to miss, maybe. Let's
+
+open the screen up a little
+
+bit. There we go. No, no typos, just little bit, little bit collapsed. Okay, so background is different now, so different color, different section, different background, color, different
+
+section. The change to purple here means the text that has to change as well to be equally contrasting. So white text on a purple background, sort of purple on white right, just reversing that relationship, but it distinguishes section one from, you know, section section one from Section two,
+
+with contrast, still going on,
+
+title, contextual information, button that links to someplace else in the large website, strong alignment between the
+
+the four elements here.
+
+But notice how the stats are designed in a similar fashion to each other, but they're also groups away from this information here. Alright? So here's proximity, here, here's this is more verbal to contextual, emotionally engaging,
+
+kind of humble bragging, if you will, right? Which is totally fine for the for the purpose of the site.
+
+But then that's, there's a strong separation between that. And then the
+
+stats here, which are grouped together, designed the same, but grouped separately from the the information above. So good information there. This pattern then repeats, right? So the information changes, the color of the purple changes. I think does it change? Maybe not.
+
+Well, we see two different shades of purple here,
+
+but grouping of stats, alignment of the textual elements here in the navigation button, I
+
+uh, even though there's this, this sort of inside picture that breaks the alignment in a in a consistent way, because that's also appears in this
+
+feature here and here,
+
+there's a strong alignment. All the images to the left here are size, the same, same width, same height, on the same in the same column, right?
+
+So once that pattern is established, with stats being grouped here,
+
+font and font differences and font color being established up here.
+
+So this, this is creating a pattern that reinforces what's above, right? So it's very, very much perfect to deliberate, intentional organization of various kinds of information throughout the whole page.
+
+Clean, right? Justification here, which lines up nicely with this also top alignment here, so it's not centered,
+
+was roughly the top of the
+
+top of the top of the
+
+text. The top of the text roughly aligns the top of the images
+
+as we scroll across, they're all the same height. They all line nicely top and bottom right. The bottom of
+
+the the
+
+student's name and then the year of graduation, are all bottom aligned,
+
+right.
+
+Okay, so we could
+
+confirm other other uses of the crap principle throughout, in many places, right? Okay, so there's actually, then this site holds up pretty well to scrutiny. I think. I mean, the TCU is
+
+the real deal. They have real money. They have a huge international audience. Their recruitment efforts are successful in large part because the website is so so
+
+well. It's not always been this way. I've seen it in earlier versions where it's much more problematic, but they've really upped their game in terms of the websites are there, there they've been posting, and there's a way we can evaluate for accessibility to that. It does fairly well that way. So there's a site called or service called wave for
+
+accessibility evaluation tool that will read the whole site on the code side of things, and then sort of tell you if it's going to be
+
+accessible in a variety of ways or meeting web standards in a variety of ways.
+
+So it does fairly well. There's only only two errors. It's not that bad. I think it passes a mustard. There's some things that should be reconsidered, possibly, but there's only two, two contrast areas. So contrast, contrast areas are really large, large, largely
+
+concerned legibility. So Black and White will not get flagged. Will not be an error because the contrast is strong. Dark, purple and white will probably not be flagged because the contrast is still fairly strong,
+
+but we can sort of see there, there is some contrast problem here somewhere, right? I mean, we not know whether it bothers us individually, but ways that technically violates web standards. So let's see what that is.
+
+So we can, we can actually jump to places
+
+where this is happening.
+
+See, I
+
+don't see the second one.
+
+Well, the first one is
+
+this gray, this kind of pale gray and white, a white background,
+
+right? So technically, this should be darker or different color to be contrast the white background more more dramatically. So I think it's a cool sort of framing of this
+
+larger text. So to my eyes, it's not a concern. But for someone with with different sort of visual needs than I have May, May hard, have a hard time reading this.
+
+So there's ways. So this gray here, what's there? They get the value for here.
+
+So you can sort of get a sense of what, what shared agreement would be better against the black, I'm sorry, against the white, and
+
+he's sort of see as you move the slider, then when it gets to a pass under sample.
+
+So it's a fair bit darker, right?
+
+So
+
+a lot of things are going on, a lot of design choices being made. A lot of things being evaluated here and TCU site on this page anyway, it may be different, deeper than the site, but on this page is doing pretty well.
+
+And it's based on, you know, there's largely, you know, 98% success rate at working with textual contrast,
+
+but there's one. Are a couple examples where they don't quite have it right? They didn't. They need to make some technical adjustment, adjustments.
+
+So this food for thoughts help you sharpen your own eyes. Look at what.
+
+Sites,
+
+websites that you care for that that kind of strike you as being cool or interesting or inviting or appealing to your own taste. So you have a vocab as to why that's happening. You know, I can so you can better articulate why you find it so appealing or so cool or so interesting.
+
+Oh, so successful. But also you can begin to sort of use it to sort of see where the designers of sites you visit may have dropped the ball. Even if you don't use the wave evaluation, you can sort of see, is there some weird alignment or lack of alignment going on? Are things groups inconsistently throughout the site, with poor proximity?
+
+Is there, excuse me, are there
+
+other moments where the light, where the repetition
+
+isn't happening, like the color of the banner between pages is changing, or the navigation,
+
+the font treatment for the for the links is different pages, page by page, so
+
+there's no clear sense of pattern, so things like that.
+
+So I hope this helps. I plan to speak to you soon.
+
+Thanks. Applause.
+
+Transcribed by https://otter.ai

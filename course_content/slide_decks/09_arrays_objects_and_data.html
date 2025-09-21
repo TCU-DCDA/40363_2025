@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays, Objects & Data Management | Web Development Fundamentals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: white;
+            margin-right: 0;
+        }
+
+        .slide:nth-child(even) {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #2980b9;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #27ae60;
+        }
+
+        p, li {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .code-example {
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            max-width: 700px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Fira Code', 'Courier New', monospace;
+        }
+
+        .code-line {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 8px 0;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .code-line:hover {
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        .keyword {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .string {
+            color: #2ecc71;
+        }
+
+        .number {
+            color: #e67e22;
+        }
+
+        .variable {
+            color: #f39c12;
+        }
+
+        .comment {
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .function-name {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: #f39c12;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #2980b9;
+        }
+
+        .nav-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .data-demo {
+            background: #ecf0f1;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #3498db;
+            max-width: 600px;
+        }
+
+        .array-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .array-box {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 80px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .array-index {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e74c3c;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .object-visual {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            max-width: 500px;
+        }
+
+        .object-property {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            margin: 5px 0;
+            background: #e9ecef;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+
+        .property-key {
+            color: #495057;
+            font-weight: bold;
+        }
+
+        .property-value {
+            color: #007bff;
+        }
+
+        .interactive-demo {
+            background: #f8f9fa;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1rem 0;
+            max-width: 650px;
+        }
+
+        .demo-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0.5rem;
+        }
+
+        .demo-output {
+            background: #e9ecef;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+            min-height: 50px;
+            border: 1px solid #dee2e6;
+            font-family: monospace;
+        }
+
+        .comparison-visual {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 2rem 0;
+            max-width: 800px;
+            gap: 2rem;
+        }
+
+        .data-type-box {
+            background: #ecf0f1;
+            border: 2px solid #34495e;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            min-width: 200px;
+            flex: 1;
+        }
+
+        .data-type-box.array { border-color: #3498db; background: #ebf3fd; }
+        .data-type-box.object { border-color: #e74c3c; background: #fdf2f2; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.5rem; }
+            p, li { font-size: 1.1rem; }
+            .code-example { font-size: 0.9rem; padding: 1rem; }
+            .array-visual { flex-direction: column; }
+            .comparison-visual { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation" id="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <h1>Arrays, Objects & Data Management</h1>
+            <h3>Organizing and Working with Collections of Information</h3>
+            <p>Building the foundation for your Favorites Tracker app</p>
+            <div class="data-demo">
+                <h3>What You'll Master Today:</h3>
+                <ul style="text-align: left;">
+                    <li>Creating and using arrays (lists of data)</li>
+                    <li>Building objects (organized information)</li>
+                    <li>Combining arrays and objects</li>
+                    <li>Searching and filtering data</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 2: Arrays Introduction -->
+        <div class="slide">
+            <h2>Arrays: Your Digital Lists</h2>
+            <p>Arrays are like <span class="highlight">numbered containers</span> that hold multiple pieces of information</p>
+            <div class="array-visual">
+                <div class="array-box">
+                    <div class="array-index">0</div>
+                    "Pizza"
+                </div>
+                <div class="array-box">
+                    <div class="array-index">1</div>
+                    "Burgers"
+                </div>
+                <div class="array-box">
+                    <div class="array-index">2</div>
+                    "Tacos"
+                </div>
+                <div class="array-box">
+                    <div class="array-index">3</div>
+                    "Pasta"
+                </div>
+            </div>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">favoriteFoods</span> = [<span class="string">"Pizza"</span>, <span class="string">"Burgers"</span>, <span class="string">"Tacos"</span>, <span class="string">"Pasta"</span>];</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Access items by their position (starting from 0)</div>
+                <div class="code-line">console.<span class="function-name">log</span>(<span class="variable">favoriteFoods</span>[<span class="number">0</span>]);</div>
+                <div class="code-line comment">// Prints: "Pizza"</div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Array Operations -->
+        <div class="slide">
+            <h2>Working with Arrays</h2>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">movies</span> = [<span class="string">"Avengers"</span>, <span class="string">"Star Wars"</span>];</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Add to the end</div>
+                <div class="code-line"><span class="variable">movies</span>.<span class="function-name">push</span>(<span class="string">"Spider-Man"</span>);</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Remove from the end</div>
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">lastMovie</span> = <span class="variable">movies</span>.<span class="function-name">pop</span>();</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Check how many items</div>
+                <div class="code-line">console.<span class="function-name">log</span>(<span class="variable">movies</span>.length);</div>
+                <div class="code-line comment">// Prints: 2</div>
+            </div>
+            <div class="interactive-demo">
+                <p><strong>Try it:</strong> Experiment with array operations</p>
+                <button class="demo-button" onclick="arrayDemo()">Add Item</button>
+                <button class="demo-button" onclick="removeDemo()">Remove Item</button>
+                <div class="demo-output" id="array-output">Click buttons to see array changes!</div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Objects Introduction -->
+        <div class="slide">
+            <h2>Objects: Labeled Information</h2>
+            <p>Objects organize information using <span class="highlight">names instead of numbers</span></p>
+            <div class="object-visual">
+                <h3>Student Information</h3>
+                <div class="object-property">
+                    <span class="property-key">name:</span>
+                    <span class="property-value">"Sarah"</span>
+                </div>
+                <div class="object-property">
+                    <span class="property-key">age:</span>
+                    <span class="property-value">20</span>
+                </div>
+                <div class="object-property">
+                    <span class="property-key">major:</span>
+                    <span class="property-value">"Computer Science"</span>
+                </div>
+                <div class="object-property">
+                    <span class="property-key">enrolled:</span>
+                    <span class="property-value">true</span>
+                </div>
+            </div>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">student</span> = {</div>
+                <div class="code-line">&nbsp;&nbsp;name: <span class="string">"Sarah"</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;age: <span class="number">20</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;major: <span class="string">"Computer Science"</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;enrolled: <span class="keyword">true</span></div>
+                <div class="code-line">};</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Accessing Object Properties -->
+        <div class="slide">
+            <h2>Getting Information from Objects</h2>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">restaurant</span> = {</div>
+                <div class="code-line">&nbsp;&nbsp;name: <span class="string">"Tony's Pizza"</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;rating: <span class="number">4.5</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;cuisine: <span class="string">"Italian"</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;delivery: <span class="keyword">true</span></div>
+                <div class="code-line">};</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Dot notation (most common)</div>
+                <div class="code-line">console.<span class="function-name">log</span>(<span class="variable">restaurant</span>.name);</div>
+                <div class="code-line comment">// Prints: "Tony's Pizza"</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Bracket notation</div>
+                <div class="code-line">console.<span class="function-name">log</span>(<span class="variable">restaurant</span>[<span class="string">"rating"</span>]);</div>
+                <div class="code-line comment">// Prints: 4.5</div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Arrays vs Objects -->
+        <div class="slide">
+            <h2>When to Use Arrays vs Objects</h2>
+            <div class="comparison-visual">
+                <div class="data-type-box array">
+                    <h3>Arrays</h3>
+                    <p><strong>Use when:</strong></p>
+                    <ul style="text-align: left; font-size: 1.1rem;">
+                        <li>Order matters</li>
+                        <li>Similar items</li>
+                        <li>Need to count</li>
+                        <li>Lists of things</li>
+                    </ul>
+                    <p><em>Example: Shopping list, favorite movies</em></p>
+                </div>
+                <div class="data-type-box object">
+                    <h3>Objects</h3>
+                    <p><strong>Use when:</strong></p>
+                    <ul style="text-align: left; font-size: 1.1rem;">
+                        <li>Need labels</li>
+                        <li>Different types of data</li>
+                        <li>Describing something</li>
+                        <li>Related information</li>
+                    </ul>
+                    <p><em>Example: Person info, restaurant details</em></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Arrays of Objects -->
+        <div class="slide">
+            <h2>Combining Arrays and Objects</h2>
+            <p>The <span class="highlight">power combination</span> for managing real data!</p>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">favoriteRestaurants</span> = [</div>
+                <div class="code-line">&nbsp;&nbsp;{</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;name: <span class="string">"Mario's Pizza"</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;rating: <span class="number">5</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cuisine: <span class="string">"Italian"</span></div>
+                <div class="code-line">&nbsp;&nbsp;},</div>
+                <div class="code-line">&nbsp;&nbsp;{</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;name: <span class="string">"Sushi Express"</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;rating: <span class="number">4</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cuisine: <span class="string">"Japanese"</span></div>
+                <div class="code-line">&nbsp;&nbsp;}</div>
+                <div class="code-line">];</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Access first restaurant's name</div>
+                <div class="code-line">console.<span class="function-name">log</span>(<span class="variable">favoriteRestaurants</span>[<span class="number">0</span>].name);</div>
+                <div class="code-line comment">// Prints: "Mario's Pizza"</div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Searching Through Data -->
+        <div class="slide">
+            <h2>Finding What You Need</h2>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">books</span> = [</div>
+                <div class="code-line">&nbsp;&nbsp;{ title: <span class="string">"Harry Potter"</span>, genre: <span class="string">"Fantasy"</span>, rating: <span class="number">5</span> },</div>
+                <div class="code-line">&nbsp;&nbsp;{ title: <span class="string">"The Martian"</span>, genre: <span class="string">"Sci-Fi"</span>, rating: <span class="number">4</span> },</div>
+                <div class="code-line">&nbsp;&nbsp;{ title: <span class="string">"Pride and Prejudice"</span>, genre: <span class="string">"Romance"</span>, rating: <span class="number">4</span> }</div>
+                <div class="code-line">];</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Find all books with 5-star rating</div>
+                <div class="code-line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="variable">books</span>.length; i++) {</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">if</span> (<span class="variable">books</span>[i].rating === <span class="number">5</span>) {</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;console.<span class="function-name">log</span>(<span class="variable">books</span>[i].title);</div>
+                <div class="code-line">&nbsp;&nbsp;}</div>
+                <div class="code-line">}</div>
+                <div class="code-line comment">// Prints: "Harry Potter"</div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Adding New Data -->
+        <div class="slide">
+            <h2>Building Your Collection</h2>
+            <div class="code-example">
+                <div class="code-line"><span class="keyword">let</span> <span class="variable">myFavorites</span> = [];</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Add new favorite restaurant</div>
+                <div class="code-line"><span class="keyword">function</span> <span class="function-name">addFavorite</span>(name, rating, cuisine) {</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="keyword">let</span> <span class="variable">newRestaurant</span> = {</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;name: name,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;rating: rating,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cuisine: cuisine,</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;dateAdded: <span class="keyword">new</span> <span class="function-name">Date</span>()</div>
+                <div class="code-line">&nbsp;&nbsp;};</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line">&nbsp;&nbsp;<span class="variable">myFavorites</span>.<span class="function-name">push</span>(<span class="variable">newRestaurant</span>);</div>
+                <div class="code-line">}</div>
+                <div class="code-line">&nbsp;</div>
+                <div class="code-line comment">// Use the function</div>
+                <div class="code-line"><span class="function-name">addFavorite</span>(<span class="string">"Burger Palace"</span>, <span class="number">4</span>, <span class="string">"American"</span>);</div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Ready for Your Project -->
+        <div class="slide">
+            <h2>You're Ready for Project 2!</h2>
+            <div class="data-demo">
+                <h3>Skills You've Mastered:</h3>
+                <ul style="text-align: left;">
+                    <li>✅ Create and manage arrays</li>
+                    <li>✅ Build and use objects</li>
+                    <li>✅ Combine arrays of objects</li>
+                    <li>✅ Search and filter data</li>
+                    <li>✅ Add new information dynamically</li>
+                </ul>
+            </div>
+            <div class="object-visual">
+                <h3>Your Favorites Tracker Will Use:</h3>
+                <div class="object-property">
+                    <span class="property-key">Arrays:</span>
+                    <span class="property-value">To store multiple favorites</span>
+                </div>
+                <div class="object-property">
+                    <span class="property-key">Objects:</span>
+                    <span class="property-value">To organize each favorite's details</span>
+                </div>
+                <div class="object-property">
+                    <span class="property-key">Functions:</span>
+                    <span class="property-value">To add, remove, and search</span>
+                </div>
+            </div>
+            <p><strong>Time to build something amazing! 🚀</strong></p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next</button>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        let demoArray = ['Pizza', 'Burgers', 'Tacos'];
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function updateSlidePosition() {
+            const presentation = document.getElementById('presentation');
+            presentation.style.transform = `translateX(-${currentSlideIndex * 100}vw)`;
+
+            document.getElementById('currentSlide').textContent = currentSlideIndex + 1;
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlideIndex === 0;
+            document.getElementById('nextBtn').disabled = currentSlideIndex === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            const newIndex = currentSlideIndex + direction;
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                currentSlideIndex = newIndex;
+                updateSlidePosition();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                changeSlide(1);
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left, go to next slide
+                } else {
+                    changeSlide(-1); // Swipe right, go to previous slide
+                }
+            }
+        }
+
+        // Interactive demo functions
+        function arrayDemo() {
+            const newItems = ['Sushi', 'Pasta', 'Ice Cream', 'Salad'];
+            const randomItem = newItems[Math.floor(Math.random() * newItems.length)];
+            demoArray.push(randomItem);
+            updateArrayDisplay();
+        }
+
+        function removeDemo() {
+            if (demoArray.length > 0) {
+                demoArray.pop();
+                updateArrayDisplay();
+            }
+        }
+
+        function updateArrayDisplay() {
+            const output = document.getElementById('array-output');
+            output.innerHTML = `Current array: [${demoArray.map(item => `"${item}"`).join(', ')}]<br>Length: ${demoArray.length}`;
+        }
+
+        // Initialize
+        updateSlidePosition();
+        updateArrayDisplay();
+    </script>
+</body>
+</html>
