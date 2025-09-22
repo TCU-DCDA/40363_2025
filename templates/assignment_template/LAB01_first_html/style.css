@@ -1,0 +1,26 @@
+/* Lab 01 minimal stylesheet */
+:root {
+  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --line-length: 60ch;
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: var(--font-stack);
+  margin: 0;
+  padding: 0 1rem 2rem;
+  line-height: 1.4;
+  background: #fafafa;
+  color: #222;
+}
+header, main, footer { max-width: var(--line-length); margin: 0 auto; }
+header { padding: 1.25rem 0 0.5rem; }
+main { padding: 0.5rem 0 1rem; }
+footer { font-size: 0.8rem; padding-top: 1rem; border-top: 1px solid #ddd; }
+
+h1, h2 { line-height: 1.2; }
+
+/* Improvement ideas for later commits:
+   - Adjust color contrast if you change colors
+   - Add focus styles if adding links/nav
+   - Extract repeated spacing values */

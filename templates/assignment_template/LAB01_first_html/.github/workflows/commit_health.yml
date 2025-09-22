@@ -1,0 +1,26 @@
+name: Commit Health Reminder
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # every 6 hours
+  workflow_dispatch:
+
+jobs:
+  check-commit-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Gather commit stats
+        run: |
+          COMMITS=$(git rev-list --count HEAD)
+          LAST_COMMIT_TS=$(git log -1 --format=%ct)
+          NOW_TS=$(date +%s)
+          HOURS_SINCE=$(( (NOW_TS - LAST_COMMIT_TS) / 3600 ))
+          echo "Commits: $COMMITS" >> $GITHUB_STEP_SUMMARY
+          echo "Hours since last commit: $HOURS_SINCE" >> $GITHUB_STEP_SUMMARY
+          if [ "$COMMITS" -lt 2 ] && [ "$HOURS_SINCE" -gt 24 ]; then
+            echo "⚠️ Consider making a small improvement commit (semantics, alt text) to keep process healthy." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Process looks active enough so far." >> $GITHUB_STEP_SUMMARY
+          fi

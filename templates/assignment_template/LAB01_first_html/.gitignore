@@ -1,0 +1,10 @@
+# Node/tooling (future labs)
+node_modules/
+.DS_Store
+
+# Logs
+yarn-error.log
+npm-debug.log*
+
+# Misc
+*.zip
