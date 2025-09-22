@@ -3,7 +3,7 @@
 > Delivery Mode: In-Class Workshop ➜ Live Portfolio Testing (Hybrid)  
 > **Portfolio Connection:** Accessibility enhancement and mobile testing for your deployed Project 1 Portfolio
 
-Goal: Use your deployed LAB09 portfolio to implement comprehensive accessibility features and test responsive behavior on real devices. Build on your CSS Grid foundation with accessibility best practices and real-world testing strategies.
+Goal: Use your deployed LAB09 portfolio to implement comprehensive accessibility features and test responsive behavior on real devices. Build on your migrated project foundation with accessibility best practices and real-world testing strategies.
 
 ## Learning Outcomes
 - Test accessibility features on live deployed portfolio sites
@@ -13,9 +13,9 @@ Goal: Use your deployed LAB09 portfolio to implement comprehensive accessibility
 - Build confidence testing websites in production environments
 
 ## Prerequisites  
-- Completed LAB09 (GitHub Pages Deployment) with live portfolio URL
-- Deployed portfolio with header, about, skills, and projects sections
-- LAB08 CSS Grid layouts working on live site
+- Completed LAB09 (Project Migration & GitHub Pages Deployment) with live portfolio URL
+- Deployed portfolio with migrated project from Sandbox folder
+- Portfolio accessible at GitHub Pages URL and displaying correctly
 - Access to mobile devices for real-world testing
 
 ## 🌟 Getting Started: Live Site Accessibility Testing

@@ -13,8 +13,8 @@ Goal: Apply professional typography systems and visual design principles to your
 
 ## Prerequisites
 - Completed LAB10 (Live Site Accessibility & Responsive Testing)
-- Deployed portfolio with accessibility features implemented
-- Working knowledge of CSS Grid and Flexbox from previous labs
+- Deployed portfolio with accessibility features implemented and migrated project live
+- Working knowledge of deployment workflow from LAB09 migration process
 - Portfolio ready for final design refinement
 
 ## 🎨 Getting Started: Professional Typography & Design
