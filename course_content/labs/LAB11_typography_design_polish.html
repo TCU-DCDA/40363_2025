@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB11_typography_design_polish</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 24px 24px 48px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #ffffff;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1e3a8a;
+    }
+    a:visited {
+      color: #1e3a8a;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h1 {
+      color: #1e3a8a;
+      border-bottom: 3px solid #6366f1;
+      padding-bottom: 12px;
+      margin-top: 0;
+    }
+    h2 {
+      color: #1f2937;
+      border-left: 4px solid #6366f1;
+      padding-left: 12px;
+      margin-top: 32px;
+    }
+    h3 {
+      color: #1f2937;
+      margin-top: 24px;
+    }
+    h4 {
+      color: #1f2937;
+      margin-top: 20px;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 24px 0;
+      padding: 12px 18px;
+      border-left: 4px solid #6366f1;
+      background-color: #eef2ff;
+      color: #1f2937;
+    }
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.95em;
+      margin: 0;
+      padding: 0 4px;
+      border-radius: 4px;
+      background-color: #f8fafc;
+      color: #0f172a;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1.25em 0;
+      overflow: auto;
+      background-color: rgba(15, 23, 42, 0.05);
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      padding: 16px;
+    }
+    pre code {
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+      background-color: transparent;
+      overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{
+      list-style: none;
+      padding-left: 1.6em;
+    }
+    ul.task-list li {
+      position: relative;
+      margin: 0.35em 0;
+      padding-left: 0.4em;
+    }
+    ul.task-list li input[type="checkbox"] {
+      position: absolute;
+      left: -1.6em;
+      top: 0.2em;
+      width: 1em;
+      height: 1em;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="lab-11-simple-portfolio-polish-final-touches">Lab 11 – Simple
+Portfolio Polish &amp; Final Touches</h1>
+<blockquote>
+<p>Delivery Mode: In-Class Demo ➜ Portfolio Refinement (Hybrid)</p>
+</blockquote>
+<p>Goal: Build on your LAB10 accessibility and mobile improvements to add
+professional typography and color choices. Learn basic design principles
+that make any website look more polished and trustworthy.</p>
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<ul>
+<li>Apply one professional font pairing to your entire portfolio</li>
+<li>Use a consistent color scheme that passes accessibility tests</li>
+<li>Add simple hover effects to make your site feel interactive</li>
+<li>Ensure your portfolio looks professional and ready for
+submission</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Completed LAB10 (Accessibility Testing &amp; Mobile-Friendly
+Check) with:
+<ul>
+<li>Lighthouse accessibility score of 90+</li>
+<li>Working responsive navigation menu</li>
+<li>Enhanced project images (featured image, grid, or circular
+profile)</li>
+</ul>
+</li>
+<li>Portfolio accessible at GitHub Pages URL and displaying
+correctly</li>
+</ul>
+<h2 id="getting-started-simple-professional-polish">🎨 Getting Started:
+Simple Professional Polish</h2>
+<h3 id="keep-it-simple-for-success">Keep It Simple for Success</h3>
+<p><strong>For beginners:</strong> The key to a professional-looking
+portfolio is consistency and simplicity, not complex design.</p>
+<h4 id="simple-polish-checklist-for-project1"><strong>Simple Polish
+Checklist for PROJECT1:</strong></h4>
+<ul class="task-list">
+<li><label><input type="checkbox" /><strong>One font pairing</strong>
+(we’ll give you the exact code to copy)</label></li>
+<li><label><input type="checkbox" /><strong>One color scheme</strong>
+(pre-tested to pass accessibility)</label></li>
+<li><label><input type="checkbox" /><strong>Simple hover
+effects</strong> (just buttons and links)</label></li>
+<li><label><input type="checkbox" /><strong>Consistent spacing</strong>
+throughout your site</label></li>
+<li><label><input type="checkbox" /><strong>Image enhancements</strong>
+(you added these in LAB10)</label></li>
+<li><label><input type="checkbox" /><strong>Responsive menu</strong>
+(you added this in LAB10)</label></li>
+</ul>
+<h3 id="easy-font-setup-just-copy-this-code">🔤 Easy Font Setup (Just
+Copy This Code!)</h3>
+<p><strong>We’re giving you ONE proven font pairing. Just copy and paste
+this code:</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Add this to the VERY TOP of your CSS file */</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">&#39;https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;family=Merriweather:wght@400;700&amp;display=swap&#39;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">/* Typography system - copy this exactly */</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>body<span class="op">,</span> p<span class="op">,</span> li {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&#39;Open Sans&#39;</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.6</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>h1<span class="op">,</span> h2<span class="op">,</span> h3 {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&#39;Merriweather&#39;</span><span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.2</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">/* Heading sizes - simple and clean */</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>h1 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">rem</span><span class="op">;</span> }    <span class="co">/* 32px */</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>h2 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.5</span><span class="dt">rem</span><span class="op">;</span> }  <span class="co">/* 24px */</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>h3 { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.25</span><span class="dt">rem</span><span class="op">;</span> } <span class="co">/* 20px */</span></span></code></pre></div>
+<h3 id="simple-color-scheme-pre-tested-for-accessibility">🎨 Simple
+Color Scheme (Pre-tested for Accessibility!)</h3>
+<p><strong>We’re giving you ONE professional color scheme that already
+passes all accessibility tests:</strong></p>
+<h4 id="understanding-your-color-palette"><strong>Understanding Your
+Color Palette:</strong></h4>
+<ul>
+<li><strong>Primary Color:</strong> Used for headings, links, and
+important elements</li>
+<li><strong>Text Color:</strong> Main body text (dark enough to read
+easily)</li>
+<li><strong>Light Text:</strong> Secondary information (still readable,
+but softer)</li>
+<li><strong>Background Colors:</strong> Clean white and very light gray
+for sections</li>
+</ul>
+<h4 id="option-a-professional-blue-recommended"><strong>Option A:
+Professional Blue (Recommended)</strong></h4>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Add this to your CSS file - already tested and safe! */</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">:root</span> {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">--primary-color</span><span class="ch">:</span> <span class="cn">#1e40af</span><span class="op">;</span>     <span class="co">/* Professional blue - passes contrast ✅ */</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">--text-color</span><span class="ch">:</span> <span class="cn">#1f2937</span><span class="op">;</span>        <span class="co">/* Dark gray for text - passes contrast ✅ */</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">--light-text</span><span class="ch">:</span> <span class="cn">#6b7280</span><span class="op">;</span>        <span class="co">/* Light gray for secondary text ✅ */</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="va">--background</span><span class="ch">:</span> <span class="cn">#ffffff</span><span class="op">;</span>        <span class="co">/* White background */</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="va">--light-background</span><span class="ch">:</span> <span class="cn">#f9fafb</span><span class="op">;</span>  <span class="co">/* Very light gray for sections */</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h4
+id="option-b-alternative-color-if-you-want-something-different"><strong>Option
+B: Alternative Color (If you want something different)</strong></h4>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Alternative: Warm professional colors */</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">:root</span> {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">--primary-color</span><span class="ch">:</span> <span class="cn">#dc2626</span><span class="op">;</span>     <span class="co">/* Professional red - passes contrast ✅ */</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">--text-color</span><span class="ch">:</span> <span class="cn">#1f2937</span><span class="op">;</span>        <span class="co">/* Same dark gray for text ✅ */</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">--light-text</span><span class="ch">:</span> <span class="cn">#6b7280</span><span class="op">;</span>        <span class="co">/* Same light gray ✅ */</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="va">--background</span><span class="ch">:</span> <span class="cn">#ffffff</span><span class="op">;</span>        <span class="co">/* White background */</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="va">--light-background</span><span class="ch">:</span> <span class="cn">#fef2f2</span><span class="op">;</span>  <span class="co">/* Very light red tint */</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h4
+id="choose-one-option-and-add-this-css-to-apply-your-colors"><strong>Choose
+ONE option and add this CSS to apply your colors:</strong></h4>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Apply colors consistently throughout your site */</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>body {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--text-color</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--background</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>h1<span class="op">,</span> h2<span class="op">,</span> h3 {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--primary-color</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>a {</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--primary-color</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">.secondary-text</span> {</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--light-text</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>💡 Want a different color?</strong> Change only the <code>--primary-color</code> value:</p>
+<ul>
+<li>Green: <code>#059669</code> (passes contrast)</li>
+<li>Purple: <code>#7c3aed</code> (passes contrast)</li>
+<li>Orange: <code>#ea580c</code> (passes contrast)</li>
+</ul>
+<p><strong>⚠️ Important:</strong> Keep the text colors the same -
+they’re already tested for accessibility!</p>
+<h2 id="tasks---keep-it-simple">Tasks - Keep It Simple!</h2>
+<p><strong>Total Time: 25-30 minutes</strong></p>
+<h3 id="task-0-verify-lab10-completion-3-minutes">Task 0: Verify LAB10
+Completion (3 minutes)</h3>
+<p><strong>Before adding typography and colors, make sure your LAB10
+work is complete:</strong></p>
+<ol type="1">
+<li><strong>Check your live portfolio</strong> - go to your GitHub
+Pages URL</li>
+<li><strong>Verify these LAB10 features are working:</strong>
+<ul>
+<li>☐ Responsive navigation menu (horizontal on desktop, vertical on
+mobile)</li>
+<li>☐ Enhanced images (featured project, grid layout, or circular
+profile)</li>
+<li>☐ Mobile-friendly design (test on your phone)</li>
+<li>☐ Lighthouse accessibility score 90+ (run a quick test if
+needed)</li>
+</ul>
+</li>
+</ol>
+<p><strong>If any of these aren't working, complete LAB10 first before
+continuing.</strong></p>
+<h3 id="task-1-add-the-font-system-5-minutes">Task 1: Add the Font
+System (5 minutes)</h3>
+<p><strong>Follow the "Easy Font Setup" example above and add that code
+to the TOP of your CSS file.</strong></p>
+<h3 id="task-2-add-the-color-system-5-7-minutes">Task 2: Add the Color
+System (5-7 minutes)</h3>
+<p><strong>Choose ONE color scheme from the "Simple Color Scheme"
+examples above and add both the CSS custom properties and the
+application styles to your CSS file.</strong></p>
+<p><strong>💡 Integration tip:</strong> Add your new typography and
+color CSS to your existing style.css file - it will work alongside your
+LAB10 responsive menu and image enhancements.</p>
+<h3 id="task-3-add-simple-hover-effects-5-minutes">Task 3: Add Simple
+Hover Effects (5 minutes)</h3>
+<p><strong>Add these hover effects to your CSS:</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Simple hover effects */</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a<span class="in">:hover</span> {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-decoration</span><span class="ch">:</span> <span class="dv">underline</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>button {</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--primary-color</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">cursor</span><span class="ch">:</span> <span class="dv">pointer</span><span class="op">;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>button<span class="in">:hover</span> {</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#1e3a8a</span><span class="op">;</span> <span class="co">/* Slightly darker blue */</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h3 id="task-4-add-better-spacing-5-minutes">Task 4: Add Better Spacing
+(5 minutes)</h3>
+<p><strong>Add consistent spacing throughout your site:</strong></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Better spacing throughout your site */</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>section {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">rem</span> <span class="dv">0</span><span class="op">;</span> <span class="co">/* Space above and below each section */</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>p {</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">rem</span><span class="op">;</span> <span class="co">/* Space between paragraphs */</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>h1<span class="op">,</span> h2<span class="op">,</span> h3 {</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">0.5</span><span class="dt">rem</span><span class="op">;</span> <span class="co">/* Space below headings */</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h2 id="testing-your-changes">✅ Testing Your Changes</h2>
+<h3 id="quick-test-2-minutes">Quick Test (2 minutes):</h3>
+<ol type="1">
+<li><strong>Save your CSS file</strong> and refresh your live
+portfolio</li>
+<li><strong>Check that:</strong>
+<ul>
+<li>Your fonts look different (more professional)</li>
+<li>Your headings are now blue</li>
+<li>Your links turn slightly darker blue when you hover</li>
+<li>Everything still works correctly</li>
+</ul></li>
+</ol>
+<h3 id="if-something-looks-wrong">If Something Looks Wrong:</h3>
+<ol type="1">
+<li><strong>Check that the Google Fonts import is at the VERY
+TOP</strong> of your CSS file</li>
+<li><strong>Make sure you copied the code exactly</strong> (no
+typos)</li>
+<li><strong>Test on your live GitHub Pages URL</strong> (not just
+locally)</li>
+</ol>
+<h2 id="youre-done">🎉 You’re Done!</h2>
+<p><strong>Congratulations!</strong> Your portfolio now has:</p>
+<ul>
+<li>✅ Professional fonts that look clean and readable</li>
+<li>✅ A consistent color scheme that passes accessibility tests</li>
+<li>✅ Simple hover effects that make your site feel interactive</li>
+<li>✅ Better spacing that makes your content easier to read</li>
+<li>✅ Enhanced images (from LAB10) that create visual interest</li>
+<li>✅ Responsive navigation menu (from LAB10) that works on mobile</li>
+</ul>
+<h2 id="simple-troubleshooting">Simple Troubleshooting</h2>
+<p><strong>“My fonts didn’t change”:</strong></p>
+<ul>
+<li>Make sure the <code>@import</code> line is at the VERY TOP of your CSS file</li>
+<li>Check for typos in the font names</li>
+</ul>
+<p><strong>“My colors didn’t change”:</strong></p>
+<ul>
+<li>Make sure you saved your CSS file</li>
+<li>Try refreshing your browser (Ctrl+F5 or Cmd+Shift+R)</li>
+</ul>
+<p><strong>“Something broke”:</strong></p>
+<ul>
+<li>Check that you copied all the closing brackets <code>}</code></li>
+<li>Make sure you didn’t accidentally delete any existing CSS</li>
+</ul>
+<h2 id="final-checklist-for-project1">✅ Final Checklist for
+PROJECT1</h2>
+<p>Before submitting your project, make sure:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" /> <strong>Fonts look professional</strong> throughout your site</label></li>
+<li><label><input type="checkbox" /> <strong>Colors are consistent</strong> (headings and links are blue)</label></li>
+<li><label><input type="checkbox" /> <strong>Hover effects work</strong> on links and buttons</label></li>
+<li><label><input type="checkbox" /> <strong>Navigation menu works on both desktop and mobile</strong></label></li>
+<li><label><input type="checkbox" /> <strong>Everything still works</strong> on your live site</label></li>
+<li><label><input type="checkbox" /> <strong>Your site looks clean and professional</strong></label></li>
+</ul>
+
+<p><strong>You did it!</strong> Your portfolio is now polished and ready
+for submission.</p>
+</body>
+</html>

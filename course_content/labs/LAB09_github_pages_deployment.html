@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 09 – Project Migration & GitHub Pages Deployment</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        h4 {
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .delivery-mode {
+            background-color: #e8f4fd;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #2980b9;
+        }
+        
+        .goal {
+            background-color: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .time-estimate {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .quick-fixes {
+            background-color: #f8d7da;
+            border: 1px solid #dc3545;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success-criteria {
+            background-color: #d4edda;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .checkbox-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .checkbox-list li {
+            margin: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checkbox-list li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .phase {
+            background-color: #f0f8ff;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .phase h3 {
+            color: #2c5aa0;
+            margin-top: 0;
+        }
+        
+        .step {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .step h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        
+        .url-example {
+            background-color: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 3px;
+            padding: 8px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tip {
+            background-color: #cce5ff;
+            border-left: 4px solid #007bff;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lab 09 – Project Migration & GitHub Pages Deployment</h1>
+    
+    <div class="delivery-mode">
+        <span class="emoji">📋</span> Delivery Mode: In-Class Tutorial ➜ Individual Migration & Deployment (Guided Practice)
+    </div>
+    
+    <div class="goal">
+        <strong>Goal:</strong> Migrate your completed project from the Sandbox folder to your portfolio root, then deploy to GitHub Pages to establish a live testing environment. This creates a professional web presence ready for Project 1 submission while building confidence with Git deployment workflow.
+    </div>
+
+    <h2>Learning Outcomes</h2>
+    <ul>
+        <li>Migrate completed projects from Sandbox to portfolio root directory</li>
+        <li>Replace placeholder files with real portfolio content</li>
+        <li>Deploy project portfolio to live web server using GitHub Pages</li>
+        <li>Configure GitHub Pages for continuous portfolio development</li>
+        <li>Establish workflow for testing responsive designs on real devices</li>
+        <li>Create professional web presence ready for project submission</li>
+        <li>Build confidence with Git deployment workflow before project deadline</li>
+    </ul>
+
+    <h2>Prerequisites</h2>
+    <ul>
+        <li>Completed project in your Sandbox folder with working <code>practice.html</code> file</li>
+        <li>Portfolio repository with placeholder <code>index.html</code> and <code>about.html</code> files</li>
+        <li>GitHub account with repository already created</li>
+        <li><strong>GitHub Desktop experience</strong> from LAB03 (repository management, commits, push/pull)</li>
+        <li>Basic familiarity with commit/push workflow</li>
+    </ul>
+
+    <h2><span class="emoji">🚀</span> Getting Started: Building on Your GitHub Desktop Skills</h2>
+
+    <h3>Quick Skills Review <span class="emoji">✅</span></h3>
+    <p>You've already learned GitHub Desktop basics in LAB03. Now we'll use those skills for <strong>project migration and deployment</strong>:</p>
+    <ul>
+        <li>✅ <strong>Repository management</strong> - you know how to open your portfolio repo</li>
+        <li>✅ <strong>Commit workflow</strong> - you can stage changes and write commit messages</li>
+        <li>✅ <strong>Push to GitHub</strong> - you can sync your local changes to GitHub.com</li>
+        <li>🆕 <strong>New skills:</strong> Migrate projects from Sandbox + Deploy to live website using GitHub Pages</li>
+    </ul>
+
+    <div class="time-estimate">
+        <h3><span class="emoji">⏰</span> Time Estimate: 45-60 minutes</h3>
+        <ul>
+            <li><strong>Project migration from Sandbox:</strong> 20-25 minutes</li>
+            <li><strong>Repository review and final commit:</strong> 10 minutes</li>
+            <li><strong>GitHub Pages setup:</strong> 10 minutes</li>
+            <li><strong>Testing and verification:</strong> 15-25 minutes</li>
+        </ul>
+    </div>
+
+    <div class="tip">
+        <h3><span class="emoji">🆘</span> Quick Refresher: GitHub Desktop Workflow</h3>
+        <p>If you need a reminder of the basic workflow from LAB03:</p>
+        <ol>
+            <li><strong>Open GitHub Desktop</strong> → Select your portfolio repository</li>
+            <li><strong>Make changes</strong> to files in VS Code</li>
+            <li><strong>Review changes</strong> in GitHub Desktop "Changes" tab</li>
+            <li><strong>Commit</strong> with descriptive message</li>
+            <li><strong>Push origin</strong> to sync to GitHub.com</li>
+            <li>🆕 <strong>Migrate and Deploy</strong> (new steps we'll learn)</li>
+        </ol>
+    </div>
+
+    <div class="quick-fixes">
+        <h3><span class="emoji">🆘</span> Common Issues & Quick Fixes</h3>
+        <p><strong>Problem:</strong> "Repository not syncing in GitHub Desktop"</p>
+        <p><strong>Solution:</strong> Check internet connection, try "Fetch origin" button, or restart GitHub Desktop</p>
+        
+        <p><strong>Problem:</strong> "GitHub Pages not building"</p>
+        <p><strong>Solution:</strong> Ensure <code>index.html</code> is in root directory (not in a subfolder), wait 5-10 minutes</p>
+        
+        <p><strong>Problem:</strong> "Site shows 404 error"</p>
+        <p><strong>Solution:</strong> Double-check repository name in URL, verify <code>index.html</code> filename (case-sensitive)</p>
+        
+        <p><strong>Problem:</strong> "CSS/Images not loading on live site"</p>
+        <p><strong>Solution:</strong> Check that all file paths are relative (<code>./style.css</code> not <code>/absolute/path/style.css</code>)</p>
+    </div>
+
+    <h2><span class="emoji">📋</span> Step-by-Step Migration & Deployment Guide</h2>
+
+    <div class="phase">
+        <h3>Phase 1: Project Migration (Prepare Your Portfolio)</h3>
+        
+        <h4>Understanding Your Current Setup</h4>
+        <p>Your repository currently has:</p>
+        <ul>
+            <li><strong>Placeholder files</strong>: <code>index.html</code> and <code>about.html</code> in the root (these are outdated templates)</li>
+            <li><strong>Your real project</strong>: Completed work in the <code>Sandbox/</code> folder with <code>practice.html</code></li>
+            <li><strong>Goal</strong>: Move your real project to replace the placeholder files</li>
+        </ul>
+
+        <div class="step">
+            <h4>Step 1: Backup Your Current Work</h4>
+            <ol>
+                <li><strong>Open GitHub Desktop</strong> and select your portfolio repository</li>
+                <li><strong>Check for any uncommitted changes</strong> in the "Changes" tab</li>
+                <li><strong>Commit any current work:</strong>
+                    <ul>
+                        <li>Write message: "Backup before project migration"</li>
+                        <li>Click <strong>"Commit to main"</strong></li>
+                        <li>Click <strong>"Push origin"</strong></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Step 2: Handle Placeholder Files</h4>
+            <ol>
+                <li><strong>Open your repository in VS Code</strong></li>
+                <li><strong>Delete the placeholder files</strong>:
+                    <ul>
+                        <li>Right-click <code>index.html</code> in the root and delete it</li>
+                        <li>Right-click <code>about.html</code> in the root and delete it</li>
+                    </ul>
+                </li>
+                <li><strong>Note</strong>: These were just template files - your real portfolio content will replace them</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Step 3: Move Your Project from Sandbox</h4>
+            <ol>
+                <li><strong>Navigate to your Sandbox folder</strong> in VS Code's Explorer panel</li>
+                <li><strong>Locate your completed project folder</strong> (e.g., <code>project-2</code>, <code>personal-website</code>, etc.)</li>
+                <li><strong>Right-click the project folder</strong> and select "Cut" (or Cmd+X on Mac)</li>
+                <li><strong>Navigate to your repository root</strong> (same level as the <code>images/</code> folder and <code>Sandbox/</code>)</li>
+                <li><strong>Right-click in the root directory</strong> and select "Paste" (or Cmd+V on Mac)</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Step 4: Rename Your Main File</h4>
+            <ol>
+                <li><strong>Navigate into your moved project folder</strong></li>
+                <li><strong>Right-click on <code>practice.html</code></strong> and select "Rename"</li>
+                <li><strong>Change the name to <code>index.html</code></strong></li>
+                <li><strong>Confirm the rename</strong></li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Step 5: Choose Your Portfolio Structure</h4>
+            <p>You have two options:</p>
+            
+            <p><strong>Option A: Single Project Portfolio</strong> (Simpler)</p>
+            <ul>
+                <li>Your project's <code>index.html</code> becomes your main portfolio page</li>
+                <li>Works well if showcasing one main project</li>
+            </ul>
+            
+            <p><strong>Option B: Multi-Project Portfolio</strong> (For multiple projects)</p>
+            <ul>
+                <li>Create a new <code>index.html</code> in the root as a portfolio landing page</li>
+                <li>Link to individual project folders</li>
+                <li>Example: Root <code>index.html</code> → links to <code>project-1/</code>, <code>project-2/</code>, etc.</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Step 6: Update File Paths (If Needed)</h4>
+            <ol>
+                <li><strong>Open your project's <code>index.html</code></strong></li>
+                <li><strong>Check all internal links</strong> (CSS files, images, other HTML pages)</li>
+                <li><strong>Update any broken paths</strong> - file locations may have changed</li>
+                <li><strong>Test links to images</strong> - they should still work if using relative paths</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Step 7: Commit Your Migration</h4>
+            <ol>
+                <li><strong>Return to GitHub Desktop</strong></li>
+                <li><strong>Review all changes</strong> in the "Changes" tab</li>
+                <li><strong>Write commit message</strong>: "Migrate [project-name] from Sandbox to portfolio root"</li>
+                <li><strong>Click "Commit to main"</strong></li>
+                <li><strong>Click "Push origin"</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="phase">
+        <h3>Phase 2: GitHub Pages Deployment</h3>
+        
+        <h4>Using GitHub Desktop (Building on LAB03 Skills)</h4>
+        <p>Since you already know GitHub Desktop from LAB03, this will be familiar:</p>
+
+        <div class="step">
+            <h4>Step 1: Final Portfolio Review</h4>
+            <ol>
+                <li><strong>Open GitHub Desktop</strong> and select your portfolio repository</li>
+                <li><strong>Verify your migration:</strong> Check that your project files are now in the root</li>
+                <li><strong>Test locally:</strong> Open your <code>index.html</code> file to ensure everything works</li>
+                <li><strong>Make any final adjustments</strong> if needed</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Step 2: Final Commit Before Deployment</h4>
+            <ol>
+                <li><strong>Review any final changes</strong> in GitHub Desktop's "Changes" tab</li>
+                <li><strong>Commit final changes:</strong>
+                    <ul>
+                        <li>Write message: "Ready for deployment - project migrated to root"</li>
+                        <li>Click <strong>"Commit to main"</strong></li>
+                        <li>Click <strong>"Push origin"</strong></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Step 3: Enable GitHub Pages (Web Interface)</h4>
+            <ol>
+                <li><strong>Go to GitHub.com</strong> and sign in</li>
+                <li><strong>Navigate to your repository</strong></li>
+                <li><strong>Click "Settings" tab</strong> (should be at the top of your repository)</li>
+                <li><strong>Scroll down to "Pages"</strong> in the left sidebar menu</li>
+                <li><strong>Under "Source"</strong> select <strong>"Deploy from a branch"</strong></li>
+                <li><strong>Select "main" branch</strong> and <strong>"/ (root)"</strong> folder</li>
+                <li><strong>Click "Save"</strong></li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Step 4: Get Your Live URL</h4>
+            <ol>
+                <li><strong>Wait 2-3 minutes</strong> for deployment to complete</li>
+                <li><strong>Refresh the GitHub Pages settings page</strong></li>
+                <li><strong>Copy your live URL</strong> - it will look like: 
+                    <div class="url-example">https://yourusername.github.io/repository-name</div>
+                </li>
+                <li><strong>Bookmark this URL</strong> - you'll use it for testing in future labs</li>
+            </ol>
+        </div>
+    </div>
+
+    <h2>Quick Checklist</h2>
+
+    <h3>Migration Phase</h3>
+    <ul class="checkbox-list">
+        <li>Sandbox project is complete and tested</li>
+        <li>Placeholder <code>index.html</code> and <code>about.html</code> deleted from root</li>
+        <li>Project folder moved from Sandbox to repository root</li>
+        <li><code>practice.html</code> renamed to <code>index.html</code></li>
+        <li>All file paths and links still work correctly</li>
+        <li>Migration committed and pushed to GitHub</li>
+    </ul>
+
+    <h3>Deployment Phase</h3>
+    <ul class="checkbox-list">
+        <li><code>index.html</code> is in your project folder (now in repository root area)</li>
+        <li>Your CSS file path in your HTML is correct after migration</li>
+        <li>Your website works when you open <code>index.html</code> locally</li>
+        <li>All your images show up correctly after the move</li>
+    </ul>
+
+    <h3>GitHub Pages Setup</h3>
+    <ul class="checkbox-list">
+        <li>GitHub Pages is enabled in your repository settings</li>
+        <li>You selected "main branch" and "/ (root)" as the source</li>
+        <li>You can access your live site at the GitHub Pages URL</li>
+    </ul>
+
+    <h3>After Deployment</h3>
+    <ul class="checkbox-list">
+        <li>Your live site shows your complete migrated project</li>
+        <li>All your styling and images appear correctly</li>
+        <li>The site looks good on your phone</li>
+        <li>All your navigation links work</li>
+    </ul>
+
+    <h2>Troubleshooting Common Issues</h2>
+
+    <div class="warning">
+        <h3>Migration Issues</h3>
+        <p><strong>"My CSS stopped working after migration":</strong> Check that your CSS file path in HTML is still correct relative to the new location</p>
+        <p><strong>"Images aren't loading":</strong> Verify image paths are still correct after moving the project folder</p>
+        <p><strong>"Project looks different":</strong> Test locally first - open your new <code>index.html</code> location in browser</p>
+    </div>
+
+    <div class="warning">
+        <h3>Deployment Issues</h3>
+        <p><strong>"404 - File not found":</strong> Make sure your main file is named exactly <code>index.html</code> (all lowercase) and is accessible from the root</p>
+        <p><strong>"Site shows wrong content":</strong> Wait 5-10 minutes - deployment takes time</p>
+        <p><strong>"CSS styling missing":</strong> Check that your CSS file path in your HTML is correct after migration</p>
+    </div>
+
+    <div class="success-criteria">
+        <h2><span class="emoji">✅</span> Success Criteria</h2>
+        <ul class="checkbox-list">
+            <li>Project successfully migrated from Sandbox to portfolio root</li>
+            <li>Website successfully deployed to GitHub Pages</li>
+            <li>Live site accessible and shows your complete project</li>
+            <li>All project sections and features display correctly</li>
+            <li>CSS styling appears correctly on the live site</li>
+            <li>Site works on both desktop and mobile</li>
+            <li>All images load properly</li>
+            <li>Navigation links work correctly</li>
+            <li>Portfolio represents your best work and is ready for submission</li>
+        </ul>
+    </div>
+
+    <h2>Next Steps</h2>
+    <p><strong>Congratulations!</strong> Your project is now live and accessible to anyone on the internet. You can:</p>
+    <ul>
+        <li>Share your URL with friends and family</li>
+        <li>Add the link to your resume or LinkedIn profile</li>
+        <li>Use this same process to update your site with new projects</li>
+        <li>Submit this URL for your project evaluation</li>
+    </ul>
+    
+    <div class="tip">
+        <p><strong>Remember:</strong> whenever you make changes to your files and push them through GitHub Desktop, your live site will automatically update!</p>
+    </div>
+
+    <div class="quick-fixes">
+        <h2><span class="emoji">🆘</span> Need Help?</h2>
+        
+        <h3>When to Ask for Help</h3>
+        <p>If you've tried the above solutions and waited at least 10 minutes, feel free to ask for help! Bring:</p>
+        <ul>
+            <li>Your GitHub Pages URL</li>
+            <li>A description of what's not working (migration or deployment issue)</li>
+            <li>Any error messages you see</li>
+            <li>Screenshots of your file structure if migration seems wrong</li>
+        </ul>
+    </div>
+
+    <div class="success-criteria">
+        <h2><span class="emoji">✅</span> Final Checklist</h2>
+        <p>Before you're done with this lab:</p>
+        <ul class="checkbox-list">
+            <li><strong>Your project is migrated</strong> - moved from Sandbox to root and <code>practice.html</code> renamed to <code>index.html</code></li>
+            <li><strong>Your site loads</strong> - you can visit your GitHub Pages URL and see your portfolio</li>
+            <li><strong>All your project content shows up</strong> - your complete project displays correctly</li>
+            <li><strong>It works on mobile</strong> - check your site on your phone</li>
+            <li><strong>Links work</strong> - all your navigation links take you to the right places</li>
+            <li><strong>Images appear</strong> - all your images load correctly</li>
+            <li><strong>You can make updates</strong> - you know how to use GitHub Desktop to push changes</li>
+            <li><strong>Ready for submission</strong> - your portfolio represents your best work</li>
+        </ul>
+        
+        <h3><span class="emoji">🎉</span> Congratulations!</h3>
+        <p>Your project portfolio is now live on the internet and ready for evaluation!</p>
+    </div>
+
+</body>
+</html>
